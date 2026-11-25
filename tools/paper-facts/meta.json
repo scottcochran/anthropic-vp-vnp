@@ -1,0 +1,8 @@
+{
+ "commit": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+ "file": "vp-vnp/paper.pdf",
+ "paper_sha256": "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c",
+ "pypdf": "7.1.1",
+ "output": "diagrams/src/paper-facts.json",
+ "output_sha256": "9123b698878419b19ec098d48579482337e5880d6b46ed65f9abd7dd51bc9a76"
+}

@@ -1,0 +1,6 @@
+[project]
+name = "vp-vnp-posters"
+version = "0.1.0"
+description = "Generated SVG posters of the VP != VNP paper and its Lean formalization, read from anthropics/formal-math at a pinned commit"
+requires-python = ">=3.12"
+dependencies = []

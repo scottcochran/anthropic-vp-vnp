@@ -1,0 +1,1044 @@
+{
+ "headers": {
+  "Corollary E.2": {
+   "page": 32,
+   "title": "clause sums as permanents"
+  },
+  "Corollary L.3": {
+   "page": 59,
+   "title": null
+  },
+  "Corollary M.4": {
+   "page": 62,
+   "title": null
+  },
+  "Definition A.1": {
+   "page": 19,
+   "title": null
+  },
+  "Definition A.4": {
+   "page": 20,
+   "title": null
+  },
+  "Definition D.1": {
+   "page": 30,
+   "title": null
+  },
+  "Definition G.1": {
+   "page": 42,
+   "title": "law"
+  },
+  "Definition J.1": {
+   "page": 52,
+   "title": null
+  },
+  "Definition K.1": {
+   "page": 55,
+   "title": null
+  },
+  "Definition N.1": {
+   "page": 62,
+   "title": null
+  },
+  "Lemma A.2": {
+   "page": 19,
+   "title": "exponents of unit tensors"
+  },
+  "Lemma A.3": {
+   "page": 19,
+   "title": "routing a tensor through two hubs"
+  },
+  "Lemma B.1": {
+   "page": 22,
+   "title": "number of symbols"
+  },
+  "Lemma C.2": {
+   "page": 26,
+   "title": "parallelogram law for the seminorm N"
+  },
+  "Lemma C.4": {
+   "page": 29,
+   "title": "standard facts on CAT(0) spaces"
+  },
+  "Lemma E.3": {
+   "page": 33,
+   "title": "the network polynomial as a permanent"
+  },
+  "Lemma E.4": {
+   "page": 33,
+   "title": "balanced products"
+  },
+  "Lemma E.7": {
+   "page": 35,
+   "title": "sums with few terms"
+  },
+  "Lemma E.8": {
+   "page": 35,
+   "title": "the exponent is almost convex along midpoints"
+  },
+  "Lemma F.1": {
+   "page": 38,
+   "title": "growth of the mean length with the rank"
+  },
+  "Lemma F.2": {
+   "page": 38,
+   "title": "length of the elements of rank one"
+  },
+  "Lemma F.3": {
+   "page": 38,
+   "title": "mean length on Un"
+  },
+  "Lemma F.4": {
+   "page": 39,
+   "title": "projections for overlapping windows"
+  },
+  "Lemma F.5": {
+   "page": 40,
+   "title": "almost right angles"
+  },
+  "Lemma I.2": {
+   "page": 50,
+   "title": "the runs of a tape automaton as networks"
+  },
+  "Lemma K.2": {
+   "page": 56,
+   "title": "evaluation of the part of low degree"
+  },
+  "Lemma K.3": {
+   "page": 56,
+   "title": "accelerators from circuits for the permanent"
+  },
+  "Lemma K.4": {
+   "page": 57,
+   "title": "postponing the constants"
+  },
+  "Lemma M.1": {
+   "page": 60,
+   "title": "circuits with constants in K"
+  },
+  "Lemma N.2": {
+   "page": 62,
+   "title": "constants that are Laurent polynomials"
+  },
+  "Lemma N.3": {
+   "page": 62,
+   "title": "sums with few terms, approximate version"
+  },
+  "Proposition A.5": {
+   "page": 20,
+   "title": "spectral points below upper functionals"
+  },
+  "Proposition A.7": {
+   "page": 21,
+   "title": "extension"
+  },
+  "Proposition A.8": {
+   "page": 21,
+   "title": "random points"
+  },
+  "Proposition B.2": {
+   "page": 22,
+   "title": "crossing identity"
+  },
+  "Proposition B.3": {
+   "page": 24,
+   "title": "crossing inequality"
+  },
+  "Proposition C.3": {
+   "page": 28,
+   "title": "embedding into a price space"
+  },
+  "Proposition E.1": {
+   "page": 31,
+   "title": "sums over bits as permanents"
+  },
+  "Proposition E.10": {
+   "page": 36,
+   "title": "lower bound for the network polynomial"
+  },
+  "Proposition E.5": {
+   "page": 33,
+   "title": "a first lower bound for the network polynomial"
+  },
+  "Proposition E.9": {
+   "page": 36,
+   "title": "facet centres of a cube"
+  },
+  "Proposition H.1": {
+   "page": 44,
+   "title": "tower"
+  },
+  "Proposition I.1": {
+   "page": 49,
+   "title": "a universal tape automaton"
+  },
+  "Proposition J.2": {
+   "page": 52,
+   "title": "the pieces of a computation"
+  },
+  "Proposition K.5": {
+   "page": 57,
+   "title": "transfer to the next scale"
+  },
+  "Proposition M.2": {
+   "page": 61,
+   "title": "sums over bits as Hamiltonian cycle polynomials"
+  },
+  "Proposition N.4": {
+   "page": 63,
+   "title": "no approximate accelerators"
+  },
+  "Remark N.6": {
+   "page": 64,
+   "title": "determinantal complexity"
+  },
+  "Theorem A.6": {
+   "page": 20,
+   "title": "duality"
+  },
+  "Theorem C.1": {
+   "page": 25,
+   "title": "curvature bound for prices"
+  },
+  "Theorem D.2": {
+   "page": 30,
+   "title": "the two cases"
+  },
+  "Theorem E.11": {
+   "page": 37,
+   "title": "lower bound for the permanent in the flat case"
+  },
+  "Theorem E.6": {
+   "page": 35,
+   "title": "no circuits of polynomial size in the flat case"
+  },
+  "Theorem F.6": {
+   "page": 40,
+   "title": "Poincaré inequality"
+  },
+  "Theorem G.2": {
+   "page": 43,
+   "title": "existence of laws"
+  },
+  "Theorem H.2": {
+   "page": 45,
+   "title": "decomposition into tree networks"
+  },
+  "Theorem J.3": {
+   "page": 53,
+   "title": "one cut"
+  },
+  "Theorem J.4": {
+   "page": 54,
+   "title": "cuts at all scales"
+  },
+  "Theorem K.6": {
+   "page": 58,
+   "title": "nonexistence of small accelerators"
+  },
+  "Theorem K.7": {
+   "page": 59,
+   "title": "lower bound in the contracting case"
+  },
+  "Theorem L.1": {
+   "page": 59,
+   "title": "main theorem"
+  },
+  "Theorem L.2": {
+   "page": 59,
+   "title": "no circuits of polynomial size"
+  },
+  "Theorem M.3": {
+   "page": 61,
+   "title": "lower bound over all fields"
+  },
+  "Theorem N.5": {
+   "page": 64,
+   "title": "approximate computation"
+  }
+ },
+ "intro": [
+  {
+   "kind": "Theorem",
+   "lean": "thm_allfields",
+   "number": "1.1",
+   "title": "main theorem"
+  },
+  {
+   "kind": "Corollary",
+   "lean": "cor_allclasses",
+   "number": "1.2",
+   "title": null
+  },
+  {
+   "kind": "Definition",
+   "lean": "def_approx",
+   "number": "1.3",
+   "title": null
+  },
+  {
+   "kind": "Theorem",
+   "lean": "thm_approx",
+   "number": "1.4",
+   "title": "approximate computation"
+  },
+  {
+   "kind": "Definition",
+   "lean": "def_cases",
+   "number": "2.1",
+   "title": "the two hypotheses"
+  },
+  {
+   "kind": "Theorem",
+   "lean": "thm_alt",
+   "number": "2.2",
+   "title": "the two cases"
+  }
+ ],
+ "pages": 70,
+ "table1": [
+  {
+   "case": "both",
+   "section": "A",
+   "uses": [],
+   "what": "spectral points and prices; duality; random points"
+  },
+  {
+   "case": "both",
+   "section": "B",
+   "uses": [
+    "A"
+   ],
+   "what": "the inequality (B.2) for two crossing wires"
+  },
+  {
+   "case": "both",
+   "section": "C",
+   "uses": [
+    "A",
+    "B"
+   ],
+   "what": "prices satisfy the inequality of Bruhat and Tits"
+  },
+  {
+   "case": "both",
+   "section": "D",
+   "uses": [
+    "C"
+   ],
+   "what": "the flat case or the contracting case holds"
+  },
+  {
+   "case": "flat",
+   "section": "E",
+   "uses": [
+    "A",
+    "C",
+    "D"
+   ],
+   "what": "lower bounds for fk,ℓ and for the permanent"
+  },
+  {
+   "case": "contracting",
+   "section": "F",
+   "uses": [
+    "C",
+    "D"
+   ],
+   "what": "a Poincaré inequality on unitriangular groups"
+  },
+  {
+   "case": "contracting",
+   "section": "G",
+   "uses": [
+    "A",
+    "F"
+   ],
+   "what": "rerouting laws"
+  },
+  {
+   "case": "contracting",
+   "section": "H",
+   "uses": [
+    "G"
+   ],
+   "what": "every network is a sum of tree networks"
+  },
+  {
+   "case": "contracting",
+   "section": "I",
+   "uses": [
+    "G",
+    "H"
+   ],
+   "what": "programs and tape automata; runs as networks"
+  },
+  {
+   "case": "contracting",
+   "section": "J",
+   "uses": [
+    "H",
+    "I"
+   ],
+   "what": "computations can be cut into pieces"
+  },
+  {
+   "case": "contracting",
+   "section": "K",
+   "uses": [
+    "E",
+    "G",
+    "I",
+    "J"
+   ],
+   "what": "small circuits give accelerators; there are none"
+  },
+  {
+   "case": "both",
+   "section": "L",
+   "uses": [
+    "D",
+    "E",
+    "K"
+   ],
+   "what": "Theorems L.1, L.2, Corollary L.3"
+  },
+  {
+   "case": "both",
+   "section": "M",
+   "uses": [
+    "D",
+    "E",
+    "K"
+   ],
+   "what": "all fields; the Hamiltonian cycle polynomial"
+  },
+  {
+   "case": "both",
+   "section": "N",
+   "uses": [
+    "E",
+    "K",
+    "M"
+   ],
+   "what": "approximate computation"
+  },
+  {
+   "case": "both",
+   "section": "O",
+   "uses": [
+    "C"
+   ],
+   "what": "proofs of the facts on CAT(0) spaces in Lemma C.4"
+  }
+ ],
+ "table3": [
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_spectral",
+    "def_spectral_congr"
+   ],
+   "number": "A.1",
+   "printed": "def_spectral, def_spectral_congr",
+   "section": "A"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_exponents"
+   ],
+   "number": "A.2",
+   "printed": "lem_exponents",
+   "section": "A"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_hubs",
+    "lem_hubs_further"
+   ],
+   "number": "A.3",
+   "printed": "lem_hubs, lem_hubs_further",
+   "section": "A"
+  },
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_price"
+   ],
+   "number": "A.4",
+   "printed": "def_price",
+   "section": "A"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_gauge"
+   ],
+   "number": "A.5",
+   "printed": "prop_gauge",
+   "section": "A"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_duality"
+   ],
+   "number": "A.6",
+   "printed": "thm_duality",
+   "section": "A"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_extend"
+   ],
+   "number": "A.7",
+   "printed": "prop_extend",
+   "section": "A"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_random"
+   ],
+   "number": "A.8",
+   "printed": "prop_random",
+   "section": "A"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_count"
+   ],
+   "number": "B.1",
+   "printed": "lem_count",
+   "section": "B"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_identity"
+   ],
+   "number": "B.2",
+   "printed": "prop_identity",
+   "section": "B"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_crossing",
+    "eq_Q"
+   ],
+   "number": "B.3",
+   "printed": "prop_crossing, eq_Q",
+   "section": "B"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_cn"
+   ],
+   "number": "C.1",
+   "printed": "thm_cn",
+   "section": "C"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_means"
+   ],
+   "number": "C.2",
+   "printed": "lem_means",
+   "section": "C"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_space"
+   ],
+   "number": "C.3",
+   "printed": "prop_space",
+   "section": "C"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_toolkit",
+    "lem_toolkit_a",
+    "lem_toolkit_b",
+    "lem_toolkit_c",
+    "lem_toolkit_d",
+    "lem_toolkit_e",
+    "lem_toolkit_f",
+    "lem_toolkit_c_minimizer"
+   ],
+   "number": "C.4",
+   "printed": "lem_toolkit, lem_toolkit_a to _f, lem_toolkit_c_minimizer",
+   "section": "C"
+  },
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_cases"
+   ],
+   "number": "D.1",
+   "printed": "def_cases",
+   "section": "D"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_alt"
+   ],
+   "number": "D.2",
+   "printed": "thm_alt",
+   "section": "D"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_grid"
+   ],
+   "number": "E.1",
+   "printed": "prop_grid",
+   "section": "E"
+  },
+  {
+   "kind": "Corollary",
+   "lean": [
+    "cor_clauses"
+   ],
+   "number": "E.2",
+   "printed": "cor_clauses",
+   "section": "E"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_fkl_perm",
+    "lem_fkl_perm_printed"
+   ],
+   "number": "E.3",
+   "printed": "lem_fkl_perm, lem_fkl_perm_printed",
+   "section": "E"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_balanced"
+   ],
+   "number": "E.4",
+   "printed": "lem_balanced",
+   "section": "E"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_flat_lower",
+    "prop_flat_lower_printed"
+   ],
+   "number": "E.5",
+   "printed": "prop_flat_lower, prop_flat_lower_printed",
+   "section": "E"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_flat_simple"
+   ],
+   "number": "E.6",
+   "printed": "thm_flat_simple",
+   "section": "E"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_few"
+   ],
+   "number": "E.7",
+   "printed": "lem_few",
+   "section": "E"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_convex"
+   ],
+   "number": "E.8",
+   "printed": "lem_convex",
+   "section": "E"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_cube"
+   ],
+   "number": "E.9",
+   "printed": "prop_cube",
+   "section": "E"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_flat_rate",
+    "prop_flat_rate_printed"
+   ],
+   "number": "E.10",
+   "printed": "prop_flat_rate, prop_flat_rate_printed",
+   "section": "E"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_flat_rate"
+   ],
+   "number": "E.11",
+   "printed": "thm_flat_rate",
+   "section": "E"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_growth"
+   ],
+   "number": "F.1",
+   "printed": "lem_growth",
+   "section": "F"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_words"
+   ],
+   "number": "F.2",
+   "printed": "lem_words",
+   "section": "F"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_first"
+   ],
+   "number": "F.3",
+   "printed": "lem_first",
+   "section": "F"
+  },
+  {
+   "kind": "Display",
+   "lean": [
+    "eq_window",
+    "projection_nearest"
+   ],
+   "number": "(F.1)",
+   "printed": "eq_window, projection_nearest",
+   "section": "F"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_tele"
+   ],
+   "number": "F.4",
+   "printed": "lem_tele",
+   "section": "F"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_angle"
+   ],
+   "number": "F.5",
+   "printed": "lem_angle",
+   "section": "F"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_poincare"
+   ],
+   "number": "F.6",
+   "printed": "thm_poincare",
+   "section": "F"
+  },
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_law"
+   ],
+   "number": "G.1",
+   "printed": "def_law",
+   "section": "G"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_laws"
+   ],
+   "number": "G.2",
+   "printed": "thm_laws",
+   "section": "G"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_tower",
+    "prop_tower_representatives"
+   ],
+   "number": "H.1",
+   "printed": "prop_tower, prop_tower_representatives",
+   "section": "H"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_tree",
+    "thm_tree_good"
+   ],
+   "number": "H.2",
+   "printed": "thm_tree, thm_tree_good",
+   "section": "H"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_universal"
+   ],
+   "number": "I.1",
+   "printed": "prop_universal",
+   "section": "I"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_runnet"
+   ],
+   "number": "I.2",
+   "printed": "lem_runnet",
+   "section": "I"
+  },
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_cut"
+   ],
+   "number": "J.1",
+   "printed": "def_cut",
+   "section": "J"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_pieces",
+    "prop_pieces_identity"
+   ],
+   "number": "J.2",
+   "printed": "prop_pieces, prop_pieces_identity",
+   "section": "J"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_onecut"
+   ],
+   "number": "J.3",
+   "printed": "thm_onecut",
+   "section": "J"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_cut",
+    "exists_setting"
+   ],
+   "number": "J.4",
+   "printed": "thm_cut, exists_setting",
+   "section": "J"
+  },
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_acc"
+   ],
+   "number": "K.1",
+   "printed": "def_acc",
+   "section": "K"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_lowdeg"
+   ],
+   "number": "K.2",
+   "printed": "lem_lowdeg",
+   "section": "K"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_circuit",
+    "lem_circuit_perm"
+   ],
+   "number": "K.3",
+   "printed": "lem_circuit, lem_circuit_perm",
+   "section": "K"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_postpone"
+   ],
+   "number": "K.4",
+   "printed": "lem_postpone",
+   "section": "K"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_next",
+    "scales_setting"
+   ],
+   "number": "K.5",
+   "printed": "prop_next, scales_setting",
+   "section": "K"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_noacc",
+    "scales_setting"
+   ],
+   "number": "K.6",
+   "printed": "thm_noacc, scales_setting",
+   "section": "K"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_contracting"
+   ],
+   "number": "K.7",
+   "printed": "thm_contracting",
+   "section": "K"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_main",
+    "thm_main_form"
+   ],
+   "number": "L.1",
+   "printed": "thm_main, thm_main_form",
+   "section": "L"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_simple"
+   ],
+   "number": "L.2",
+   "printed": "thm_simple",
+   "section": "L"
+  },
+  {
+   "kind": "Corollary",
+   "lean": [
+    "cor_classes"
+   ],
+   "number": "L.3",
+   "printed": "cor_classes",
+   "section": "L"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_transfer"
+   ],
+   "number": "M.1",
+   "printed": "lem_transfer",
+   "section": "M"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_hc_grid",
+    "cor_clauses_hc"
+   ],
+   "number": "M.2",
+   "printed": "prop_hc_grid, cor_clauses_hc",
+   "section": "M"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_allfields"
+   ],
+   "number": "M.3",
+   "printed": "thm_allfields",
+   "section": "M"
+  },
+  {
+   "kind": "Corollary",
+   "lean": [
+    "cor_allclasses"
+   ],
+   "number": "M.4",
+   "printed": "cor_allclasses",
+   "section": "M"
+  },
+  {
+   "kind": "Definition",
+   "lean": [
+    "def_approx"
+   ],
+   "number": "N.1",
+   "printed": "def_approx",
+   "section": "N"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_transfer_approx"
+   ],
+   "number": "N.2",
+   "printed": "lem_transfer_approx",
+   "section": "N"
+  },
+  {
+   "kind": "Lemma",
+   "lean": [
+    "lem_few_approx"
+   ],
+   "number": "N.3",
+   "printed": "lem_few_approx",
+   "section": "N"
+  },
+  {
+   "kind": "Proposition",
+   "lean": [
+    "prop_approx_acc",
+    "prop_approx_acc_setting"
+   ],
+   "number": "N.4",
+   "printed": "prop_approx_acc, prop_approx_acc_setting",
+   "section": "N"
+  },
+  {
+   "kind": "Theorem",
+   "lean": [
+    "thm_approx"
+   ],
+   "number": "N.5",
+   "printed": "thm_approx",
+   "section": "N"
+  },
+  {
+   "kind": "Remark",
+   "lean": [],
+   "number": "N.6",
+   "printed": "not formalized",
+   "section": "N"
+  }
+ ]
+}

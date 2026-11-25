@@ -1,0 +1,63 @@
+# Where the proof-posters skills (the plugin published from scottcochran/riemann-diagrams, enabled for this repository
+# by .claude/settings.json) find this repository's parts. The skills hold the method; this file holds the paths and
+# names. Every path is relative to the root of this repository unless it says otherwise.
+
+[project]
+name = "vp-vnp-posters"
+custodian = "scottcochran"            # the only account that signs and pushes release tags
+default_branch = "main"
+plan = "PLAN.md"                      # decisions, the release table, and a done note per phase
+poster_skill = "drawing-posters"      # this repository's own skill for adding or reworking a poster (.claude/skills/)
+docs = ["README.md", "diagrams/README.md", "diagrams/TEXT.md", "tools/paper-facts/README.md"]
+
+[build]
+regenerate = ["uv run python diagrams/gen-diagrams.py"]
+failure_markers = ["WARNING", "ERROR"]
+rerun_marker = "NOTE "                # a run that exits 1 with a line starting so is run once more
+vary_env = [{ PYTHONHASHSEED = "0" }, { PYTHONHASHSEED = "1" }]
+outputs = ["diagrams/*.svg"]
+manifests = ["diagrams/manifest.json"]
+manifest_counts = ["cards", "arrows"]
+modules = "diagrams/src/d_*.py"       # one per poster; each records what it expects the sources to say
+ci = ".github/workflows/posters.yml"  # regenerates at the pin and fails on any byte that differs
+# Module-level names in the poster modules that record what the sources say.
+expected_names = ["EXPECTED", "DIRECT", "BORNE", "LEAN_ONLY", "CASES", "COUNTS", "N_STATEMENTS", "KINDS",
+                  "NOT_FORMALIZED", "NO_DOC_LABEL", "SHARED", "CLAIMS", "DEFINITIONS", "INTRO", "AXIOMS", "QUOTED",
+                  "LIBRARY", "IMPORTS", "UPWARD", "STATEMENTS_IN", "TOP"]
+# The expected_names whose change makes a release MINOR (PLAN.md, "Releases").
+minor_names = ["EXPECTED", "CLAIMS"]
+
+[pins]
+file = "diagrams/src/vp.py"
+
+[[pins.commit]]
+name = "FM_COMMIT"
+what = "the anthropics/formal-math commit every file of vp-vnp is read from"
+repo = "anthropics/formal-math"
+checkout_env = "VP_VNP"               # the vp-vnp folder inside the checkout
+checkout_default = "../vp-np"
+
+# Files derived outside the build, each pinned by its hash and by the commit it was read from.
+[[pins.derived]]
+name = "PAPER_FACTS_SHA256"
+file = "diagrams/src/paper-facts.json"
+meta = "tools/paper-facts/meta.json"
+
+[[pins.reread]]
+name = "PAPER_SHA256"
+source = "vp-vnp/paper.pdf at FM_COMMIT"
+refresh = "uv run --with pypdf==7.1.1 python tools/paper-facts/extract.py"
+reread = "src/paper-facts.json against the paper's Table 1, Table 3 and statement headers, and every poster that quotes them (R2's cards, F1's titles)"
+
+[links]
+require_targets = true
+frame_classes = ["rd-target"]
+unrendered = ["[[@"]
+allow = []
+
+[release]
+classification = "PLAN.md, Releases: the MAJOR / MINOR / PATCH table"
+tag = "vMAJOR.MINOR.PATCH, annotated and signed (git tag -s), on main, pushed by the custodian"
+tag_match = "v*"
+assets = ["diagrams/*.svg"]
+checksums = "SHA256SUMS"

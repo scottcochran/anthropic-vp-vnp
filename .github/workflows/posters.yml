@@ -1,0 +1,76 @@
+# Regenerate every poster from the pinned source and fail if the committed SVGs differ.
+#
+# The pin is read from diagrams/src/vp.py: the anthropics/formal-math commit (FM_COMMIT) every file of vp-vnp is read
+# from. The generator checks that the checkout is at the pin, that paper.pdf and src/paper-facts.json hash to their
+# pins, and that every poster's sources say what the poster records; any WARNING or ERROR line makes it exit 1. The
+# byte comparison then says whether the committed posters are the ones these sources produce.
+name: posters
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  regenerate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v5
+        with:
+          path: posters
+
+      - name: Read the pin
+        id: pins
+        shell: bash
+        run: |
+          cd posters
+          value=$(python3 -c "import re; print(re.search(r'^FM_COMMIT = \"([0-9a-f]+)\"', open('diagrams/src/vp.py').read(), re.M).group(1))")
+          echo "FM_COMMIT=$value" | tee -a "$GITHUB_OUTPUT"
+
+      - name: Resolve the pin to a full commit
+        id: full
+        shell: bash
+        run: |
+          fm=$(gh api "repos/anthropics/formal-math/commits/${{ steps.pins.outputs.FM_COMMIT }}" -q .sha)
+          echo "formal_math=$fm" | tee -a "$GITHUB_OUTPUT"
+        env:
+          GH_TOKEN: ${{ github.token }}
+
+      - name: Check out formal-math at its pin, only the vp-vnp folder
+        uses: actions/checkout@v5
+        with:
+          repository: anthropics/formal-math
+          ref: ${{ steps.full.outputs.formal_math }}
+          path: formal-math
+          sparse-checkout: |
+            vp-vnp
+          sparse-checkout-cone-mode: true
+
+      - name: Python 3.12
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate the posters
+        shell: bash
+        env:
+          VP_VNP: ${{ github.workspace }}/formal-math/vp-vnp
+        run: |
+          cd posters
+          python3 diagrams/gen-diagrams.py
+
+      - name: The committed posters are the regenerated ones
+        shell: bash
+        run: |
+          cd posters
+          git status --porcelain -- diagrams
+          if [ -n "$(git status --porcelain -- diagrams)" ]; then
+            echo "::error::a poster differs from its sources, or is not committed; regenerate and commit"
+            git diff --stat -- diagrams
+            exit 1
+          fi
