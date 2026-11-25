@@ -1,4 +1,4 @@
-"""F4 — The paper's own picture of the proof, Figure 1, with each of its arrows checked against the Lean text.
+"""F4 — The paper's own picture of the proof, Figure 1, with each of its arrows checked against the elaborated Lean.
 
 Figure 1 of the paper, "The structure of the proof", draws a common part that splits into the flat case and the
 contracting case, each a column of boxes joined by arrows, some arrows marked with Lean names, and both ending at
@@ -159,17 +159,17 @@ def build():
         order = [k for n in path(dst) for k in node_stmts(n)]
         firsts = next((node_stmts(n) for n in path(dst) if node_stmts(n)), [])
         for t in firsts:
-            if s in src.uses[t]:
+            if s in src.lean_uses[t]:
                 return "at", [t]
         for t in order:
-            if t not in firsts and s in src.uses[t]:
+            if t not in firsts and s in src.lean_uses[t]:
                 return "below", [t]
         own = {stmt(n) for n in names + carried}
         for t in order:                                 # breadth first, through what the figure does not draw
             prev, queue = {t: None}, [t]
             while queue:
                 cur = queue.pop(0)
-                for u in src.uses[cur]:
+                for u in src.lean_uses[cur]:
                     if u in prev:
                         continue
                     prev[u] = cur
@@ -188,17 +188,17 @@ def build():
             v, via = verdict(a, stmt(name))
             got.append((i, stmt(name), v, via))
     compare("F4: the verdict on each arrow of Figure 1", VERDICTS, got,
-            "Figure 1 (p. 5), its transcription in d_f4_figure_1.py, and the uses read from the Lean text")
+            "Figure 1 (p. 5), its transcription in d_f4_figure_1.py, and the uses in src/lean-uses.json")
     by_arrow = collections.defaultdict(list)
     for i, s, v, via in VERDICTS:
         by_arrow[i].append((s, v, via))
 
     c = Canvas(ID, "The paper's own picture of the proof: Figure 1, each of its arrows checked against the uses the "
-               "Lean text shows",
+               "elaborated Lean shows",
                "Figure 1 of the paper (p. 5) draws the common part, the flat case and the contracting case, ending at "
                "Theorem 1.1. Its boxes and arrows are transcribed here from the rendered page; its Lean names are "
                "read from the PDF's text and joined to the numbered statements through Table 3; each arrow is coloured "
-               f"by what the uses read from the Lean source of vp-vnp at formal-math {src.commit} say of it.", W,
+               f"by what the uses of the elaborated Lean of vp-vnp at formal-math {src.commit} say of it (src/lean-uses.json).", W,
                sources=f"anthropics/formal-math {src.commit}, vp-vnp/paper.pdf (Figure 1, Table 3), "
                "vp-vnp/Paper/*.lean.", state=f"Drawn from formal-math {src.commit}")
     x0, y = c.x0, c.y
@@ -208,7 +208,7 @@ def build():
            "is numbered as in the table below and coloured by the worst verdict on the statements it carries: teal, "
            "the next box with a Lean name uses them; amber, a later box does; violet, a later box reaches them only "
            "through statements the figure leaves out; red, not seen. Of the "
-           f"{len(VERDICTS)} statements carried, {n_ok} are used at the arrow's end. " + vp.NOT_BUILT, S + 0.5, "muted")
+           f"{len(VERDICTS)} statements carried, {n_ok} are used at the arrow's end. " + vp.NOT_BUILT_LEAN, S + 0.5, "muted")
     y += 84
 
     # ---- the boxes, in the figure's places
@@ -299,9 +299,9 @@ def build():
     y += 50
 
     # ---- the verdicts, arrow by arrow
-    y += c.heading(x0, y, "Each arrow, and what the Lean text shows of the statements it carries")
+    y += c.heading(x0, y, "Each arrow, and what the elaborated Lean shows of the statements it carries")
     cols = [("Arrow", 110), ("From → to (transcribed)", 560), ("Carries", 330), ("Verdict", 400),
-            ("What the Lean text shows", c.x1 - x0 - 1400)]
+            ("What the elaborated Lean shows", c.x1 - x0 - 1400)]
     rows = []
     for i, (a, b, mark, names, carried) in enumerate(ARROWS):
         for j, (s, v, via) in enumerate(by_arrow[i]):

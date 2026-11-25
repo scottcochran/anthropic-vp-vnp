@@ -50,7 +50,7 @@ PAPER_FACTS_SHA256 = "4c5b9ea23fc64aca3d1ce55847c4f6aa78ccd5e3b3d13bad2022438a5d
 
 # diagrams/src/lean-uses.json, the uses between statements read from a lean4export export of vp-vnp at FM_COMMIT by
 # tools/lean-uses/read_export.py (Phase 2); tools/lean-uses/meta.json records the export's hash and the commit.
-LEAN_USES_SHA256 = "e6645f504ee5828af2ec3d5d0db1b6bca830c2265f0cc11bfc444d2bb83b640c"
+LEAN_USES_SHA256 = "b9e1d12356a1d1ef42e972556267f3ccd4eedf86a913d4de517cb9aa3148f92c"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
@@ -347,6 +347,7 @@ def load(lean=True):
     # The Lean reading, in the form of s.uses: statement -> {used statement: "direct" | "through"}
     s.lean_uses = {k: s.lean["uses"].get(k, {}) for k in s.statements}
     s.lean_reach = {k: set(v) for k, v in s.lean["reach"].items()}
+    s.lean_under = {k: set(v) for k, v in s.lean["under"].items()}   # every source declaration under a statement
     return s
 
 

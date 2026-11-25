@@ -15,9 +15,10 @@ with WARNING or ERROR is a failure.
 | `src/papers.toml`: the paper behind each reference | this repository's own data, checked both ways against the references | `vp.load()`, F8 |
 | `src/lean-uses.json`: the uses between statements in the elaborated Lean, from an export of vp-vnp built at the pin | `LEAN_USES_SHA256`, and `tools/lean-uses/meta.json`, which records the commit and the export's hash | `vp.load()`, F9 |
 
-Which reading a poster draws: F1, R2, R3, T1 and T2 draw the uses of the elaborated Lean (`src/lean-uses.json`,
-Phase 2: an export of vp-vnp built once at the pin, read by `tools/lean-uses/read_export.py`). F3, F4 and F5 read
-the source as text, as below. F9 sets the two readings against each other.
+Which reading a poster draws: every poster that draws uses between statements, or the Lean under one (F1, F3, F4,
+F5, R2, R3, T1, T2), reads the elaborated Lean (`src/lean-uses.json`, Phase 2: an export of vp-vnp built once at the
+pin, read by `tools/lean-uses/read_export.py`). The text reading below is Phase 1's; F9 sets the two against each
+other, and it is still how vp.py finds the source's declarations, files and lines.
 
 How the Lean is read as text: comments and strings blanked, full names come from `namespace`, `section` and
 `end`, and a declaration runs from its keyword at the head of a line to the next command at the head of a line. A
@@ -28,7 +29,8 @@ co-owner is not counted as a use: it states the two together, in J.4's setting. 
 without the name (an instance, a `simp` set, a tactic that finds the lemma), or a name behind an `open`. A local
 variable that shares a name with a theorem is counted as a use of it.
 
-**What lies under a statement** (F3, `vp.closure`) is read the same way, across every library: the walk from the
+**What lies under a statement**, in the text reading (`vp.closure`, which no poster draws now), is read the same
+way, across every library: the walk from the
 statement's own theorems through every declaration their text names, stopping at the theorems of other statements. A
 token names a declaration when it is the declaration's full name, or a dotted suffix of exactly one full name, in a
 file the naming file imports, and has at least three characters.

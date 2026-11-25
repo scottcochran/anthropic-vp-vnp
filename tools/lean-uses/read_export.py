@@ -9,7 +9,8 @@ expression only its children and, for a constant, the name it refers to; then, f
 paper (Table 3, through diagrams/src/vp.py), it walks, breadth first, from the statement's Lean theorems through every
 declaration of vp-vnp that belongs to no statement, and records each other statement's theorem it meets: "direct" when
 one of the statement's own theorems refers to it, "through" when a helper does, with a shortest chain of declarations
-from the one to the other, and the declarations of the Paper library the walk passed. It is the walk of vp._statement_uses, over the
+from the one to the other, the declarations of the Paper library the walk passed, and every source declaration of
+vp-vnp under the statement's theorems (a compiler-made or private constant counted as the declaration it belongs to). It is the walk of vp._statement_uses, over the
 terms Lean elaborated instead of the names in the source, with the same rule for a name Table 3 gives two statements.
 
 A constant is vp-vnp's own when (rule; it is recorded in the meta file):
@@ -126,6 +127,17 @@ def main(argv):
         parts = n.split(".")
         return any(".".join(parts[:k]) in source for k in range(1, len(parts) + 1))
 
+    def source_of(n):
+        """The source declaration a vp-vnp constant belongs to: itself, the name a compiler-made one extends, or the
+        name a private one hides."""
+        if n.startswith("_private."):
+            n = n[len("_private."):].split(".0.", 1)[-1]
+        parts = n.split(".")
+        for k in range(len(parts), 0, -1):
+            if ".".join(parts[:k]) in source:
+                return ".".join(parts[:k])
+        return None
+
     def refs(name_id):
         """The constants a declaration's type and value refer to."""
         out, seen, stack = set(), set(), list(decls.get(name_id, ()))
@@ -156,7 +168,7 @@ def main(argv):
             ref_cache[i] = refs(i)
         return ref_cache[i]
 
-    uses, chains, reach, met = {}, {}, {}, {}
+    uses, chains, reach, met, under = {}, {}, {}, {}, {}
     for key, st in sorted(src.statements.items(), key=lambda t: vp.order_key(t[0])):
         start = [by_name[f] for f in st["decls"] if f in by_name]
         found, seen, via, hit = {}, set(start), {}, {}
@@ -190,10 +202,12 @@ def main(argv):
         chains[key] = {k: via[k] for k in sorted(via, key=vp.order_key)}
         # the declarations of the Paper library the walk passed, the statement's own among them: R3's route claims
         met[key] = {k: sorted(hit[k]) for k in sorted(hit, key=vp.order_key)}   # the used one's names arrived at
+        # every source declaration of vp-vnp under the statement's theorems: F3's weights, F5's directories
+        under[key] = sorted({m for m in (source_of(name_of(i)) for i in seen) if m})
         reach[key] = sorted(n for n in (name_of(i) for i in seen) if n.startswith("Paper.") and n in source)
 
     own_count = sum(1 for i in decls if own(name_of(i)))
-    data = {"uses": uses, "chains": chains, "reach": reach, "met": met, "absent": sorted(absent),
+    data = {"uses": uses, "chains": chains, "reach": reach, "met": met, "under": under, "absent": sorted(absent),
             "counts": {"declarations": len(decls), "vp_vnp": own_count, "library": len(decls) - own_count,
                        "uses": sum(len(v) for v in uses.values()),
                        "direct": sum(1 for v in uses.values() for h in v.values() if h == "direct")}}

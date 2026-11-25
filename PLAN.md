@@ -143,9 +143,16 @@ sections that only the Lean shows (A→D and F→H added). R3's route, its longe
 exception of Definition A.1, reached only through `def_spectral_congr`, holds in the export too: no walk arrives at
 `def_spectral`) and the seven route claims hold unchanged, and so do T1 and T2. src/lean-uses.json gained, for each
 statement, the Paper declarations its walk passes and the used statements' names it arrives at, which R3's checks
-read. F3, F4 and F5 still read the text.
+read.
 
-Open: whether F3, F4 and F5 should read the Lean too; the second reading
+Then F3, F4 and F5 too. src/lean-uses.json gained, for each statement, every source declaration under its Lean
+theorems (a compiler-made or private constant counted as the one it belongs to). F4's 25 verdicts hold unchanged.
+F3's weights grow a little (J.3: 1,076 declarations, against 1,014 read from the text), and the overview's four now
+rank 1, 2, 3 and 5. F5's coverage was the text reading's blind spot: 46,338 of 46,392 declaration lines (99.9%) lie
+under some statement in the elaborated Lean, against 42,168 (91%) reached by name; only 54 lines are under none,
+most in Nc.Rate. Every poster that draws uses now reads the Lean; only F9 draws the text reading, to compare.
+
+Open: the second reading
 proof-posters:extracting-lean-deps asks for (the compiled modules, read by a small Lean program) is here the text
 reading, not a build cache.
 

@@ -1,10 +1,10 @@
 """F9 — The text against the Lean: every use between numbered statements, as the source text shows it (Phase 1) and as
 the elaborated Lean shows it (Phase 2), side by side.
 
-Phase 1 read the uses from the Lean source as text (vp.py); F3, F4 and F5 still do. Phase 2 built vp-vnp once at
+Phase 1 read the uses from the Lean source as text (vp.py). Phase 2 built vp-vnp once at
 FM_COMMIT, exported Solution's theorems and every Lean theorem of Table 3 with their dependency closure (lean4export),
-and read the uses from the elaborated terms (tools/lean-uses/read_export.py, pinned in src/lean-uses.json), which F1,
-R2, R3 and the traces draw. This poster sets the two readings against each other, use by use, and says why they differ. The build fails if a use of
+and read the uses from the elaborated terms (tools/lean-uses/read_export.py, pinned in src/lean-uses.json), which every
+other poster that draws uses now reads. This poster sets the two readings against each other, use by use, and says why they differ. The build fails if a use of
 either reading is missing from the other other than those recorded here, if the two give a use different kinds, if
 the uses only the export shows or the helper behind each change, or if the counts of the export change."""
 import collections

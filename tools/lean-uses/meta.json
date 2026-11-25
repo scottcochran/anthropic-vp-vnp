@@ -16,5 +16,5 @@
  },
  "rule": "vp-vnp's own: a name the source declares, a name extending one, or _private.<vp-vnp module>.0.*",
  "output": "diagrams/src/lean-uses.json",
- "output_sha256": "e6645f504ee5828af2ec3d5d0db1b6bca830c2265f0cc11bfc444d2bb83b640c"
+ "output_sha256": "b9e1d12356a1d1ef42e972556267f3ccd4eedf86a913d4de517cb9aa3148f92c"
 }

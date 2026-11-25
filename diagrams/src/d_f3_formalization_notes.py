@@ -3,8 +3,9 @@
 The paper's overview says that the printed proofs of four statements describe machines and programs, that only the
 Lean development verifies they do what is claimed, and that each of the four is followed by a formalization note; the
 text has seven such notes. This poster quotes the overview and the seven notes, places each note in the text, and
-measures, for every numbered statement, the declarations of vp-vnp under its Lean theorems (vp.closure: names read
-from the text, in any library, stopping at the theorems of other statements). The build fails if the overview's
+measures, for every numbered statement, the declarations of vp-vnp under its Lean theorems in the elaborated Lean
+(src/lean-uses.json: the walk through every constant of their terms, in any library, stopping at the theorems of other
+statements). The build fails if the overview's
 four, the notes (page, place, the statements they name), or any statement's count of declarations and lines by
 library differ from what is recorded here, in either direction."""
 import vp
@@ -35,34 +36,33 @@ NOTES = [
 ]
 # statement -> (declarations under its Lean theorems, and their lines in Paper, Nc, NS1, Ov)
 WEIGHT = {
-    'Definition A.1': (13, 17, 0, 0, 46), 'Lemma A.2': (85, 150, 5, 0, 747), 'Lemma A.3': (43, 86, 0, 0, 383),
-    'Definition A.4': (19, 14, 31, 0, 42), 'Proposition A.5': (70, 318, 10, 0, 356),
-    'Theorem A.6': (86, 210, 55, 0, 434), 'Proposition A.7': (90, 236, 10, 0, 504),
-    'Proposition A.8': (70, 327, 61, 0, 316), 'Lemma B.1': (23, 172, 149, 0, 0),
-    'Proposition B.2': (74, 601, 385, 0, 0), 'Proposition B.3': (75, 439, 232, 0, 225),
-    'Theorem C.1': (145, 968, 502, 0, 108), 'Lemma C.2': (96, 446, 411, 0, 105),
-    'Proposition C.3': (29, 250, 39, 0, 43), 'Lemma C.4': (30, 433, 78, 0, 0), 'Definition D.1': (18, 40, 13, 0, 32),
-    'Theorem D.2': (160, 919, 618, 0, 104), 'Proposition E.1': (32, 42, 436, 0, 0),
-    'Corollary E.2': (17, 97, 113, 0, 11), 'Lemma E.3': (39, 145, 99, 0, 71), 'Lemma E.4': (28, 63, 261, 0, 0),
-    'Proposition E.5': (137, 445, 512, 0, 322), 'Theorem E.6': (16, 55, 24, 0, 32),
-    'Lemma E.7': (45, 8, 315, 0, 145), 'Lemma E.8': (66, 232, 63, 0, 316), 'Proposition E.9': (57, 119, 89, 0, 263),
-    'Proposition E.10': (172, 541, 428, 129, 431), 'Theorem E.11': (18, 99, 24, 0, 32),
-    'Display (F.1)': (53, 104, 178, 0, 74), 'Lemma F.1': (61, 137, 304, 0, 93), 'Lemma F.2': (28, 96, 303, 0, 0),
-    'Lemma F.3': (85, 252, 613, 0, 90), 'Lemma F.4': (65, 230, 276, 0, 74), 'Lemma F.5': (36, 161, 132, 0, 74),
-    'Theorem F.6': (120, 736, 592, 0, 112), 'Definition G.1': (2, 7, 43, 0, 0),
-    'Theorem G.2': (158, 469, 713, 0, 336), 'Proposition H.1': (241, 30, 2001, 0, 85),
-    'Theorem H.2': (888, 1514, 10279, 107, 101), 'Proposition I.1': (436, 148, 4506, 165, 0),
-    'Lemma I.2': (117, 27, 1466, 0, 0), 'Definition J.1': (19, 34, 0, 118, 0),
-    'Proposition J.2': (327, 1493, 1575, 134, 167), 'Theorem J.3': (1014, 383, 10271, 2233, 71),
-    'Theorem J.4': (131, 165, 198, 1131, 90), 'Definition K.1': (20, 15, 0, 130, 0),
-    'Lemma K.2': (192, 121, 1215, 786, 0), 'Lemma K.3': (195, 645, 1231, 250, 86),
-    'Lemma K.4': (130, 37, 0, 1633, 0), 'Proposition K.5': (141, 327, 9, 1140, 32),
-    'Theorem K.6': (137, 388, 9, 1058, 32), 'Theorem K.7': (67, 151, 163, 163, 94),
-    'Theorem L.1': (36, 67, 20, 129, 32), 'Theorem L.2': (47, 64, 35, 129, 94), 'Corollary L.3': (26, 95, 117, 0, 0),
-    'Lemma M.1': (11, 20, 143, 0, 0), 'Proposition M.2': (72, 133, 689, 0, 49),
-    'Theorem M.3': (103, 532, 194, 163, 99), 'Corollary M.4': (73, 45, 491, 0, 49),
-    'Definition N.1': (5, 12, 14, 0, 0), 'Lemma N.2': (13, 33, 154, 0, 0), 'Lemma N.3': (47, 55, 311, 0, 145),
-    'Proposition N.4': (349, 1008, 275, 3131, 90), 'Theorem N.5': (452, 1777, 2351, 288, 449),
+    'Definition A.1': (15, 17, 0, 0, 58), 'Lemma A.2': (99, 150, 5, 0, 853), 'Lemma A.3': (49, 86, 0, 0, 421),
+    'Definition A.4': (47, 14, 40, 0, 228), 'Proposition A.5': (74, 318, 0, 0, 424),
+    'Theorem A.6': (96, 210, 104, 0, 500), 'Proposition A.7': (104, 236, 0, 0, 632),
+    'Proposition A.8': (91, 333, 75, 0, 489), 'Lemma B.1': (24, 172, 152, 0, 0),
+    'Proposition B.2': (78, 601, 403, 0, 0), 'Proposition B.3': (121, 472, 262, 0, 517),
+    'Theorem C.1': (180, 1095, 508, 0, 258), 'Lemma C.2': (126, 454, 576, 0, 258),
+    'Proposition C.3': (59, 299, 44, 0, 258), 'Lemma C.4': (34, 433, 111, 0, 0),
+    'Definition D.1': (19, 40, 17, 0, 30), 'Theorem D.2': (191, 937, 659, 0, 258),
+    'Proposition E.1': (33, 42, 439, 0, 0), 'Corollary E.2': (13, 103, 40, 0, 0), 'Lemma E.3': (28, 145, 104, 0, 0),
+    'Lemma E.4': (25, 63, 249, 0, 0), 'Proposition E.5': (148, 445, 396, 0, 468), 'Theorem E.6': (19, 55, 35, 0, 30),
+    'Lemma E.7': (78, 21, 313, 0, 445), 'Lemma E.8': (123, 285, 82, 0, 870),
+    'Proposition E.9': (90, 152, 107, 0, 515), 'Proposition E.10': (153, 541, 292, 0, 536),
+    'Theorem E.11': (17, 99, 24, 0, 30), 'Display (F.1)': (79, 200, 406, 0, 0), 'Lemma F.1': (44, 137, 301, 0, 0),
+    'Lemma F.2': (44, 96, 434, 0, 0), 'Lemma F.3': (95, 252, 800, 0, 0), 'Lemma F.4': (84, 326, 493, 0, 0),
+    'Lemma F.5': (67, 257, 419, 0, 0), 'Theorem F.6': (137, 832, 825, 0, 30), 'Definition G.1': (2, 7, 43, 0, 0),
+    'Theorem G.2': (194, 528, 776, 0, 650), 'Proposition H.1': (256, 30, 2140, 0, 0),
+    'Theorem H.2': (947, 1553, 10733, 4, 0), 'Proposition I.1': (561, 148, 5769, 159, 0),
+    'Lemma I.2': (110, 27, 1491, 0, 0), 'Definition J.1': (33, 34, 0, 215, 0),
+    'Proposition J.2': (261, 1618, 1283, 4, 0), 'Theorem J.3': (1076, 466, 10832, 2431, 0),
+    'Theorem J.4': (160, 170, 297, 1332, 30), 'Definition K.1': (29, 15, 0, 198, 0),
+    'Lemma K.2': (222, 121, 1348, 948, 0), 'Lemma K.3': (199, 651, 1358, 348, 0), 'Lemma K.4': (152, 37, 0, 1764, 0),
+    'Proposition K.5': (184, 336, 13, 1395, 30), 'Theorem K.6': (186, 397, 13, 1374, 30),
+    'Theorem K.7': (50, 152, 99, 122, 30), 'Theorem L.1': (22, 79, 28, 0, 30), 'Theorem L.2': (22, 76, 43, 0, 30),
+    'Corollary L.3': (30, 95, 180, 0, 0), 'Lemma M.1': (7, 20, 71, 0, 0), 'Proposition M.2': (63, 133, 633, 0, 0),
+    'Theorem M.3': (87, 527, 200, 122, 30), 'Corollary M.4': (49, 38, 407, 0, 0),
+    'Definition N.1': (4, 12, 12, 0, 0), 'Lemma N.2': (21, 33, 231, 0, 0), 'Lemma N.3': (79, 68, 307, 0, 445),
+    'Proposition N.4': (388, 1008, 263, 3479, 30), 'Theorem N.5': (476, 1778, 2455, 433, 536),
 }
 
 
@@ -83,7 +83,7 @@ def build():
     for k in sorted(st, key=vp.order_key):
         if not st[k]["decls"]:
             continue
-        cl = vp.closure(src, k)
+        cl = src.lean_under[k]
         lines = {lib: 0 for lib in LIBS}
         for n in cl:
             lib = src.decls[n]["module"].split(".")[0]
@@ -92,7 +92,7 @@ def build():
             lines[lib] += src.decls[n]["lines"]
         weight[k] = (len(cl),) + tuple(lines[lib] for lib in LIBS)
     compare("F3: the declarations and lines under each statement's Lean", WEIGHT, weight,
-            "the Lean files of vp-vnp at FM_COMMIT (vp.closure)")
+            "src/lean-uses.json (under) and the Lean files of vp-vnp at FM_COMMIT")
     _, on = vp.route(src)
     total = {k: sum(v[1:]) for k, v in WEIGHT.items()}
     ranked = sorted(total, key=lambda k: (-total[k], vp.order_key(k)))
@@ -103,15 +103,16 @@ def build():
                "each numbered statement",
                "The paper's overview names four statements whose printed proofs describe machines and programs, and "
                "says that only the Lean verifies them. This poster quotes it and the notes, places each note in the "
-               f"text, and counts the Lean under every statement, read from the source of vp-vnp at formal-math "
-               f"{src.commit}. The words in quotation marks are the paper's.", W,
+               f"text, and counts the Lean under every statement, in the elaborated Lean of vp-vnp at formal-math "
+               f"{src.commit} (src/lean-uses.json). The words in quotation marks are the paper's.", W,
                sources=f"anthropics/formal-math {src.commit}, vp-vnp/paper.pdf (p. 17, the formalization notes, "
                "Appendix Q), vp-vnp/**/*.lean.", state=f"Drawn from formal-math {src.commit}")
     x0, y = c.x0, c.y
     c.para(x0, y, c.x1 - x0, "**How to read it.** The amber card quotes the overview. The cards below it are the "
            "notes in the order of the text. The bars measure, for each numbered statement, the declarations under its "
-           "Lean theorems: the walk from them through every declaration their text names, in any library, stopping at "
-           "another statement's theorems. A statement number links to its row on F1. " + vp.NOT_BUILT, S + 0.5,
+           "Lean theorems: the walk from them through every constant of their elaborated terms, in any library, "
+           "stopping at another statement's theorems, each constant counted as the source declaration it belongs to. "
+           "A statement number links to its row on F1. " + vp.NOT_BUILT_LEAN, S + 0.5,
            "muted")
     y += 64
 
@@ -200,8 +201,7 @@ def build():
     y += hh + 40
     c.para(x0, y, c.x1 - x0, "**Not checked here.** Where a note ends: the extractor takes a note to its first line "
            "that ends with a full stop (tools/paper-facts/README.md). What a note is about, when it stands in another "
-           "section than the statement before it: the first statement it names. The walk under a statement matches "
-           "names as written: a name reached only by `simp`, an instance or a tactic is missed, an ambiguous short "
-           "name is skipped, and a local variable that is also the last part of exactly one declaration's name is "
-           "counted. That the Lean of a statement proves what the note says it does.", S + 0.5, "muted")
+           "section than the statement before it: the first statement it names. That every declaration under a "
+           "statement is needed: a constant counts wherever it stands in a term, its type included. That the Lean of a "
+           "statement proves what the note says it does.", S + 0.5, "muted")
     return c

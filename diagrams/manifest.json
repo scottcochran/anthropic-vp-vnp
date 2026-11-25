@@ -110,7 +110,7 @@
  },
  "F4": {
   "file": "F4-figure-1-2026.11.25.svg",
-  "title": "The paper's own picture of the proof: Figure 1, each of its arrows checked against the uses the Lean text shows",
+  "title": "The paper's own picture of the proof: Figure 1, each of its arrows checked against the uses the elaborated Lean shows",
   "cards": 20,
   "arrows": 20,
   "anchors": [

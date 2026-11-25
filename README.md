@@ -37,15 +37,15 @@ Open them on their own and zoom in.
 - [Where the paper rests on the Lean](diagrams/F3-formalization-notes-2026.11.25.svg): the overview's four
   statements whose proofs only the Lean verifies, the paper's seven formalization notes, each placed in the text,
   and the Lean under each of the 64 statements that have a Lean theorem. By lines, the overview's four rank 1, 2,
-  4 and 5.
+  3 and 5.
 - [Figure 1, checked](diagrams/F4-figure-1-2026.11.25.svg): the paper's own picture of the proof, transcribed
   box by box and arrow by arrow, with a verdict from the Lean uses for each of the 25 statements its arrows carry.
   15 are used where the figure says, 5 further down, 3 through statements the figure leaves out, and 2 are not
   seen.
 - [Where the formal work is](diagrams/F5-library-2026.11.25.svg): the 25 directories of Nc, NS1 and Ov, which
-  hold three quarters of the code, set against the sections whose statements reach them. 42168 of their 46392
-  declaration lines (91%) are reached by name from some numbered statement. In 10 directories one section reaches
-  at least 80%, for example Nc.Tow under H (trees) and Nc.Grp and Nc.Dl under J (cuts).
+  hold three quarters of the code, set against the sections whose statements reach them. 46338 of their 46392
+  declaration lines (99.9%) lie under some numbered statement in the elaborated Lean. In 10 directories one section
+  reaches at least 80%, for example Nc.Tow under H (trees) and Nc.Grp and Nc.Dl under J (cuts).
 - [Where the Lean and the text differ](diagrams/F6-differences-2026.11.25.svg): every Lean name the paper
   prints (96; all declared but `native_decide`, a tactic no file uses), the 11 beyond Table 3, Appendix Q.3's
   universes set against the signatures (the same 6 statements), and Q.3's 15 listed differences, quoted.

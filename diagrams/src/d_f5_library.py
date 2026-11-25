@@ -3,9 +3,9 @@ the sections of the paper whose statements reach it.
 
 Three quarters of the Lean is outside the Paper library. This poster reads every declaration of Nc, NS1 and Ov at
 FM_COMMIT, groups them by directory, and for each section of the paper takes the declarations its numbered
-statements reach (vp.closure: names read from the text, in files the naming file imports, stopping at the theorems of
-other statements), so that a cell is the formal work a section's own statements stand on in a directory. It also
-measures how much of each directory no statement reaches by name. The build fails if any directory's files, lines or
+statements reach in the elaborated Lean (src/lean-uses.json: every constant of their terms, stopping at the theorems
+of other statements), so that a cell is the formal work a section's own statements stand on in a directory. It also
+measures how much of each directory no statement's proof uses at all. The build fails if any directory's files, lines or
 declaration lines, any cell, or any directory's reached lines differ from what is recorded here, in either
 direction."""
 import collections
@@ -49,39 +49,107 @@ DIRS = {
     'Nc.Vp': (2, 193, 147),
     'Nc.Plus': (2, 41, 7),
 }
-# directory -> the declaration lines that some numbered statement reaches by name
-REACHED = {
-    'Nc.Tow': 6939, 'NS1': 5924, 'Nc.Grp': 5325, 'Nc.Dl': 4090, 'Nc.Uni': 3668, 'Nc.Flag': 1834, 'Nc': 1693,
-    'Nc.Tower': 1978, 'Nc.G': 1662, 'Nc.Acc': 1302, 'Nc.Cut': 1235, 'Ov.Core': 948, 'Nc.Price': 852, 'Nc.Tape': 619,
-    'Nc.Cat': 757, 'Nc.Hc': 804, 'Nc.Cross': 588, 'Nc.Sort': 405, 'Nc.CaseI': 600, 'Nc.Rate': 227, 'Ov.Duality': 248,
-    'Nc.End': 183, 'Nc.Final': 133, 'Nc.Vp': 147, 'Nc.Plus': 7,
-}
+# directory -> the declaration lines under some numbered statement's Lean theorems in the elaborated Lean
+REACHED = {'Nc.Tow': 7427,
+ 'NS1': 6399,
+ 'Nc.Grp': 5501,
+ 'Nc.Dl': 4500,
+ 'Nc.Uni': 4337,
+ 'Nc.Flag': 2072,
+ 'Nc': 1875,
+ 'Nc.Tower': 2078,
+ 'Nc.G': 1698,
+ 'Nc.Acc': 1440,
+ 'Nc.Cut': 1235,
+ 'Ov.Core': 1124,
+ 'Nc.Price': 913,
+ 'Nc.Tape': 984,
+ 'Nc.Cat': 907,
+ 'Nc.Hc': 821,
+ 'Nc.Cross': 606,
+ 'Nc.Sort': 661,
+ 'Nc.CaseI': 610,
+ 'Nc.Rate': 279,
+ 'Ov.Duality': 300,
+ 'Nc.End': 236,
+ 'Nc.Final': 181,
+ 'Nc.Vp': 147,
+ 'Nc.Plus': 7}
 # section -> directory -> the declaration lines its numbered statements reach there (each declaration once a section)
-MATRIX = {
-    'A': {'Ov.Core': 891, 'Nc.Price': 120, 'Nc.Rate': 5, 'Ov.Duality': 248},
-    'B': {'Ov.Core': 225, 'Nc.Price': 109, 'Nc.Cross': 588, 'Nc.Rate': 5},
-    'C': {'Ov.Core': 108, 'Nc.Price': 20, 'Nc.Cat': 740},
-    'D': {'Nc.Flag': 594, 'Ov.Core': 104, 'Nc.Price': 20, 'Nc.Cat': 4},
-    'E': {'NS1': 129, 'Nc.Flag': 13, 'Nc': 541, 'Nc.Tower': 19, 'Nc.Cut': 6, 'Ov.Core': 461, 'Nc.Price': 425,
-        'Nc.Tape': 43, 'Nc.CaseI': 600, 'Nc.Rate': 18, 'Nc.Final': 11},
-    'F': {'Nc.Flag': 1320, 'Nc.Tower': 51, 'Ov.Core': 112, 'Nc.Price': 9, 'Nc.Cat': 49, 'Nc.Vp': 125},
-    'G': {'Nc.Tow': 70, 'Nc.Flag': 22, 'Nc.Tower': 95, 'Nc.G': 43, 'Nc.Cut': 6, 'Ov.Core': 303, 'Nc.Price': 292,
-        'Nc.Tape': 43, 'Ov.Duality': 33, 'Nc.Vp': 142},
-    'H': {'Nc.Tow': 6855, 'NS1': 107, 'Nc.Flag': 25, 'Nc': 265, 'Nc.Tower': 1943, 'Nc.G': 1262, 'Nc.Cut': 385,
-        'Ov.Core': 112, 'Nc.Price': 27, 'Nc.Tape': 142, 'Nc.Cat': 15, 'Nc.Vp': 136, 'Nc.Plus': 4},
-    'I': {'NS1': 165, 'Nc.Dl': 84, 'Nc.Uni': 3665, 'Nc.G': 280, 'Nc.Cut': 870, 'Nc.Tape': 584, 'Nc.Sort': 405},
-    'J': {'Nc.Tow': 685, 'NS1': 2752, 'Nc.Grp': 5325, 'Nc.Dl': 4015, 'Nc.Uni': 3, 'Nc.Flag': 9, 'Nc': 174,
-        'Nc.Tower': 69, 'Nc.G': 436, 'Nc.Cut': 387, 'Ov.Core': 182, 'Nc.Price': 9, 'Nc.Tape': 195, 'Nc.Cat': 15,
-        'Nc.Vp': 6, 'Nc.Plus': 7},
-    'K': {'Nc.Tow': 3, 'NS1': 3083, 'Nc.Dl': 4, 'Nc': 983, 'Nc.Tower': 19, 'Nc.Acc': 1204, 'Ov.Core': 109,
-        'Nc.Price': 9, 'Nc.Tape': 51, 'Nc.Rate': 8, 'Nc.End': 183, 'Nc.Final': 25},
-    'L': {'NS1': 129, 'Nc': 11, 'Ov.Core': 94, 'Nc.Price': 9, 'Nc.Hc': 10, 'Nc.Final': 111},
-    'M': {'Nc.Tow': 3, 'NS1': 163, 'Nc.Flag': 4, 'Nc': 101, 'Ov.Core': 111, 'Nc.Price': 9, 'Nc.Tape': 141,
-        'Nc.Hc': 804, 'Nc.CaseI': 6, 'Nc.Rate': 71, 'Nc.End': 32, 'Nc.Final': 122},
-    'N': {'Nc.Tow': 6, 'NS1': 3163, 'Nc.Dl': 4, 'Nc.Uni': 118, 'Nc.Flag': 13, 'Nc': 992, 'Nc.Tower': 23,
-        'Nc.Acc': 247, 'Nc.Cut': 10, 'Ov.Core': 465, 'Nc.Price': 324, 'Nc.Tape': 227, 'Nc.Hc': 237, 'Nc.CaseI': 229,
-        'Nc.Rate': 227, 'Nc.End': 183, 'Nc.Final': 122},
-}
+MATRIX = {'A': {'Ov.Core': 1008, 'Nc.Price': 174, 'Nc.Rate': 5, 'Ov.Duality': 300},
+ 'B': {'Ov.Core': 517, 'Nc.Price': 136, 'Nc.Cross': 606, 'Nc.Rate': 5},
+ 'C': {'Ov.Core': 258, 'Nc.Price': 32, 'Nc.Cat': 875},
+ 'D': {'Nc.Flag': 623, 'Ov.Core': 258, 'Nc.Price': 32, 'Nc.Cat': 4},
+ 'E': {'Nc.Flag': 4, 'Nc': 544, 'Ov.Core': 954, 'Nc.Price': 449, 'Nc.CaseI': 610, 'Nc.Rate': 18, 'Nc.Final': 11},
+ 'F': {'Nc.Flag': 1538, 'Nc.Tower': 122, 'Ov.Core': 30, 'Nc.Price': 9, 'Nc.Cat': 66, 'Nc.Vp': 125},
+ 'G': {'Nc.Tow': 70,
+       'Nc.Flag': 34,
+       'Nc.Tower': 167,
+       'Nc.G': 43,
+       'Ov.Core': 617,
+       'Nc.Price': 315,
+       'Nc.Rate': 5,
+       'Ov.Duality': 33,
+       'Nc.Vp': 142},
+ 'H': {'Nc.Tow': 7344,
+       'NS1': 4,
+       'Nc.Flag': 32,
+       'Nc': 278,
+       'Nc.Tower': 2045,
+       'Nc.G': 1306,
+       'Nc.Cut': 388,
+       'Nc.Vp': 136,
+       'Nc.Plus': 4},
+ 'I': {'NS1': 159, 'Nc.Dl': 84, 'Nc.Uni': 4337, 'Nc.G': 285, 'Nc.Cut': 870, 'Nc.Tape': 982, 'Nc.Sort': 661},
+ 'J': {'Nc.Tow': 271,
+       'NS1': 2961,
+       'Nc.Grp': 5501,
+       'Nc.Dl': 4425,
+       'Nc.Flag': 4,
+       'Nc': 240,
+       'Nc.Tower': 167,
+       'Nc.G': 459,
+       'Nc.Cut': 379,
+       'Ov.Core': 30,
+       'Nc.Price': 9,
+       'Nc.Tape': 49,
+       'Nc.Vp': 6,
+       'Nc.Plus': 7},
+ 'K': {'NS1': 3426,
+       'Nc.Dl': 4,
+       'Nc.Flag': 4,
+       'Nc': 1149,
+       'Nc.Acc': 1326,
+       'Ov.Core': 30,
+       'Nc.Price': 9,
+       'Nc.Tape': 31,
+       'Nc.Rate': 8,
+       'Nc.End': 183,
+       'Nc.Final': 21},
+ 'L': {'Nc.Flag': 8, 'Nc': 11, 'Ov.Core': 30, 'Nc.Price': 9, 'Nc.Hc': 10, 'Nc.Final': 159},
+ 'M': {'NS1': 122,
+       'Nc.Flag': 8,
+       'Nc': 101,
+       'Ov.Core': 30,
+       'Nc.Price': 9,
+       'Nc.Hc': 821,
+       'Nc.CaseI': 11,
+       'Nc.Rate': 66,
+       'Nc.End': 32,
+       'Nc.Final': 170},
+ 'N': {'NS1': 3479,
+       'Nc.Dl': 4,
+       'Nc.Flag': 8,
+       'Nc': 1149,
+       'Nc.Acc': 371,
+       'Ov.Core': 620,
+       'Nc.Price': 324,
+       'Nc.Tape': 31,
+       'Nc.Hc': 237,
+       'Nc.CaseI': 237,
+       'Nc.Rate': 279,
+       'Nc.End': 236,
+       'Nc.Final': 170}}
 
 
 def dir_of(module):
@@ -91,7 +159,7 @@ def dir_of(module):
 
 def build():
     src = vp.load()
-    reread = "the Lean files of Nc, NS1 and Ov at FM_COMMIT (vp.closure)"
+    reread = "src/lean-uses.json (under) and the Lean files of Nc, NS1 and Ov at FM_COMMIT"
     dirs = collections.defaultdict(lambda: [0, 0, 0])
     for m, d in src.modules.items():
         if d["library"] in LIB_ACCENT:
@@ -106,7 +174,7 @@ def build():
     reached = set()
     for k, st in src.statements.items():
         if st["decls"]:
-            cl = vp.closure(src, k)
+            cl = src.lean_under[k]
             by_sec[st["section"]] |= cl
             reached |= cl
     matrix = {}
@@ -143,7 +211,7 @@ def build():
     c = Canvas(ID, f"Where the formal work is: the {len(DIRS)} directories of Nc, NS1 and Ov, set against the "
                "sections of the paper whose statements reach them",
                f"Read from the Lean source of vp-vnp at formal-math {src.commit}. A cell is the lines of the "
-               "declarations in a directory that a section's numbered statements reach by name, before they reach "
+               "declarations in a directory that a section's numbered statements reach in the elaborated Lean, before "
                "another statement's theorem: the formal work that section's own statements stand on there. The words "
                "in quotation marks are the files' docstrings.", W,
                sources=f"anthropics/formal-math {src.commit}, vp-vnp/{{Nc,NS1,Ov}}/**/*.lean, vp-vnp/Paper/*.lean, "
@@ -152,10 +220,9 @@ def build():
     total = sum(v[2] for v in DIRS.values())
     nreach = sum(REACHED.values())
     c.para(x0, y, c.x1 - x0, f"**How to read it.** The {sum(v[1] for v in DIRS.values())} lines of Nc, NS1 and Ov "
-           f"hold {total} lines of declarations; {nreach} of them ({100 * nreach / total:.0f}%) are reached by name "
-           "from some numbered statement. The rest are reached by nothing this reading sees: an instance, a `simp` "
-           "lemma, a lemma a tactic finds, or code no statement uses. Each directory card names its home, the "
-           "section whose statements reach most of it. " + vp.NOT_BUILT, S + 0.5, "muted")
+           f"hold {total} lines of declarations; {nreach} of them ({100 * nreach / total:.1f}%) lie under some "
+           "numbered statement's Lean theorems in the elaborated Lean. The rest no statement's proof uses at all. "
+           "Each directory card names its home, the section whose statements reach most of it. " + vp.NOT_BUILT_LEAN, S + 0.5, "muted")
     y += 70
 
     # ---- the matrix
@@ -206,7 +273,7 @@ def build():
         specs.append(dict(
             name=dd if dd != "Nc" else "Nc, files at the top", accent=LIB_ACCENT[dd.split(".")[0]], pill=f"home {best} · {share}",
             bullets=[f"**{f} files**, {ln} lines, {dl} in declarations",
-                     f"**Reached by name** {REACHED[dd]} of {dl} declaration lines ({100 * REACHED[dd] / dl:.0f}%)",
+                     f"**Under a statement** {REACHED[dd]} of {dl} declaration lines ({100 * REACHED[dd] / dl:.1f}%)",
                      f"**Home** Section {best}, “{vp.abridge(t1[best]['what'], 60)}”: {bl} of the {tot} lines "
                      "the sections reach here"]
             + [f"“{h}”" for h in hs], anchor=f"dir-{dd.replace('.', '-')}"))
@@ -221,17 +288,17 @@ def build():
     # ---- the interpretation, computed
     strong = [dd for dd in order if home[dd][2] and home[dd][1] / home[dd][2] >= 0.8]
     shared = [dd for dd in order if home[dd][2] and home[dd][1] / home[dd][2] < 0.5]
-    low = [dd for dd in order if REACHED[dd] / DIRS[dd][2] < 0.75]
+    unused = sorted(((DIRS[dd][2] - REACHED[dd], dd) for dd in order if DIRS[dd][2] > REACHED[dd]), key=lambda t: (-t[0], t[1]))
     y += c.card(x0, y, c.x1 - x0, "An interpretation: most directories belong to one section",
                 [f"In {len(strong)} of the {len(DIRS)} directories one section's statements reach at least 80% of the "
                  "lines the sections reach there: " + ", ".join(f"{dd} ({home[dd][0]})" for dd in strong) + ". "
                  f"In {len(shared)} no section reaches half: " + ", ".join(f"{dd}" for dd in shared) + ", shared work.",
-                 f"Least reached by name: " + ", ".join(f"{dd} ({100 * REACHED[dd] / DIRS[dd][2]:.0f}%)" for dd in low)
-                 + ". There the text reading sees least of how the code is used.",
+                 f"Under no statement: {sum(n for n, _ in unused)} declaration lines in all, in {len(unused)} directories, "
+                 "most in " + ", ".join(f"{dd} ({n})" for n, dd in unused[:3]) + ".",
                  "Computed from `MATRIX`, `REACHED` and `DIRS`, which the build checks."], accent="amber",
                 size=S + 0.5) + 30
-    c.para(x0, y, c.x1 - x0, "**Not checked here.** Whether a declaration reached by name is used: a name in a proof "
-           "counts wherever it stands. Whether one that is not reached is used in a way the text does not show. A "
+    c.para(x0, y, c.x1 - x0, "**Not checked here.** Whether a declaration under a statement is needed: a constant counts "
+           "wherever it stands in a term, its type included. A "
            "directory's home is where the most lines are reached, which says where its code is used from, not what "
            "it is about; its docstrings say that.", S + 0.5, "muted")
     return c
