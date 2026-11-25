@@ -5,5 +5,5 @@
  "pypdf": "7.1.1",
  "pymupdf": "2.1",
  "output": "diagrams/src/paper-facts.json",
- "output_sha256": "46c2befb550ed317aef7d2216ade4d7739d07b6ef3dec69626bb7fc6ab30804d"
+ "output_sha256": "dfe6b5b575857a897459ec91ced42d595d7cfc051463ae49f41133605b2ce94d"
 }

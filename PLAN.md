@@ -88,9 +88,21 @@ statements in any universe are exactly those whose Lean takes a type in any univ
 of the paper's words that Q.3 says it renames (packet, tally, node tensor, upper functional).
 
 Open: pypdf loses the spaces of a few lines, which shows in some quotations (diagrams/TEXT.md); a reading of
-those passages with PyMuPDF's positions, as the glossary is read, would fix it. The 132 references are not linked
-to the papers (proof-posters:linking-papers). Read `paper-facts.json` against the rendered pages, still open from
+those passages with PyMuPDF's positions, as the glossary is read, would fix it. Read `paper-facts.json` against the rendered pages, still open from
 Phase 1.
+
+## Phase 1f: the papers (2026.11.25)
+
+`diagrams/src/papers.toml` links each of the 134 references (proof-posters:linking-papers, plugin 0.4.1): 132
+linked, 2 not, each with a note (Ald84, a 1984 dissertation with no stable copy; OAI26, an unpublished manuscript).
+How each was found is its `via`: Crossref 108, zbMATH 10, arXiv 6, the entry's own url 1, by hand 9. Every DOI was
+verified against its own Crossref record (the five LIPIcs DOIs against DataCite's), and every link opened once.
+
+Found along the way: the extractor had missed the two keys with no digits ([Lean], [Mathlib]), which had run into
+the entries before them; the first searches matched a conference version or a book chapter where ten entries cite a
+journal paper or a book (AW09, Bür00b, FPV13, GKKS14, Gro15, Hya79, KI04, SW14, KLS10, and Wil25 the other way),
+which the year check alone would have let through. Each was set right by comparing the cited venue with the
+record's, and its note says so.
 
 ## Phase 2: checking the uses against the Lean (planned)
 

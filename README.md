@@ -52,8 +52,9 @@ Open them on their own and zoom in.
 - [The two vocabularies](diagrams/F7-vocabulary-2026.11.25.svg): Appendix P's 17 coined terms and Appendix Q.3's
   7 renamings, each word counted in the Lean's names and text. The Lean never writes packet, tally, node tensor or
   upper functional, and writes unit, bill, table and gauge instead.
-- [The proof as literature](diagrams/F8-literature-2026.11.25.svg): the 132 references by decade, and where each
-  of the 181 citations stands, Section 1 to 3 or an appendix.
+- [The proof as literature](diagrams/F8-literature-2026.11.25.svg): the 134 references by decade, where each of
+  the 185 citations stands, Section 1 to 3 or an appendix, and each entry linked to its paper: 132 linked, 120 of
+  them by a DOI verified against its own record (`diagrams/src/papers.toml`).
 - [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
   files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
 

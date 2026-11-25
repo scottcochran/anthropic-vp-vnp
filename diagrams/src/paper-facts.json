@@ -1758,6 +1758,14 @@
     "part": "2"
    },
    {
+    "key": "Lean",
+    "part": "3"
+   },
+   {
+    "key": "Mathlib",
+    "part": "3"
+   },
+   {
     "key": "Str87",
     "part": "A"
    },
@@ -2104,6 +2112,14 @@
    {
     "key": "MS01",
     "part": "N"
+   },
+   {
+    "key": "Lean",
+    "part": "Q"
+   },
+   {
+    "key": "Mathlib",
+    "part": "Q"
    }
   ],
   "entries": [
@@ -2484,8 +2500,13 @@
    },
    {
     "key": "Lan17",
-    "text": "J. M. Landsberg, Geometry and complexity theory, Cambridge University Press, 2017. [Lean] L. de Moura and S. Ullrich, The Lean 4 theorem prover and programming language, CADE 28, LNCS 12699 (2021), 625–635.",
+    "text": "J. M. Landsberg, Geometry and complexity theory, Cambridge University Press, 2017.",
     "year": 2017
+   },
+   {
+    "key": "Lean",
+    "text": "L. de Moura and S. Ullrich, The Lean 4 theorem prover and programming language, CADE 28, LNCS 12699 (2021), 625–635.",
+    "year": 2021
    },
    {
     "key": "LMR13",
@@ -2499,8 +2520,13 @@
    },
    {
     "key": "Mal03",
-    "text": "G. Malod, Polynômes et coefficients, Thèse, Université Claude Bernard Lyon 1, 2003. [Mathlib] The mathlib Community, The Lean mathematical library, CPP 2020, 367–381.",
+    "text": "G. Malod, Polynômes et coefficients, Thèse, Université Claude Bernard Lyon 1, 2003.",
     "year": 2003
+   },
+   {
+    "key": "Mathlib",
+    "text": "The mathlib Community, The Lean mathematical library, CPP 2020, 367–381.",
+    "year": 2020
    },
    {
     "key": "MN13",
@@ -2764,7 +2790,7 @@
    },
    {
     "key": "Zui19",
-    "text": "J. Zuiddam, The asymptotic spectrum of graphs and the Shannon capacity, Combinatorica 39 (2019), 1173–1184. VP ≠ VNP 17",
+    "text": "J. Zuiddam, The asymptotic spectrum of graphs and the Shannon capacity, Combinatorica 39 (2019), 1173–1184.",
     "year": 2019
    }
   ]

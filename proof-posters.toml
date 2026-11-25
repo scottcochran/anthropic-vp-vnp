@@ -53,11 +53,27 @@ source = "vp-vnp/paper.pdf at FM_COMMIT"
 refresh = "uv run --with pypdf==7.1.1 --with pymupdf==2.1 python tools/paper-facts/extract.py"
 reread = "src/paper-facts.json against the paper's Table 1, Table 3, statement headers, formalization notes, Appendix Q and Figure 1, every poster that quotes them, and F4's transcription of Figure 1 (BOXES, ARROWS in diagrams/src/d_f4_figure_1.py) against the rendered p. 5"
 
+[papers]
+file = "diagrams/src/papers.toml"
+references = "the reference list of vp-vnp/paper.pdf, as src/paper-facts.json gives it (references.entries: key, text, year)"
+checked_by = "diagrams/src/d_f8_literature.py"   # fails on a reference with no entry; vp.load on an entry with no reference
+regenerate = "uv run python diagrams/gen-diagrams.py F8"
+entry = """
+["<reference key>"]
+url = "https://doi.org/<doi>"
+via = "crossref"          # crossref | zbmath | arxiv | hand
+note = "only where the choice needs one"
+"""
+
 [links]
 require_targets = true
 frame_classes = ["rd-target"]
 unrendered = ["[[@"]
-allow = []
+# Every link out that is not at the pin comes from src/papers.toml.
+allow = ["https://doi.org/", "https://zbmath.org/", "https://arxiv.org/", "https://www.numdam.org/", "https://eudml.org/",
+         "https://archive.org/", "https://eccc.weizmann.ac.il/",
+         "https://theses.hal.science/tel-00087399",              # Mal03, the thesis on HAL
+         "https://github.com/dasarpmar/lowerbounds-survey"]      # Sap21, the url the entry prints
 
 [release]
 classification = "PLAN.md, Releases: the MAJOR / MINOR / PATCH table"

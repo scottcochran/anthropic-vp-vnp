@@ -1,0 +1,575 @@
+# The paper behind each reference of vp-vnp/paper.pdf, this repository's own data (proof-posters:linking-papers).
+# url: where a reader lands, a DOI where there is one, verified against its own Crossref record (a LIPIcs DOI
+# against DataCite's); none for a work with no stable copy, which the note says. via: crossref | zbmath | arxiv |
+# paper (the url the entry prints) | hand. A note says what was checked where a check could not be run as is.
+# Sorted by key.
+
+["AJMV98"]
+url = "https://doi.org/10.1016/s0304-3975(97)00227-2"
+via = "crossref"
+
+["AKK22"]
+url = "https://doi.org/10.4086/toc.2022.v018a016"
+via = "zbmath"
+note = "zbMATH's record links this DOI; Crossref's record of it has no title, and its authors and year agree, as do the volume and article the DOI names."
+
+["Ald84"]
+via = "hand"
+note = "A dissertation, Universität Zürich, 1984. Neither Crossref nor zbMATH has it, and no stable copy was found: not linked."
+
+["All99"]
+url = "https://doi.org/10.4086/cjtcs.1999.007"
+via = "zbmath"
+note = "zbMATH's record links this DOI; Crossref's record of it has no title, and its authors and year agree, as do the volume and article the DOI names."
+
+["And84"]
+url = "https://doi.org/10.1090/memo/0301"
+via = "crossref"
+
+["AV08"]
+url = "https://doi.org/10.1109/focs.2008.32"
+via = "crossref"
+
+["AW09"]
+url = "https://doi.org/10.1145/1490270.1490272"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the STOC 2008 paper instead; journal, volume and pages agree. Crossref's title is 'Algebrization' alone, so the title is checked by eye."
+
+["BCRL79"]
+url = "https://doi.org/10.1016/0020-0190(79)90113-3"
+via = "crossref"
+
+["BCS97"]
+url = "https://doi.org/10.1007/978-3-662-03338-8"
+via = "crossref"
+
+["BEGKN94"]
+url = "https://doi.org/10.1007/bf01185212"
+via = "crossref"
+
+["Ber84"]
+url = "https://doi.org/10.1016/0020-0190(84)90018-8"
+via = "crossref"
+
+["BGS75"]
+url = "https://doi.org/10.1137/0204037"
+via = "hand"
+note = "Crossref's record; its title writes P = ?NP in TeX, which lowers the title score. Verified against the record's title without the markup."
+
+["BH99"]
+url = "https://doi.org/10.1007/978-3-662-12494-9"
+via = "hand"
+note = "The book's DOI (Grundlehren 319), the prefix of the chapter DOIs Crossref matched; zbMATH's record links none. Verified against its Crossref record."
+
+["BIP19"]
+url = "https://doi.org/10.1090/jams/908"
+via = "crossref"
+
+["BIZ18"]
+url = "https://doi.org/10.1145/3209663"
+via = "crossref"
+
+["BLMW11"]
+url = "https://doi.org/10.1137/090765328"
+via = "crossref"
+
+["BN08"]
+url = "https://doi.org/10.1007/s10711-008-9243-3"
+via = "crossref"
+
+["BS83"]
+url = "https://doi.org/10.1016/0304-3975(83)90110-x"
+via = "crossref"
+
+["BS83b"]
+url = "https://doi.org/10.1007/bf01192806"
+via = "crossref"
+
+["BT72"]
+url = "https://doi.org/10.1007/bf02715544"
+via = "crossref"
+
+["Bür00"]
+url = "https://doi.org/10.1007/978-3-662-04179-6"
+via = "crossref"
+
+["Bür00b"]
+url = "https://doi.org/10.1016/s0304-3975(99)00183-8"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the chapter of the 2000 book instead; journal, volume and pages agree."
+
+["Bür04"]
+url = "https://doi.org/10.1007/s10208-002-0059-5"
+via = "crossref"
+
+["Bür24"]
+url = "https://arxiv.org/abs/2406.06217"
+via = "arxiv"
+note = "The arXiv version the entry cites; it is not yet published, and the Crossref match was an Oberwolfach report."
+
+["CCL10"]
+url = "https://doi.org/10.1007/s00037-009-0284-2"
+via = "crossref"
+
+["CDM16"]
+url = "https://doi.org/10.1007/s00224-015-9630-8"
+via = "crossref"
+
+["CKRST20"]
+url = "https://doi.org/10.1109/focs46700.2020.00085"
+via = "crossref"
+
+["CKSV22"]
+url = "https://doi.org/10.1007/s00037-022-00223-8"
+via = "crossref"
+
+["Cur26"]
+url = "https://arxiv.org/abs/2611.03636"
+via = "zbmath"
+
+["CVZ19"]
+url = "https://doi.org/10.1007/s00037-018-0172-8"
+via = "crossref"
+
+["CVZ23"]
+url = "https://doi.org/10.1090/jams/996"
+via = "crossref"
+note = "Published online in 2021 and in volume 36 (2023), which the entry cites."
+
+["CZ19"]
+url = "https://doi.org/10.1007/s00037-018-0164-8"
+via = "crossref"
+
+["DDS21"]
+url = "https://doi.org/10.1109/focs52979.2021.00018"
+via = "crossref"
+
+["DHM02"]
+url = "https://doi.org/10.1007/s00037-000-0170-4"
+via = "crossref"
+
+["DJ02"]
+url = "https://doi.org/10.1007/s00222-002-0242-y"
+via = "crossref"
+
+["EGOW18"]
+url = "https://doi.org/10.4230/LIPIcs.ITCS.2018.1"
+via = "crossref"
+note = "A LIPIcs DOI, registered with DataCite: Crossref has no record of it; DataCite's record agrees in title, authors and year."
+
+["Eis95"]
+url = "https://doi.org/10.1007/978-1-4612-5350-1"
+via = "crossref"
+note = "Graduate Texts in Mathematics 150; Crossref's title is 'Commutative Algebra' without its subtitle."
+
+["EJ10"]
+url = "https://doi.org/10.1007/s00222-009-0218-2"
+via = "crossref"
+
+["Enf69"]
+url = "https://doi.org/10.1007/bf02589549"
+via = "crossref"
+
+["FLMV05"]
+url = "https://doi.org/10.1145/1101821.1101822"
+via = "crossref"
+
+["For24"]
+url = "https://doi.org/10.4230/LIPIcs.CCC.2024.31"
+via = "crossref"
+note = "A LIPIcs DOI, registered with DataCite: Crossref has no record of it; DataCite's record agrees in title, authors and year."
+
+["FPV13"]
+url = "https://doi.org/10.1016/j.ic.2014.09.006"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the MFCS 2013 preliminary version instead; journal, volume and pages agree. The key's year is the 2013 preliminary version's; the journal version is of 2015."
+
+["Fri21"]
+url = "https://doi.org/10.1080/00927872.2020.1803344"
+via = "crossref"
+
+["FSV18"]
+url = "https://doi.org/10.4086/toc.2018.v014a018"
+via = "zbmath"
+note = "zbMATH's record links this DOI; Crossref's record of it has no title, and its authors and year agree, as do the volume and article the DOI names."
+
+["GKKS14"]
+url = "https://doi.org/10.1145/2629541"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the CCC 2013 paper instead; journal, volume and pages agree."
+
+["GKKS16"]
+url = "https://doi.org/10.1137/140957123"
+via = "crossref"
+
+["GKSS17"]
+url = "https://arxiv.org/abs/1701.01717"
+via = "arxiv"
+
+["Gly10"]
+url = "https://doi.org/10.1016/j.ejc.2010.01.010"
+via = "crossref"
+
+["GMOW19"]
+url = "https://doi.org/10.1109/focs.2019.00054"
+via = "crossref"
+
+["GMQ16"]
+url = "https://doi.org/10.4230/LIPIcs.ICALP.2016.34"
+via = "crossref"
+note = "A LIPIcs DOI, registered with DataCite: Crossref has no record of it; DataCite's record agrees in title, authors and year."
+
+["Gro03"]
+url = "https://doi.org/10.1007/s000390300002"
+via = "crossref"
+
+["Gro15"]
+url = "https://doi.org/10.1007/s00037-015-0103-x"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the CCC 2014 paper instead; journal, volume and pages agree."
+
+["GS89"]
+url = "https://doi.org/10.1007/3-540-51237-3_10"
+via = "crossref"
+
+["Guo26"]
+url = "https://arxiv.org/abs/2609.29568"
+via = "zbmath"
+
+["HPV77"]
+url = "https://doi.org/10.1145/322003.322015"
+via = "crossref"
+
+["HR18"]
+url = "https://doi.org/10.1112/plms/s2-17.1.75"
+via = "crossref"
+
+["Hya79"]
+url = "https://doi.org/10.1137/0208010"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the STOC 1978 paper instead; journal, volume and pages agree."
+
+["IN05"]
+url = "https://doi.org/10.1007/s10711-004-1843-y"
+via = "crossref"
+
+["IP17"]
+url = "https://doi.org/10.1016/j.aim.2017.08.024"
+via = "crossref"
+
+["IS22"]
+url = "https://doi.org/10.1016/j.ipl.2021.106243"
+via = "crossref"
+
+["JS82"]
+url = "https://doi.org/10.1145/322326.322341"
+via = "crossref"
+
+["Kal85"]
+url = "https://doi.org/10.1137/0214050"
+via = "crossref"
+
+["Kas11"]
+url = "https://doi.org/10.4171/ggd/134"
+via = "crossref"
+
+["KI04"]
+url = "https://doi.org/10.1007/s00037-004-0182-6"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the STOC 2003 paper instead; journal, volume and pages agree."
+
+["KLS10"]
+url = "https://doi.org/10.1007/978-3-642-05014-5"
+via = "zbmath"
+note = "The book's DOI, which zbMATH links; Crossref's first match was a chapter of it."
+
+["KLSS17"]
+url = "https://doi.org/10.1137/151002423"
+via = "crossref"
+
+["KO18"]
+url = "https://doi.org/10.1145/3188745.3188782"
+via = "crossref"
+
+["KO23"]
+url = "https://doi.org/10.1016/j.ejc.2023.103696"
+via = "crossref"
+
+["Koi12"]
+url = "https://doi.org/10.1016/j.tcs.2012.03.041"
+via = "crossref"
+
+["KP09"]
+url = "https://doi.org/10.1109/ccc.2009.19"
+via = "crossref"
+
+["KRST22"]
+url = "https://doi.org/10.4230/LIPIcs.STACS.2022.44"
+via = "hand"
+note = "The LIPIcs DOI of STACS 2022, paper 44, which the entry cites; the author search found nothing. DataCite's record agrees in title, authors and year."
+
+["KS17"]
+url = "https://doi.org/10.1137/140999335"
+via = "crossref"
+
+["KS93"]
+url = "https://doi.org/10.4310/cag.1993.v1.n4.a4"
+via = "crossref"
+
+["Kum20"]
+url = "https://doi.org/10.1145/3371506"
+via = "crossref"
+
+["KV26"]
+url = "https://arxiv.org/abs/2609.34462"
+via = "arxiv"
+
+["Lan17"]
+url = "https://doi.org/10.1017/9781108183192"
+via = "crossref"
+
+["Lean"]
+url = "https://doi.org/10.1007/978-3-030-79876-5_37"
+via = "hand"
+note = "The LNCS DOI of CADE 28, pages 625-635, as the entry cites."
+
+["LMR13"]
+url = "https://doi.org/10.4171/cmh/292"
+via = "crossref"
+
+["LST25"]
+url = "https://doi.org/10.1145/3734215"
+via = "crossref"
+
+["Mal03"]
+url = "https://theses.hal.science/tel-00087399"
+via = "hand"
+note = "The thesis on HAL (theses.hal.science), Guillaume Malod, 2003; it has no DOI."
+
+["Mathlib"]
+url = "https://doi.org/10.1145/3372885.3373824"
+via = "hand"
+note = "The ACM DOI of the CPP 2020 paper, pages 367-381, as the entry cites."
+
+["MN13"]
+url = "https://doi.org/10.2478/agms-2013-0003"
+via = "crossref"
+
+["MP08"]
+url = "https://doi.org/10.1016/j.jco.2006.09.006"
+via = "crossref"
+
+["MR04"]
+url = "https://doi.org/10.1155/S1073792804142566"
+via = "zbmath"
+note = "zbMATH's record links this DOI; Crossref's record of it has no title, and its authors and year agree, as do the volume and article the DOI names."
+
+["MS01"]
+url = "https://doi.org/10.1137/s009753970038715x"
+via = "crossref"
+
+["MS08"]
+url = "https://doi.org/10.1137/080718115"
+via = "crossref"
+
+["MS08b"]
+url = "https://doi.org/10.1137/050644756"
+via = "crossref"
+
+["MW17"]
+url = "https://doi.org/10.4230/LIPIcs.CCC.2017.8"
+via = "crossref"
+note = "A LIPIcs DOI, registered with DataCite: Crossref has no record of it; DataCite's record agrees in title, authors and year."
+
+["Nis91"]
+url = "https://doi.org/10.1145/103418.103462"
+via = "crossref"
+
+["NS23"]
+url = "https://doi.org/10.1007/s00440-023-01228-2"
+via = "crossref"
+
+["NW97"]
+url = "https://doi.org/10.1007/bf01294256"
+via = "crossref"
+
+["OAI26"]
+via = "hand"
+note = "An unpublished manuscript (September 24, 2026); the entry points to [Guo26, She26b]: not linked."
+
+["Opp17"]
+url = "https://doi.org/10.1007/s00208-016-1413-2"
+via = "crossref"
+
+["Orús14"]
+url = "https://doi.org/10.1016/j.aop.2014.06.013"
+via = "crossref"
+
+["PPST83"]
+url = "https://doi.org/10.1109/sfcs.1983.39"
+via = "crossref"
+
+["PS13"]
+url = "https://doi.org/10.1007/s00440-012-0436-1"
+via = "crossref"
+
+["Raz09"]
+url = "https://doi.org/10.1145/1502793.1502797"
+via = "crossref"
+
+["Raz10"]
+url = "https://doi.org/10.4086/toc.2010.v006a007"
+via = "zbmath"
+note = "zbMATH's record links this DOI; Crossref's record of it has no title, and its authors and year agree, as do the volume and article the DOI names."
+
+["Raz13"]
+url = "https://doi.org/10.1145/2535928"
+via = "crossref"
+
+["Raz26"]
+url = "https://arxiv.org/abs/2604.22006"
+via = "arxiv"
+
+["Res68"]
+url = "https://doi.org/10.1007/bf02199105"
+via = "crossref"
+
+["Rob91"]
+url = "https://doi.org/10.1016/0304-3975(91)90177-4"
+via = "crossref"
+
+["RR97"]
+url = "https://doi.org/10.1006/jcss.1997.1494"
+via = "crossref"
+
+["Rys63"]
+url = "https://doi.org/10.5948/upo9781614440147"
+via = "crossref"
+
+["RZ21"]
+url = "https://doi.org/10.1109/focs52979.2021.00079"
+via = "crossref"
+
+["Sap21"]
+url = "https://github.com/dasarpmar/lowerbounds-survey"
+via = "paper"
+note = "The url the entry itself prints, for version 9.0.3 of the survey; it has no published version."
+
+["Sat09"]
+url = "https://doi.org/10.1007/s00013-009-0057-9"
+via = "crossref"
+
+["Sch78"]
+url = "https://doi.org/10.1145/322047.322060"
+via = "crossref"
+
+["Sch80"]
+url = "https://doi.org/10.1137/0209036"
+via = "crossref"
+
+["She26"]
+url = "https://arxiv.org/abs/2606.13628"
+via = "arxiv"
+
+["She26b"]
+url = "https://arxiv.org/abs/2610.40484"
+via = "zbmath"
+
+["Sto95"]
+url = "https://doi.org/10.1214/aop/1176987809"
+via = "crossref"
+
+["Str73"]
+url = "https://doi.org/10.1007/bf01436566"
+via = "crossref"
+
+["Str87"]
+url = "https://doi.org/10.1515/crll.1987.375-376.406"
+via = "crossref"
+note = "Crossref's record of it lists no authors; its title and year agree, and so do the journal and volume."
+
+["Str88"]
+url = "https://doi.org/10.1515/crll.1988.384.102"
+via = "crossref"
+note = "Crossref's record of it lists no authors; its title and year agree, and so do the journal and volume."
+
+["Str91"]
+url = "https://doi.org/10.1515/crll.1991.413.127"
+via = "crossref"
+note = "Crossref's record of it lists no authors; its title and year agree, and so do the journal and volume."
+
+["Stu03"]
+url = "https://doi.org/10.1090/conm/338/06080"
+via = "crossref"
+
+["SW14"]
+url = "https://doi.org/10.1007/s00037-014-0087-y"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the CCC 2013 paper instead; journal, volume and pages agree."
+
+["SY10"]
+url = "https://doi.org/10.1561/9781601984012"
+via = "crossref"
+
+["Tav15"]
+url = "https://doi.org/10.1016/j.ic.2014.09.004"
+via = "crossref"
+
+["Val79"]
+url = "https://doi.org/10.1145/800135.804419"
+via = "crossref"
+
+["Val79b"]
+url = "https://doi.org/10.1016/0304-3975(79)90044-6"
+via = "crossref"
+
+["Val82"]
+url = "https://zbmath.org/3744549"
+via = "zbmath"
+note = "zbMATH's record (Monogr. Enseign. Math. 30, 365-380, 1982); it links no DOI or scan. zbMATH's pages refuse scripted requests (403), so it was checked through api.zbmath.org."
+
+["VC17"]
+url = "https://doi.org/10.1007/s00220-017-2861-6"
+via = "crossref"
+
+["Vin91"]
+url = "https://doi.org/10.1109/sct.1991.160269"
+via = "hand"
+note = "Found by its title alone: Crossref's record carries no date, so the year filter hid it; its proceedings title says 1991. Title and author verified, the year by the proceedings."
+
+["vM07"]
+url = "https://doi.org/10.1561/9781601980854"
+via = "crossref"
+
+["Vra22"]
+url = "https://doi.org/10.1007/s11083-021-09570-7"
+via = "crossref"
+
+["VSBR83"]
+url = "https://doi.org/10.1137/0212043"
+via = "crossref"
+
+["Wan00"]
+url = "https://doi.org/10.4310/cag.2000.v8.n3.a5"
+via = "crossref"
+
+["Wil25"]
+url = "https://doi.org/10.1145/3717823.3718225"
+via = "crossref"
+note = "Crossref, searched with the whole entry: the version the entry cites; a first search had matched the J. ACM 2026 version instead; journal, volume and pages agree."
+
+["WZ26"]
+url = "https://doi.org/10.1090/bull/1880"
+via = "crossref"
+
+["Yab15"]
+url = "https://arxiv.org/abs/1504.00151"
+via = "arxiv"
+
+["Yeh19"]
+url = "https://doi.org/10.1145/3313276.3316311"
+via = "crossref"
+
+["Zui19"]
+url = "https://doi.org/10.1007/s00493-019-3992-5"
+via = "crossref"

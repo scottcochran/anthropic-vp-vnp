@@ -344,18 +344,20 @@ def q3_more(text):
             "differences": bullets}
 
 
-KEY = r"(?:[^\W\d_]|\+)+\d\d[a-z]?"                  # a reference key: letters (Bür, vM, BCS+), two digits, a letter
+KEY = r"(?:[^\W\d_]|\+)+(?:\d\d[a-z]?)?"            # a reference key: letters (Bür, vM, BCS+), two digits, a letter;
+                                                    # or letters alone (Lean, Mathlib)
 
 
 def references(text):
     """The reference list, entry by entry (key, text, year), and every citation of a key in the rest of the text,
     with the part of the paper it stands in (Section 1, 2 or 3, or an appendix by its letter)."""
     body = between(text, "\nReferences\n", "\nAppendix: the full proof", "of the reference list")
-    body = re.sub(r"\n(=== page \d+|VP ̸= VNP \d+|\d+ CLAUDE)(?=\n)", "", body)
+    body = re.sub(r"\n(VP ̸= VNP \d+|\d+ CLAUDE)(?=\n|$)", "", body)     # running heads, the last one too
     entries = []
     for m in re.finditer(r"^\[(" + KEY + r")\] (.*?)(?=^\[" + KEY + r"\] |\Z)", body, re.M | re.S):
         t = prose(m.group(2))
-        two = re.search(r"\d\d", m.group(1)).group(0)          # a key's digits are its year's last two
+        digits = re.search(r"\d\d", m.group(1))             # a key's digits are its year's last two
+        two = digits.group(0) if digits else ""          # a key of letters alone: the last year printed
         years = []
         for y, end in re.findall(r"\b((?:1[89]|20)\d\d)(?:/(\d\d))?\b", t):    # a volume year may be 1996/97
             years += [y] if y.endswith(two) else ([y[:2] + end] if end == two else [])

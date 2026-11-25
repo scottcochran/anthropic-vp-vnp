@@ -3,7 +3,8 @@
 The paper's reference list and every citation of its keys in the text are read from paper.pdf
 (src/paper-facts.json, references): each citation is placed in the part of the paper it stands in, Section 1, 2 or
 3 or an appendix by its letter. The build fails if the number of references or citations, or the parts where any
-reference is cited, differ from what is recorded here. The papers are not linked yet (proof-posters:linking-papers)."""
+reference is cited, differ from what is recorded here, or if a reference has no paper in src/papers.toml
+(proof-posters:linking-papers), which links each entry to it."""
 import collections
 
 import vp
@@ -16,8 +17,8 @@ W = 3080
 S = 13
 PARTS = "front 1 2 3 A B C D E F G H I J K L M N O P Q".split()
 
-N_REFS = 132
-N_CITATIONS = 181
+N_REFS = 134
+N_CITATIONS = 185
 CITED = {'AJMV98': ['K'],
  'AKK22': ['H'],
  'Ald84': ['1', 'N'],
@@ -94,9 +95,11 @@ CITED = {'AJMV98': ['K'],
  'Kum20': ['1'],
  'KV26': ['1'],
  'Lan17': ['1'],
+ 'Lean': ['3', 'Q'],
  'LMR13': ['1'],
  'LST25': ['1'],
  'Mal03': ['M'],
+ 'Mathlib': ['3', 'Q'],
  'MN13': ['F'],
  'MP08': ['2', 'K'],
  'MR04': ['1'],
@@ -163,6 +166,10 @@ def build():
         got[ci["key"]].append(ci["part"])
     compare("F8: where each reference is cited", CITED,
             {e["key"]: sorted(got[e["key"]], key=PARTS.index) for e in r["entries"]}, reread)
+    missing = sorted((k for k in CITED if k not in src.papers), key=str.lower)
+    if missing:
+        raise ValueError(f"F8: references with no paper in src/papers.toml: {missing}; add them "
+                         "(proof-posters:linking-papers)")
     t1 = {t["section"]: t for t in src.facts["table1"]}
     entries = {e["key"]: e for e in r["entries"]}
 
@@ -176,7 +183,8 @@ def build():
     by_part = collections.Counter(p for ps in CITED.values() for p in ps)
     c.para(x0, y, c.x1 - x0, "**How to read it.** Section 1 is the introduction, 2 the overview, 3 the Lean "
            "formalization; A to O are the appendices of the proof. A citation is a key inside square brackets; "
-           "[Str87, Str88] cites two. Nothing here reads the cited papers, and they are not linked yet.", S + 1,
+           "[Str87, Str88] cites two. An entry links to its paper (src/papers.toml): a DOI where there is one. "
+           "Nothing here reads the cited papers.", S + 1,
            "muted")
     y += 50
 
@@ -188,7 +196,7 @@ def build():
     yy = y
     for p in parts:
         lab = {"1": "Section 1, introduction", "2": "Section 2, overview", "3": "Section 3, Lean"}.get(
-            p, f"{p} · {vp.abridge(t1[p]['what'], 40)}" if p in t1 else p)
+            p, f"{p} · {vp.abridge(t1[p]['what'], 40)}" if p in t1 else f"Appendix {p}")
         c.text(x0, yy + 15, lab, S, "ink")
         c.rect(x0 + 380, yy + 3, (half - 480) * by_part[p] / mx, 16, "blue", rx=2, sw=1)
         c.text(x0 + 390 + (half - 480) * by_part[p] / mx, yy + 15, str(by_part[p]), S, "muted")
@@ -219,7 +227,10 @@ def build():
         e = entries[k]
         cnt = collections.Counter(CITED[k])
         where = ", ".join(f"{p}" + (f" ×{cnt[p]}" if cnt[p] > 1 else "") for p in PARTS if cnt[p])
-        rows.append({"cells": [f"`{k}`", str(e["year"]), f"“{vp.abridge(e['text'], 260)}”", where],
+        pp = src.papers[k]
+        tail = f" ({pp['via']})" if pp.get("url") else " (not linked: no stable copy)"
+        rows.append({"cells": [f"`{k}`", str(e["year"]),
+                               vp.linked(pp.get("url"), f"“{vp.abridge(e['text'], 250)}”") + tail, where],
                      "anchor": f"ref-{k.replace('+', '-')}"})
     y += c.table(x0, y, cols, rows, size=S - 0.5) + 30
     c.para(x0, y, c.x1 - x0, "**Not checked here.** That a key in brackets is a citation and not notation: a bracket is "

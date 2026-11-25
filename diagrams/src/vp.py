@@ -27,6 +27,7 @@ import os
 import pathlib
 import re
 import subprocess
+import tomllib
 from xml.sax.saxutils import escape
 
 import lib
@@ -45,7 +46,7 @@ FM_SUB = "vp-vnp"                    # the folder of the formalization inside fo
 # paper.pdf at FM_COMMIT, from which diagrams/src/paper-facts.json was read by tools/paper-facts/extract.py.
 PAPER_SHA256 = "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c"
 # diagrams/src/paper-facts.json as that script wrote it (tools/paper-facts/meta.json records both, and the commit).
-PAPER_FACTS_SHA256 = "46c2befb550ed317aef7d2216ade4d7739d07b6ef3dec69626bb7fc6ab30804d"
+PAPER_FACTS_SHA256 = "dfe6b5b575857a897459ec91ced42d595d7cfc051463ae49f41133605b2ce94d"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
@@ -261,6 +262,17 @@ def load():
         raise ValueError("tools/paper-facts/meta.json does not record the pinned commit and hashes")
     s.facts = json.loads(facts_path.read_text(encoding="utf-8"))
     lib.PINNED[:] = [f"{FM_URL}/blob/{s.full}/", f"{FM_URL}/tree/{s.full}/"]
+    # The papers behind the reference list, this repository's own data (src/papers.toml): every id is a reference.
+    s.papers = tomllib.loads((SRC / "papers.toml").read_text(encoding="utf-8"))
+    keys = {e["key"] for e in s.facts["references"]["entries"]}
+    bad = sorted(set(s.papers) - keys)
+    if bad:
+        raise ValueError(f"src/papers.toml names ids that are not references of the paper: {bad}")
+    lib.PAPERS.clear()
+    lib.PAPERS.update({k: v["url"] for k, v in s.papers.items() if v.get("url")})   # a work with no stable copy has none
+    bare = sorted(k for k, v in s.papers.items() if not v.get("url") and not v.get("note"))
+    if bare:
+        raise ValueError(f"src/papers.toml: entries with neither a url nor a note saying why: {bare}")
 
     # every Lean file of the folder, outside .lake
     s.modules, s.decls, s.challenge = {}, {}, {}

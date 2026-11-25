@@ -201,7 +201,7 @@
  },
  "F8": {
   "file": "F8-literature-2026.11.25.svg",
-  "title": "The proof as literature: the paper's 132 references, by decade, and where in the paper each one is cited",
+  "title": "The proof as literature: the paper's 134 references, by decade, and where in the paper each one is cited",
   "cards": 0,
   "arrows": 0,
   "anchors": [
@@ -283,6 +283,7 @@
    "ref-LMR13",
    "ref-LST25",
    "ref-Lan17",
+   "ref-Lean",
    "ref-MN13",
    "ref-MP08",
    "ref-MR04",
@@ -291,6 +292,7 @@
    "ref-MS08b",
    "ref-MW17",
    "ref-Mal03",
+   "ref-Mathlib",
    "ref-NS23",
    "ref-NW97",
    "ref-Nis91",
