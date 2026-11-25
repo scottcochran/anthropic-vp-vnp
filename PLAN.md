@@ -44,9 +44,27 @@ reaches Definition A.1 through `def_spectral_congr`, the second Lean name Table 
 `def_spectral`. R3 records this as `ON_BY_SECOND` rather than widening the comparison. Every other row agrees
 with Q.3, and all seven of Appendix Q's route claims that R3 checks hold.
 
-Done: all six posters build with no WARNING or ERROR. `check-expectations.py`: 6 modules, 30 expectations under 29
+Done (1b): all six posters build with no WARNING or ERROR. `check-expectations.py`: 6 modules, 30 expectations under 29
 names, all literals. `determinism.py`: 7 files byte-identical over two seeds (one failure was fixed first: R3 had
 iterated over a set). `check-links.py` passes. R3 and F3 looked at in light (rsvg-convert) and dark (Chrome).
+
+## Phase 1c: two traces and Figure 1 (2026.11.25)
+
+A fix to the reading first. Phase 1b counted a Lean name given to two statements (`Paper.scales_setting`, K.5 and
+K.6) as neither one's own, which dropped the uses it makes of J.4. Now it is each one's own, and what it names of
+the other co-owner is not counted. Re-recorded: F1 gains J.4 → K.5 and J.4 → K.6 (100 uses, 41 direct); R2's
+"K uses J" is now borne out (23 in both, 7 only in Table 1); F3's K.5 and K.6 grow; R3's longest chain is now 14
+statements, through the contracting case. The route itself and Q.3's comparison are unchanged.
+
+Then T1 `trace-contracting`, T2 `trace-flat` and F4 `figure-1`. Figure 1 was read from p. 5 rendered with
+PyMuPDF (outside the build, in the scratchpad), and its arrows transcribed into `d_f4_figure_1.py`. Of the 25
+statements its arrows carry, 15 are used where the figure says, 5 further down (among them Theorem D.2, the case
+split, used once by Theorem M.3), 3 through statements the figure leaves out (D.2 reaches C.1 through C.3), and 2
+are not seen: Definition D.1, and Corollary E.2 on the contracting branch, which Appendix Q explains.
+
+Done (1c): all nine posters build with no WARNING or ERROR. `check-expectations.py`: 9 modules, 37 expectations
+under 34 names, all literals. `determinism.py`: 10 files byte-identical over two seeds. `check-links.py`: 1,032
+links. T1 and F4 looked at in Chrome (dark).
 
 ## Phase 2: checking the uses against the Lean (planned)
 

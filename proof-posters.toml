@@ -24,7 +24,8 @@ ci = ".github/workflows/posters.yml"  # regenerates at the pin and fails on any 
 expected_names = ["EXPECTED", "DIRECT", "BORNE", "LEAN_ONLY", "CASES", "COUNTS", "N_STATEMENTS", "KINDS",
                   "NOT_FORMALIZED", "NO_DOC_LABEL", "SHARED", "CLAIMS", "DEFINITIONS", "INTRO", "AXIOMS", "QUOTED",
                   "LIBRARY", "IMPORTS", "UPWARD", "STATEMENTS_IN", "TOP", "OFF_ROUTE", "Q3_OFF", "ON_BY_SECOND",
-                  "CHAIN", "ROUTE_CLAIMS", "OVERVIEW", "NOTES", "WEIGHT"]
+                  "CHAIN", "ROUTE_CLAIMS", "OVERVIEW", "NOTES", "WEIGHT", "FIGURE_NAMES", "THEOREM", "BOXES",
+                  "ARROWS", "VERDICTS"]
 # The expected_names whose change makes a release MINOR (PLAN.md, "Releases").
 minor_names = ["EXPECTED", "CLAIMS"]
 
@@ -48,7 +49,7 @@ meta = "tools/paper-facts/meta.json"
 name = "PAPER_SHA256"
 source = "vp-vnp/paper.pdf at FM_COMMIT"
 refresh = "uv run --with pypdf==7.1.1 python tools/paper-facts/extract.py"
-reread = "src/paper-facts.json against the paper's Table 1, Table 3 and statement headers, and every poster that quotes them (R2's cards, F1's titles)"
+reread = "src/paper-facts.json against the paper's Table 1, Table 3, statement headers, formalization notes, Appendix Q and Figure 1, every poster that quotes them, and F4's transcription of Figure 1 (BOXES, ARROWS in diagrams/src/d_f4_figure_1.py) against the rendered p. 5"
 
 [links]
 require_targets = true

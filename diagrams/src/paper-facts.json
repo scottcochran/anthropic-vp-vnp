@@ -28,6 +28,34 @@
    "Theorem H.2 uses parts (a) and (b) of Proposition H.1 through the named theorems that also prove the proposition."
   ]
  },
+ "figure1": {
+  "caption": "The structure of the proof. The two arrows marked P are the only steps that use the permanent; they use the circuit too, but only by substituting into it. The two arrows marked C are the only steps that look inside the circuit, both times at the polynomial at every gate. In the shaded boxes neither the polynomial that is to be computed nor a circuit occurs; the dashed boxes are the assumptions. For the determinant the arrows P are missing, and a Boolean circuit does not pass the arrows C (Section 2.5).",
+  "names": [
+   "lem_hubs",
+   "prop_crossing",
+   "thm_cn",
+   "thm_alt",
+   "def_cases",
+   "lem_few",
+   "prop_cube",
+   "prop_flat_rate",
+   "thm_flat_rate",
+   "cor_clauses",
+   "lem_fkl_perm",
+   "lem_balanced",
+   "thm_poincare",
+   "thm_laws",
+   "thm_tree",
+   "thm_cut",
+   "lem_circuit",
+   "thm_noacc",
+   "thm_contracting",
+   "lem_lowdeg",
+   "lem_postpone",
+   "prop_next"
+  ],
+  "theorem": "Theorem 1.1"
+ },
  "headers": {
   "Corollary E.2": {
    "page": 32,

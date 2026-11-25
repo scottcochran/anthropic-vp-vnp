@@ -24,6 +24,7 @@ NOT_FORMALIZED = ["Remark N.6"]
 # Rows whose first Lean theorem's docstring does not open with "**Paper: <Kind> <label>.**" for the row's kind and the
 # label of the theorem's name (thm_cut -> thm:cut).
 NO_DOC_LABEL = ["Display (F.1)", "Remark N.6"]
+# A name given to two rows is each one's own; what it names of the other row is not a use (vp._statement_uses).
 SHARED = {"Paper.scales_setting": ["Proposition K.5", "Theorem K.6"]}
 # Every use between numbered statements that the Lean text shows, as (used, user); DIRECT, those a theorem of the
 # user's own row names, the rest through declarations of the Paper library that belong to no row.
@@ -47,8 +48,8 @@ EXPECTED = [
     ('Theorem F.6', 'Theorem G.2'), ('Proposition H.1', 'Theorem H.2'), ('Theorem H.2', 'Proposition J.2'),
     ('Lemma I.2', 'Proposition J.2'), ('Proposition I.1', 'Theorem J.3'), ('Proposition J.2', 'Theorem J.3'),
     ('Theorem G.2', 'Theorem J.4'), ('Theorem J.3', 'Theorem J.4'), ('Proposition E.1', 'Lemma K.3'),
-    ('Proposition I.1', 'Lemma K.3'), ('Lemma K.2', 'Lemma K.3'), ('Lemma K.4', 'Theorem K.6'),
-    ('Proposition K.5', 'Theorem K.6'), ('Proposition E.1', 'Theorem K.7'), ('Lemma K.3', 'Theorem K.7'),
+    ('Proposition I.1', 'Lemma K.3'), ('Lemma K.2', 'Lemma K.3'), ('Theorem J.4', 'Proposition K.5'),
+    ('Theorem J.4', 'Theorem K.6'), ('Lemma K.4', 'Theorem K.6'), ('Proposition K.5', 'Theorem K.6'), ('Proposition E.1', 'Theorem K.7'), ('Lemma K.3', 'Theorem K.7'),
     ('Proposition K.5', 'Theorem K.7'), ('Theorem K.6', 'Theorem K.7'), ('Theorem D.2', 'Theorem L.1'),
     ('Theorem E.11', 'Theorem L.1'), ('Theorem K.7', 'Theorem L.1'), ('Theorem D.2', 'Theorem L.2'),
     ('Theorem E.6', 'Theorem L.2'), ('Theorem K.7', 'Theorem L.2'), ('Theorem L.2', 'Corollary L.3'),
@@ -71,7 +72,7 @@ DIRECT = [
     ('Display (F.1)', 'Lemma F.4'), ('Lemma F.4', 'Lemma F.5'), ('Proposition C.3', 'Theorem F.6'),
     ('Lemma C.4', 'Theorem F.6'), ('Theorem H.2', 'Proposition J.2'), ('Lemma I.2', 'Proposition J.2'),
     ('Proposition I.1', 'Theorem J.3'), ('Proposition J.2', 'Theorem J.3'), ('Theorem J.3', 'Theorem J.4'),
-    ('Theorem D.2', 'Theorem L.1'), ('Theorem E.11', 'Theorem L.1'), ('Theorem K.7', 'Theorem L.1'),
+    ('Theorem J.4', 'Proposition K.5'), ('Theorem J.4', 'Theorem K.6'), ('Theorem D.2', 'Theorem L.1'), ('Theorem E.11', 'Theorem L.1'), ('Theorem K.7', 'Theorem L.1'),
     ('Theorem D.2', 'Theorem L.2'), ('Theorem E.6', 'Theorem L.2'), ('Theorem K.7', 'Theorem L.2'),
     ('Theorem L.2', 'Corollary L.3'), ('Theorem D.2', 'Theorem M.3'), ('Theorem E.11', 'Theorem M.3'),
     ('Theorem K.7', 'Theorem M.3'), ('Lemma M.1', 'Theorem M.3'), ('Theorem M.3', 'Corollary M.4'),

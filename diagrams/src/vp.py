@@ -45,7 +45,7 @@ FM_SUB = "vp-vnp"                    # the folder of the formalization inside fo
 # paper.pdf at FM_COMMIT, from which diagrams/src/paper-facts.json was read by tools/paper-facts/extract.py.
 PAPER_SHA256 = "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c"
 # diagrams/src/paper-facts.json as that script wrote it (tools/paper-facts/meta.json records both, and the commit).
-PAPER_FACTS_SHA256 = "dcf6ae23499ed4b0b338396e5fe1d1333d3c1fd2028d34d3265231955f9cc109"
+PAPER_FACTS_SHA256 = "fd6b14d0001f1a2559877d0f3e893199124e985f0354149890b70e1848396927"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
@@ -351,8 +351,7 @@ def closure(s, key):
         s._resolved[(t, mod)] = hit
         return hit
     st = s.statements[key]
-    mine = [n for n in st["decls"] if s.lean_of[n] == [key]]
-    seen, stack = set(mine), list(mine)
+    seen, stack = set(st["decls"]), list(st["decls"])
     while stack:
         d = s.decls[stack.pop()]
         for t in d["tokens"]:
@@ -389,21 +388,24 @@ def _statement_uses(s):
     for key, st in s.statements.items():
         # walk from the statement's declarations through declarations that belong to no statement, or to this one;
         # stop at a declaration of another statement, which is a use: direct if one of its own names it
+        # A name Table 3 gives two statements (scales_setting: K.5 and K.6) is each one's own, but what it names of
+        # the other is a bundle, not a use: a walk that starts from it does not count the other co-owner.
         found = {}
-        mine = [n for n in st["decls"] if owner[n] == [key]]   # a name Table 3 gives two statements is neither's own
-        seen = set(mine)
-        frontier = [(n, True) for n in mine]
+        seen = set(st["decls"])
+        frontier = [(n, True, frozenset(owner[n]) - {key}) for n in st["decls"]]
         while frontier:
-            n, own = frontier.pop()
+            n, own, skip = frontier.pop()
             for m in sorted(edges.get(n, ())):
                 others = [k for k in owner.get(m, ()) if k != key]
                 if others:
                     for k in others:
+                        if k in skip:
+                            continue
                         found[k] = "direct" if (own or found.get(k) == "direct") else found.get(k, "through")
                     continue
                 if m not in seen and m not in owner:
                     seen.add(m)
-                    frontier.append((m, False))
+                    frontier.append((m, False, skip))
         uses[key] = {k: found[k] for k in sorted(found, key=order_key)}
         s.reach[key] = seen                 # the statement's own theorems and the Paper helpers its walk passed
     return uses
@@ -595,6 +597,13 @@ def names(xs, limit=10):
     xs = list(xs)
     head = ", ".join(code(x) for x in xs[:limit])
     return head + (f" … and {len(xs) - limit} more" if len(xs) > limit else "")
+
+
+def abridge(s, limit):
+    """At most `limit` characters, cut at a word and marked with ' …'."""
+    if s is None or len(s) <= limit:
+        return s
+    return s[:limit].rsplit(" ", 1)[0].rstrip(",;:") + " …"
 
 
 def anchor_of(key):

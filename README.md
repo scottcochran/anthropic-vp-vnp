@@ -21,19 +21,27 @@ Open them on their own and zoom in.
   are stated with, and where the paper's introduction states each result.
 - [The proof, section by section](diagrams/R2-sections-2026.11.25.svg): the paper's 15 appendix sections as cards,
   coloured by the case each serves (flat, contracting or both), and Table 1's 30 uses between them set against the
-  uses the Lean text shows: 22 in both, 8 only in Table 1, 7 only in the Lean.
+  uses the Lean text shows: 23 in both, 7 only in Table 1, 7 only in the Lean.
 - [The route to the main theorems](diagrams/R3-route-2026.11.25.svg): the 54 numbered statements that Solution's
-  theorems reach, drawn as a graph of the uses the Lean text shows, with the longest chain, 11 statements from
-  Corollary M.4 down to Definition A.1. The 11 statements off the route are set against Appendix Q.3's list,
+  theorems reach, drawn as a graph of the uses the Lean text shows, with the longest chain, 14 statements from
+  Corollary M.4 through the contracting case down to Definition A.1. The 11 statements off the route are set against Appendix Q.3's list,
   which matches except for Definition A.1: the walk reaches it through its second Lean name,
   `def_spectral_congr`. Seven of Appendix Q's claims about the route are checked against the uses.
+- Two traces, one chain of uses each, a card per statement in reading order:
+  [the longest chain](diagrams/T1-trace-contracting-2026.11.25.svg), 14 statements through the contracting case,
+  and [the longest chain through the flat case](diagrams/T2-trace-flat-2026.11.25.svg), 11 statements through
+  Theorem E.11. The two meet at Theorem C.1.
 - [The paper against the Lean](diagrams/F1-paper-lean-2026.11.25.svg): the 65 numbered statements of the appendix,
   row by row, each with its Lean theorems and their file and line, the label and the quotation of the paper in
-  the first theorem's docstring, and the 98 uses between statements read from the Lean text.
+  the first theorem's docstring, and the 100 uses between statements read from the Lean text.
 - [Where the paper rests on the Lean](diagrams/F3-formalization-notes-2026.11.25.svg): the overview's four
   statements whose proofs only the Lean verifies, the paper's seven formalization notes, each placed in the text,
   and the Lean under each of the 64 statements that have a Lean theorem. By lines, the overview's four rank 1, 2,
   4 and 5.
+- [Figure 1, checked](diagrams/F4-figure-1-2026.11.25.svg): the paper's own picture of the proof, transcribed
+  box by box and arrow by arrow, with a verdict from the Lean uses for each of the 25 statements its arrows carry.
+  15 are used where the figure says, 5 further down, 3 through statements the figure leaves out, and 2 are not
+  seen.
 - [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
   files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
 

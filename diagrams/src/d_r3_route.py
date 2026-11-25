@@ -31,8 +31,9 @@ Q3_OFF = ["Theorem L.2", "Corollary L.3", "Proposition E.5", "Theorem E.6"]
 # The one row of Q.3's "the definitions" that the walk reaches, with the only Lean name of it that any proof names:
 # Table 3 gives Definition A.1 two theorems, and the proofs name the second, never the first.
 ON_BY_SECOND = {"Definition A.1": "Paper.def_spectral_congr"}
-CHAIN = ["Corollary M.4", "Theorem M.3", "Theorem L.1", "Theorem E.11", "Proposition E.10", "Proposition E.9",
-         "Lemma E.8", "Theorem C.1", "Proposition A.8", "Lemma A.2", "Definition A.1"]
+CHAIN = ["Corollary M.4", "Theorem M.3", "Theorem L.1", "Theorem K.7", "Theorem K.6", "Proposition K.5", "Theorem J.4",
+         "Theorem G.2", "Theorem F.6", "Proposition C.3", "Theorem C.1", "Proposition A.8", "Lemma A.2",
+         "Definition A.1"]
 # Appendix Q, "Routes of proof": a phrase of the paper, how this poster reads it, and what must then hold of the uses
 # read from the Lean text. ("absent", user, used): user's walk does not reach used's theorems; ("through", user,
 # used): it reaches them only through helpers; ("reaches", user, name): its walk passes the Paper declaration name.

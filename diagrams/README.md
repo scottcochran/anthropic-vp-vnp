@@ -1,8 +1,8 @@
 # The posters and what they check
 
-Six posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
+Nine posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
 expects them to say as module-level literals, and fails the build when they differ, in either direction. R is a
-reading at one level, F another frame. The generator is `diagrams/gen-diagrams.py`. Any line it prints starting
+reading at one level, T a trace, F another frame. The generator is `diagrams/gen-diagrams.py`. Any line it prints starting
 with WARNING or ERROR is a failure.
 
 ## Sources
@@ -17,7 +17,8 @@ How the Lean is read: as text, with comments and strings blanked. Full names com
 `end`, and a declaration runs from its keyword at the head of a line to the next command at the head of a line. A
 statement **uses** another when the text of one of its Lean theorems names one of the other's. It may name it
 directly, or through declarations of the Paper library that belong to no statement. A name Table 3 gives two
-statements (`Paper.scales_setting`, given to K.5 and K.6) is neither one's own proof. Not seen: a use made
+statements (`Paper.scales_setting`, given to K.5 and K.6) is each one's own, but what it names of the other
+co-owner is not counted as a use: it states the two together, in J.4's setting. Not seen: a use made
 without the name (an instance, a `simp` set, a tactic that finds the lemma), or a name behind an `open`. A local
 variable that shares a name with a theorem is counted as a use of it.
 
@@ -33,8 +34,11 @@ file the naming file imports, and has at least three characters.
 | R1 `main-theorems` | the five theorems of `Solution.lean`, the 13 definitions of `Statement.lean`, the introduction's statements | the theorems `comparator.json` names, `Solution.lean` proves and `Challenge.lean` states (`CLAIMS`); the statement each is proved from (`CLAIMS`); the definitions (`DEFINITIONS`); Statement's and Challenge's imports; the introduction's statements and their rows of Table 3 (`INTRO`); the permitted axioms (`AXIOMS`); the README sentence it quotes (`QUOTED`) |
 | R2 `sections` | the 15 sections of the appendix, and their uses by Table 1 and by the Lean text | each section's case (`CASES`); statements per section (`COUNTS`); Table 1's uses (`EXPECTED`); those the Lean bears out (`BORNE`); those only the Lean shows (`LEAN_ONLY`) |
 | R3 `route` | the 54 statements on the route of Solution's theorems as a graph, the longest chain, the 11 off the route, Appendix Q's route claims | the uses drawn are F1's (`EXPECTED` of F1); the statements off the route (`OFF_ROUTE`); Q.3's list (`Q3_OFF`) and that it ends with "the definitions"; the one row of Q.3 the walk reaches, and the Lean name it reaches it by (`ON_BY_SECOND`); that the rest of the route agrees with Q.3; the longest chain (`CHAIN`); each claim of Appendix Q's "Routes of proof" quoted and its check (`ROUTE_CLAIMS`) |
+| T1 `trace-contracting` | the longest chain of uses, 14 statements, one card each | the chain (`CHAIN`), which must be R3's; that each step uses the next and the last uses nothing; that below L.1 it runs through the contracting sections, then C and A |
+| T2 `trace-flat` | the longest chain through Theorem E.11, 11 statements | the chain (`CHAIN`); that each step uses the next; that below E.11 it is the longest; that it first meets T1's at C.1 |
 | F1 `paper-lean` | the 65 numbered statements of Table 3, row by row | the count and kinds (`N_STATEMENTS`, `KINDS`); the rows with no Lean theorem (`NOT_FORMALIZED`); the rows whose docstring does not open with the paper's kind and label (`NO_DOC_LABEL`); names given to two rows (`SHARED`); every use between statements (`EXPECTED`) and which are direct (`DIRECT`) |
 | F3 `formalization-notes` | the overview's statements left to the Lean, the 7 formalization notes, the Lean under every statement | the overview's four (`OVERVIEW`); each note's page, place, names and statement (`NOTES`); the declarations and lines by library under each of 64 statements (`WEIGHT`) |
+| F4 `figure-1` | Figure 1 of the paper, transcribed, each arrow coloured by a verdict from the uses | the Lean names the figure prints (`FIGURE_NAMES`), which the transcription (`BOXES`, `ARROWS`) must use exactly; the row of Table 3 that is its Theorem 1.1 (`THEOREM`); the verdict on every statement an arrow carries (`VERDICTS`) |
 | F2 `modules` | the seven libraries, the imports between them, the Paper library file by file, the largest files | files, lines and declarations per library (`LIBRARY`); imports between libraries (`IMPORTS`); the files outside Paper that import a Paper file (`UPWARD`); the statements each Paper file declares (`STATEMENTS_IN`); the 12 largest files (`TOP`) |
 
 Also fails on any poster: a Table 3 name that no file declares, a declaration name used twice outside

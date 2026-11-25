@@ -35,7 +35,7 @@ EXPECTED = [
 # Those of Table 1's uses that a statement of the user names a statement of the used section in the Lean text.
 BORNE = [
     ("A", "B"), ("A", "C"), ("B", "C"), ("C", "D"), ("A", "E"), ("C", "E"), ("C", "F"), ("A", "G"), ("F", "G"),
-    ("H", "J"), ("I", "J"), ("E", "K"), ("I", "K"), ("D", "L"), ("E", "L"), ("K", "L"), ("D", "M"), ("E", "M"),
+    ("H", "J"), ("I", "J"), ("E", "K"), ("I", "K"), ("J", "K"), ("D", "L"), ("E", "L"), ("K", "L"), ("D", "M"), ("E", "M"),
     ("K", "M"), ("E", "N"), ("K", "N"), ("M", "N"),
 ]
 # Uses between sections that the Lean text shows and Table 1 does not list.

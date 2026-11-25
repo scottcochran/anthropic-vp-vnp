@@ -250,6 +250,21 @@ def appendix_q(text):
     }
 
 
+def figure1(text):
+    """Figure 1, "The structure of the proof": the Lean names its boxes and arrows print, in the order pypdf reads
+    them, and its caption. Where its arrows run is not in the text; the poster that draws it records that itself."""
+    body = between(text, "Common part: tensors over the field k.\n", "\nFigure 1. The structure of the proof.",
+                   "of Figure 1")
+    names = []
+    for n in re.findall(r"\b(?:thm|lem|prop|cor|def)_[a-z_]+\b", body):
+        if n not in names:
+            names.append(n)
+    caption = prose("The structure of the proof." + between(text, "\nFigure 1. The structure of the proof.",
+                                                            " (Section 2.5).", "the caption of Figure 1")
+                    + " (Section 2.5).")
+    return {"names": names, "caption": caption, "theorem": "Theorem 1.1" if "\nTheorem 1.1\n" in body + "\n" else None}
+
+
 def main(argv):
     src = pathlib.Path(argv[0] if argv else os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
     pdf = src / "paper.pdf"
@@ -261,7 +276,7 @@ def main(argv):
     text = "\n".join(texts)
     t3 = table3(text)
     facts = {"table1": table1(text), "table3": t3, "headers": headers(texts, t3), "intro": intro(text),
-             "pages": len(texts), "notes": notes(text, texts, t3), "appendix_q": appendix_q(text)}
+             "pages": len(texts), "notes": notes(text, texts, t3), "appendix_q": appendix_q(text), "figure1": figure1(text)}
     data = json.dumps(facts, indent=1, ensure_ascii=False, sort_keys=True) + "\n"
     OUT.write_text(data, encoding="utf-8")
     meta = {"commit": commit, "file": "vp-vnp/paper.pdf",

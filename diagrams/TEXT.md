@@ -1,6 +1,7 @@
 # What on a poster is quoted, computed or its own
 
-Every sentence on a poster is one of four kinds (proof-posters:recording-expectations, section 3).
+Every sentence on a poster is one of four kinds (proof-posters:recording-expectations, section 3), and F4 adds a
+fifth, a transcription.
 
 1. **Quoted.** Lean code in a panel, set in the code face, from the file the card's footer links to at the pinned
    commit. Words in italics on a card: the Lean files' own docstrings (R1), Table 1's "what is proved" (R2's
@@ -26,6 +27,12 @@ Every sentence on a poster is one of four kinds (proof-posters:recording-expecta
    - F3, "the statements the paper leaves to the Lean are where the Lean is": computed from `WEIGHT`. Each note is
      placed by a recorded rule (`NOTES`): the statement whose header it follows, unless it stands in another
      section, when it is the first statement it names.
+
+5. **A transcription.** F4's boxes and arrows (`BOXES`, `ARROWS`) are this repository's reading of Figure 1 as
+   rendered (p. 5), since the PDF's text has the figure's words but not its arrows. The words in its boxes are this
+   poster's short wording. What the build checks: that the transcription uses exactly the Lean names the figure
+   prints, and that the PDF is the one it was read from (`PAPER_SHA256`). F4's interpretation card is computed
+   from `VERDICTS`. The traces' "How to read it" sentences stand behind assertions in T1 and T2.
 
 **Inferred relations.** Every use between statements, and so every use between sections that is marked "Lean", is
 inferred from names in the source text (`diagrams/README.md`, "How the Lean is read"). The posters say so where they

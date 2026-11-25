@@ -18,6 +18,7 @@ What it reads, from the text pypdf 7.1.1 extracts:
 | `headers` | each statement's header in the text | the first line that starts with the statement's kind and number followed by `(` or `.`: its page, and the title in parentheses where there is one |
 | `intro` | the numbered statements of Sections 1 and 2 | 6 headers of the form "Theorem 1.1 (main theorem; thm_allfields)." |
 | `notes` | every "Formalization note." | 7 notes: the page, the note up to its first line that ends with a full stop, the last statement header and the last subsection heading before it, and the statements it names |
+| `figure1` | Figure 1, "The structure of the proof" | the 22 Lean names its text prints, in pypdf's order, its caption, and that it ends at Theorem 1.1; not its arrows, which F4 transcribes |
 | `appendix_q` | the overview's passage on the printed proofs (p. 17); Appendix Q.3's list of what is off the route; Q's "Routes of proof", "Some steps exist only under names of the underlying library", and "Not in Lean" | quoted whole, with the statements they name; the routes as their 6 bullets |
 
 It stops without writing if a row does not parse, Table 1's sections are out of order, a row of Table 3 sits under
