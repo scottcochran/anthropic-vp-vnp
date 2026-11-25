@@ -177,3 +177,8 @@ hashes, the run) and `SHA256SUMS`, and publishes every poster's SVG with notes f
 Before 1.0 a MAJOR change may go out as MINOR, and its tag message then says what is checked differently. The
 date in the posters' file names changes with every regeneration, and is not a move by itself.
 
+Done, v0.1.0 (2026.11.25): the first release, signed and pushed by the custodian on c23e2d0. Release run
+45605568786 passed (tag, check, release); it published 16 assets, the 14 posters, `pins.json` and `SHA256SUMS`.
+`verify-release.py v0.1.0`: the 14 posters match the tree at the tag by their checksums, and `pins.json` names the
+tag (formal-math 11b6c7e3c927, Python 3.12 in the run). No Pages site.
+
