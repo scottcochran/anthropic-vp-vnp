@@ -37,7 +37,16 @@ further apart than a fifth of the font size, a space before an operator that has
 running heads dropped. A passage is respaced only when its characters, spaces aside, stand in that reading exactly;
 at FM_COMMIT that holds for 158 passages, and 13 are kept as pypdf reads them. The script prints both counts.
 
-**Not checked:** that pypdf's text order matches the printed layout beyond these parses. On 2026.11.25 the rows
-were read against pypdf's text of pages 17 and 67, not against the rendered pages; a reading against the printed
-tables is still to be done (PLAN.md). When `FM_COMMIT` moves and the PDF changed, run the
+**Read against the rendered pages** on 2026.11.25, with PyMuPDF 2.1 at FM_COMMIT:
+
+- by eye, Table 1 (p. 17, 15 rows), Table 3 (p. 67, 65 rows in two columns), the glossary of Appendix P (pp.
+  65–66, 17 rows) and Figure 1 (p. 5, its 22 Lean names): every row agrees, but for the typography of formulas,
+  whose sub- and superscripts are set inline (fk,ℓ for f_{k,ℓ}, vH for v^H, a stacked ?= as "? =");
+- against PyMuPDF's own reading of the text, by script: the page and title of all 64 statement headers, the pages
+  of the 7 formalization notes, the 6 statements of Sections 1 and 2, the 134 reference keys in order and each
+  entry's year; and, by the respacing above, the characters of 158 quoted passages. No disagreement.
+
+**Not checked:** the 14 passages that are not respaced, beyond reading them (each holds a formula the two readers
+order differently, or runs across a page); and where pypdf and the print could both differ from what the author
+meant. When `FM_COMMIT` moves and the PDF changed, run the
 script again, read the diff of `paper-facts.json` against the new PDF, then bump both hashes in `vp.py`.

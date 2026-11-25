@@ -29,7 +29,6 @@ pin on Ubuntu with Python 3.12, byte-identical to the committed files.
 
 Still open in Phase 1:
 
-- Read `paper-facts.json` against the rendered Table 1 and Table 3, not only pypdf's text of them.
 - Look at a link's framed target in a browser. Headless Chrome's screenshot of `F1…svg#K.3` came out blank.
 - Look at R1, F1 and F2 in the dark theme.
 
@@ -87,8 +86,8 @@ Found: all 96 Lean names the paper prints are declared but `native_decide`, whic
 statements in any universe are exactly those whose Lean takes a type in any universe; the Lean never writes four
 of the paper's words that Q.3 says it renames (packet, tally, node tensor, upper functional).
 
-Open: read `paper-facts.json` against the rendered pages, still open from Phase 1. (The quotations that lost their
-spaces were fixed in Phase 1g.)
+(Both items once open here are done: the quotations that lost their spaces in Phase 1g, and the reading of
+`paper-facts.json` against the rendered pages in Phase 1h.)
 
 ## Phase 1f: the papers (2026.11.25)
 
@@ -110,6 +109,13 @@ reading of the page, keeping pypdf's characters and requiring them to match exac
 At FM_COMMIT this changes 7 passages: Q.3's second difference ("Thepermanentiswrittenthereas"), the reference Vin91
 ("Countingauxiliarypushdownautomata…"), and the spacing around commas and full stops in five others. No recorded
 expectation moved.
+
+## Phase 1h: paper-facts.json against the rendered pages (2026.11.25)
+
+Read by eye against the pages PyMuPDF 2.1 renders: Table 1, Table 3, the glossary and Figure 1, every row agreeing
+but for the typography of formulas (sub- and superscripts inline). Checked by script against PyMuPDF's own reading:
+the 64 statement headers (page and title), the 7 notes, the 6 statements of Sections 1 and 2, the 134 reference keys
+and years. No disagreement; nothing in `paper-facts.json` changed. tools/paper-facts/README.md lists what was read.
 
 ## Phase 2: checking the uses against the Lean (planned)
 
