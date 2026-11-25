@@ -1,6 +1,6 @@
 # The posters and what they check
 
-Nine posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
+Ten posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
 expects them to say as module-level literals, and fails the build when they differ, in either direction. R is a
 reading at one level, T a trace, F another frame. The generator is `diagrams/gen-diagrams.py`. Any line it prints starting
 with WARNING or ERROR is a failure.
@@ -39,6 +39,7 @@ file the naming file imports, and has at least three characters.
 | F1 `paper-lean` | the 65 numbered statements of Table 3, row by row | the count and kinds (`N_STATEMENTS`, `KINDS`); the rows with no Lean theorem (`NOT_FORMALIZED`); the rows whose docstring does not open with the paper's kind and label (`NO_DOC_LABEL`); names given to two rows (`SHARED`); every use between statements (`EXPECTED`) and which are direct (`DIRECT`) |
 | F3 `formalization-notes` | the overview's statements left to the Lean, the 7 formalization notes, the Lean under every statement | the overview's four (`OVERVIEW`); each note's page, place, names and statement (`NOTES`); the declarations and lines by library under each of 64 statements (`WEIGHT`) |
 | F4 `figure-1` | Figure 1 of the paper, transcribed, each arrow coloured by a verdict from the uses | the Lean names the figure prints (`FIGURE_NAMES`), which the transcription (`BOXES`, `ARROWS`) must use exactly; the row of Table 3 that is its Theorem 1.1 (`THEOREM`); the verdict on every statement an arrow carries (`VERDICTS`) |
+| F5 `library` | the 25 directories of Nc, NS1 and Ov against the 14 sections whose statements reach them | files, lines and declaration lines per directory (`DIRS`); the lines each section's statements reach in each directory (`MATRIX`); the lines of each directory some statement reaches (`REACHED`) |
 | F2 `modules` | the seven libraries, the imports between them, the Paper library file by file, the largest files | files, lines and declarations per library (`LIBRARY`); imports between libraries (`IMPORTS`); the files outside Paper that import a Paper file (`UPWARD`); the statements each Paper file declares (`STATEMENTS_IN`); the 12 largest files (`TOP`) |
 
 Also fails on any poster: a Table 3 name that no file declares, a declaration name used twice outside

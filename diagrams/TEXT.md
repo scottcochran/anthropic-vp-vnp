@@ -28,6 +28,9 @@ fifth, a transcription.
      placed by a recorded rule (`NOTES`): the statement whose header it follows, unless it stands in another
      section, when it is the first statement it names.
 
+   - F5, "most directories belong to one section": computed from `MATRIX`, `REACHED` and `DIRS`. A directory's
+     "home" is a computed label, the section that reaches most of its lines; it says where the code is used from,
+     not what it is about.
 5. **A transcription.** F4's boxes and arrows (`BOXES`, `ARROWS`) are this repository's reading of Figure 1 as
    rendered (p. 5), since the PDF's text has the figure's words but not its arrows. The words in its boxes are this
    poster's short wording. What the build checks: that the transcription uses exactly the Lean names the figure

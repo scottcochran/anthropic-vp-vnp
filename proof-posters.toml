@@ -25,7 +25,7 @@ expected_names = ["EXPECTED", "DIRECT", "BORNE", "LEAN_ONLY", "CASES", "COUNTS",
                   "NOT_FORMALIZED", "NO_DOC_LABEL", "SHARED", "CLAIMS", "DEFINITIONS", "INTRO", "AXIOMS", "QUOTED",
                   "LIBRARY", "IMPORTS", "UPWARD", "STATEMENTS_IN", "TOP", "OFF_ROUTE", "Q3_OFF", "ON_BY_SECOND",
                   "CHAIN", "ROUTE_CLAIMS", "OVERVIEW", "NOTES", "WEIGHT", "FIGURE_NAMES", "THEOREM", "BOXES",
-                  "ARROWS", "VERDICTS"]
+                  "ARROWS", "VERDICTS", "DIRS", "REACHED", "MATRIX"]
 # The expected_names whose change makes a release MINOR (PLAN.md, "Releases").
 minor_names = ["EXPECTED", "CLAIMS"]
 

@@ -66,6 +66,16 @@ Done (1c): all nine posters build with no WARNING or ERROR. `check-expectations.
 under 34 names, all literals. `determinism.py`: 10 files byte-identical over two seeds. `check-links.py`: 1,032
 links. T1 and F4 looked at in Chrome (dark).
 
+## Phase 1d: the layer under Paper (2026.11.25)
+
+F5 `library`: the 25 directories of Nc, NS1 and Ov against the sections, by the lines each section's own statements
+reach (`vp.closure`). It is read from the text like the rest, and the reading is shakier here than in Paper, where
+names are distinctive. So the poster measures what it misses: 42168 of 46392 declaration lines (91%) are reached by
+name from some statement, least in Nc.Sort (61%) and Nc.Tape (63%). Phase 2's export would give exact uses.
+
+Done (1d): ten posters, no WARNING or ERROR. `check-expectations.py`, `determinism.py` and `check-links.py`
+pass (counts in the commit). F5 looked at in Chrome (dark).
+
 ## Phase 2: checking the uses against the Lean (planned)
 
 Build vp-vnp at its toolchain (Lean 4.33.1, Mathlib `0df444a360e`), export it with lean4export, and derive a pinned
