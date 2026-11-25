@@ -30,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check out this repository
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           path: posters
 
@@ -52,7 +52,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
 
       - name: Check out formal-math at its pin, only the vp-vnp folder
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: anthropics/formal-math
           ref: ${{ steps.full.outputs.formal_math }}
@@ -62,7 +62,7 @@ jobs:
           sparse-checkout-cone-mode: true
 
       - name: Python 3.12
-        uses: actions/setup-python@v6
+        uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -86,7 +86,7 @@ jobs:
           fi
 
       - name: Check out the proof-posters plugin at its pin
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: scottcochran/riemann-diagrams
           ref: ${{ env.PROOF_POSTERS_COMMIT }}

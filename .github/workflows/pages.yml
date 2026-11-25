@@ -53,7 +53,7 @@ jobs:
           [ "$GITHUB_ACTOR" = scottcochran ] || { echo "pages: only the custodian publishes"; exit 1; }
           [[ "$TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]] || { echo "pages: $TAG is not vMAJOR.MINOR.PATCH"; exit 1; }
           gh release view "$TAG" --json tagName -q .tagName >/dev/null || { echo "pages: $TAG has no release"; exit 1; }
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           ref: refs/tags/${{ inputs.tag }}
       - name: Stage the site
