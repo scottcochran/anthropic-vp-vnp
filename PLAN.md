@@ -219,3 +219,10 @@ tag (formal-math 11b6c7e3c927, Python 3.12 in the run). Published to the Pages s
 hand from main at 1723c26 (run 45606514259): the build checked every file against the release's `SHA256SUMS`, and the
 deploy confirmed the site serves v0.1.0; `verify-release.py v0.1.0` then passed with the site check too.
 
+
+Done, v0.1.1 (2026.11.25): PATCH, Phase 3's links, signed and pushed by the custodian on ab9b1a8. Release run
+45615900190 passed (tag, check, release, pages build, pages deploy), the first release to publish itself to the Pages
+site and the first run of release.yml and pages.yml on checkout and setup-python v7; it published 16 assets, the 14
+posters, `pins.json` and `SHA256SUMS`. `verify-release.py v0.1.1`: the 14 posters match the tree at the tag by their
+checksums, `pins.json` names the tag, and the site serves v0.1.1. On the site, F5 is served as `image/svg+xml` with its
+48 links, the count Chrome found in the tree.
