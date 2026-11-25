@@ -64,7 +64,7 @@ Open them on their own and zoom in.
   and then the 126 import lines between libraries file by file, the 44 files of the Paper library with the part of the
   paper each one's docstring names, and the 12 largest files.
 - [The proof file by file](diagrams/F10-files-2026.11.25.svg): all 323 Lean files, by library and by directory, each
-  with its lines, its declarations (4,618 in all, each linked to its line at the pin), and the files it imports and is
+  with its lines, its declarations (4,623 in all, each linked to its line at the pin), and the files it imports and is
   imported by. The counts on F2's library cards and F5's directory cards open the files they count here.
 
 What each poster checks is in [diagrams/README.md](diagrams/README.md). Which of a poster's words are quoted,
