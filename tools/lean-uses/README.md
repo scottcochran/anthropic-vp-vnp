@@ -60,7 +60,26 @@ names it. A name Table 3 gives two statements is each one's own, and what it nam
 `.match_1`, `.eq_1`, a structure's constructor and fields), or when it is private to a module of vp-vnp; every other
 constant is the library's and is not walked. For each use the file keeps one shortest chain of declarations.
 
-**Not checked:** that the rule for vp-vnp's own constants is complete (a declaration vp-vnp makes under a library's
-name is read as the library's); the export itself against a second reading of the compiled modules, as
-proof-posters:extracting-lean-deps does with a build cache: here the second reading is the text reading of Phase 1,
-and F9 sets the two against each other.
+## The second reading: the compiled modules
+
+`diagrams/src/lean-modules.json` reads the same uses a second way, from the built modules by Lean itself, so that the
+export and its reader are checked against something that does not share them (proof-posters:extracting-lean-deps).
+`ReadModules.lean` imports the 38 modules at the private level, which holds the proofs (vp-vnp's files do not use
+Lean's module system, so the proofs are in the `.olean` itself), and prints every constant a module of vp-vnp defines,
+with the constants its type and value use; `read_modules.py` runs the same walk on that, deciding what is vp-vnp's by
+the module that defines it, and pins its output by `LEAN_MODULES_SHA256` and `meta-modules.json`.
+
+```sh
+# from the vp-vnp folder of the built checkout; bash, since the module list must split into words
+bash -c 'MODS=$(cut -d"-" -f1 $D/export-args.txt); lake env lean --run <this repository>/tools/lean-uses/ReadModules.lean \
+    $MODS > $D/modules/modules.ndjson'          # 2 min, 13,561 constants of vp-vnp from 10,819 imported modules
+uv run python tools/lean-uses/read_modules.py $D/modules/modules.ndjson   # 1 s; prints LEAN_MODULES_SHA256
+```
+
+At FM_COMMIT the two Lean readings agree on all 124 uses and their kinds. The export's rule takes nothing a library
+defines for vp-vnp's, and misses 480 constants vp-vnp's modules define without a name in the source (derived
+instances such as `NS1.instDecidableEqTree`, equation lemmas such as `Fin.consEquiv.eq_1`); through them the modules
+find up to 7 more declarations under 6 statements. F9 records all of this.
+
+**Not checked:** that the export reader's rule is the right one where the two readings part (F3 and F5 draw the
+export's, which counts a little less under 6 statements).

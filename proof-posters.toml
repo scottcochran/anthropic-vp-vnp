@@ -28,7 +28,8 @@ expected_names = ["EXPECTED", "DIRECT", "BORNE", "LEAN_ONLY", "CASES", "COUNTS",
                   "ARROWS", "VERDICTS", "DIRS", "REACHED", "MATRIX", "N_PAPER_NAMES", "NOT_DECLARED",
                   "BEYOND_TABLE3", "UNIVERSES", "STRONGER", "DIFFERENCES", "GLOSSARY", "RENAMES", "IN_NAMES",
                   "IN_TEXT", "N_REFS", "N_CITATIONS", "CITED", "EXPORT_ONLY", "OUTSIDE", "TEXT_ONLY",
-                  "KIND_DIFFERS", "LEAN_COUNTS", "SECTIONS_ADDED"]
+                  "KIND_DIFFERS", "LEAN_COUNTS", "SECTIONS_ADDED", "MODULES_COUNTS", "READINGS_DIFFER",
+                  "RULE_FALSE", "RULE_MISSED", "UNDER_DIFFERS"]
 # The expected_names whose change makes a release MINOR (PLAN.md, "Releases").
 minor_names = ["EXPECTED", "CLAIMS"]
 
@@ -52,6 +53,11 @@ meta = "tools/paper-facts/meta.json"
 name = "LEAN_USES_SHA256"
 file = "diagrams/src/lean-uses.json"
 meta = "tools/lean-uses/meta.json"
+
+[[pins.derived]]
+name = "LEAN_MODULES_SHA256"
+file = "diagrams/src/lean-modules.json"
+meta = "tools/lean-uses/meta-modules.json"
 
 [[pins.reread]]
 name = "PAPER_SHA256"

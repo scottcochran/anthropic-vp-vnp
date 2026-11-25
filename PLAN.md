@@ -152,9 +152,13 @@ rank 1, 2, 3 and 5. F5's coverage was the text reading's blind spot: 46,338 of 4
 under some statement in the elaborated Lean, against 42,168 (91%) reached by name; only 54 lines are under none,
 most in Nc.Rate. Every poster that draws uses now reads the Lean; only F9 draws the text reading, to compare.
 
-Open: the second reading
-proof-posters:extracting-lean-deps asks for (the compiled modules, read by a small Lean program) is here the text
-reading, not a build cache.
+Then the second Lean reading proof-posters:extracting-lean-deps asks for: the compiled modules, read by Lean itself
+(tools/lean-uses/ReadModules.lean, `lake env lean --run`, 2 minutes) into `diagrams/src/lean-modules.json`, pinned by
+`LEAN_MODULES_SHA256`. It gives the same 124 uses as the export, each of the same kind. It decides what is vp-vnp's by
+the defining module, which checks the export reader's rule by name: that rule takes nothing a library defines, and
+misses 480 compiler-made constants (derived instances, equation lemmas), through which the modules find up to 7
+more declarations under 6 statements (A.5, A.6, A.7, G.2, L.3, M.4). F9 records all of it; F3 and F5 draw the
+export's counts. Nothing is open in Phase 2.
 
 ## Releases
 

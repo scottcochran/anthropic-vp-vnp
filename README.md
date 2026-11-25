@@ -58,7 +58,8 @@ Open them on their own and zoom in.
 - [The text against the Lean](diagrams/F9-text-lean-2026.11.25.svg): every use between statements as the source text
   shows it and as the elaborated Lean shows it, from an export of vp-vnp built at the pin. All 100 uses of the text
   reading are confirmed, of the same kind; the Lean shows 24 more, each through a helper outside the Paper library,
-  which the text reading does not walk. F1, R2, R3 and the traces draw the Lean reading.
+  which the text reading does not walk. A second Lean reading, from the compiled modules read by Lean itself, gives the
+  same 124 uses. Every poster that draws uses reads the Lean.
 - [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
   files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
 

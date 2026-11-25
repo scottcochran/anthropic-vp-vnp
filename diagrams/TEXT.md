@@ -32,8 +32,9 @@ fifth, a transcription.
      "home" is a computed label, the section that reaches most of its lines; it says where the code is used from,
      not what it is about.
    - F7, "the Lean writes its own word": computed from `IN_TEXT`. F8's "The most cited": computed from `CITED`.
-   - F9's three cards: computed from `src/lean-uses.json` and the text reading, and guarded by `EXPORT_ONLY`,
-     `OUTSIDE`, `TEXT_ONLY`, `KIND_DIFFERS` and `SECTIONS_ADDED`.
+   - F9's four cards: computed from `src/lean-uses.json`, `src/lean-modules.json` and the text reading, and guarded by
+     `EXPORT_ONLY`, `OUTSIDE`, `TEXT_ONLY`, `KIND_DIFFERS`, `SECTIONS_ADDED`, `MODULES_COUNTS`, `READINGS_DIFFER`,
+     `RULE_FALSE`, `RULE_MISSED` and `UNDER_DIFFERS`.
 5. **A transcription.** F4's boxes and arrows (`BOXES`, `ARROWS`) are this repository's reading of Figure 1 as
    rendered (p. 5), since the PDF's text has the figure's words but not its arrows. The words in its boxes are this
    poster's short wording. What the build checks: that the transcription uses exactly the Lean names the figure

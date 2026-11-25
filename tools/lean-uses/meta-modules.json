@@ -1,0 +1,10 @@
+{
+ "fm_commit": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+ "input": "modules.ndjson",
+ "input_sha256": "d6e36d5ef642bee4a92c28f09ae8c55ee0fb96e1c2110b2186ce2fe05fc65c84",
+ "constants": 13561,
+ "reader": "tools/lean-uses/ReadModules.lean, lean --run with the project's toolchain (lean-toolchain)",
+ "rule": "vp-vnp's own: defined by a module of Statement, Challenge, Solution, Paper, Nc, NS1 or Ov",
+ "output": "diagrams/src/lean-modules.json",
+ "output_sha256": "2fa32a4e2ef6424d4257d64940edde9fb3aa50da2330ae17817fab7c27f9ef40"
+}

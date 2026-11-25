@@ -52,6 +52,10 @@ PAPER_FACTS_SHA256 = "4c5b9ea23fc64aca3d1ce55847c4f6aa78ccd5e3b3d13bad2022438a5d
 # tools/lean-uses/read_export.py (Phase 2); tools/lean-uses/meta.json records the export's hash and the commit.
 LEAN_USES_SHA256 = "b9e1d12356a1d1ef42e972556267f3ccd4eedf86a913d4de517cb9aa3148f92c"
 
+# diagrams/src/lean-modules.json, the second Lean reading: the same uses read from the compiled modules by Lean itself
+# (tools/lean-uses/ReadModules.lean, read_modules.py), which F9 checks against the first; meta-modules.json beside.
+LEAN_MODULES_SHA256 = "2fa32a4e2ef6424d4257d64940edde9fb3aa50da2330ae17817fab7c27f9ef40"
+
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
 LIBRARIES = ("Statement", "Challenge", "Solution", "Paper", "Nc", "NS1", "Ov")
@@ -348,6 +352,14 @@ def load(lean=True):
     s.lean_uses = {k: s.lean["uses"].get(k, {}) for k in s.statements}
     s.lean_reach = {k: set(v) for k, v in s.lean["reach"].items()}
     s.lean_under = {k: set(v) for k, v in s.lean["under"].items()}   # every source declaration under a statement
+    mod_path = SRC / "lean-modules.json"
+    if sha256(mod_path) != LEAN_MODULES_SHA256:
+        raise ValueError(f"src/lean-modules.json hashes to {sha256(mod_path)}, pinned {LEAN_MODULES_SHA256}")
+    mmeta = json.loads((ROOT / "tools" / "lean-uses" / "meta-modules.json").read_text(encoding="utf-8"))
+    if mmeta["fm_commit"] != s.full or mmeta["output_sha256"] != LEAN_MODULES_SHA256:
+        raise ValueError("tools/lean-uses/meta-modules.json does not record FM_COMMIT and the pinned hash")
+    s.lean_modules = json.loads(mod_path.read_text(encoding="utf-8"))
+    s.lean_modules_meta = mmeta
     return s
 
 

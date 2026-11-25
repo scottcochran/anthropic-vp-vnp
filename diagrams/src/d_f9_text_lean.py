@@ -62,6 +62,19 @@ KIND_DIFFERS = []
 LEAN_COUNTS = {"declarations": 63346, "direct": 41, "library": 53351, "uses": 124, "vp_vnp": 9995}
 # Uses between sections that only the export adds (to R2's matrix, which reads the text).
 SECTIONS_ADDED = [("A", "D"), ("F", "H")]
+# The second Lean reading, the compiled modules read by Lean itself (src/lean-modules.json).
+MODULES_COUNTS = {"direct": 41, "modules": 321, "uses": 124, "vp_vnp": 13561}
+# Uses the two Lean readings give differently, or that only one gives: none.
+READINGS_DIFFER = []
+# The export's rule for vp-vnp's own constants, by name, against the modules': names it takes for vp-vnp's that a
+# library defines (none), and how many of vp-vnp's constants it does not take (compiler-made: derived instances,
+# equation lemmas).
+RULE_FALSE = []
+RULE_MISSED = 480
+# Statements under whose Lean theorems the modules find more declarations than the export: (declarations, their lines,
+# declarations the export finds and the modules do not). Reached through the constants the rule misses.
+UNDER_DIFFERS = {"Corollary L.3": (2, 16, 0), "Corollary M.4": (2, 16, 0), "Proposition A.5": (7, 35, 0),
+                 "Proposition A.7": (3, 11, 0), "Theorem A.6": (3, 11, 0), "Theorem G.2": (4, 15, 0)}
 
 
 def sec(k):
@@ -92,6 +105,24 @@ def build():
     compare("F9: the uses between sections only the export adds", SECTIONS_ADDED, sorted(secE - secT), reread)
     t1 = {(u, r["section"]) for r in src.facts["table1"] for u in r["uses"]}
     m = src.lean_meta
+    mods = src.lean_modules
+    compare("F9: the counts of the module reading", MODULES_COUNTS, mods["counts"], "src/lean-modules.json")
+    Mu = {(u, k): h for k, v in mods["uses"].items() for u, h in v.items()}
+    compare("F9: the uses the two Lean readings give differently", READINGS_DIFFER,
+            sorted({(u, k, E.get((u, k)), Mu.get((u, k))) for (u, k) in set(E) | set(Mu) if E.get((u, k)) != Mu.get((u, k))}),
+            "src/lean-uses.json and src/lean-modules.json")
+    compare("F9: constants the export's rule takes for vp-vnp's that a library defines", RULE_FALSE,
+            mods["rule"]["by_name_not_by_module"], "src/lean-modules.json")
+    compare("F9: vp-vnp's constants the export's rule does not take", RULE_MISSED,
+            len(mods["rule"]["by_module_not_by_name"]), "src/lean-modules.json")
+    under = {}
+    for k in lean["under"]:
+        extra = set(mods["under"][k]) - set(lean["under"][k])
+        fewer = set(lean["under"][k]) - set(mods["under"][k])
+        if extra or fewer:
+            under[k] = (len(extra), sum(src.decls[n]["lines"] for n in extra), len(fewer))
+    compare("F9: where the two Lean readings find different declarations under a statement", UNDER_DIFFERS, under,
+            "src/lean-uses.json and src/lean-modules.json")
 
     def lean_link(n):
         d = src.decls.get(n)
@@ -116,7 +147,7 @@ def build():
            "proofs are correct: that is the claim of the formal-math repository's CI.", S + 0.5, "muted")
     y += 70
 
-    cw = (c.x1 - x0 - 2 * G) / 3
+    cw = (c.x1 - x0 - 3 * G) / 4
     cards = [
         ("The text reading, confirmed", "teal",
          [f"All {len(T)} uses the text shows are in the Lean reading, {same} of {len(T)}, and each of the same kind: "
@@ -132,6 +163,16 @@ def build():
           f"text reading ({len(t1 & secT)}): the other {len(t1 - secE)} are uses the elaborated Lean does not make "
           "either.", "It adds " + ", ".join(f"{a}→{b}" for a, b in SECTIONS_ADDED) + " to the uses Table 1 does not "
           "list (R2 draws the Lean reading's)."]),
+        ("A second Lean reading: the compiled modules", "blue",
+         [f"Read by Lean itself from the built modules ({mods['counts']['vp_vnp']} constants of vp-vnp, "
+          "tools/lean-uses/ReadModules.lean): the same "
+          f"{mods['counts']['uses']} uses, each of the same kind ({mods['counts']['direct']} direct). "
+          "No use differs (`READINGS_DIFFER`).",
+          f"The export's rule for what is vp-vnp's, by name, takes nothing a library defines, and misses "
+          f"{RULE_MISSED} compiler-made constants (derived instances, equation lemmas). Through them the modules find "
+          f"a few more declarations under {len(UNDER_DIFFERS)} statements, at most "
+          f"{max(v[0] for v in UNDER_DIFFERS.values())} ({', '.join(f'`{anchor_of(k)}`' for k in UNDER_DIFFERS)}); "
+          "F3 and F5 draw the export's."]),
     ]
     hs = [c.card(0, 0, cw, t, b, accent=a, size=S + 0.5, draw=False) for t, a, b in cards]
     for i, (t, a, b) in enumerate(cards):
