@@ -79,6 +79,12 @@ Standard library only, Python 3.12 or later. The source is the vp-vnp folder of 
 (`.github/workflows/posters.yml`) checks formal-math out at the pin, regenerates the posters and fails on any byte
 that differs.
 
+## Releases
+
+A release is a signed version tag, pushed by the custodian; its workflow (`.github/workflows/release.yml`) checks the
+posters at the tag and publishes every SVG with `SHA256SUMS` and `pins.json`, which names the formal-math commit and the
+four pinned hashes, so that a poster can be cited by release (PLAN.md, Releases).
+
 ## Licence
 
 Code under Apache-2.0 (`LICENSE`), prose and posters under CC BY 4.0 (`LICENSE-DOCS`). The quotations of vp-vnp's

@@ -48,5 +48,5 @@ It reads this repository's paths from `proof-posters.toml`. The poster recipe is
 | `proof-posters:moving-pins` | formal-math moved; `FM_COMMIT`, `PAPER_SHA256`, `PAPER_FACTS_SHA256` or `LEAN_USES_SHA256` fails |
 | `proof-posters:extracting-lean-deps` | `diagrams/src/lean-uses.json` must be rebuilt (`tools/lean-uses/README.md`) |
 | `proof-posters:linking-posters` | a link lands on nothing, or a new card or row should be reachable |
-| `proof-posters:cutting-releases` | a release is due (no release workflow exists yet: PLAN.md) |
+| `proof-posters:cutting-releases` | a release is due (PLAN.md, Releases), or a published one needs checking |
 | `drawing-posters` | a poster is added, or its layout or wording changes |

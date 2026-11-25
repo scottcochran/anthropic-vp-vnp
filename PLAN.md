@@ -162,6 +162,18 @@ export's counts. Nothing is open in Phase 2.
 
 ## Releases
 
-Not set up. There is no release workflow yet. When there is one, the classes are riemann-diagrams': MAJOR for a
-change of what a poster is, MINOR for a poster added or removed or a change to `EXPECTED` or `CLAIMS`, and PATCH
-otherwise.
+A release is a version tag, `vMAJOR.MINOR.PATCH`, annotated and signed, on `main`, pushed by the custodian
+(scottcochran) and never moved, re-pointed, deleted or re-created; a release found wrong gets a successor. On the tag,
+`.github/workflows/release.yml` runs the posters check, writes `pins.json` (the formal-math commit, the four pinned
+hashes, the run) and `SHA256SUMS`, and publishes every poster's SVG with notes from `tools/release-notes.py`
+(proof-posters:cutting-releases). There is no Pages site: the repository is private.
+
+| Part | When it changes | What a reader of a cited poster has to do |
+|---|---|---|
+| MAJOR | The checks change: what a poster is verified against (a kind of check added, removed or redefined), or the source of the uses is replaced | Re-read every poster |
+| MINOR | `FM_COMMIT` moves, or a poster is added or removed, or a recorded `EXPECTED` or `CLAIMS` changes | Re-read the posters the tag message names |
+| PATCH | Layout, wording or library; no pin moves and every recorded list is unchanged | Nothing: the same statements and uses, drawn again |
+
+Before 1.0 a MAJOR change may go out as MINOR, and its tag message then says what is checked differently. The
+date in the posters' file names changes with every regeneration, and is not a move by itself.
+
