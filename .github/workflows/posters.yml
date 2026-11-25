@@ -4,6 +4,12 @@
 # from. The generator checks that the checkout is at the pin, that paper.pdf and src/paper-facts.json hash to their
 # pins, and that every poster's sources say what the poster records; any WARNING or ERROR line makes it exit 1. The
 # byte comparison then says whether the committed posters are the ones these sources produce.
+#
+# Then the method's own checks, from the proof-posters plugin (scottcochran/riemann-diagrams) at PROOF_POSTERS_COMMIT
+# below: check-expectations.py --strict (every recorded name is a literal, assigned once and read), check-links.py
+# (every link lands on an id the committed manifest lists, or on formal-math at the pin) and determinism.py (two
+# rounds, PYTHONHASHSEED 0 and 1, byte-identical). They read this repository's paths from proof-posters.toml. The
+# plugin pin is a tool's, not a source's: move it deliberately when the plugin gains a check, as with FM_COMMIT.
 name: posters
 
 on:
@@ -15,6 +21,9 @@ on:
 
 permissions:
   contents: read
+
+env:
+  PROOF_POSTERS_COMMIT: 37fecadb9a2bb234ef1849d2467ae476f86829d4   # riemann-diagrams, proof-posters 0.4.2
 
 jobs:
   regenerate:
@@ -73,5 +82,45 @@ jobs:
           if [ -n "$(git status --porcelain -- diagrams)" ]; then
             echo "::error::a poster differs from its sources, or is not committed; regenerate and commit"
             git diff --stat -- diagrams
+            exit 1
+          fi
+
+      - name: Check out the proof-posters plugin at its pin
+        uses: actions/checkout@v5
+        with:
+          repository: scottcochran/riemann-diagrams
+          ref: ${{ env.PROOF_POSTERS_COMMIT }}
+          path: riemann-diagrams
+          sparse-checkout: |
+            plugins/proof-posters
+          sparse-checkout-cone-mode: true
+
+      - name: uv, for the generator command proof-posters.toml names
+        uses: astral-sh/setup-uv@1db35dd8eee11c5894872e0b383ae6c406cf738d   # v10.4.0
+        with:
+          python-version: "3.12"
+
+      - name: Every expectation is recorded as a literal, once, and read
+        shell: bash
+        run: |
+          cd posters
+          python3 ../riemann-diagrams/plugins/proof-posters/skills/recording-expectations/scripts/check-expectations.py --strict
+
+      - name: Every link lands
+        shell: bash
+        run: |
+          cd posters
+          python3 ../riemann-diagrams/plugins/proof-posters/skills/linking-posters/scripts/check-links.py
+
+      - name: Two rounds, two hash seeds, the same bytes
+        shell: bash
+        env:
+          VP_VNP: ${{ github.workspace }}/formal-math/vp-vnp
+        run: |
+          cd posters
+          python3 ../riemann-diagrams/plugins/proof-posters/skills/moving-pins/scripts/determinism.py
+          if [ -n "$(git status --porcelain -- diagrams)" ]; then
+            echo "::error::the determinism rounds left a poster different from the committed one"
+            git status --porcelain -- diagrams
             exit 1
           fi

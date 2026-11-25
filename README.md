@@ -76,8 +76,12 @@ uv run python diagrams/gen-diagrams.py        # all four; exits 1 with a NOTE wh
 
 Standard library only, Python 3.12 or later. The source is the vp-vnp folder of a formal-math checkout at
 `FM_COMMIT`. By default that is `../vp-np`; set `VP_VNP` to use another. CI
-(`.github/workflows/posters.yml`) checks formal-math out at the pin, regenerates the posters and fails on any byte
-that differs.
+(`.github/workflows/posters.yml`, on every push to main and every pull request) checks formal-math out at the pin,
+regenerates the posters and fails on any byte that differs, then runs the proof-posters plugin's
+`check-expectations.py --strict`, `check-links.py` and `determinism.py` from riemann-diagrams at
+`PROOF_POSTERS_COMMIT` (proof-posters 0.4.2). A daily run (`.github/workflows/sources.yml`) fails when formal-math's
+main has commits after `FM_COMMIT` that touch vp-vnp, or when the pin is no longer on main; it only reports, and the
+pin is moved by hand (proof-posters:moving-pins).
 
 ## Releases
 

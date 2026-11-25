@@ -1,0 +1,77 @@
+# Check, every day, whether the source has moved past its pin: whether anthropics/formal-math's main has commits
+# after FM_COMMIT (diagrams/src/vp.py) that touch the vp-vnp folder, and whether FM_COMMIT is still on main at all.
+# Every file the posters read is read at FM_COMMIT, so nothing they draw changes until the pin moves; a failure
+# here means the posters may be behind their source, not that anything is broken. Adapted from riemann-diagrams'
+# sources.yml, which re-reads web pages; here the only thing that can go stale is the pin.
+#
+# The job only reports. A failed scheduled run is what notifies the repository (GitHub mails whoever last changed
+# this schedule); the run's summary lists the commits. To take them in: proof-posters:moving-pins (bump FM_COMMIT,
+# regenerate, fix what the checks report). Commits elsewhere in formal-math are counted but do not fail the run.
+#
+# GitHub turns a schedule off after 60 days without activity in the repository; run it by hand (Actions, sources,
+# Run workflow) to check at any time, or to turn it back on.
+name: sources
+
+on:
+  schedule:
+    - cron: "17 6 * * *"        # 06:17 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out this repository
+        uses: actions/checkout@v5
+        with:
+          path: posters
+
+      - name: Clone formal-math's main, history only
+        run: |
+          git clone -q --filter=blob:none --no-checkout --single-branch --branch main \
+            https://github.com/anthropics/formal-math.git formal-math
+
+      - name: What lies between the pin and main
+        run: |
+          pin=$(python3 -c "import re; print(re.search(r'^FM_COMMIT = \"([0-9a-f]+)\"', open('posters/diagrams/src/vp.py').read(), re.M).group(1))")
+          cd formal-math
+          head=$(git rev-parse --short=10 origin/main)
+          commits() { if [ "$1" = 1 ]; then echo "1 commit"; else echo "$1 commits"; fi; }
+          full=$(git rev-parse --verify -q "$pin^{commit}") || {
+            echo "::error::FM_COMMIT = $pin is not a commit of formal-math's main history"
+            exit 1
+          }
+          git merge-base --is-ancestor "$full" origin/main || {
+            echo "::error::FM_COMMIT = $pin is not an ancestor of formal-math's main ($head)"
+            exit 1
+          }
+          all=$(git rev-list --count "$full..origin/main")
+          ours=$(git rev-list --count "$full..origin/main" -- vp-vnp)
+          {
+            echo "### FM_COMMIT = $pin against formal-math's main ($head)"
+            echo
+            echo "$(commits "$all") on main after the pin, $ours of them touching vp-vnp."
+            if [ "$ours" != 0 ]; then
+              echo
+              echo '```'
+              git log --format='%h %ad %s' --date=short "$full..origin/main" -- vp-vnp
+              echo '```'
+              echo
+              echo "Files of vp-vnp they change:"
+              echo
+              echo '```'
+              git diff --name-status "$full" origin/main -- vp-vnp
+              echo '```'
+            fi
+          } | tee -a "$GITHUB_STEP_SUMMARY"
+          if [ "$ours" != 0 ]; then
+            echo "::error::vp-vnp has $(commits "$ours") after FM_COMMIT = $pin; move the pin (proof-posters:moving-pins)"
+            exit 1
+          fi

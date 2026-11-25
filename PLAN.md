@@ -15,6 +15,12 @@
 - **No map set.** riemann-diagrams has one because the proof's source there is unlicensed. vp-vnp is Apache-2.0, so
   the posters quote it under that licence (NOTICE).
 - **The light page** is riemann-diagrams' measured `#eeeeee`, not measured again for these posters.
+- **CI runs the method's checks** (2026.11.25). `posters.yml` runs, after the byte comparison, proof-posters'
+  `check-expectations.py --strict`, `check-links.py` and `determinism.py`, from riemann-diagrams at
+  `PROOF_POSTERS_COMMIT = 37fecad` (proof-posters 0.4.2), so that a pull request and a release tag are held to what
+  each phase's done note records by hand. The plugin pin is moved deliberately, like `FM_COMMIT`. `sources.yml`
+  checks daily whether formal-math's main has commits after `FM_COMMIT` that touch vp-vnp, or has lost the pin; it
+  only reports, since every file is read at the pin and nothing drawn changes until the pin moves.
 
 ## Phase 1: the first four posters (2026.11.25)
 
