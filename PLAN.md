@@ -253,3 +253,9 @@ site and the first run of release.yml and pages.yml on checkout and setup-python
 posters, `pins.json` and `SHA256SUMS`. `verify-release.py v0.1.1`: the 14 posters match the tree at the tag by their
 checksums, `pins.json` names the tag, and the site serves v0.1.1. On the site, F5 is served as `image/svg+xml` with its
 48 links, the count Chrome found in the tree.
+
+Done, v0.2.0 (2026.11.25): MINOR, F10 and Phase 3b's count links, signed and pushed by the custodian on a4c88f4 (the
+README's count of F10's declarations set right after fea6bb7). Release run 45620432376 passed (tag, check, release,
+pages build, pages deploy); it published 17 assets, the 15 posters, `pins.json` and `SHA256SUMS`. `verify-release.py
+v0.2.0`: the 15 posters match the tree at the tag by their checksums, `pins.json` names the tag, and the site serves
+v0.2.0. On the site, F10 is served as `image/svg+xml`, 2,261,176 bytes, with its 6,121 links, and the index lists it.
