@@ -26,6 +26,8 @@ env:
   PROOF_POSTERS_COMMIT: 37fecadb9a2bb234ef1849d2467ae476f86829d4   # riemann-diagrams, proof-posters 0.4.2
 
 jobs:
+  # The ruleset "main: posters must pass" (id 28073225) requires this job by its name: rename it there too, or every
+  # pull request waits for a check that never reports.
   regenerate:
     runs-on: ubuntu-latest
     steps:

@@ -21,6 +21,10 @@
   each phase's done note records by hand. The plugin pin is moved deliberately, like `FM_COMMIT`. `sources.yml`
   checks daily whether formal-math's main has commits after `FM_COMMIT` that touch vp-vnp, or has lost the pin; it
   only reports, since every file is read at the pin and nothing drawn changes until the pin moves.
+- **A merge into main needs the posters check** (2026.11.25). The ruleset "main: posters must pass" (id 28073225)
+  requires `regenerate`, the posters job, from GitHub Actions; a branch need not be up to date with main. The admin
+  role bypasses it, so the custodian still pushes to main directly, and posters runs on that push. It names the job:
+  renaming `regenerate` means changing the ruleset with it.
 
 ## Phase 1: the first four posters (2026.11.25)
 
