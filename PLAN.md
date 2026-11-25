@@ -125,11 +125,22 @@ row covered it. They now follow the plugin's form for a row, a group `rd-row` wh
 style frames (3 px, amber), as `[links].frame_classes` now lists. Both themes; with reduced motion the frame stays
 and does not pulse.
 
-## Phase 2: checking the uses against the Lean (planned)
+## Phase 2: checking the uses against the Lean (2026.11.25)
 
-Build vp-vnp at its toolchain (Lean 4.33.1, Mathlib `0df444a360e`), export it with lean4export, and derive a pinned
-`src/lean-uses.json` (proof-posters:extracting-lean-deps). Then give each use on F1 and R2 a verdict, as
-riemann-diagrams' F7 does. Until then, every use is labelled as read from the text.
+vp-vnp built once at `FM_COMMIT` with its toolchain (Lean 4.33.1, Mathlib `0df444a360e`) in a fresh clone outside the
+repository (11 GB, 47 minutes), Solution's theorems and Table 3's exported with their dependency closure by
+lean4export 3.1.0 (625 MB), and the uses between statements read from the elaborated terms into
+`diagrams/src/lean-uses.json`, pinned by `LEAN_USES_SHA256` (tools/lean-uses/README.md).
+
+Found: the export holds 63,346 declarations, 9,995 of them vp-vnp's. All 100 uses of the text reading are in it,
+each of the same kind (41 direct); none is only in the text. It shows 24 more, all through helpers, and on the
+shortest chain of each lies a declaration outside the Paper library (Nc.Price, Ov.Spec, Nc.Flag, NS1), which the text
+reading does not walk by design. At the level of sections it adds A→D and F→H; the 7 uses that only Table 1 lists
+are not made by the elaborated Lean either. F9 draws this; F1, R2, R3 and the traces still draw the text reading.
+
+Open: whether F1, R2 and R3 should draw the Lean reading instead, or mark the 24; the second reading
+proof-posters:extracting-lean-deps asks for (the compiled modules, read by a small Lean program) is here the text
+reading, not a build cache.
 
 ## Releases
 

@@ -1,0 +1,20 @@
+{
+ "fm_commit": "11b6c7e3c927df2658f513b6b68ea7f8929c62c5",
+ "export": "vp-vnp.ndjson",
+ "export_sha256": "42d55bce6fee3e1843c71712bf4590e043d48e533b2c9eb0a523d39510621784",
+ "export_lines": 11700833,
+ "exporter": {
+  "name": "lean4export",
+  "version": "3.1.0"
+ },
+ "lean": {
+  "githash": "819816b2e0a3bf405af45ae5c7af2491d8f5bee6",
+  "version": "4.33.1"
+ },
+ "format": {
+  "version": "3.1.0"
+ },
+ "rule": "vp-vnp's own: a name the source declares, a name extending one, or _private.<vp-vnp module>.0.*",
+ "output": "diagrams/src/lean-uses.json",
+ "output_sha256": "5d7ee5bfd719d8650d083b0d895be25b422eb21ccc1a2d46a176f8e7c38da829"
+}

@@ -1,0 +1,1071 @@
+{
+ "absent": [],
+ "chains": {
+  "Corollary E.2": {
+   "Proposition E.1": [
+    "Paper.cor_clauses",
+    "Paper.gridComplete_perm",
+    "Paper.prop_grid"
+   ]
+  },
+  "Corollary L.3": {
+   "Theorem L.2": [
+    "Paper.cor_classes",
+    "Paper.thm_simple"
+   ]
+  },
+  "Corollary M.4": {
+   "Theorem M.3": [
+    "Paper.cor_allclasses",
+    "Paper.thm_allfields"
+   ]
+  },
+  "Definition A.1": {},
+  "Definition A.4": {},
+  "Definition D.1": {},
+  "Definition G.1": {},
+  "Definition J.1": {},
+  "Definition K.1": {},
+  "Definition N.1": {},
+  "Display (F.1)": {
+   "Lemma C.4": [
+    "Paper.projection_nearest",
+    "Paper.projection_var",
+    "Paper.lem_toolkit"
+   ],
+   "Lemma F.3": [
+    "Paper.eq_window",
+    "Paper.lem_first"
+   ]
+  },
+  "Lemma A.2": {
+   "Definition A.1": [
+    "Paper.lem_exponents",
+    "Paper.def_spectral_congr"
+   ]
+  },
+  "Lemma A.3": {},
+  "Lemma B.1": {},
+  "Lemma C.2": {
+   "Definition A.1": [
+    "Paper.lem_means",
+    "Paper.lem_means_limit",
+    "Paper.meanLength_len",
+    "Paper.lem_means_lip",
+    "Nc.Price.IsPrice.self",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents_symm",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_means",
+    "Paper.lem_means_limit",
+    "Paper.meanLength_len",
+    "Paper.lem_means_lip",
+    "Nc.Price.IsPrice.self",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Proposition B.3": [
+    "Paper.lem_means",
+    "Paper.lem_means_limit",
+    "Paper.meanLength_len",
+    "Paper.lem_means_lip",
+    "Paper.eq_Q"
+   ]
+  },
+  "Lemma C.4": {},
+  "Lemma E.3": {
+   "Corollary E.2": [
+    "Paper.lem_fkl_perm",
+    "Paper.cor_clauses"
+   ]
+  },
+  "Lemma E.4": {},
+  "Lemma E.7": {
+   "Definition A.1": [
+    "Paper.lem_few",
+    "Nc.Price.few",
+    "Nc.Price.pow_le_few",
+    "Nc.Price.le_type_bound",
+    "Ov.Spec.unit_eq",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ]
+  },
+  "Lemma E.8": {
+   "Definition A.1": [
+    "Paper.lem_convex",
+    "Paper.hexp_convex",
+    "Paper.hexp_le_mean_add",
+    "Ov.Spec.e_self",
+    "Paper.lem_exponents_self",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_convex",
+    "Paper.hexp_convex",
+    "Paper.hexp_le_mean_add",
+    "Paper.sq_dist_midpoint_le",
+    "Nc.Price.IsPrice.nonneg",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Proposition A.7": [
+    "Paper.lem_convex",
+    "Paper.hexp_convex",
+    "Paper.hexp_le_mean_add",
+    "Paper.exists_mix_hexp",
+    "Paper.exists_mix_spec_keep",
+    "Paper.prop_extend"
+   ],
+   "Theorem C.1": [
+    "Paper.lem_convex",
+    "Paper.hexp_convex",
+    "Paper.hexp_le_mean_add",
+    "Paper.sq_dist_midpoint_le",
+    "Paper.thm_cn"
+   ]
+  },
+  "Lemma F.1": {},
+  "Lemma F.2": {},
+  "Lemma F.3": {
+   "Lemma F.1": [
+    "Paper.lem_first",
+    "Paper.lem_first_double",
+    "Paper.lem_first_block",
+    "Paper.lem_growth"
+   ],
+   "Lemma F.2": [
+    "Paper.lem_first",
+    "Paper.lem_first_double",
+    "Paper.lem_first_block",
+    "Paper.lem_first_rank_one",
+    "Paper.lem_words"
+   ]
+  },
+  "Lemma F.4": {
+   "Display (F.1)": [
+    "Paper.lem_tele",
+    "Paper.projection_nearest"
+   ],
+   "Lemma C.4": [
+    "Paper.lem_tele",
+    "Paper.lem_toolkit"
+   ]
+  },
+  "Lemma F.5": {
+   "Display (F.1)": [
+    "Paper.lem_angle",
+    "Paper.lem_angle_projections",
+    "Paper.projection_nearest"
+   ],
+   "Lemma C.4": [
+    "Paper.lem_angle",
+    "Paper.segment_fixed",
+    "Paper.lem_toolkit"
+   ],
+   "Lemma F.4": [
+    "Paper.lem_angle",
+    "Paper.lem_tele"
+   ]
+  },
+  "Lemma I.2": {},
+  "Lemma K.2": {},
+  "Lemma K.3": {
+   "Lemma K.2": [
+    "Paper.lem_circuit",
+    "Paper.lem_circuit_program",
+    "Paper.lem_lowdeg"
+   ],
+   "Proposition E.1": [
+    "Paper.lem_circuit_perm",
+    "Paper.gridComplete_perm",
+    "Paper.prop_grid"
+   ],
+   "Proposition I.1": [
+    "Paper.lem_circuit",
+    "Paper.lem_circuit_universal",
+    "Paper.prop_universal"
+   ]
+  },
+  "Lemma K.4": {},
+  "Lemma M.1": {},
+  "Lemma N.2": {},
+  "Lemma N.3": {
+   "Definition A.1": [
+    "Paper.lem_few_approx",
+    "Nc.Price.few",
+    "Nc.Price.pow_le_few",
+    "Nc.Price.le_type_bound",
+    "Ov.Spec.unit_eq",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ]
+  },
+  "Proposition A.5": {},
+  "Proposition A.7": {
+   "Definition A.1": [
+    "Paper.prop_extend",
+    "Paper.def_spectral_congr"
+   ],
+   "Proposition A.5": [
+    "Paper.prop_extend",
+    "Paper.prop_gauge"
+   ]
+  },
+  "Proposition A.8": {
+   "Definition A.1": [
+    "Paper.prop_random",
+    "Nc.Price.IsPrice.nonneg",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents_symm",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.prop_random",
+    "Nc.Price.IsPrice.nonneg",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Proposition A.7": [
+    "Paper.prop_random",
+    "Paper.prop_random_limit",
+    "Paper.prop_random_spectral",
+    "Paper.prop_extend"
+   ]
+  },
+  "Proposition B.2": {},
+  "Proposition B.3": {
+   "Definition A.1": [
+    "Paper.prop_crossing",
+    "Paper.prop_crossing_first",
+    "Paper.prop_crossing_spectral",
+    "Ov.Spec.e_nonneg",
+    "Paper.lem_exponents_unit_interval",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.prop_crossing",
+    "Paper.prop_crossing_first",
+    "Paper.prop_crossing_spectral",
+    "Paper.prop_crossing_term",
+    "Paper.prop_crossing_hubs_c",
+    "Paper.prop_crossing_cut",
+    "Paper.lem_hubs"
+   ],
+   "Lemma B.1": [
+    "Paper.prop_crossing",
+    "Paper.prop_crossing_first",
+    "Paper.prop_crossing_spectral",
+    "Paper.prop_crossing_tensors",
+    "Paper.lem_count"
+   ],
+   "Proposition B.2": [
+    "Paper.prop_crossing",
+    "Paper.prop_crossing_first",
+    "Paper.prop_crossing_spectral",
+    "Paper.prop_crossing_tensors",
+    "Paper.prop_identity"
+   ]
+  },
+  "Proposition C.3": {
+   "Definition A.1": [
+    "Paper.prop_space",
+    "Nc.Price.IsPrice.self",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents_symm",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.prop_space",
+    "Nc.Price.IsPrice.self",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Proposition A.8": [
+    "Paper.prop_space",
+    "Paper.prop_space_midpoints",
+    "Paper.prop_space_step",
+    "Paper.prop_random_finite",
+    "Paper.prop_random"
+   ],
+   "Theorem C.1": [
+    "Paper.prop_space",
+    "Paper.thm_cn"
+   ]
+  },
+  "Proposition E.1": {},
+  "Proposition E.10": {
+   "Definition A.1": [
+    "Paper.prop_flat_rate",
+    "Paper.someSetPays_of_few",
+    "Paper.hubTen_price",
+    "Ov.Spec.wire_eq",
+    "Paper.lem_exponents_wire",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.prop_flat_rate",
+    "Paper.prop_flat_lower_sum",
+    "Paper.lem_hubs"
+   ],
+   "Lemma E.4": [
+    "Paper.prop_flat_rate",
+    "Paper.prop_flat_lower_sum",
+    "Paper.lem_balanced_cf",
+    "Paper.lem_balanced"
+   ],
+   "Lemma E.7": [
+    "Paper.prop_flat_rate",
+    "Paper.lem_few"
+   ],
+   "Proposition E.9": [
+    "Paper.prop_flat_rate",
+    "Paper.rate_of_someSetPays",
+    "Paper.prop_cube"
+   ]
+  },
+  "Proposition E.5": {
+   "Definition A.1": [
+    "Paper.prop_flat_lower",
+    "Paper.hubTen_price",
+    "Ov.Spec.wire_eq",
+    "Paper.lem_exponents_wire",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.prop_flat_lower",
+    "Paper.prop_flat_lower_sum",
+    "Paper.lem_hubs"
+   ],
+   "Lemma E.4": [
+    "Paper.prop_flat_lower",
+    "Paper.prop_flat_lower_sum",
+    "Paper.lem_balanced_cf",
+    "Paper.lem_balanced"
+   ]
+  },
+  "Proposition E.9": {
+   "Definition A.1": [
+    "Paper.prop_cube",
+    "Nc.Price.hexp_le_of_two",
+    "Ov.Spec.e_nonneg",
+    "Paper.lem_exponents_unit_interval",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma E.8": [
+    "Paper.prop_cube",
+    "Paper.lem_convex"
+   ]
+  },
+  "Proposition H.1": {
+   "Lemma F.2": [
+    "Paper.prop_tower",
+    "Nc.Flag.mem_of_x",
+    "Paper.lem_words"
+   ]
+  },
+  "Proposition I.1": {},
+  "Proposition J.2": {
+   "Lemma I.2": [
+    "Paper.prop_pieces",
+    "Paper.lem_runnet"
+   ],
+   "Theorem H.2": [
+    "Paper.prop_pieces",
+    "Paper.thm_tree"
+   ]
+  },
+  "Proposition K.5": {
+   "Lemma K.4": [
+    "Paper.prop_next",
+    "Paper.prop_next_round",
+    "NS1.round",
+    "Paper.lem_postpone"
+   ],
+   "Theorem J.4": [
+    "Paper.scales_setting",
+    "Paper.exists_setting"
+   ]
+  },
+  "Proposition M.2": {},
+  "Proposition N.4": {
+   "Lemma K.4": [
+    "Paper.prop_approx_acc",
+    "Paper.prop_approx_acc_hasAcc",
+    "Paper.prop_approx_acc_exact",
+    "Paper.lem_postpone"
+   ],
+   "Theorem J.4": [
+    "Paper.prop_approx_acc_setting",
+    "Paper.exists_setting"
+   ],
+   "Theorem K.6": [
+    "Paper.prop_approx_acc",
+    "Paper.thm_noacc"
+   ]
+  },
+  "Remark N.6": {},
+  "Theorem A.6": {
+   "Definition A.1": [
+    "Paper.thm_duality",
+    "Paper.def_spectral_congr"
+   ],
+   "Proposition A.5": [
+    "Paper.thm_duality",
+    "Paper.prop_gauge"
+   ]
+  },
+  "Theorem C.1": {
+   "Definition A.1": [
+    "Paper.thm_cn",
+    "Nc.Price.IsPrice.nonneg",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents_symm",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.thm_cn",
+    "Nc.Price.IsPrice.nonneg",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Lemma C.2": [
+    "Paper.thm_cn",
+    "Paper.thm_cn_end",
+    "Paper.lem_means_norm",
+    "Paper.lem_means"
+   ],
+   "Proposition A.8": [
+    "Paper.thm_cn",
+    "Paper.thm_cn_fan",
+    "Paper.thm_cn_segments",
+    "Paper.prop_random_finite",
+    "Paper.prop_random"
+   ],
+   "Proposition B.3": [
+    "Paper.thm_cn",
+    "Paper.thm_cn_end",
+    "Paper.thm_cn_i",
+    "Paper.fanWs_lip",
+    "Paper.lem_means_lip",
+    "Paper.eq_Q"
+   ]
+  },
+  "Theorem D.2": {
+   "Definition A.1": [
+    "Paper.thm_alt",
+    "Paper.thm_alt_euclidean",
+    "Paper.thm_alt_rank_price",
+    "Paper.thm_alt_extremal",
+    "Paper.thm_alt_bounded",
+    "Nc.Price.IsPrice.self",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents_symm",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.thm_alt",
+    "Paper.thm_alt_euclidean",
+    "Paper.thm_alt_rank_price",
+    "Paper.thm_alt_extremal",
+    "Paper.thm_alt_bounded",
+    "Nc.Price.IsPrice.self",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Lemma C.4": [
+    "Paper.thm_alt",
+    "Paper.thm_alt_euclidean",
+    "Paper.thm_alt_cube",
+    "Paper.thm_alt_fill",
+    "Paper.lem_toolkit"
+   ],
+   "Proposition C.3": [
+    "Paper.thm_alt",
+    "Paper.thm_alt_euclidean",
+    "Paper.prop_space"
+   ]
+  },
+  "Theorem E.11": {
+   "Lemma E.3": [
+    "Paper.thm_flat_rate",
+    "Paper.lem_fkl_perm"
+   ],
+   "Proposition E.10": [
+    "Paper.thm_flat_rate",
+    "Paper.prop_flat_rate"
+   ]
+  },
+  "Theorem E.6": {
+   "Lemma E.3": [
+    "Paper.thm_flat_simple",
+    "Paper.lem_fkl_perm"
+   ],
+   "Proposition E.5": [
+    "Paper.thm_flat_simple",
+    "Paper.prop_flat_lower"
+   ]
+  },
+  "Theorem F.6": {
+   "Display (F.1)": [
+    "Paper.thm_poincare",
+    "Paper.thm_poincare_action",
+    "Paper.thm_poincare_limit",
+    "Paper.projection_nearest"
+   ],
+   "Lemma C.4": [
+    "Paper.thm_poincare",
+    "Paper.lem_toolkit"
+   ],
+   "Lemma F.2": [
+    "Paper.thm_poincare",
+    "Paper.thm_poincare_action",
+    "Paper.thm_poincare_limit",
+    "Nc.Flag.mem_of_x",
+    "Paper.lem_words"
+   ],
+   "Lemma F.3": [
+    "Paper.thm_poincare",
+    "Paper.thm_poincare_size",
+    "Paper.lem_first"
+   ],
+   "Lemma F.5": [
+    "Paper.thm_poincare",
+    "Paper.thm_poincare_action",
+    "Paper.thm_poincare_limit",
+    "Paper.thm_poincare_step",
+    "Paper.thm_poincare_pairs",
+    "Paper.lem_angle"
+   ],
+   "Proposition C.3": [
+    "Paper.thm_poincare",
+    "Paper.prop_space"
+   ]
+  },
+  "Theorem G.2": {
+   "Definition A.1": [
+    "Paper.thm_laws",
+    "Paper.thm_laws_poincare",
+    "Nc.Price.IsPrice.symm",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents_symm",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.thm_laws",
+    "Paper.thm_laws_poincare",
+    "Nc.Price.IsPrice.symm",
+    "Paper.def_price_pseudometric",
+    "Paper.lem_exponents"
+   ],
+   "Lemma F.2": [
+    "Paper.thm_laws",
+    "Paper.thm_laws_over_field",
+    "Paper.indices_agree",
+    "Nc.Flag.const_of_x",
+    "Nc.Flag.mem_of_x",
+    "Paper.lem_words"
+   ],
+   "Theorem A.6": [
+    "Paper.thm_laws",
+    "Paper.thm_laws_over_field",
+    "Paper.thm_laws_cover",
+    "Paper.thm_duality"
+   ],
+   "Theorem F.6": [
+    "Paper.thm_laws",
+    "Paper.thm_laws_poincare",
+    "Paper.thm_poincare"
+   ]
+  },
+  "Theorem H.2": {
+   "Proposition H.1": [
+    "Paper.thm_tree",
+    "Paper.tree_towers",
+    "Paper.prop_tower"
+   ]
+  },
+  "Theorem J.3": {
+   "Proposition I.1": [
+    "Paper.thm_onecut",
+    "Paper.prop_universal"
+   ],
+   "Proposition J.2": [
+    "Paper.thm_onecut",
+    "Paper.prop_pieces"
+   ]
+  },
+  "Theorem J.4": {
+   "Theorem G.2": [
+    "Paper.exists_setting",
+    "Paper.exists_laws",
+    "Paper.thm_laws"
+   ],
+   "Theorem J.3": [
+    "Paper.thm_cut",
+    "Paper.thm_onecut"
+   ]
+  },
+  "Theorem K.6": {
+   "Lemma K.4": [
+    "Paper.thm_noacc",
+    "Paper.thm_noacc_diagonal",
+    "Paper.lem_postpone"
+   ],
+   "Proposition K.5": [
+    "Paper.thm_noacc",
+    "Paper.thm_noacc_all_scales",
+    "Paper.prop_next"
+   ],
+   "Theorem J.4": [
+    "Paper.scales_setting",
+    "Paper.exists_setting"
+   ]
+  },
+  "Theorem K.7": {
+   "Lemma K.3": [
+    "Paper.thm_contracting",
+    "Paper.contracting_complete",
+    "Paper.lem_circuit"
+   ],
+   "Proposition E.1": [
+    "Paper.thm_contracting",
+    "Paper.gridComplete_perm",
+    "Paper.prop_grid"
+   ],
+   "Proposition K.5": [
+    "Paper.thm_contracting",
+    "Paper.contracting_complete",
+    "Paper.scales_setting"
+   ],
+   "Theorem K.6": [
+    "Paper.thm_contracting",
+    "Paper.contracting_complete",
+    "Paper.scales_setting"
+   ]
+  },
+  "Theorem L.1": {
+   "Theorem D.2": [
+    "Paper.thm_main",
+    "Paper.thm_alt"
+   ],
+   "Theorem E.11": [
+    "Paper.thm_main",
+    "Paper.thm_flat_rate"
+   ],
+   "Theorem K.7": [
+    "Paper.thm_main",
+    "Paper.thm_contracting"
+   ]
+  },
+  "Theorem L.2": {
+   "Theorem D.2": [
+    "Paper.thm_simple",
+    "Paper.thm_alt"
+   ],
+   "Theorem E.6": [
+    "Paper.thm_simple",
+    "Paper.thm_flat_simple"
+   ],
+   "Theorem K.7": [
+    "Paper.thm_simple",
+    "Paper.thm_contracting"
+   ]
+  },
+  "Theorem M.3": {
+   "Lemma K.3": [
+    "Paper.thm_allfields",
+    "Paper.contracting_hc",
+    "Paper.contracting_complete",
+    "Paper.lem_circuit"
+   ],
+   "Lemma M.1": [
+    "Paper.thm_allfields",
+    "Paper.lem_transfer"
+   ],
+   "Proposition E.10": [
+    "Paper.thm_allfields",
+    "Paper.flat_rate_hc",
+    "Paper.flat_rate_complete",
+    "Paper.prop_flat_rate"
+   ],
+   "Proposition K.5": [
+    "Paper.thm_allfields",
+    "Paper.contracting_hc",
+    "Paper.contracting_complete",
+    "Paper.scales_setting"
+   ],
+   "Proposition M.2": [
+    "Paper.thm_allfields",
+    "Paper.flat_rate_hc",
+    "Paper.gridComplete_hc",
+    "Paper.prop_hc_grid"
+   ],
+   "Theorem D.2": [
+    "Paper.thm_allfields",
+    "Paper.thm_alt"
+   ],
+   "Theorem E.11": [
+    "Paper.thm_allfields",
+    "Paper.thm_flat_rate"
+   ],
+   "Theorem K.6": [
+    "Paper.thm_allfields",
+    "Paper.contracting_hc",
+    "Paper.contracting_complete",
+    "Paper.scales_setting"
+   ],
+   "Theorem K.7": [
+    "Paper.thm_allfields",
+    "Paper.thm_contracting"
+   ],
+   "Theorem L.1": [
+    "Paper.thm_allfields",
+    "Paper.beyond_of_rate",
+    "Paper.thm_main_form"
+   ]
+  },
+  "Theorem N.5": {
+   "Definition A.1": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.flat_rate_approx_complete",
+    "Paper.flat_rate_approximating",
+    "Paper.someSetPays_of_few",
+    "Paper.hubTen_price",
+    "Ov.Spec.wire_eq",
+    "Paper.lem_exponents_wire",
+    "Paper.lem_exponents_power",
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.flat_rate_approx_complete",
+    "Paper.flat_rate_approximating",
+    "Paper.hubs_series",
+    "Paper.prop_flat_lower_sum",
+    "Paper.lem_hubs"
+   ],
+   "Lemma E.4": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.flat_rate_approx_complete",
+    "Paper.flat_rate_approximating",
+    "Paper.hubs_series",
+    "Paper.prop_flat_lower_sum",
+    "Paper.lem_balanced_cf",
+    "Paper.lem_balanced"
+   ],
+   "Lemma K.2": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.contracting_approx_rate",
+    "Paper.contracting_approx_complete",
+    "Paper.lem_circuit_approx",
+    "Paper.lem_circuit_program",
+    "Paper.lem_lowdeg"
+   ],
+   "Lemma N.2": [
+    "Paper.thm_approx",
+    "Paper.lem_transfer_approx"
+   ],
+   "Lemma N.3": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.flat_rate_approx_complete",
+    "Paper.flat_rate_approximating",
+    "Paper.lem_few_approx"
+   ],
+   "Proposition E.1": [
+    "Paper.thm_approx",
+    "Paper.gridComplete_perm",
+    "Paper.prop_grid"
+   ],
+   "Proposition E.9": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.flat_rate_approx_complete",
+    "Paper.flat_rate_approximating",
+    "Paper.rate_of_someSetPays",
+    "Paper.prop_cube"
+   ],
+   "Proposition I.1": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.contracting_approx_rate",
+    "Paper.contracting_approx_complete",
+    "Paper.lem_circuit_approx",
+    "Paper.lem_circuit_universal",
+    "Paper.prop_universal"
+   ],
+   "Proposition M.2": [
+    "Paper.thm_approx",
+    "Paper.gridComplete_hc",
+    "Paper.prop_hc_grid"
+   ],
+   "Proposition N.4": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.contracting_approx_rate",
+    "Paper.contracting_approx_complete",
+    "Paper.prop_approx_acc_setting"
+   ],
+   "Theorem D.2": [
+    "Paper.thm_approx",
+    "Paper.approx_rate_closed",
+    "Paper.thm_alt"
+   ],
+   "Theorem L.1": [
+    "Paper.thm_approx",
+    "Paper.beyond_of_rate",
+    "Paper.thm_main_form"
+   ]
+  }
+ },
+ "counts": {
+  "declarations": 63346,
+  "direct": 41,
+  "library": 53351,
+  "uses": 124,
+  "vp_vnp": 9995
+ },
+ "uses": {
+  "Corollary E.2": {
+   "Proposition E.1": "through"
+  },
+  "Corollary L.3": {
+   "Theorem L.2": "direct"
+  },
+  "Corollary M.4": {
+   "Theorem M.3": "direct"
+  },
+  "Definition A.1": {},
+  "Definition A.4": {},
+  "Definition D.1": {},
+  "Definition G.1": {},
+  "Definition J.1": {},
+  "Definition K.1": {},
+  "Definition N.1": {},
+  "Display (F.1)": {
+   "Lemma C.4": "through",
+   "Lemma F.3": "direct"
+  },
+  "Lemma A.2": {
+   "Definition A.1": "direct"
+  },
+  "Lemma A.3": {},
+  "Lemma B.1": {},
+  "Lemma C.2": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Proposition B.3": "through"
+  },
+  "Lemma C.4": {},
+  "Lemma E.3": {
+   "Corollary E.2": "direct"
+  },
+  "Lemma E.4": {},
+  "Lemma E.7": {
+   "Definition A.1": "through"
+  },
+  "Lemma E.8": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Proposition A.7": "through",
+   "Theorem C.1": "through"
+  },
+  "Lemma F.1": {},
+  "Lemma F.2": {},
+  "Lemma F.3": {
+   "Lemma F.1": "through",
+   "Lemma F.2": "through"
+  },
+  "Lemma F.4": {
+   "Display (F.1)": "direct",
+   "Lemma C.4": "direct"
+  },
+  "Lemma F.5": {
+   "Display (F.1)": "through",
+   "Lemma C.4": "through",
+   "Lemma F.4": "direct"
+  },
+  "Lemma I.2": {},
+  "Lemma K.2": {},
+  "Lemma K.3": {
+   "Lemma K.2": "through",
+   "Proposition E.1": "through",
+   "Proposition I.1": "through"
+  },
+  "Lemma K.4": {},
+  "Lemma M.1": {},
+  "Lemma N.2": {},
+  "Lemma N.3": {
+   "Definition A.1": "through"
+  },
+  "Proposition A.5": {},
+  "Proposition A.7": {
+   "Definition A.1": "direct",
+   "Proposition A.5": "direct"
+  },
+  "Proposition A.8": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Proposition A.7": "through"
+  },
+  "Proposition B.2": {},
+  "Proposition B.3": {
+   "Definition A.1": "through",
+   "Lemma A.3": "through",
+   "Lemma B.1": "through",
+   "Proposition B.2": "through"
+  },
+  "Proposition C.3": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Proposition A.8": "through",
+   "Theorem C.1": "direct"
+  },
+  "Proposition E.1": {},
+  "Proposition E.10": {
+   "Definition A.1": "through",
+   "Lemma A.3": "through",
+   "Lemma E.4": "through",
+   "Lemma E.7": "direct",
+   "Proposition E.9": "through"
+  },
+  "Proposition E.5": {
+   "Definition A.1": "through",
+   "Lemma A.3": "through",
+   "Lemma E.4": "through"
+  },
+  "Proposition E.9": {
+   "Definition A.1": "through",
+   "Lemma E.8": "direct"
+  },
+  "Proposition H.1": {
+   "Lemma F.2": "through"
+  },
+  "Proposition I.1": {},
+  "Proposition J.2": {
+   "Lemma I.2": "direct",
+   "Theorem H.2": "direct"
+  },
+  "Proposition K.5": {
+   "Lemma K.4": "through",
+   "Theorem J.4": "direct"
+  },
+  "Proposition M.2": {},
+  "Proposition N.4": {
+   "Lemma K.4": "through",
+   "Theorem J.4": "direct",
+   "Theorem K.6": "direct"
+  },
+  "Remark N.6": {},
+  "Theorem A.6": {
+   "Definition A.1": "direct",
+   "Proposition A.5": "direct"
+  },
+  "Theorem C.1": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Lemma C.2": "through",
+   "Proposition A.8": "through",
+   "Proposition B.3": "through"
+  },
+  "Theorem D.2": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Lemma C.4": "through",
+   "Proposition C.3": "through"
+  },
+  "Theorem E.11": {
+   "Lemma E.3": "direct",
+   "Proposition E.10": "direct"
+  },
+  "Theorem E.6": {
+   "Lemma E.3": "direct",
+   "Proposition E.5": "direct"
+  },
+  "Theorem F.6": {
+   "Display (F.1)": "through",
+   "Lemma C.4": "direct",
+   "Lemma F.2": "through",
+   "Lemma F.3": "through",
+   "Lemma F.5": "through",
+   "Proposition C.3": "direct"
+  },
+  "Theorem G.2": {
+   "Definition A.1": "through",
+   "Lemma A.2": "through",
+   "Lemma F.2": "through",
+   "Theorem A.6": "through",
+   "Theorem F.6": "through"
+  },
+  "Theorem H.2": {
+   "Proposition H.1": "through"
+  },
+  "Theorem J.3": {
+   "Proposition I.1": "direct",
+   "Proposition J.2": "direct"
+  },
+  "Theorem J.4": {
+   "Theorem G.2": "through",
+   "Theorem J.3": "direct"
+  },
+  "Theorem K.6": {
+   "Lemma K.4": "through",
+   "Proposition K.5": "through",
+   "Theorem J.4": "direct"
+  },
+  "Theorem K.7": {
+   "Lemma K.3": "through",
+   "Proposition E.1": "through",
+   "Proposition K.5": "through",
+   "Theorem K.6": "through"
+  },
+  "Theorem L.1": {
+   "Theorem D.2": "direct",
+   "Theorem E.11": "direct",
+   "Theorem K.7": "direct"
+  },
+  "Theorem L.2": {
+   "Theorem D.2": "direct",
+   "Theorem E.6": "direct",
+   "Theorem K.7": "direct"
+  },
+  "Theorem M.3": {
+   "Lemma K.3": "through",
+   "Lemma M.1": "direct",
+   "Proposition E.10": "through",
+   "Proposition K.5": "through",
+   "Proposition M.2": "through",
+   "Theorem D.2": "direct",
+   "Theorem E.11": "direct",
+   "Theorem K.6": "through",
+   "Theorem K.7": "direct",
+   "Theorem L.1": "through"
+  },
+  "Theorem N.5": {
+   "Definition A.1": "through",
+   "Lemma A.3": "through",
+   "Lemma E.4": "through",
+   "Lemma K.2": "through",
+   "Lemma N.2": "direct",
+   "Lemma N.3": "through",
+   "Proposition E.1": "through",
+   "Proposition E.9": "through",
+   "Proposition I.1": "through",
+   "Proposition M.2": "through",
+   "Proposition N.4": "through",
+   "Theorem D.2": "through",
+   "Theorem L.1": "through"
+  }
+ }
+}

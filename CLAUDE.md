@@ -14,7 +14,9 @@ and done.
 3. The source is pinned (`FM_COMMIT`, `PAPER_SHA256`, `PAPER_FACTS_SHA256` in `diagrams/src/vp.py`). Moving one is
    deliberate: bump, regenerate, fix what the checks report.
 4. The output is deterministic, and CI fails on the first byte that differs.
-5. No Lean is built. Uses between statements are read from the source text, and the posters say so.
+5. The posters build no Lean. Uses between statements are read from the source text, and the posters say so; F9
+   checks that reading against `diagrams/src/lean-uses.json`, read once from an export of the built Lean outside the
+   build (`tools/lean-uses/README.md`) and pinned by its hash (`LEAN_USES_SHA256`).
 6. Standard library only for the posters, on Python 3.12+. The one exception is `tools/paper-facts/extract.py`,
    which uses pypdf and PyMuPDF and runs outside the build.
 
@@ -43,7 +45,8 @@ It reads this repository's paths from `proof-posters.toml`. The poster recipe is
 | Skill | When |
 |---|---|
 | `proof-posters:recording-expectations` | the method for any poster: read, record, compare both ways, four kinds of sentence, deterministic |
-| `proof-posters:moving-pins` | formal-math moved; `FM_COMMIT`, `PAPER_SHA256` or `PAPER_FACTS_SHA256` fails |
+| `proof-posters:moving-pins` | formal-math moved; `FM_COMMIT`, `PAPER_SHA256`, `PAPER_FACTS_SHA256` or `LEAN_USES_SHA256` fails |
+| `proof-posters:extracting-lean-deps` | `diagrams/src/lean-uses.json` must be rebuilt (`tools/lean-uses/README.md`) |
 | `proof-posters:linking-posters` | a link lands on nothing, or a new card or row should be reachable |
 | `proof-posters:cutting-releases` | a release is due (no release workflow exists yet: PLAN.md) |
 | `drawing-posters` | a poster is added, or its layout or wording changes |

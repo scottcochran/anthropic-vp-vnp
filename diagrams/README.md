@@ -1,6 +1,6 @@
 # The posters and what they check
 
-Thirteen posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
+Fourteen posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
 expects them to say as module-level literals, and fails the build when they differ, in either direction. R is a
 reading at one level, T a trace, F another frame. The generator is `diagrams/gen-diagrams.py`. Any line it prints starting
 with WARNING or ERROR is a failure.
@@ -12,6 +12,8 @@ with WARNING or ERROR is a failure.
 | The vp-vnp folder of anthropics/formal-math: every `.lean` file, `comparator.json`, `README.md` | `FM_COMMIT` in `src/vp.py`; the build fails on a checkout at another commit | `vp.load()` |
 | `vp-vnp/paper.pdf` | `PAPER_SHA256`; the build fails if the file is present and hashes otherwise | `tools/paper-facts/extract.py`, outside the build |
 | `src/paper-facts.json`: the paper's Table 1, Table 3, statement headers, and the statements of Sections 1 and 2 | `PAPER_FACTS_SHA256`, and `tools/paper-facts/meta.json`, which records the commit and both hashes | `vp.load()` |
+| `src/papers.toml`: the paper behind each reference | this repository's own data, checked both ways against the references | `vp.load()`, F8 |
+| `src/lean-uses.json`: the uses between statements in the elaborated Lean, from an export of vp-vnp built at the pin | `LEAN_USES_SHA256`, and `tools/lean-uses/meta.json`, which records the commit and the export's hash | `vp.load()`, F9 |
 
 How the Lean is read: as text, with comments and strings blanked. Full names come from `namespace`, `section` and
 `end`, and a declaration runs from its keyword at the head of a line to the next command at the head of a line. A
@@ -43,6 +45,7 @@ file the naming file imports, and has at least three characters.
 | F6 `differences` | every Lean name the paper prints, the universes, Appendix Q.3's differences | the count of printed names (`N_PAPER_NAMES`); those no file declares (`NOT_DECLARED`), and that no file uses them; those beyond Table 3 and their declarations (`BEYOND_TABLE3`); the universes of Q.3 and of the signatures (`UNIVERSES`); the stronger forms (`STRONGER`); each bullet's statements and Lean names (`DIFFERENCES`), every name declared |
 | F7 `vocabulary` | the glossary and the renamings, each word counted in the Lean | the glossary's terms and places (`GLOSSARY`); the renamings (`RENAMES`); each word's count in declaration names (`IN_NAMES`) and in the source text (`IN_TEXT`) |
 | F8 `literature` | the references by decade, where each is cited, each linked to its paper | the number of references and citations (`N_REFS`, `N_CITATIONS`); where each reference is cited (`CITED`); that every reference has an entry in `src/papers.toml` and every entry names a reference (with `vp.load`), each with a url or a note saying why not |
+| F9 `text-lean` | every use between statements in the text reading and in the Lean reading (`src/lean-uses.json`) | the export's counts (`LEAN_COUNTS`); the uses only the text shows (`TEXT_ONLY`, none) and those the two give different kinds (`KIND_DIFFERS`, none); the uses only the Lean shows (`EXPORT_ONLY`) and the helper outside Paper behind each (`OUTSIDE`); the uses between sections the Lean adds (`SECTIONS_ADDED`) |
 | F2 `modules` | the seven libraries, the imports between them, the Paper library file by file, the largest files | files, lines and declarations per library (`LIBRARY`); imports between libraries (`IMPORTS`); the files outside Paper that import a Paper file (`UPWARD`); the statements each Paper file declares (`STATEMENTS_IN`); the 12 largest files (`TOP`) |
 
 Also fails on any poster: a Table 3 name that no file declares, a declaration name used twice outside
@@ -58,5 +61,6 @@ out that is not at the pinned commit.
 | `src/vp.py` | the pins, the commit and hash checks, the Lean reader, the card |
 | `src/lib.py`, `src/metrics.py`, `src/fonts/` | the drawing library and its fonts, from riemann-diagrams; `tools/build-fonts.py` rebuilds them |
 | `src/paper-facts.json` | the facts of the paper, written by `tools/paper-facts/extract.py` |
+| `src/lean-uses.json` | the uses between statements in the elaborated Lean, written by `tools/lean-uses/read_export.py` (Phase 2) |
 | `src/papers.toml` | the paper behind each reference, with how it was found (proof-posters:linking-papers) |
 | `src/d_*.py` | one module per poster |

@@ -343,6 +343,15 @@
   "links": 0,
   "links_out": 0
  },
+ "F9": {
+  "file": "F9-text-lean-2026.11.25.svg",
+  "title": "The text against the Lean: every use between the numbered statements, as the source text shows it and as the elaborated Lean shows it",
+  "cards": 0,
+  "arrows": 0,
+  "anchors": [],
+  "links": 0,
+  "links_out": 213
+ },
  "R1": {
   "file": "R1-main-theorems-2026.11.25.svg",
   "title": "What is claimed: the five theorems Comparator checks, the definitions they are stated with, and the statements of the paper they are proved from",

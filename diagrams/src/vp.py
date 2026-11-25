@@ -48,6 +48,10 @@ PAPER_SHA256 = "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c
 # diagrams/src/paper-facts.json as that script wrote it (tools/paper-facts/meta.json records both, and the commit).
 PAPER_FACTS_SHA256 = "4c5b9ea23fc64aca3d1ce55847c4f6aa78ccd5e3b3d13bad2022438a5d6288b7"
 
+# diagrams/src/lean-uses.json, the uses between statements read from a lean4export export of vp-vnp at FM_COMMIT by
+# tools/lean-uses/read_export.py (Phase 2); tools/lean-uses/meta.json records the export's hash and the commit.
+LEAN_USES_SHA256 = "5d7ee5bfd719d8650d083b0d895be25b422eb21ccc1a2d46a176f8e7c38da829"
+
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
 LIBRARIES = ("Statement", "Challenge", "Solution", "Paper", "Nc", "NS1", "Ov")
@@ -321,6 +325,15 @@ def load():
         s.statements[key] = st
     s.reach = {}
     s.uses = _statement_uses(s)
+    lean_path = SRC / "lean-uses.json"
+    if sha256(lean_path) != LEAN_USES_SHA256:
+        raise ValueError(f"src/lean-uses.json hashes to {sha256(lean_path)}, pinned {LEAN_USES_SHA256}: rebuild it "
+                         "(tools/lean-uses/README.md) or re-read it and bump the pin")
+    lmeta = json.loads((ROOT / "tools" / "lean-uses" / "meta.json").read_text(encoding="utf-8"))
+    if lmeta["fm_commit"] != s.full or lmeta["output_sha256"] != LEAN_USES_SHA256:
+        raise ValueError("tools/lean-uses/meta.json does not record FM_COMMIT and the pinned hash of src/lean-uses.json")
+    s.lean = json.loads(lean_path.read_text(encoding="utf-8"))
+    s.lean_meta = lmeta
     return s
 
 

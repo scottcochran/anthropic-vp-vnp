@@ -5,7 +5,7 @@ Generated SVG posters of *VP ≠ VNP over every field* and its Lean 4 formalizat
 (`FM_COMMIT = 11b6c7e3c9` in `diagrams/src/vp.py`). The build fails when the sources no longer say what a poster
 records.
 
-Nothing here builds the Lean. The posters read two things. The first is the Lean source as text: 323 files, 72920
+The posters build no Lean. The posters read two things. The first is the Lean source as text: 323 files, 72920
 lines. The second is three parts of the paper: Table 1, its map of the sections; Table 3, its list of the Lean
 theorems for each numbered statement; and the statement headers. These are read from `paper.pdf` once, into
 `diagrams/src/paper-facts.json`, which is pinned by its hash. The formal-math README says of the paper and the
@@ -55,6 +55,10 @@ Open them on their own and zoom in.
 - [The proof as literature](diagrams/F8-literature-2026.11.25.svg): the 134 references by decade, where each of
   the 185 citations stands, Section 1 to 3 or an appendix, and each entry linked to its paper: 132 linked, 120 of
   them by a DOI verified against its own record (`diagrams/src/papers.toml`).
+- [The text against the Lean](diagrams/F9-text-lean-2026.11.25.svg): every use between statements as the source text
+  shows it and as the elaborated Lean shows it, from an export of vp-vnp built at the pin. All 100 uses of the text
+  reading are confirmed, of the same kind; the Lean shows 24 more, each through a helper outside the Paper library,
+  which the text reading does not walk.
 - [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
   files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
 

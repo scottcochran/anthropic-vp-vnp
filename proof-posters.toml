@@ -8,7 +8,7 @@ custodian = "scottcochran"            # the only account that signs and pushes r
 default_branch = "main"
 plan = "PLAN.md"                      # decisions, the release table, and a done note per phase
 poster_skill = "drawing-posters"      # this repository's own skill for adding or reworking a poster (.claude/skills/)
-docs = ["README.md", "diagrams/README.md", "diagrams/TEXT.md", "tools/paper-facts/README.md"]
+docs = ["README.md", "diagrams/README.md", "diagrams/TEXT.md", "tools/paper-facts/README.md", "tools/lean-uses/README.md"]
 
 [build]
 regenerate = ["uv run python diagrams/gen-diagrams.py"]
@@ -27,7 +27,8 @@ expected_names = ["EXPECTED", "DIRECT", "BORNE", "LEAN_ONLY", "CASES", "COUNTS",
                   "CHAIN", "ROUTE_CLAIMS", "OVERVIEW", "NOTES", "WEIGHT", "FIGURE_NAMES", "THEOREM", "BOXES",
                   "ARROWS", "VERDICTS", "DIRS", "REACHED", "MATRIX", "N_PAPER_NAMES", "NOT_DECLARED",
                   "BEYOND_TABLE3", "UNIVERSES", "STRONGER", "DIFFERENCES", "GLOSSARY", "RENAMES", "IN_NAMES",
-                  "IN_TEXT", "N_REFS", "N_CITATIONS", "CITED"]
+                  "IN_TEXT", "N_REFS", "N_CITATIONS", "CITED", "EXPORT_ONLY", "OUTSIDE", "TEXT_ONLY",
+                  "KIND_DIFFERS", "LEAN_COUNTS", "SECTIONS_ADDED"]
 # The expected_names whose change makes a release MINOR (PLAN.md, "Releases").
 minor_names = ["EXPECTED", "CLAIMS"]
 
@@ -47,11 +48,23 @@ name = "PAPER_FACTS_SHA256"
 file = "diagrams/src/paper-facts.json"
 meta = "tools/paper-facts/meta.json"
 
+[[pins.derived]]
+name = "LEAN_USES_SHA256"
+file = "diagrams/src/lean-uses.json"
+meta = "tools/lean-uses/meta.json"
+
 [[pins.reread]]
 name = "PAPER_SHA256"
 source = "vp-vnp/paper.pdf at FM_COMMIT"
 refresh = "uv run --with pypdf==7.1.1 --with pymupdf==2.1 python tools/paper-facts/extract.py"
 reread = "src/paper-facts.json against the paper's Table 1, Table 3, statement headers, formalization notes, Appendix Q and Figure 1, every poster that quotes them, and F4's transcription of Figure 1 (BOXES, ARROWS in diagrams/src/d_f4_figure_1.py) against the rendered p. 5"
+
+[lean]
+method = "tools/lean-uses/README.md"   # the commands, in order, with timings and sizes
+tools = "tools/lean-uses"
+data_dir = "outside the repository: about 11 GB (Mathlib's compiled files, the build of vp-vnp, a 625 MB export)"
+export = "made here: lean4export 3.1.0 (15f6055) of Solution's and Table 3's theorems, at FM_COMMIT"
+cache_toolchain = "vp-vnp/lean-toolchain at FM_COMMIT (leanprover/lean4:v4.33.1)"
 
 [papers]
 file = "diagrams/src/papers.toml"
