@@ -83,7 +83,7 @@ def build():
     c.para(x0, y, c.x1 - x0, f"**How to read it.** The cards are the sections in the paper's order, coloured by the "
            "case Table 1 says each serves. The words in italics are Table 1's. Below them, the matrix sets each section "
            "(a row) against the sections it uses (the columns), by Table 1, by the elaborated Lean, or by both. A statement "
-           "number links to its row on F1. " + vp.NOT_BUILT_LEAN, S + 0.5, "muted")
+           "number links to its row on " + vp.poster("F1") + ". " + vp.NOT_BUILT_LEAN, S + 0.5, "muted")
     y += 64
 
     # ---- the cards

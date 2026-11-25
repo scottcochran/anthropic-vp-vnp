@@ -155,14 +155,15 @@ def build():
           "through helpers.", f"No use is only in the text (`TEXT_ONLY` is empty)."]),
         (f"{len(EXPORT_ONLY)} uses only the Lean shows", "violet",
          [f"All {len(EXPORT_ONLY)} are through helpers, and on the shortest chain of each lies a declaration outside the "
-          f"Paper library ({', '.join(sorted({n.split('.')[0] for n in OUTSIDE.values()}))}), which the text reading "
+          f"Paper library ({', '.join(vp.library(x) for x in sorted({n.split('.')[0] for n in OUTSIDE.values()}))}), "
+          "which the text reading "
           "does not walk: so where the text reading walks explains each (`OUTSIDE`).",
           "They reach mostly Definition A.1 and Lemma A.2, through the price lemmas of Nc.Price and Ov.Spec."]),
         ("Table 1, read again", "amber",
          [f"Of Table 1's {len(t1)} uses between sections the Lean reading bears out {len(t1 & secE)}, the same as the "
           f"text reading ({len(t1 & secT)}): the other {len(t1 - secE)} are uses the elaborated Lean does not make "
           "either.", "It adds " + ", ".join(f"{a}→{b}" for a, b in SECTIONS_ADDED) + " to the uses Table 1 does not "
-          "list (R2 draws the Lean reading's)."]),
+          "list (" + vp.poster("R2") + " draws the Lean reading's)."]),
         ("A second Lean reading: the compiled modules", "blue",
          [f"Read by Lean itself from the built modules ({mods['counts']['vp_vnp']} constants of vp-vnp, "
           "tools/lean-uses/ReadModules.lean): the same "
@@ -172,7 +173,7 @@ def build():
           f"{RULE_MISSED} compiler-made constants (derived instances, equation lemmas). Through them the modules find "
           f"a few more declarations under {len(UNDER_DIFFERS)} statements, at most "
           f"{max(v[0] for v in UNDER_DIFFERS.values())} ({', '.join(f'`{anchor_of(k)}`' for k in UNDER_DIFFERS)}); "
-          "F3 and F5 draw the export's."]),
+          f"{vp.poster('F3')} and {vp.poster('F5')} draw the export's."]),
     ]
     hs = [c.card(0, 0, cw, t, b, accent=a, size=S + 0.5, draw=False) for t, a, b in cards]
     for i, (t, a, b) in enumerate(cards):

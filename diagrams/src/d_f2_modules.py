@@ -100,7 +100,7 @@ def build():
     c.para(x0, y, c.x1 - x0, f"**How to read it.** {nfiles} files and {total} lines in all. A declaration is counted "
            "where a `theorem`, `lemma`, `def`, `structure` or the like begins a line; nothing is elaborated, so "
            "declarations made by commands or by `where` clauses are not counted. A statement number links to its row "
-           "on F1. " + vp.NOT_BUILT, S + 0.5, "muted")
+           "on " + vp.poster("F1") + ". " + vp.NOT_BUILT, S + 0.5, "muted")
     y += 64
 
     # ---- band 1: the libraries
@@ -122,8 +122,10 @@ def build():
         inn = sorted(imported_by[k], key=lambda t: (-t[1], t[0]))
         specs.append(dict(name=k, accent=ACCENT[k], pill=f"{f} file{'s' if f > 1 else ''}",
                           bullets=[f"**{ln} lines**, {dc} declarations", f"**Holds** {role[k]} (this poster's words)",
-                                   "**Imports** " + (", ".join(f"{b} ({n})" for b, n in out) or "nothing outside itself"),
-                                   "**Imported by** " + (", ".join(f"{a} ({n})" for a, n in inn) or "nothing")],
+                                   "**Imports** " + (", ".join(f"{vp.library(b)} ({n})" for b, n in out)
+                                                     or "nothing outside itself"),
+                                   "**Imported by** " + (", ".join(f"{vp.library(a)} ({n})" for a, n in inn)
+                                                         or "nothing")],
                           anchor=f"lib-{k}"))
     hs = [vp.node(c, 0, 0, cw, draw=False, size=S, **sp) for sp in specs]
     for i, sp in enumerate(specs):
@@ -140,10 +142,11 @@ def build():
 
     # ---- band 2: the import matrix
     y += c.heading(x0, y, "2 · Who imports whom: import lines, by library (a row imports the columns)")
-    cols = [("Imports →", 200)] + [(b, 150) for b in ORDER + ["Mathlib"]]
+    cols = [("Imports →", 200)] + [(vp.library(b), 150) for b in ORDER + ["Mathlib"]]
     rows = []
     for a in ORDER:
-        rows.append([f"**{a}**"] + [str(imp[(a, b)]) if imp[(a, b)] else "" for b in ORDER + ["Mathlib"]])
+        rows.append([vp.library(a, f"**{a}**")]
+                    + [str(imp[(a, b)]) if imp[(a, b)] else "" for b in ORDER + ["Mathlib"]])
     y += c.table(x0, y, cols, rows, size=S) + 50
 
     # ---- band 3: the Paper library, file by file

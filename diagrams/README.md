@@ -60,6 +60,39 @@ Also fails on any poster: a Table 3 name that no file declares, a declaration na
 its cell, two texts that overlap, a character outside the embedded fonts, a link to an id no poster draws, and a link
 out that is not at the pinned commit.
 
+## Links
+
+The posters link to each other and to formal-math at `FM_COMMIT`. `Canvas.link()` (`src/lib.py`) makes every link
+after the layout, so a link adds nothing to the measured text and moves nothing. A name links to where the set, or
+the source, draws it:
+
+| The text names | It opens |
+|---|---|
+| a statement number (`K.3`), or a display in parentheses (`(F.1)`) | its card on the same poster, else its row on F1; a display only where F1 has a row for it, so `(B.2)` stays text |
+| a section (`Section K`, `Sections C and A`, `Appendix O`), or an appendix in F8's Cited in | its card on R2 |
+| a directory (`Nc.Price`) | its card on F5 |
+| a library, where a poster marks it (F2, F3, F5, F9) | its card on F2 |
+| a reference's key (`Val79`) | its row on F8 |
+| one of Solution's theorems or Statement's definitions, by its full name or, in code, by its last part | its card on R1 |
+| another poster by its id, where a poster marks it (`R3 checks that sentence`) | that poster's title |
+| a Lean declaration, by its full name, or by a short name that one declaration has and that is four letters or more, in code or as the paper prints one (a word with an underscore) | its line in formal-math at the pin |
+| a module, a file of vp-vnp, or a `file:line` | the file, or the line, at the pin |
+
+A name stays text inside the card or row it would open, inside a Lean panel (which quotes code), and wherever it does
+not resolve. A link to a poster is made only to an id the committed `manifest.json` lists, which the generator writes
+with every poster's anchors; when a run moves any poster's anchors, it updates the manifest, prints a NOTE and exits
+1, and the second run makes the links follow. A link to formal-math is made only to a declaration or file read at the
+pin, and to a line that file has. `check-links.py` (proof-posters:linking-posters) checks that every link lands; at
+2026.11.25 it counts 2,615 links: 1,075 to another poster, 635 within a poster, 773 to formal-math at the pin and 132
+to the papers of F8. That count is written here by hand.
+
+A link's target is framed when it opens (CSS `:target`): a card by its halo, a table row by its own background, and
+without the pulse under reduced motion. This works wherever a browser opens the SVG as a document (the Pages site, a
+release asset, a file), not in GitHub's file viewer, which shows an SVG as an image, without its links.
+
+Not checked: that a short name in code is the declaration and not a local of the same name (hence only names of four
+letters or more that one declaration has); that the framing works in Firefox and Safari (measured in Chrome).
+
 ## Files
 
 | File | What it is |

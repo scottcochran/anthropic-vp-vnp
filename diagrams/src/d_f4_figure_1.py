@@ -320,8 +320,9 @@ def build():
                  "split of Theorem D.2 is used once, at the top, by Theorem M.3, not inside either branch (arrows 4 and "
                  "5). Not seen: " + "; ".join(f"`{anchor_of(s)}` on arrow {i + 1}" for i, s in unseen) + ". "
                  "Appendix Q explains the first on the contracting branch: Lemma K.3 uses the general form for "
-                 "families complete for grid sums, of which Corollary E.2 is an instance (R3 checks that sentence). "
-                 "Definition D.1 is a definition, and no Lean proof names the theorem Table 3 gives a definition (R3).",
+                 "families complete for grid sums, of which Corollary E.2 is an instance ("
+                 + vp.poster("R3") + " checks that sentence). Definition D.1 is a definition, and no Lean proof names "
+                 "the theorem Table 3 gives a definition (" + vp.poster("R3") + ").",
                  "Computed from `VERDICTS`, which the build checks; the sentences about arrows 4 and 5 and the two "
                  "statements not seen stand behind the check that fails when the verdicts change."],
                 accent="amber", size=S + 0.5) + 30

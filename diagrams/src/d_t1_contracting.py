@@ -2,6 +2,7 @@
 contracting case. The same chain R3 marks; the build fails if a step no longer uses the next, if the last step gains a
 use, or if the chain differs from CHAIN."""
 import trace
+import vp
 from vp import anchor_of
 
 ID, SLUG = "T1", "trace-contracting"
@@ -25,6 +26,7 @@ def build():
         "paper's words as that theorem's docstring quotes them, and the next statement, which its Lean proof uses.",
         CHAIN,
         f"**How to read it.** From the top, each statement's Lean proof uses the one below it. It is the longest chain "
-        f"of the uses in the elaborated Lean (R3 draws all of them). From `{anchor_of('Theorem L.1')}` it takes the "
+        f"of the uses in the elaborated Lean ({vp.poster('R3')} draws all of them). "
+        f"From `{anchor_of('Theorem L.1')}` it takes the "
         "contracting case down to its cuts and laws, and from there to the prices of Sections C and A. The colour is "
         "the case of the statement's section.")

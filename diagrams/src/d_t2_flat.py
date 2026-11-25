@@ -39,5 +39,6 @@ def build():
         CHAIN,
         f"**How to read it.** From the top, each statement's Lean proof uses the one below it. From "
         f"`{anchor_of(THROUGH)}`, the lower bound in the flat case, it is the longest chain of the uses read from the "
-        "elaborated Lean; T1 is the longest chain of all, through the contracting case. The two meet at "
+        "elaborated Lean; " + vp.poster("T1") + " is the longest chain of all, through the contracting case. "
+        "The two meet at "
         f"`{anchor_of('Theorem C.1')}`. The colour is the case of the statement's section.")

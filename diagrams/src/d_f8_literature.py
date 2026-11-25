@@ -226,7 +226,8 @@ def build():
     for k in sorted(entries, key=lambda k: k.lower()):
         e = entries[k]
         cnt = collections.Counter(CITED[k])
-        where = ", ".join(f"{p}" + (f" ×{cnt[p]}" if cnt[p] > 1 else "") for p in PARTS if cnt[p])
+        where = ", ".join((vp.to(f"sec-{p}", p) if p.isalpha() and len(p) == 1 else p)   # an appendix: its card on R2
+                          + (f" ×{cnt[p]}" if cnt[p] > 1 else "") for p in PARTS if cnt[p])
         pp = src.papers[k]
         tail = f" ({pp['via']})" if pp.get("url") else " (not linked: no stable copy)"
         rows.append({"cells": [f"`{k}`", str(e["year"]),

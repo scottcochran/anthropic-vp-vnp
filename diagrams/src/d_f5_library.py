@@ -219,7 +219,8 @@ def build():
     x0, y = c.x0, c.y
     total = sum(v[2] for v in DIRS.values())
     nreach = sum(REACHED.values())
-    c.para(x0, y, c.x1 - x0, f"**How to read it.** The {sum(v[1] for v in DIRS.values())} lines of Nc, NS1 and Ov "
+    c.para(x0, y, c.x1 - x0, f"**How to read it.** The {sum(v[1] for v in DIRS.values())} lines of {vp.library('Nc')}, "
+           f"{vp.library('NS1')} and {vp.library('Ov')} "
            f"hold {total} lines of declarations; {nreach} of them ({100 * nreach / total:.1f}%) lie under some "
            "numbered statement's Lean theorems in the elaborated Lean. The rest no statement's proof uses at all. "
            "Each directory card names its home, the section whose statements reach most of it. " + vp.NOT_BUILT_LEAN, S + 0.5, "muted")

@@ -71,8 +71,8 @@
    "N.5",
    "N.6"
   ],
-  "links": 313,
-  "links_out": 0
+  "links": 320,
+  "links_out": 15
  },
  "F2": {
   "file": "F2-modules-2026.11.25.svg",
@@ -88,8 +88,8 @@
    "lib-Solution",
    "lib-Statement"
   ],
-  "links": 0,
-  "links_out": 64
+  "links": 39,
+  "links_out": 65
  },
  "F3": {
   "file": "F3-formalization-notes-2026.11.25.svg",
@@ -106,7 +106,7 @@
    "note-63"
   ],
   "links": 0,
-  "links_out": 98
+  "links_out": 149
  },
  "F4": {
   "file": "F4-figure-1-2026.11.25.svg",
@@ -128,7 +128,7 @@
    "fig-main"
   ],
   "links": 0,
-  "links_out": 96
+  "links_out": 104
  },
  "F5": {
   "file": "F5-library-2026.11.25.svg",
@@ -162,8 +162,8 @@
    "dir-Ov-Core",
    "dir-Ov-Duality"
   ],
-  "links": 0,
-  "links_out": 0
+  "links": 16,
+  "links_out": 32
  },
  "F6": {
   "file": "F6-differences-2026.11.25.svg",
@@ -188,7 +188,7 @@
    "diff-9"
   ],
   "links": 0,
-  "links_out": 67
+  "links_out": 147
  },
  "F7": {
   "file": "F7-vocabulary-2026.11.25.svg",
@@ -197,7 +197,7 @@
   "arrows": 0,
   "anchors": [],
   "links": 0,
-  "links_out": 0
+  "links_out": 9
  },
  "F8": {
   "file": "F8-literature-2026.11.25.svg",
@@ -340,8 +340,8 @@
    "ref-Zui19",
    "ref-vM07"
   ],
-  "links": 0,
-  "links_out": 0
+  "links": 14,
+  "links_out": 78
  },
  "F9": {
   "file": "F9-text-lean-2026.11.25.svg",
@@ -350,7 +350,7 @@
   "arrows": 0,
   "anchors": [],
   "links": 0,
-  "links_out": 219
+  "links_out": 228
  },
  "R1": {
   "file": "R1-main-theorems-2026.11.25.svg",
@@ -377,7 +377,7 @@
    "Statement.hc",
    "Statement.perm"
   ],
-  "links": 0,
+  "links": 33,
   "links_out": 11
  },
  "R2": {
@@ -402,8 +402,8 @@
    "sec-N",
    "sec-O"
   ],
-  "links": 0,
-  "links_out": 89
+  "links": 7,
+  "links_out": 96
  },
  "R3": {
   "file": "R3-route-2026.11.25.svg",
@@ -477,8 +477,8 @@
    "off-N.1",
    "off-N.6"
   ],
-  "links": 91,
-  "links_out": 18
+  "links": 108,
+  "links_out": 30
  },
  "T1": {
   "file": "T1-trace-contracting-2026.11.25.svg",
@@ -501,8 +501,8 @@
    "M.3",
    "M.4"
   ],
-  "links": 53,
-  "links_out": 44
+  "links": 55,
+  "links_out": 62
  },
  "T2": {
   "file": "T2-trace-flat-2026.11.25.svg",
@@ -522,7 +522,7 @@
    "M.3",
    "M.4"
   ],
-  "links": 40,
-  "links_out": 36
+  "links": 43,
+  "links_out": 49
  }
 }

@@ -15,7 +15,10 @@ renderers without CSS) and once as a class whose CSS custom property switches un
 `prefers-color-scheme: dark`. CSS beats presentation attributes, so browsers adapt and
 everything else falls back to light.
 
-Inline markup in any text: **bold**, `code`, and [[accent|text]] for an accent-coloured run.
+Inline markup in any text: **bold**, `code`, [[accent|text]] for an accent-coloured run, and [[@url|text]] for a
+link: to an address, to an anchor as [[@#id|text]], or to another poster's title as [[@poster:ID|text]], the last two
+resolved by Canvas.link (vp.to, vp.library, vp.poster). Canvas.link also makes links of the names in the text that
+resolve (diagrams/README.md, Links).
 """
 import base64
 import collections
@@ -295,10 +298,34 @@ TEXT_BOXES = []   # (x0, y0, x1, y1, text) of every line drawn, for the overlap 
 # posters, so each set links only within itself.
 HOME_ORDER = ["F1", "R2", "R1", "F2"]
 POSTERS, ANCHORS_OF, REGISTRY = {}, {}, {}
-# The links out, set by vp.load: PINNED, the prefixes an absolute href may have, formal-math at the pinned commit.
-# EXTERNAL, PAPERS and SOURCES stay empty here; they are kept so that check() reads as riemann-diagrams' does.
-EXTERNAL, PINNED = {}, []
+# The links out, set by vp.load: PINNED, the prefixes an absolute href may have, formal-math at the pinned commit;
+# EXTERNAL, the text of a code run -> its place in formal-math at the pin (a declaration's line, by its full name or
+# by a short name no other declaration has; a module's file); FILES, a file of vp-vnp as a poster writes it (its path,
+# or a .lean file's name where no other file has it) -> (its address, its lines, or None where not counted). PAPERS
+# and SOURCES stay empty here; they are kept so that check() reads as riemann-diagrams' does.
+EXTERNAL, PINNED, FILES = {}, [], {}
 PAPERS, SOURCES = {}, {}
+
+# What Canvas.link() makes a link in plain text (outside code runs, outside the Lean panels, outside any link): a file
+# of vp-vnp, with a line; a dotted Lean name (a directory of F5, a card of a poster, a declaration); a Lean name as the
+# paper prints one, a word with an underscore, where exactly one declaration has it; a statement number, as a display
+# where it stands in parentheses; a section or a list of sections; a reference's key. Each only where it resolves;
+# none inside the card or row it would open.
+_PLAIN = re.compile(
+    r"(?P<file>(?<![\w/.-])(?:vp-vnp/)?(?:[A-Za-z]\w*/)*[A-Za-z][\w-]*\.(?:lean|json|md|toml)(?::(?P<line>\d+))?"
+    r"(?![\w/]))"
+    r"|(?P<dotted>(?<![\w.])[A-Z]\w*(?:\.[A-Za-z_][\w'!?]*)+(?![\w'!?]|\.\w))"
+    r"|(?P<ident>(?<![\w.'])[a-z][a-z0-9]*_[\w']*[\w'](?![\w']|\.\w))"
+    r"|(?P<label>(?<![\w.])[A-P]\.\d+(?!\d|\.\d|\w))"
+    r"|(?P<sections>\b(?:Sections?|Appendix|Appendices) +(?:[A-O](?:, and |, | and | to | or |–))*[A-O](?!\w|\.\d))"
+    r"|(?P<ref>(?<![\w+])[A-Z][A-Za-z+]*\d{2}[a-z]?(?![\w+]))")
+_STATEMENT = re.compile(r"[A-P]\.\d+")
+_LETTERS = r"(?:[A-O](?:, and |, | and | to | or |–))*[A-O](?!\w|\.\d)"   # "A." ends a sentence; "A.1" is a number
+# a list of sections that a line ends inside ("Sections C and"), and its rest at the start of the next line ("A")
+_SECTIONS_OPEN = re.compile(r"\b(?:Sections|Appendices) +(?:[A-O](?:, and |, | and | to | or |–))*[A-O]"
+                            r"(?:,| and| to| or|, and)?\s*$")
+_SECTIONS_REST = re.compile(r"^(\s*(?:, and |, |and |to |or |–)?)(" + _LETTERS + ")")
+_TAG = re.compile(r"(<[^>]+>)")
 
 
 def load_registry(manifest):
@@ -361,7 +388,7 @@ class Canvas:
         self.anchors = []  # ids set as the id of a card's group, for the manifest and the link check
         self.links = 0     # code runs that name a card on this poster, made links to it by link()
         self.links_out = 0 # and those that name a card on another poster of the set, linked there
-        self.links_ext = 0 # and those that would name an id of EXTERNAL; none here
+        self.links_ext = 0 # and those that open formal-math at the pin (EXTERNAL, FILES)
         self.overflow = [] # table cells whose text is wider than the cell, which Canvas.check warns about
         self.y = self._header()
 
@@ -665,31 +692,163 @@ class Canvas:
         return cy + size + 6 - y
 
     # -- output
-    _MONO_TSPAN = re.compile(r'<tspan ((?:[^<>]*? )?font-family="' + re.escape(MONO) + r'"[^<>]*)>([^<>]+)</tspan>')
+    _MONO_ATTR = f'font-family="{MONO}"'
+
+    def _to(self, frag, inside):
+        """The href of an anchor: on this poster, else on the poster that draws it in full (REGISTRY). None where no
+        poster anchors it, or where the text stands inside the group it would open."""
+        if frag in inside:
+            return None
+        if frag in self._own:
+            self.links += 1
+            return f"#{frag}"
+        if frag in REGISTRY:
+            self.links_out += 1
+            return f"{REGISTRY[frag]}#{frag}"
+        return None
+
+    def _file(self, path, line=None):
+        """The href of a file of vp-vnp at the pin, and of a line in it if the file has that line."""
+        hit = FILES.get(path.removeprefix("vp-vnp/"))
+        if not hit or (line is not None and not (hit[1] and 1 <= int(line) <= hit[1])):
+            return None
+        self.links_ext += 1
+        return hit[0] + (f"#L{int(line)}" if line is not None else "")
+
+    def _code(self, t, inside):
+        """The href of a whole code run: a card's id, as before, wherever the run stands; then a library of F2 or a
+        directory of F5; then a card named by its full Lean name, when the run is the last part of exactly one such
+        name (this poster's first); then the declaration, module or file in formal-math at the pin."""
+        if t in self._own:
+            self.links += 1
+            return f"#{t}"
+        if t in REGISTRY:
+            self.links_out += 1
+            return f"{REGISTRY[t]}#{t}"
+        for frag in (f"lib-{t}", f"dir-{t.replace('.', '-')}"):
+            if h := self._to(frag, inside):
+                return h
+        if re.fullmatch(r"[A-Za-z_][\w']+", t):
+            for pool in (self._own, REGISTRY.keys()):
+                named = [a for a in pool if a.endswith("." + t) and not _STATEMENT.match(a)]
+                if len(named) == 1:
+                    return self._to(named[0], inside)
+                if named:
+                    return None
+        if t in EXTERNAL:
+            self.links_ext += 1
+            return EXTERNAL[t]
+        m = re.fullmatch(r"([\w/.-]+\.(?:lean|json|md|toml))(?::(\d+))?", t)
+        return self._file(m.group(1), m.group(2)) if m else None
+
+    def _plain(self, s, inside):
+        """Plain text with its names made links (_PLAIN), each in a tspan of its own so that hover underlines it."""
+        def wrap(h, t):
+            return f'<a href="{h}"><tspan>{t}</tspan></a>' if h else t
+        def repl(m):
+            g, t = m.lastgroup, m.group(0)
+            if g == "file":
+                return wrap(self._file(t.split(":")[0], m.group("line")), t)
+            if g == "dotted":
+                u = unescape(t)
+                h = self._to(f"dir-{u.replace('.', '-')}", inside) or self._to(u, inside)
+                if not h and u in EXTERNAL:
+                    self.links_ext += 1
+                    h = EXTERNAL[u]
+                return wrap(h, t)
+            if g == "ident":
+                h = None
+                if t in EXTERNAL:
+                    self.links_ext += 1
+                    h = EXTERNAL[t]
+                return wrap(h, t)
+            if g == "label":   # "(F.1)" is the display (F.1), not Lemma F.1
+                display = m.string[m.start() - 1:m.start()] == "(" and m.string[m.end():m.end() + 1] == ")"
+                return wrap(self._to(f"{t}-display" if display else t, inside), t)
+            if g == "sections":
+                head, rest = re.fullmatch(r"(\S+ +)(.*)", t).groups()
+                if len(rest) == 1:
+                    return wrap(self._to(f"sec-{rest}", inside), t)
+                return head + letters(rest)
+            return wrap(self._to(f"ref-{t.replace('+', '-')}", inside), t)
+        def letters(x):
+            return re.sub(r"[A-O]", lambda y: wrap(self._to(f"sec-{y.group(0)}", inside), y.group(0)), x)
+        head = ""
+        if self._sections_open and (m := _SECTIONS_REST.match(s)):
+            head, s = m.group(1) + letters(m.group(2)), s[m.end():]
+        self._sections_open = bool(_SECTIONS_OPEN.search(s)) if s.strip() else self._sections_open
+        return head + _PLAIN.sub(repl, s)
 
     def link(self):
-        """A code run whose text is exactly one of the poster's anchors becomes a link to that card: in a Stated
-        with, Proof uses or Used by footer, in a card's text, in a key. One that names a card on another poster of
-        the set links there, by a relative href that resolves in the tree, on the Pages site and among a release's
-        assets alike. Plain href, SVG's own <a> inside <text>; no glyph is added, so the measured widths and the
-        overlap check are unchanged."""
-        anchors = set(self.anchors)
-        def repl(m):
-            t = m.group(2)
-            if t in anchors:
-                self.links += 1
-                return f'<a href="#{t}">{m.group(0)}</a>'
-            if t in REGISTRY:
-                self.links_out += 1
-                return f'<a href="{REGISTRY[t]}#{t}">{m.group(0)}</a>'
-            if t in EXTERNAL:
-                self.links_ext += 1
-                return f'<a href="{escape(EXTERNAL[t])}">{m.group(0)}</a>'
-            return m.group(0)
-        def line(s):   # the runs render_line has already made links are left alone: SVG does not nest <a>
-            parts = re.split(r'(<a href="[^"]*">.*?</a>)', s)
-            return "".join(p if i % 2 else self._MONO_TSPAN.sub(repl, p) for i, p in enumerate(parts))
-        self.out = [line(s) if "<tspan" in s else s for s in self.out]
+        """Make links wherever the text names something a poster of the set or formal-math at the pin draws, in one
+        pass over the drawn SVG, after the layout: no glyph is added, so the measured widths and the overlap check are
+        unchanged. Plain href, SVG's own <a> inside <text>; a link to another poster is relative, and resolves in the
+        tree, on the Pages site and among a release's assets alike.
+
+        - A code run whose text is exactly an anchor links to that card: on this poster, else on the poster that
+          draws it (REGISTRY). Then _code's other rules: libraries, directories, a short name of a card's Lean name,
+          and formal-math (EXTERNAL, FILES).
+        - Plain text: _PLAIN's names, by _plain. Not in a Lean panel (a text set in mono), and not inside a link.
+        - A link the text marks for later, [[@#id|…]] or [[@poster:ID|…]] (vp.to, vp.library, vp.poster), resolves
+          here: to the anchor, as _to does, or to another poster's top. One that does not resolve is dropped, and its
+          text stays.
+        A name inside the card or row it would open stays text (the open groups' ids), except a code run that is
+        exactly an anchor, as before."""
+        self._own = set(self.anchors)
+        self._sections_open = False
+        groups, links = [], []        # the ids of the open <g> (None for none); per open <a>, whether it is kept
+        in_text = mono_text = False
+        out = []
+        for s in self.out:
+            if "<" not in s:
+                out.append(s)
+                continue
+            toks, res, i = _TAG.split(s), [], 0
+            while i < len(toks):
+                t = toks[i]
+                inside = {g for g in groups if g}
+                if not t.startswith("<"):
+                    if t and in_text and not links and not mono_text:
+                        t = self._plain(t, inside)
+                    res.append(t)
+                elif re.match(r"<g[\s>]", t):
+                    m = re.search(r' id="([^"]*)"', t)
+                    groups.append(m.group(1) if m else None)
+                    res.append(t)
+                elif t == "</g>":
+                    groups.pop()
+                    res.append(t)
+                elif t.startswith("<a "):
+                    href = unescape(re.search(r' href="([^"]*)"', t).group(1))
+                    if href.startswith("#"):
+                        href = self._to(href[1:], inside)
+                    elif href.startswith("poster:"):
+                        pid = href[len("poster:"):]
+                        href = f"{POSTERS[pid]}#{TOP}" if pid in POSTERS and pid != self.ident else None
+                        self.links_out += href is not None
+                    links.append(href is not None)
+                    if href is not None:
+                        res.append(f'<a href="{escape(href)}">')
+                elif t == "</a>":
+                    if links.pop():
+                        res.append(t)
+                elif t.startswith("<text"):
+                    in_text, mono_text = True, self._MONO_ATTR in t
+                    res.append(t)
+                elif t == "</text>":
+                    in_text = False
+                    res.append(t)
+                elif (t.startswith("<tspan") and self._MONO_ATTR in t and not links and i + 2 < len(toks)
+                      and toks[i + 2] == "</tspan>" and toks[i + 1]
+                      and (h := self._code(unescape(toks[i + 1]), inside))):
+                    res += [f'<a href="{escape(h)}">', t, toks[i + 1], "</tspan>", "</a>"]
+                    i += 3
+                    continue
+                else:
+                    res.append(t)
+                i += 1
+            out.append("".join(res))
+        self.out = out
 
     def check(self):
         """Warn about text lines whose boxes intersect, or that leave the canvas, and about characters the

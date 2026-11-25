@@ -21,6 +21,7 @@ the other's Lean theorems, bare or as `Paper.<name>`, directly or through declar
 belong to no statement. A name is matched as written: an `open`, a local variable of the same name, or a reference
 made by a tactic without naming the theorem are not seen. The posters say so where they draw these edges.
 """
+import collections
 import hashlib
 import json
 import os
@@ -73,9 +74,9 @@ NOT_BUILT = ("Nothing here builds or elaborates the Lean: names are read from th
 
 # ------------------------------------------------------------------------------------------------ git and hashes
 NOT_BUILT_LEAN = ("The posters build no Lean. The uses between statements are read from an export of vp-vnp built once "
-                  "at the pinned commit (src/lean-uses.json; F9 sets them against the source text), and a card says "
-                  "what a statement is, not that it is proved. That the proofs check is the claim of the formal-math "
-                  "repository's own CI (Comparator, with the nanoda kernel), not of these posters.")
+                  "at the pinned commit (src/lean-uses.json; [[@poster:F9|F9]] sets them against the source text), "
+                  "and a card says what a statement is, not that it is proved. That the proofs check is the claim of "
+                  "the formal-math repository's own CI (Comparator, with the nanoda kernel), not of these posters.")
 
 
 def git_rev(path, pin, what):
@@ -100,6 +101,22 @@ def lean_url(full, path, line=None):
 
 def linked(url, text):
     return f"[[@{url}|{text}]]" if url else text
+
+
+def to(anchor, text):
+    """A link to a poster's card, resolved when the poster is drawn (lib.Canvas.link): to the card on this poster,
+    else on the poster that draws it, else no link and the text alone."""
+    return f"[[@#{anchor}|{text}]]"
+
+
+def library(name, text=None):
+    """A library's card on F2, where F2 draws one (Mathlib has none)."""
+    return to(f"lib-{name}", text or name)
+
+
+def poster(pid, text=None):
+    """Another poster as a whole, opened at its title (lib.TOP); on the poster itself, the text alone."""
+    return f"[[@poster:{pid}|{text or pid}]]"
 
 
 # ------------------------------------------------------------------------------------------------ Lean text
@@ -314,6 +331,28 @@ def load(lean=True):
             s.decls[d["name"]] = d
             by_short.setdefault(d["short"], []).append(d["name"])
     s.by_short = by_short
+    # What a poster's text may link to in formal-math at the pin (lib.link): a declaration's line by its full name, or
+    # by its short name where no other declaration has it and it is not a one- to three-letter local's; a module's
+    # file by the module's name; a file by its path, or a .lean file by its own name where no other has it. Only the
+    # files read here and the files at the top of the folder, with the lines each has.
+    lib.EXTERNAL.clear()
+    lib.FILES.clear()
+    for n, d in s.decls.items():
+        lib.EXTERNAL[n] = lean_url(s.full, d["file"], d["line"])
+    for short, ns in by_short.items():
+        if len(ns) == 1 and len(short) > 3 and short not in lib.EXTERNAL:
+            lib.EXTERNAL[short] = lib.EXTERNAL[ns[0]]
+    for mod, m in s.modules.items():
+        lib.EXTERNAL.setdefault(mod, lean_url(s.full, m["file"]))
+        lib.FILES[m["file"]] = (lean_url(s.full, m["file"]), m["lines"])
+    names = collections.Counter(pathlib.PurePosixPath(m["file"]).name for m in s.modules.values())
+    for m in s.modules.values():
+        name = pathlib.PurePosixPath(m["file"]).name
+        if names[name] == 1:
+            lib.FILES.setdefault(name, lib.FILES[m["file"]])
+    for p in sorted(VP.iterdir()):
+        if p.is_file() and p.suffix in (".json", ".md", ".toml"):
+            lib.FILES[p.name] = (lean_url(s.full, p.name), p.read_text(encoding="utf-8").count("\n"))
 
     # the numbered statements: Table 3, each Lean name a declaration Paper.<name>
     s.statements = {}

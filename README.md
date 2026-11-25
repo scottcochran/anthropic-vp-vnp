@@ -65,8 +65,10 @@ Open them on their own and zoom in.
 
 What each poster checks is in [diagrams/README.md](diagrams/README.md). Which of a poster's words are quoted,
 computed or its own is in [diagrams/TEXT.md](diagrams/TEXT.md), and how the paper's tables were read is in
-[tools/paper-facts/README.md](tools/paper-facts/README.md). On a poster opened on its own, a statement number
-links to its row on F1, and a Lean name, file or line links to formal-math at the pinned commit.
+[tools/paper-facts/README.md](tools/paper-facts/README.md). On a poster opened on its own (not in GitHub's file
+viewer), a statement number, section, library, directory or reference key links to the poster that draws it, and a
+Lean name, module, file or line links to formal-math at the pinned commit ([diagrams/README.md](diagrams/README.md),
+Links).
 
 ## Building
 

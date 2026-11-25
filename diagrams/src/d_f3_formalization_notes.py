@@ -112,7 +112,7 @@ def build():
            "notes in the order of the text. The bars measure, for each numbered statement, the declarations under its "
            "Lean theorems: the walk from them through every constant of their elaborated terms, in any library, "
            "stopping at another statement's theorems, each constant counted as the source declaration it belongs to. "
-           "A statement number links to its row on F1. " + vp.NOT_BUILT_LEAN, S + 0.5,
+           "A statement number links to its row on " + vp.poster("F1") + ". " + vp.NOT_BUILT_LEAN, S + 0.5,
            "muted")
     y += 64
 
@@ -133,7 +133,7 @@ def build():
         d = src.decls[r["decls"][0]]
         url = vp.lean_url(src.full, d["file"], d["line"])
         v = WEIGHT[subj]
-        parts = ", ".join(f"{lib} {v[1 + i]}" for i, lib in enumerate(LIBS) if v[1 + i])
+        parts = ", ".join(f"{vp.library(lib)} {v[1 + i]}" for i, lib in enumerate(LIBS) if v[1 + i])
         title = (r["header"] or {}).get("title") or r["kind"].lower()
         specs.append(dict(
             name=f"p. {page} · {sub}", accent="pink" if subj in OVERVIEW else "grey",

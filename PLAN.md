@@ -170,6 +170,29 @@ misses 480 compiler-made constants (derived instances, equation lemmas), through
 more declarations under 6 statements (A.5, A.6, A.7, G.2, L.3, M.4). F9 records all of it; F3 and F5 draw the
 export's counts. Nothing is open in Phase 2.
 
+## Phase 3: a link wherever a mapping is (2026.11.25)
+
+Before it, every link between posters opened a statement or a Lean name, nearly all on F1; nothing linked to the 215
+anchors of R2's sections, F2's libraries, F3's notes, F4's boxes, F5's directories, F6's differences or F8's
+references, and F5 and F7 had no links. `Canvas.link()` now makes every link in one pass after the layout, by the
+rules `diagrams/README.md` (Links) lists: in code and in plain text, to a card or row of the set through the manifest,
+and to formal-math at the pin through the declarations, modules and files `vp.load` reads. A library and another
+poster's id are linked only where a poster marks them (`vp.library`, `vp.poster`), since "Paper" and "T1" are also
+words and a variable.
+
+Done: 869 links added and none changed or removed: `check-links.py` counts 2,615 (1,746 before): 1,075 to another
+poster (742), 635 within a poster (497), 773 to formal-math at the pin (375), 132 to papers (132). No anchor moved,
+no WARNING, a second run changes nothing; `check-expectations.py --strict` and `determinism.py` pass. In Chrome
+(Playwright, outside the build): every one of the 2,615 links is the element at the centre of its own text, so none
+is covered; one link of each new kind, clicked there, opened its target framed, 91 to 92 px below the top of the window
+(R2 `sec-H` and `sec-K`, F2 `lib-Nc`, F5 `dir-Nc-Price`, F1 `F.1-display`, R1 `Statement.MainTheorem`; F8 `ref-Val79`
+at 373 px, its row too near the end of the page to scroll higher), and R3's title for a poster's id. No glyph is added, so the drawn text is unchanged: a
+PATCH (Releases).
+
+Left as text, with no target: F1's LaTeX labels (`def:spectral`); the paper's Sections 1 to 3, which no poster draws
+as a card; Appendix Q.3 and the formalization notes, which no poster names by a form a rule could read; a name inside
+its own card or row; names inside the Lean panels, which quote code.
+
 ## Releases
 
 A release is a version tag, `vMAJOR.MINOR.PATCH`, annotated and signed, on `main`, pushed by the custodian
