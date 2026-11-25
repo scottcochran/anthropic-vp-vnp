@@ -288,7 +288,7 @@ A release is a version tag, `vMAJOR.MINOR.PATCH`, annotated and signed, on `main
 hashes, the run) and `SHA256SUMS`, and publishes every poster's SVG with notes from `tools/release-notes.py`
 (proof-posters:cutting-releases). Each release is then published by `.github/workflows/pages.yml` to the Pages site,
 https://scottcochran.github.io/anthropic-vp-vnp/, which serves one release at a time, checked against its
-`SHA256SUMS`. The site is public, though the repository is private.
+`SHA256SUMS`. The site is public, and so, since 2026.11.25, is the repository.
 
 | Part | When it changes | What a reader of a cited poster has to do |
 |---|---|---|
