@@ -152,9 +152,7 @@ MATRIX = {'A': {'Ov.Core': 1008, 'Nc.Price': 174, 'Nc.Rate': 5, 'Ov.Duality': 30
        'Nc.Final': 170}}
 
 
-def dir_of(module):
-    p = module.split(".")
-    return f"{p[0]}.{p[1]}" if p[0] in ("Nc", "Ov") and len(p) > 2 else p[0]
+dir_of = vp.dir_of   # as F10 groups the files
 
 
 def build():
@@ -273,7 +271,7 @@ def build():
         hs = heads.get(dd, [])[:3]
         specs.append(dict(
             name=dd if dd != "Nc" else "Nc, files at the top", accent=LIB_ACCENT[dd.split(".")[0]], pill=f"home {best} · {share}",
-            bullets=[f"**{f} files**, {ln} lines, {dl} in declarations",
+            bullets=[vp.to(vp.files_id(dd), f"**{f} files**, {ln} lines, {dl} in declarations"),   # the files on F10
                      f"**Under a statement** {REACHED[dd]} of {dl} declaration lines ({100 * REACHED[dd] / dl:.1f}%)",
                      f"**Home** Section {best}, “{vp.abridge(t1[best]['what'], 60)}”: {bl} of the {tot} lines "
                      "the sections reach here"]

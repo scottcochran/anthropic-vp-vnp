@@ -328,6 +328,11 @@ _SECTIONS_REST = re.compile(r"^(\s*(?:, and |, |and |to |or |–)?)(" + _LETTERS
 _TAG = re.compile(r"(<[^>]+>)")
 
 
+def _bare(s):
+    """Rich text as plain text, for the <title> and <desc> a reader's tools show: no markup, no link."""
+    return re.sub(r"[*`]", "", re.sub(r"\[\[@?[^|\]]+\|(.+?)\]\]", r"\1", s))
+
+
 def load_registry(manifest):
     POSTERS.clear(); ANCHORS_OF.clear(); REGISTRY.clear()
     for pid, m in manifest.items():
@@ -444,7 +449,9 @@ class Canvas:
                  f'{fs(f, accent)} stroke-width="{sw}"{d}/>', y + h)
 
     def pill(self, x, y, label, accent="grey", size=12, dash=None, solid=False, anchor="start"):
+        """A rounded label. It may be a link, [[@url|text]] (vp.to); its text is drawn bold in either case."""
         w = text_width(label, size, bold=True) + 18
+        runs = [(s, "b", a if a and a.startswith("@") else None) for s, _, a in parse(label)]
         h = size + 10
         if anchor == "end":
             x -= w
@@ -454,11 +461,11 @@ class Canvas:
         if solid:
             self.add(f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h}" rx="{h / 2}" '
                      f'{fs(accent, accent)} stroke-width="1.2"/>')
-            self.add(render_line(x + 9, y + size + 2.5, [(label, "b", None)], size, "bg"), y + h)
+            self.add(render_line(x + 9, y + size + 2.5, runs, size, "bg"), y + h)
         else:
             self.add(f'<rect x="{x:.1f}" y="{y:.1f}" width="{w:.1f}" height="{h}" rx="{h / 2}" '
                      f'{fs(accent + "-t", accent)} stroke-width="1.2"{d}/>')
-            self.add(render_line(x + 9, y + size + 2.5, [(label, "b", None)], size, accent), y + h)
+            self.add(render_line(x + 9, y + size + 2.5, runs, size, accent), y + h)
         return w
 
     def status(self, x, y, key, extra="", size=11.5, anchor="start"):
@@ -583,8 +590,9 @@ class Canvas:
     def table(self, x, y, cols, rows, size=13.5, header=True, hsize=13.5, pad=9, zebra=True, draw=True,
               accent="grey"):
         """cols: list of (title, width[, opts]) where opts may hold mono/bold/accent/align.
-        rows: list of lists of rich strings; or {'group': label, 'accent': a}; or
-        {'cells': [...], 'accent': a, 'dash': bool} to tint a row. Returns height."""
+        rows: list of lists of rich strings; or {'group': label, 'accent': a, 'anchor': id}; or
+        {'cells': [...], 'accent': a, 'dash': bool, 'anchor': id} to tint a row. A row or group row with an anchor is
+        a group of class rd-row, which a link may open. Returns height."""
         lead = round(size * 1.38, 1)
         tw = sum(c[1] for c in cols)
         cy = y
@@ -618,10 +626,15 @@ class Canvas:
                 gl = wrap(r["group"], tw - 2 * pad, size, bold=True)
                 gh = len(gl) * lead + 2 * pad - 4
                 if draw:
+                    if r.get("anchor"):
+                        parts.append(f'<g id="{r["anchor"]}" class="rd-row">')
+                        self.anchors.append(r["anchor"])
                     parts.append(f'<rect x="{x}" y="{cy:.1f}" width="{tw}" height="{gh:.1f}" '
                                  f'{fs(gacc + "-t", "line")} stroke-width="1"/>')
                     for i, ln in enumerate(gl):
                         parts.append(render_line(x + pad, cy + pad + size - 2 + i * lead, ln, size, gacc, bold=True))
+                    if r.get("anchor"):
+                        parts.append("</g>")
                 cy += gh
                 continue
             racc, rdash, ranchor = None, False, None
@@ -718,19 +731,23 @@ class Canvas:
     def _code(self, t, inside):
         """The href of a whole code run: a card's id, as before, wherever the run stands; then a library of F2 or a
         directory of F5; then a card named by its full Lean name, when the run is the last part of exactly one such
-        name (this poster's first); then the declaration, module or file in formal-math at the pin."""
+        name (this poster's first); then the declaration, module or file in formal-math at the pin. A library, a
+        directory and a file (lib-, dir-, mod-) are looked for on this poster first, then on the others."""
         if t in self._own:
             self.links += 1
             return f"#{t}"
         if t in REGISTRY:
             self.links_out += 1
             return f"{REGISTRY[t]}#{t}"
-        for frag in (f"lib-{t}", f"dir-{t.replace('.', '-')}"):
-            if h := self._to(frag, inside):
-                return h
+        frags = (f"lib-{t}", f"dir-{t.replace('.', '-')}", f"mod-{t}")
+        for pool in (self._own, REGISTRY):
+            for frag in frags:
+                if frag in pool and (h := self._to(frag, inside)):
+                    return h
         if re.fullmatch(r"[A-Za-z_][\w']+", t):
             for pool in (self._own, REGISTRY.keys()):
-                named = [a for a in pool if a.endswith("." + t) and not _STATEMENT.match(a)]
+                # a card's Lean name: not a statement number, nor a prefixed id (mod-, dir-, …), which has a hyphen
+                named = [a for a in pool if a.endswith("." + t) and not _STATEMENT.match(a) and "-" not in a]
                 if len(named) == 1:
                     return self._to(named[0], inside)
                 if named:
@@ -749,9 +766,10 @@ class Canvas:
             g, t = m.lastgroup, m.group(0)
             if g == "file":
                 return wrap(self._file(t.split(":")[0], m.group("line")), t)
-            if g == "dotted":
+            if g == "dotted":   # a directory, a file or a card, on this poster first; else formal-math
                 u = unescape(t)
-                h = self._to(f"dir-{u.replace('.', '-')}", inside) or self._to(u, inside)
+                h = next((h for pool in (self._own, REGISTRY) for f in (f"dir-{u.replace('.', '-')}", f"mod-{u}", u)
+                          if f in pool and (h := self._to(f, inside))), None)
                 if not h and u in EXTERNAL:
                     self.links_ext += 1
                     h = EXTERNAL[u]
@@ -925,8 +943,8 @@ class Canvas:
             for k in list(ACCENTS) + ["ink", "muted", "faint"])
         head = (f'<svg xmlns="http://www.w3.org/2000/svg" width="{self.W}" height="{H}" '
                 f'viewBox="0 0 {self.W} {H}" aria-labelledby="t d">\n'
-                f'<title id="t">{BRAND} {escape(self.ident)} — {escape(re.sub(r"[*`]", "", self.title))}</title>\n'
-                f'<desc id="d">{escape(re.sub(r"[*`]", "", self.subtitle))}</desc>\n'
+                f'<title id="t">{BRAND} {escape(self.ident)} — {escape(_bare(self.title))}</title>\n'
+                f'<desc id="d">{escape(_bare(self.subtitle))}</desc>\n'
                 f'<style>\n{_css()}\n</style>\n<defs>{markers}</defs>\n'
                 f'<rect width="{self.W}" height="{H}" {fill("page")}/>\n')
         self.link()

@@ -193,6 +193,33 @@ Left as text, with no target: F1's LaTeX labels (`def:spectral`); the paper's Se
 as a card; Appendix Q.3 and the formalization notes, which no poster names by a form a rule could read; a name inside
 its own card or row; names inside the Lean panels, which quote code.
 
+## Phase 3b: F10 `files`, and every count of a library or a directory opening what it counts (2026.11.25)
+
+A count should open the list it counts (proof-posters:linking-posters), and F2's library cards ("1 file", "98 lines,
+13 declarations", "Imports Mathlib (1)") and F5's directory cards ("10 files, 1218 lines, …") opened nothing: no
+poster listed the files, the declarations or the import lines they count. F10 lists them: every one of the 323 Lean
+files, grouped by library and by F5's directories (`vp.dir_of`, now shared), with its lines, its declarations, each
+linked to its line at the pin, and the files it imports and is imported by, each linked to its row. A header row per
+library and directory carries the counts and is what F2's and F5's counts open. F2 gains a band of the 126 import lines
+between libraries, file by file, one row per pair, which its import counts and the cells of its import table open.
+F10 records the counts of each library and directory (`GROUPS`), not each file's; F2 records the 126 lines (`ACROSS`).
+It does not list the declarations F3 counts under a statement: that closure is the export's, and no poster draws it.
+
+The library: a pill may be a link; a table's group row may carry an anchor, framed as a row is; a library, a
+directory or a module is looked for on the poster itself before the others; a module opens its F10 row (`mod-`), where
+it opened its file in formal-math before; a file by its path still opens formal-math. The `<title>` and `<desc>` of a
+poster drop link markup, as they drop bold and code.
+
+Done: F10 builds, 14,728 px tall and 2.3 MB, with 354 anchors and 6,121 links; F2 and F5 change, the other 12 posters
+are byte-identical. No WARNING; `check-expectations.py --strict` (15 modules, 66 expectations), `check-links.py`
+(9,075 links: 1,465 to another poster, 1,797 within a poster, 5,681 to formal-math, 132 to papers) and
+`determinism.py` pass, and a second run changes nothing. In Chrome every one of the 9,075 links is the element at the
+centre of its own text, and each new kind, clicked there, opened its target framed 91 to 92 px below the top of the
+window: F2's "1 file" and "98 lines, 13 declarations" (F10 `files-Statement`), "Mathlib (1)", "Challenge (1)" and the
+table's 50 (F2 `imp-Statement-Mathlib`, `imp-Challenge-Statement`, `imp-Paper-Nc`), F5's count (F10
+`files-Nc.Price`), an import on F10 (`mod-Nc.Price.Basic`) and a directory header's card (F5 `dir-Nc-Price`). A poster
+is added, so the next release is a MINOR.
+
 ## Releases
 
 A release is a version tag, `vMAJOR.MINOR.PATCH`, annotated and signed, on `main`, pushed by the custodian

@@ -114,6 +114,19 @@ def library(name, text=None):
     return to(f"lib-{name}", text or name)
 
 
+def dir_of(module):
+    """The directory a file is counted in, as F5 and F10 count: Nc.Price for Nc.Price.Cross, Nc for a file at the top
+    of Nc, and the library for every other file."""
+    p = module.split(".")
+    return f"{p[0]}.{p[1]}" if p[0] in ("Nc", "Ov") and len(p) > 2 else p[0]
+
+
+def files_id(group):
+    """The id of a library's or a directory's header row on F10: files-Nc.Price; files-Nc-top for the files at the top
+    of Nc, which F5 counts as the directory Nc; files-<library> for a library."""
+    return f"files-{group}-top" if group in ("Nc", "Ov") else f"files-{group}"
+
+
 def poster(pid, text=None):
     """Another poster as a whole, opened at its title (lib.TOP); on the poster itself, the text alone."""
     return f"[[@poster:{pid}|{text or pid}]]"

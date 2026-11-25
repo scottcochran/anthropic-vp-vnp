@@ -29,7 +29,7 @@ expected_names = ["EXPECTED", "DIRECT", "BORNE", "LEAN_ONLY", "CASES", "COUNTS",
                   "BEYOND_TABLE3", "UNIVERSES", "STRONGER", "DIFFERENCES", "GLOSSARY", "RENAMES", "IN_NAMES",
                   "IN_TEXT", "N_REFS", "N_CITATIONS", "CITED", "EXPORT_ONLY", "OUTSIDE", "TEXT_ONLY",
                   "KIND_DIFFERS", "LEAN_COUNTS", "SECTIONS_ADDED", "MODULES_COUNTS", "READINGS_DIFFER",
-                  "RULE_FALSE", "RULE_MISSED", "UNDER_DIFFERS"]
+                  "RULE_FALSE", "RULE_MISSED", "UNDER_DIFFERS", "GROUPS", "ACROSS"]
 # The expected_names whose change makes a release MINOR (PLAN.md, "Releases").
 minor_names = ["EXPECTED", "CLAIMS"]
 

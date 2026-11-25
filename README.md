@@ -60,15 +60,19 @@ Open them on their own and zoom in.
   reading are confirmed, of the same kind; the Lean shows 24 more, each through a helper outside the Paper library,
   which the text reading does not walk. A second Lean reading, from the compiled modules read by Lean itself, gives the
   same 124 uses. Every poster that draws uses reads the Lean.
-- [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
-  files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
+- [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, counted
+  and then the 126 import lines between libraries file by file, the 44 files of the Paper library with the part of the
+  paper each one's docstring names, and the 12 largest files.
+- [The proof file by file](diagrams/F10-files-2026.11.25.svg): all 323 Lean files, by library and by directory, each
+  with its lines, its declarations (4,618 in all, each linked to its line at the pin), and the files it imports and is
+  imported by. The counts on F2's library cards and F5's directory cards open the files they count here.
 
 What each poster checks is in [diagrams/README.md](diagrams/README.md). Which of a poster's words are quoted,
 computed or its own is in [diagrams/TEXT.md](diagrams/TEXT.md), and how the paper's tables were read is in
 [tools/paper-facts/README.md](tools/paper-facts/README.md). On a poster opened on its own (not in GitHub's file
-viewer), a statement number, section, library, directory or reference key links to the poster that draws it, and a
-Lean name, module, file or line links to formal-math at the pinned commit ([diagrams/README.md](diagrams/README.md),
-Links).
+viewer), a statement number, section, library, directory, module or reference key links to the poster that draws it,
+a count to the list it counts, and a Lean name, file or line to formal-math at the pinned commit
+([diagrams/README.md](diagrams/README.md), Links).
 
 ## Building
 

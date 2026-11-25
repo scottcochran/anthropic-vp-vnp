@@ -1,6 +1,6 @@
 # The posters and what they check
 
-Fourteen posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
+Fifteen posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
 expects them to say as module-level literals, and fails the build when they differ, in either direction. R is a
 reading at one level, T a trace, F another frame. The generator is `diagrams/gen-diagrams.py`. Any line it prints starting
 with WARNING or ERROR is a failure.
@@ -53,7 +53,8 @@ file the naming file imports, and has at least three characters.
 | F7 `vocabulary` | the glossary and the renamings, each word counted in the Lean | the glossary's terms and places (`GLOSSARY`); the renamings (`RENAMES`); each word's count in declaration names (`IN_NAMES`) and in the source text (`IN_TEXT`) |
 | F8 `literature` | the references by decade, where each is cited, each linked to its paper | the number of references and citations (`N_REFS`, `N_CITATIONS`); where each reference is cited (`CITED`); that every reference has an entry in `src/papers.toml` and every entry names a reference (with `vp.load`), each with a url or a note saying why not |
 | F9 `text-lean` | every use between statements in the text reading and in the Lean reading (`src/lean-uses.json`) | the export's counts (`LEAN_COUNTS`); the uses only the text shows (`TEXT_ONLY`, none) and those the two give different kinds (`KIND_DIFFERS`, none); the uses only the Lean shows (`EXPORT_ONLY`) and the helper outside Paper behind each (`OUTSIDE`); the uses between sections the Lean adds (`SECTIONS_ADDED`); the second Lean reading's counts (`MODULES_COUNTS`), that the two Lean readings give the same uses (`READINGS_DIFFER`, none), the export rule's false and missed constants (`RULE_FALSE`, `RULE_MISSED`), and where they find different declarations under a statement (`UNDER_DIFFERS`) |
-| F2 `modules` | the seven libraries, the imports between them, the Paper library file by file, the largest files | files, lines and declarations per library (`LIBRARY`); imports between libraries (`IMPORTS`); the files outside Paper that import a Paper file (`UPWARD`); the statements each Paper file declares (`STATEMENTS_IN`); the 12 largest files (`TOP`) |
+| F2 `modules` | the seven libraries, the imports between them, counted and then file by file, the Paper library file by file, the largest files | files, lines and declarations per library (`LIBRARY`); imports between libraries (`IMPORTS`), and the 126 import lines between them file by file (`ACROSS`); the files outside Paper that import a Paper file (`UPWARD`); the statements each Paper file declares (`STATEMENTS_IN`); the 12 largest files (`TOP`) |
+| F10 `files` | every one of the 323 Lean files, by library and by F5's directories: its lines, its declarations, each linked to its line at the pin, and the files it imports and is imported by; a header row per library and directory, which F2's and F5's counts open | the files, lines and declarations of each library and each directory (`GROUPS`); not each file's, so a declaration renamed or replaced within a directory is not caught |
 
 Also fails on any poster: a Table 3 name that no file declares, a declaration name used twice outside
 `Challenge.lean`, a Lean file outside the seven libraries, a title wider than its card, a cell's word wider than
@@ -71,20 +72,23 @@ the source, draws it:
 | a statement number (`K.3`), or a display in parentheses (`(F.1)`) | its card on the same poster, else its row on F1; a display only where F1 has a row for it, so `(B.2)` stays text |
 | a section (`Section K`, `Sections C and A`, `Appendix O`), or an appendix in F8's Cited in | its card on R2 |
 | a directory (`Nc.Price`) | its card on F5 |
-| a library, where a poster marks it (F2, F3, F5, F9) | its card on F2 |
+| a library, where a poster marks it (F2, F3, F5, F9, F10) | its card on F2 |
+| a count of a library's files, lines and declarations on F2, or of a directory's on F5 | its header row on F10, above the files it counts |
+| an import count on F2 (`Imports Nc (50)`, and the cells of its import table) | the import lines it counts, in F2's band 3; within one library, its files on F10 |
+| a module (`Nc.Price.Cross`), in code or in plain text | its row on F10 |
 | a reference's key (`Val79`) | its row on F8 |
 | one of Solution's theorems or Statement's definitions, by its full name or, in code, by its last part | its card on R1 |
 | another poster by its id, where a poster marks it (`R3 checks that sentence`) | that poster's title |
 | a Lean declaration, by its full name, or by a short name that one declaration has and that is four letters or more, in code or as the paper prints one (a word with an underscore) | its line in formal-math at the pin |
-| a module, a file of vp-vnp, or a `file:line` | the file, or the line, at the pin |
+| a file of vp-vnp by its path (`Paper/Tree.lean`), or a `file:line` | the file, or the line, at the pin |
 
 A name stays text inside the card or row it would open, inside a Lean panel (which quotes code), and wherever it does
 not resolve. A link to a poster is made only to an id the committed `manifest.json` lists, which the generator writes
 with every poster's anchors; when a run moves any poster's anchors, it updates the manifest, prints a NOTE and exits
 1, and the second run makes the links follow. A link to formal-math is made only to a declaration or file read at the
 pin, and to a line that file has. `check-links.py` (proof-posters:linking-posters) checks that every link lands; at
-2026.11.25 it counts 2,615 links: 1,075 to another poster, 635 within a poster, 773 to formal-math at the pin and 132
-to the papers of F8. That count is written here by hand.
+2026.11.25 it counts 9,075 links: 1,465 to another poster, 1,797 within a poster, 5,681 to formal-math at the pin and
+132 to the papers of F8. That count is written here by hand.
 
 A link's target is framed when it opens (CSS `:target`): a card by its halo, a table row by its own background, and
 without the pulse under reduced motion. This works wherever a browser opens the SVG as a document (the Pages site, a
