@@ -122,7 +122,10 @@ def _css():
     lines.append("a:hover tspan,a:focus tspan,a:hover>text{text-decoration:underline} a:hover>rect{stroke-width:3.4}")
     lines.append(".rd-target{opacity:0} g:target>.rd-target{opacity:1;animation:rd-pulse 0.9s ease-in-out 3} "
                  "@keyframes rd-pulse{50%{stroke-width:9}} g[id]{scroll-margin-top:90px} "
-                 "@media (prefers-reduced-motion:reduce){g:target>.rd-target{animation:none}}")
+                 "g.rd-row:target>rect:first-child{fill:var(--amber-t);stroke:var(--amber);stroke-width:3;"
+                 "animation:rd-pulse 0.9s ease-in-out 3} "
+                 "@media (prefers-reduced-motion:reduce){g:target>.rd-target,g.rd-row:target>rect:first-child"
+                 "{animation:none}}")
     for k in BASE:
         lines.append(f".f-{k}{{fill:var(--{k})}} .s-{k}{{stroke:var(--{k})}}")
     for k in ACCENTS:
@@ -159,8 +162,9 @@ def sonly(stroke_name):
     return f'fill="none" stroke="{light(stroke_name)}" class="s-{stroke_name}"'
 
 
-# A link's target is framed when it is opened (the plugin's linking-posters, step 3): every anchored group's first
-# child is a halo, a rounded rectangle a little larger than what the group draws, hidden by its opacity attribute and
+# A link's target is framed when it is opened (the plugin's linking-posters, step 3). A table row that a link may open
+# is a group of class rd-row, whose own background, its first child, the style frames (lib.table). Every other
+# anchored group's first child is a halo, a rounded rectangle a little larger than what the group draws, hidden by its opacity attribute and
 # shown by the poster's own style while the group is the target. A renderer that runs no CSS keeps it hidden.
 TOP = "top"          # the id of every poster's header group, so that a link to a poster as a whole has a target
 HALO_PAD = 7
@@ -598,9 +602,8 @@ class Canvas:
                 racc, rdash, ranchor, r = r.get("accent"), r.get("dash", False), r.get("anchor"), r["cells"]
             ls = [cell_lines(s, c[1], c[2] if len(c) > 2 else {}) for s, c in zip(r, cols)]
             rh = max(max(len(l), 1) for l in ls) * lead + 2 * pad - 4
-            if draw and ranchor:      # a row a link may open: its group carries the id, and a halo first
-                parts.append(f'<g id="{ranchor}">')
-                parts.append(halo(x, cy, tw, rh, racc or accent, pad=3, rx=4))
+            if draw and ranchor:      # a row a link may open: its group carries the id, and the style frames the
+                parts.append(f'<g id="{ranchor}" class="rd-row">')   # row's own background, its first child
                 self.anchors.append(ranchor)
             if draw:
                 bgtok = f"{racc}-t" if racc else ("zebra" if zebra and ri % 2 else "bg")

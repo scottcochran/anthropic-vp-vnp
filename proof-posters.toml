@@ -67,7 +67,7 @@ note = "only where the choice needs one"
 
 [links]
 require_targets = true
-frame_classes = ["rd-target"]
+frame_classes = ["rd-target", "rd-row"]   # a card's halo; a table row, framed by its own background (lib.table)
 unrendered = ["[[@"]
 # Every link out that is not at the pin comes from src/papers.toml.
 allow = ["https://doi.org/", "https://zbmath.org/", "https://arxiv.org/", "https://www.numdam.org/", "https://eudml.org/",

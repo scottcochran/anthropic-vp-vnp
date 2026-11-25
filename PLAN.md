@@ -27,9 +27,7 @@ within a poster, 154 to another poster's id, 163 to formal-math at the pin. Look
 and, for R2, in dark (Chrome). Committed as 4f009f5; CI (posters, run 45571628046) regenerated all four at the
 pin on Ubuntu with Python 3.12, byte-identical to the committed files.
 
-Still open in Phase 1:
-
-- Look at a link's framed target in a browser. Headless Chrome's screenshot of `F1…svg#K.3` came out blank.
+Still open in Phase 1: nothing (the framed target was looked at in Phase 1i). Headless Chrome's screenshot of `F1…svg#K.3` came out blank.
 - Look at R1, F1 and F2 in the dark theme.
 
 ## Phase 1b: the route, and where the paper rests on the Lean (2026.11.25)
@@ -116,6 +114,16 @@ Read by eye against the pages PyMuPDF 2.1 renders: Table 1, Table 3, the glossar
 but for the typography of formulas (sub- and superscripts inline). Checked by script against PyMuPDF's own reading:
 the 64 statement headers (page and title), the 7 notes, the 6 statements of Sections 1 and 2, the 134 reference keys
 and years. No disagreement; nothing in `paper-facts.json` changed. tools/paper-facts/README.md lists what was read.
+
+## Phase 1i: a link's target, framed, in a browser (2026.11.25)
+
+Looked at in Chrome, driven by Playwright (`channel="chrome"`, outside the build), and measured, since a headless
+capture of a scrolled poster is not to be trusted (proof-posters:linking-posters, target-highlighting.md). A card
+opened at its id (R2#sec-K) shows its halo and lands 92 px below the top; a link from R2 to F1#K.3 opens F1 at the
+row. The rows of a table were not framed well: their halo was drawn first and the row's own background and the next
+row covered it. They now follow the plugin's form for a row, a group `rd-row` whose background, its first child, the
+style frames (3 px, amber), as `[links].frame_classes` now lists. Both themes; with reduced motion the frame stays
+and does not pulse.
 
 ## Phase 2: checking the uses against the Lean (planned)
 

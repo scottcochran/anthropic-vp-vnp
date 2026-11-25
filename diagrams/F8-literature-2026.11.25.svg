@@ -12,7 +12,7 @@ svg{--bg:#ffffff;--page:#eeeeee;--ink:#1e2430;--muted:#4a5262;--faint:#7d8596;--
 @media (prefers-color-scheme: dark){svg:not([data-theme=light]){--bg:#12151b;--page:#12151b;--ink:#e6e9ef;--muted:#b0b8c6;--faint:#7f8898;--panel:#1a1e26;--line:#363d4a;--zebra:#161a21;--blue:#8fb0ec;--blue-t:#1a2540;--teal:#6cc7b0;--teal-t:#12302a;--amber:#f0b15c;--amber-t:#33260f;--violet:#b9a0e8;--violet-t:#261d38;--red:#f08a8f;--red-t:#3a1a1d;--grey:#a3abb9;--grey-t:#22262e;--brown:#e0a56b;--brown-t:#2f2215;--pink:#ec8cc2;--pink-t:#351a2a;--green:#85c98a;--green-t:#17291a;}}
 svg[data-theme=dark]{--bg:#12151b;--page:#12151b;--ink:#e6e9ef;--muted:#b0b8c6;--faint:#7f8898;--panel:#1a1e26;--line:#363d4a;--zebra:#161a21;--blue:#8fb0ec;--blue-t:#1a2540;--teal:#6cc7b0;--teal-t:#12302a;--amber:#f0b15c;--amber-t:#33260f;--violet:#b9a0e8;--violet-t:#261d38;--red:#f08a8f;--red-t:#3a1a1d;--grey:#a3abb9;--grey-t:#22262e;--brown:#e0a56b;--brown-t:#2f2215;--pink:#ec8cc2;--pink-t:#351a2a;--green:#85c98a;--green-t:#17291a;}
 a:hover tspan,a:focus tspan,a:hover>text{text-decoration:underline} a:hover>rect{stroke-width:3.4}
-.rd-target{opacity:0} g:target>.rd-target{opacity:1;animation:rd-pulse 0.9s ease-in-out 3} @keyframes rd-pulse{50%{stroke-width:9}} g[id]{scroll-margin-top:90px} @media (prefers-reduced-motion:reduce){g:target>.rd-target{animation:none}}
+.rd-target{opacity:0} g:target>.rd-target{opacity:1;animation:rd-pulse 0.9s ease-in-out 3} @keyframes rd-pulse{50%{stroke-width:9}} g[id]{scroll-margin-top:90px} g.rd-row:target>rect:first-child{fill:var(--amber-t);stroke:var(--amber);stroke-width:3;animation:rd-pulse 0.9s ease-in-out 3} @media (prefers-reduced-motion:reduce){g:target>.rd-target,g.rd-row:target>rect:first-child{animation:none}}
 .f-bg{fill:var(--bg)} .s-bg{stroke:var(--bg)}
 .f-page{fill:var(--page)} .s-page{stroke:var(--page)}
 .f-ink{fill:var(--ink)} .s-ink{stroke:var(--ink)}
@@ -123,1072 +123,938 @@ a:hover tspan,a:focus tspan,a:hover>text{text-decoration:underline} a:hover>rect
 <text x="215.0" y="878.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13.5" fill="#ffffff" class="f-bg" text-anchor="start"><tspan font-weight="bold">Year</tspan></text>
 <text x="295.0" y="878.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13.5" fill="#ffffff" class="f-bg" text-anchor="start"><tspan font-weight="bold">The entry (the paper's reference list)</tspan></text>
 <text x="2345.0" y="878.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="13.5" fill="#ffffff" class="f-bg" text-anchor="start"><tspan font-weight="bold">Cited in</tspan></text>
-<g id="ref-AJMV98">
-<rect x="53.0" y="888.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-AJMV98" class="rd-row">
 <rect x="56" y="891.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="911.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">AJMV98</tspan></text>
 <text x="215.0" y="911.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1998</text>
 <text x="295.0" y="911.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/s0304-3975(97)00227-2">“E. Allender, J. Jiao, M. Mahajan and V. Vinay, Non-commutative arithmetic circuits: depth reduction and size lower bounds, Theoret. Comput. Sci. 209 (1998), 47–86.”</a> (crossref)</text>
 <text x="2345.0" y="911.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-AKK22">
-<rect x="53.0" y="919.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-AKK22" class="rd-row">
 <rect x="56" y="922.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="942.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">AKK22</tspan></text>
 <text x="215.0" y="942.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2022</text>
 <text x="295.0" y="942.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4086/toc.2022.v018a016">“P. Austrin, P. Kaski and K. Kubjas, Tensor network complexity of multilinear maps, Theory Comput. 18 (2022), article 16.”</a> (zbmath)</text>
 <text x="2345.0" y="942.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">H</text>
 </g>
-<g id="ref-Ald84">
-<rect x="53.0" y="951.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Ald84" class="rd-row">
 <rect x="56" y="954.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="973.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Ald84</tspan></text>
 <text x="215.0" y="973.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1984</text>
 <text x="295.0" y="973.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">“A. Alder, Grenzrang und Grenzkomplexität aus algebraischer und topologischer Sicht, Dissertation, Universität Zürich, 1984.” (not linked: no stable copy)</text>
 <text x="2345.0" y="973.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, N</text>
 </g>
-<g id="ref-All99">
-<rect x="53.0" y="982.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-All99" class="rd-row">
 <rect x="56" y="985.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1004.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">All99</tspan></text>
 <text x="215.0" y="1004.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1999</text>
 <text x="295.0" y="1004.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4086/cjtcs.1999.007">“E. Allender, The permanent requires large uniform threshold circuits, Chicago J. Theoret. Comput. Sci. 1999, article 7.”</a> (zbmath)</text>
 <text x="2345.0" y="1004.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-And84">
-<rect x="53.0" y="1013.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-And84" class="rd-row">
 <rect x="56" y="1016.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1035.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">And84</tspan></text>
 <text x="215.0" y="1035.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1984</text>
 <text x="295.0" y="1035.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1090/memo/0301">“G. E. Andrews, Generalized Frobenius partitions, Mem. Amer. Math. Soc. 49 (1984), no. 301.”</a> (crossref)</text>
 <text x="2345.0" y="1035.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">B</text>
 </g>
-<g id="ref-AV08">
-<rect x="53.0" y="1044.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-AV08" class="rd-row">
 <rect x="56" y="1047.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1067.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">AV08</tspan></text>
 <text x="215.0" y="1067.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2008</text>
 <text x="295.0" y="1067.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/focs.2008.32">“M. Agrawal and V. Vinay, Arithmetic circuits: a chasm at depth four, FOCS 2008, 67–75.”</a> (crossref)</text>
 <text x="2345.0" y="1067.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-AW09">
-<rect x="53.0" y="1075.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-AW09" class="rd-row">
 <rect x="56" y="1078.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1098.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">AW09</tspan></text>
 <text x="215.0" y="1098.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2009</text>
 <text x="295.0" y="1098.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/1490270.1490272">“S. Aaronson and A. Wigderson, Algebrization: a new barrier in complexity theory, ACM Trans. Comput. Theory 1 (2009), article 2.”</a> (crossref)</text>
 <text x="2345.0" y="1098.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BCRL79">
-<rect x="53.0" y="1107.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BCRL79" class="rd-row">
 <rect x="56" y="1110.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1129.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BCRL79</tspan></text>
 <text x="215.0" y="1129.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1979</text>
 <text x="295.0" y="1129.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/0020-0190(79)90113-3">“D. Bini, M. Capovani, F. Romani and G. Lotti, O(n2.7799) complexity for n × n approximate matrix multiplication, Inform. Process. Lett. 8 (1979), 234–235.”</a> (crossref)</text>
 <text x="2345.0" y="1129.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BCS97">
-<rect x="53.0" y="1138.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BCS97" class="rd-row">
 <rect x="56" y="1141.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1160.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BCS97</tspan></text>
 <text x="215.0" y="1160.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1997</text>
 <text x="295.0" y="1160.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/978-3-662-03338-8">“P. Bürgisser, M. Clausen and M. A. Shokrollahi, Algebraic complexity theory, Springer, 1997.”</a> (crossref)</text>
 <text x="2345.0" y="1160.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BEGKN94">
-<rect x="53.0" y="1169.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BEGKN94" class="rd-row">
 <rect x="56" y="1172.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1191.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BEGKN94</tspan></text>
 <text x="215.0" y="1191.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1994</text>
 <text x="295.0" y="1191.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf01185212">“M. Blum, W. Evans, P. Gemmell, S. Kannan and M. Naor, Checking the correctness of memories, Algorithmica 12 (1994), 225–244.”</a> (crossref)</text>
 <text x="2345.0" y="1191.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-Ber84">
-<rect x="53.0" y="1200.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Ber84" class="rd-row">
 <rect x="56" y="1203.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1223.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Ber84</tspan></text>
 <text x="215.0" y="1223.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1984</text>
 <text x="295.0" y="1223.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/0020-0190(84)90018-8">“S. J. Berkowitz, On computing the determinant in small parallel time using a small number of processors, Inform. Process. Lett. 18 (1984), 147–150.”</a> (crossref)</text>
 <text x="2345.0" y="1223.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, 2, N</text>
 </g>
-<g id="ref-BGS75">
-<rect x="53.0" y="1231.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BGS75" class="rd-row">
 <rect x="56" y="1234.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1254.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BGS75</tspan></text>
 <text x="215.0" y="1254.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1975</text>
 <text x="295.0" y="1254.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/0204037">“T. Baker, J. Gill and R. Solovay, Relativizations of the P ? = NP question, SIAM J. Comput. 4 (1975), 431–442.”</a> (hand)</text>
 <text x="2345.0" y="1254.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BH99">
-<rect x="53.0" y="1263.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BH99" class="rd-row">
 <rect x="56" y="1266.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1285.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BH99</tspan></text>
 <text x="215.0" y="1285.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1999</text>
 <text x="295.0" y="1285.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/978-3-662-12494-9">“M. R. Bridson and A. Haefliger, Metric spaces of non-positive curvature, Springer, 1999.”</a> (hand)</text>
 <text x="2345.0" y="1285.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2, C ×5</text>
 </g>
-<g id="ref-BIP19">
-<rect x="53.0" y="1294.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BIP19" class="rd-row">
 <rect x="56" y="1297.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1316.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BIP19</tspan></text>
 <text x="215.0" y="1316.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2019</text>
 <text x="295.0" y="1316.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1090/jams/908">“P. Bürgisser, C. Ikenmeyer and G. Panova, No occurrence obstructions in geometric complexity theory, J. Amer. Math. Soc. 32 (2019), 163–193.”</a> (crossref)</text>
 <text x="2345.0" y="1316.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BIZ18">
-<rect x="53.0" y="1325.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BIZ18" class="rd-row">
 <rect x="56" y="1328.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1347.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BIZ18</tspan></text>
 <text x="215.0" y="1347.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2018</text>
 <text x="295.0" y="1347.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3209663">“K. Bringmann, C. Ikenmeyer and J. Zuiddam, On algebraic branching programs of small width, J. ACM 65 (2018), article 32.”</a> (crossref)</text>
 <text x="2345.0" y="1347.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BLMW11">
-<rect x="53.0" y="1356.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BLMW11" class="rd-row">
 <rect x="56" y="1359.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1379.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BLMW11</tspan></text>
 <text x="215.0" y="1379.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2011</text>
 <text x="295.0" y="1379.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/090765328">“P. Bürgisser, J. M. Landsberg, L. Manivel and J. Weyman, An overview of mathematical issues arising in the geometric complexity theory approach to VP ≠ VNP, SIAM J. Comput. 40 (2011), 1179–1209.”</a> (crossref)</text>
 <text x="2345.0" y="1379.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BN08">
-<rect x="53.0" y="1387.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BN08" class="rd-row">
 <rect x="56" y="1390.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1410.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BN08</tspan></text>
 <text x="215.0" y="1410.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2008</text>
 <text x="295.0" y="1410.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s10711-008-9243-3">“I. D. Berg and I. G. Nikolaev, Quasilinearization and curvature of Aleksandrov spaces, Geom. Dedicata 133 (2008), 195–218.”</a> (crossref)</text>
 <text x="2345.0" y="1410.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">C ×2</text>
 </g>
-<g id="ref-BS83">
-<rect x="53.0" y="1419.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BS83" class="rd-row">
 <rect x="56" y="1422.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1441.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BS83</tspan></text>
 <text x="215.0" y="1441.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1983</text>
 <text x="295.0" y="1441.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/0304-3975(83)90110-x">“W. Baur and V. Strassen, The complexity of partial derivatives, Theoret. Comput. Sci. 22 (1983), 317–330.”</a> (crossref)</text>
 <text x="2345.0" y="1441.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-BS83b">
-<rect x="53.0" y="1450.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BS83b" class="rd-row">
 <rect x="56" y="1453.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1472.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BS83b</tspan></text>
 <text x="215.0" y="1472.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1983</text>
 <text x="295.0" y="1472.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf01192806">“E. Becker and N. Schwartz, Zum Darstellungssatz von Kadison–Dubois, Arch. Math. (Basel) 40 (1983), 421–428.”</a> (crossref)</text>
 <text x="2345.0" y="1472.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-BT72">
-<rect x="53.0" y="1481.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-BT72" class="rd-row">
 <rect x="56" y="1484.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1503.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">BT72</tspan></text>
 <text x="215.0" y="1503.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1972</text>
 <text x="295.0" y="1503.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf02715544">“F. Bruhat and J. Tits, Groupes réductifs sur un corps local: I. Données radicielles valuées, Publ. Math. IHÉS 41 (1972), 5–251.”</a> (crossref)</text>
 <text x="2345.0" y="1503.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2, C ×2</text>
 </g>
-<g id="ref-Bür00">
-<rect x="53.0" y="1512.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Bür00" class="rd-row">
 <rect x="56" y="1515.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1535.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Bür00</tspan></text>
 <text x="215.0" y="1535.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2000</text>
 <text x="295.0" y="1535.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/978-3-662-04179-6">“P. Bürgisser, Completeness and reduction in algebraic complexity theory, Springer, 2000.”</a> (crossref)</text>
 <text x="2345.0" y="1535.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, E</text>
 </g>
-<g id="ref-Bür00b">
-<rect x="53.0" y="1543.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Bür00b" class="rd-row">
 <rect x="56" y="1546.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1566.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Bür00b</tspan></text>
 <text x="215.0" y="1566.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2000</text>
 <text x="295.0" y="1566.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/s0304-3975(99)00183-8">“P. Bürgisser, Cook’s versus Valiant’s hypothesis, Theoret. Comput. Sci. 235 (2000), 71–88.”</a> (crossref)</text>
 <text x="2345.0" y="1566.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×2</text>
 </g>
-<g id="ref-Bür04">
-<rect x="53.0" y="1575.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Bür04" class="rd-row">
 <rect x="56" y="1578.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1597.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Bür04</tspan></text>
 <text x="215.0" y="1597.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2004</text>
 <text x="295.0" y="1597.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s10208-002-0059-5">“P. Bürgisser, The complexity of factors of multivariate polynomials, Found. Comput. Math. 4 (2004), 369–396.”</a> (crossref)</text>
 <text x="2345.0" y="1597.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, N</text>
 </g>
-<g id="ref-Bür24">
-<rect x="53.0" y="1606.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Bür24" class="rd-row">
 <rect x="56" y="1609.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1628.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Bür24</tspan></text>
 <text x="215.0" y="1628.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2024</text>
 <text x="295.0" y="1628.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2406.06217">“P. Bürgisser, Completeness classes in algebraic complexity theory, arXiv:2406.06217, 2024; to appear in Foundations of Computation and Machine Learning: The Work of Leslie Valiant (R. A. Servedio, ed.), ACM Books.”</a> (arxiv)</text>
 <text x="2345.0" y="1628.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, E</text>
 </g>
-<g id="ref-CCL10">
-<rect x="53.0" y="1637.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CCL10" class="rd-row">
 <rect x="56" y="1640.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1659.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CCL10</tspan></text>
 <text x="215.0" y="1659.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2010</text>
 <text x="295.0" y="1659.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-009-0284-2">“J.-Y. Cai, X. Chen and D. Li, Quadratic lower bound for permanent vs. determinant in any characteristic, Comput. Complexity 19 (2010), 37–56.”</a> (crossref)</text>
 <text x="2345.0" y="1659.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-CDM16">
-<rect x="53.0" y="1668.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CDM16" class="rd-row">
 <rect x="56" y="1671.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1691.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CDM16</tspan></text>
 <text x="215.0" y="1691.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2016</text>
 <text x="295.0" y="1691.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00224-015-9630-8">“F. Capelli, A. Durand and S. Mengel, The arithmetic complexity of tensor contraction, Theory Comput. Syst. 58 (2016), 506–527.”</a> (crossref)</text>
 <text x="2345.0" y="1691.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">H</text>
 </g>
-<g id="ref-CKRST20">
-<rect x="53.0" y="1699.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CKRST20" class="rd-row">
 <rect x="56" y="1702.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1722.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CKRST20</tspan></text>
 <text x="215.0" y="1722.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2020</text>
 <text x="295.0" y="1722.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/focs46700.2020.00085">“P. Chatterjee, M. Kumar, C. Ramya, R. Saptharishi and A. Tengse, On the existence of algebraically natural proofs, FOCS 2020; arXiv:2004.14147.”</a> (crossref)</text>
 <text x="2345.0" y="1722.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-CKSV22">
-<rect x="53.0" y="1731.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CKSV22" class="rd-row">
 <rect x="56" y="1734.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1753.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CKSV22</tspan></text>
 <text x="215.0" y="1753.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2022</text>
 <text x="295.0" y="1753.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-022-00223-8">“P. Chatterjee, M. Kumar, A. She and B. L. Volk, Quadratic lower bounds for algebraic branching programs and formulas, Comput. Complexity 31 (2022), article 8.”</a> (crossref)</text>
 <text x="2345.0" y="1753.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Cur26">
-<rect x="53.0" y="1762.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Cur26" class="rd-row">
 <rect x="56" y="1765.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1784.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Cur26</tspan></text>
 <text x="215.0" y="1784.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="1784.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2611.03636">“R. Curticapean, Get permanent results faster by counting stars, arXiv:2611.03636, 2026.”</a> (zbmath)</text>
 <text x="2345.0" y="1784.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-CVZ19">
-<rect x="53.0" y="1793.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CVZ19" class="rd-row">
 <rect x="56" y="1796.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1815.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CVZ19</tspan></text>
 <text x="215.0" y="1815.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2019</text>
 <text x="295.0" y="1815.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-018-0172-8">“M. Christandl, P. Vrana and J. Zuiddam, Asymptotic tensor rank of graph tensors: beyond matrix multiplication, Comput. Complexity 28 (2019), 57–111.”</a> (crossref)</text>
 <text x="2345.0" y="1815.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-CVZ23">
-<rect x="53.0" y="1824.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CVZ23" class="rd-row">
 <rect x="56" y="1827.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1847.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CVZ23</tspan></text>
 <text x="215.0" y="1847.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2023</text>
 <text x="295.0" y="1847.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1090/jams/996">“M. Christandl, P. Vrana and J. Zuiddam, Universal points in the asymptotic spectrum of tensors, J. Amer. Math. Soc. 36 (2023), 31–79.”</a> (crossref)</text>
 <text x="2345.0" y="1847.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-CZ19">
-<rect x="53.0" y="1855.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-CZ19" class="rd-row">
 <rect x="56" y="1858.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1878.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">CZ19</tspan></text>
 <text x="215.0" y="1878.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2019</text>
 <text x="295.0" y="1878.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-018-0164-8">“M. Christandl and J. Zuiddam, Tensor surgery and tensor rank, Comput. Complexity 28 (2019), 27–56.”</a> (crossref)</text>
 <text x="2345.0" y="1878.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-DDS21">
-<rect x="53.0" y="1887.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-DDS21" class="rd-row">
 <rect x="56" y="1890.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1909.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">DDS21</tspan></text>
 <text x="215.0" y="1909.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2021</text>
 <text x="295.0" y="1909.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/focs52979.2021.00018">“P. Dutta, P. Dwivedi and N. Saxena, Demystifying the border of depth-3 algebraic circuits, FOCS 2021, 92–103.”</a> (crossref)</text>
 <text x="2345.0" y="1909.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-DHM02">
-<rect x="53.0" y="1918.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-DHM02" class="rd-row">
 <rect x="56" y="1921.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="1940.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">DHM02</tspan></text>
 <text x="215.0" y="1940.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2002</text>
 <text x="295.0" y="1940.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-000-0170-4">“C. Damm, M. Holzer and P. McKenzie, The complexity of tensor calculus, Comput. Complexity 11 (2002), 54–89.”</a> (crossref)</text>
 <text x="2345.0" y="1940.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">H</text>
 </g>
-<g id="ref-DJ02">
-<rect x="53.0" y="1949.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-DJ02" class="rd-row">
 <rect x="56" y="1952.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="1971.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">DJ02</tspan></text>
 <text x="215.0" y="1971.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2002</text>
 <text x="295.0" y="1971.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00222-002-0242-y">“J. Dymara and T. Januszkiewicz, Cohomology of buildings and of their automorphism groups, Invent. Math. 150 (2002), 579–627.”</a> (crossref)</text>
 <text x="2345.0" y="1971.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-EGOW18">
-<rect x="53.0" y="1980.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-EGOW18" class="rd-row">
 <rect x="56" y="1983.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2003.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">EGOW18</tspan></text>
 <text x="215.0" y="2003.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2018</text>
 <text x="295.0" y="2003.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4230/LIPIcs.ITCS.2018.1">“K. Efremenko, A. Garg, R. Oliveira and A. Wigderson, Barriers for rank methods in arithmetic complexity, ITCS 2018, LIPIcs 94, 1:1–1:19.”</a> (crossref)</text>
 <text x="2345.0" y="2003.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Eis95">
-<rect x="53.0" y="2011.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Eis95" class="rd-row">
 <rect x="56" y="2014.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2034.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Eis95</tspan></text>
 <text x="215.0" y="2034.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1995</text>
 <text x="295.0" y="2034.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/978-1-4612-5350-1">“D. Eisenbud, Commutative algebra with a view toward algebraic geometry, Springer, 1995.”</a> (crossref)</text>
 <text x="2345.0" y="2034.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2, K</text>
 </g>
-<g id="ref-EJ10">
-<rect x="53.0" y="2043.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-EJ10" class="rd-row">
 <rect x="56" y="2046.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2065.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">EJ10</tspan></text>
 <text x="215.0" y="2065.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2010</text>
 <text x="295.0" y="2065.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00222-009-0218-2">“M. Ershov and A. Jaikin-Zapirain, Property (T) for noncommutative universal lattices, Invent. Math. 179 (2010), 303–347.”</a> (crossref)</text>
 <text x="2345.0" y="2065.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-Enf69">
-<rect x="53.0" y="2074.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Enf69" class="rd-row">
 <rect x="56" y="2077.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2096.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Enf69</tspan></text>
 <text x="215.0" y="2096.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1969</text>
 <text x="295.0" y="2096.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf02589549">“P. Enflo, On the nonexistence of uniform homeomorphisms between Lp-spaces, Ark. Mat. 8 (1969), 103–105.”</a> (crossref)</text>
 <text x="2345.0" y="2096.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">C</text>
 </g>
-<g id="ref-FLMV05">
-<rect x="53.0" y="2105.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-FLMV05" class="rd-row">
 <rect x="56" y="2108.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2127.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">FLMV05</tspan></text>
 <text x="215.0" y="2127.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2005</text>
 <text x="295.0" y="2127.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/1101821.1101822">“L. Fortnow, R. Lipton, D. van Melkebeek and A. Viglas, Time-space lower bounds for satisfiability, J. ACM 52 (2005), 835–865.”</a> (crossref)</text>
 <text x="2345.0" y="2127.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-For24">
-<rect x="53.0" y="2136.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-For24" class="rd-row">
 <rect x="56" y="2139.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2159.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">For24</tspan></text>
 <text x="215.0" y="2159.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2024</text>
 <text x="295.0" y="2159.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4230/LIPIcs.CCC.2024.31">“M. A. Forbes, Low-depth algebraic circuit lower bounds over any field, CCC 2024, LIPIcs 300, 31:1–31:16.”</a> (crossref)</text>
 <text x="2345.0" y="2159.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-FPV13">
-<rect x="53.0" y="2167.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-FPV13" class="rd-row">
 <rect x="56" y="2170.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2190.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">FPV13</tspan></text>
 <text x="215.0" y="2190.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2013</text>
 <text x="295.0" y="2190.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.ic.2014.09.006">“H. Fournier, S. Perifel and R. de Joannis de Verclos, On fixed-polynomial size circuit lower bounds for uniform polynomials in the sense of Valiant, Inform. and Comput. 240 (2015), 31–41; preliminary version in MFCS 2013.”</a> (crossref)</text>
 <text x="2345.0" y="2190.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">M</text>
 </g>
-<g id="ref-Fri21">
-<rect x="53.0" y="2199.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Fri21" class="rd-row">
 <rect x="56" y="2202.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2221.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Fri21</tspan></text>
 <text x="215.0" y="2221.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2021</text>
 <text x="295.0" y="2221.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1080/00927872.2020.1803344">“T. Fritz, A generalization of Strassen’s Positivstellensatz, Comm. Algebra 49 (2021), 482–499.”</a> (crossref)</text>
 <text x="2345.0" y="2221.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-FSV18">
-<rect x="53.0" y="2230.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-FSV18" class="rd-row">
 <rect x="56" y="2233.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2252.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">FSV18</tspan></text>
 <text x="215.0" y="2252.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2018</text>
 <text x="295.0" y="2252.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4086/toc.2018.v014a018">“M. A. Forbes, A. Shpilka and B. L. Volk, Succinct hitting sets and barriers to proving lower bounds for algebraic circuits, Theory Comput. 14 (2018), article 18.”</a> (zbmath)</text>
 <text x="2345.0" y="2252.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-GKKS14">
-<rect x="53.0" y="2261.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-GKKS14" class="rd-row">
 <rect x="56" y="2264.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2283.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">GKKS14</tspan></text>
 <text x="215.0" y="2283.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2014</text>
 <text x="295.0" y="2283.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/2629541">“A. Gupta, P. Kamath, N. Kayal and R. Saptharishi, Approaching the chasm at depth four, J. ACM 61 (2014), article 33.”</a> (crossref)</text>
 <text x="2345.0" y="2283.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-GKKS16">
-<rect x="53.0" y="2292.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-GKKS16" class="rd-row">
 <rect x="56" y="2295.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2315.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">GKKS16</tspan></text>
 <text x="215.0" y="2315.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2016</text>
 <text x="295.0" y="2315.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/140957123">“A. Gupta, P. Kamath, N. Kayal and R. Saptharishi, Arithmetic circuits: a chasm at depth 3, SIAM J. Comput. 45 (2016), 1064–1079.”</a> (crossref)</text>
 <text x="2345.0" y="2315.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-GKSS17">
-<rect x="53.0" y="2323.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-GKSS17" class="rd-row">
 <rect x="56" y="2326.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2346.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">GKSS17</tspan></text>
 <text x="215.0" y="2346.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="2346.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/1701.01717">“J. A. Grochow, M. Kumar, M. Saks and S. Saraf, Towards an algebraic natural proofs barrier via polynomial identity testing, arXiv:1701.01717, 2017.”</a> (arxiv)</text>
 <text x="2345.0" y="2346.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Gly10">
-<rect x="53.0" y="2355.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Gly10" class="rd-row">
 <rect x="56" y="2358.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2377.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Gly10</tspan></text>
 <text x="215.0" y="2377.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2010</text>
 <text x="295.0" y="2377.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.ejc.2010.01.010">“D. G. Glynn, The permanent of a square matrix, European J. Combin. 31 (2010), 1887–1891.”</a> (crossref)</text>
 <text x="2345.0" y="2377.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, L</text>
 </g>
-<g id="ref-GMOW19">
-<rect x="53.0" y="2386.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-GMOW19" class="rd-row">
 <rect x="56" y="2389.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2408.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">GMOW19</tspan></text>
 <text x="215.0" y="2408.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2019</text>
 <text x="295.0" y="2408.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/focs.2019.00054">“A. Garg, V. Makam, R. Oliveira and A. Wigderson, More barriers for rank methods, via a “numeric to symbolic” transfer, FOCS 2019, 824–844.”</a> (crossref)</text>
 <text x="2345.0" y="2408.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-GMQ16">
-<rect x="53.0" y="2417.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-GMQ16" class="rd-row">
 <rect x="56" y="2420.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2439.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">GMQ16</tspan></text>
 <text x="215.0" y="2439.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2016</text>
 <text x="295.0" y="2439.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4230/LIPIcs.ICALP.2016.34">“J. A. Grochow, K. D. Mulmuley and Y. Qiao, Boundaries of VP and VNP, ICALP 2016, LIPIcs 55, 34:1–34:14.”</a> (crossref)</text>
 <text x="2345.0" y="2439.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Gro03">
-<rect x="53.0" y="2448.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Gro03" class="rd-row">
 <rect x="56" y="2451.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2471.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Gro03</tspan></text>
 <text x="215.0" y="2471.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2003</text>
 <text x="295.0" y="2471.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s000390300002">“M. Gromov, Random walk in random groups, Geom. Funct. Anal. 13 (2003), 73–146.”</a> (crossref)</text>
 <text x="2345.0" y="2471.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-Gro15">
-<rect x="53.0" y="2479.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Gro15" class="rd-row">
 <rect x="56" y="2482.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2502.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Gro15</tspan></text>
 <text x="215.0" y="2502.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2015</text>
 <text x="295.0" y="2502.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-015-0103-x">“J. A. Grochow, Unifying known lower bounds via geometric complexity theory, Comput. Complexity 24 (2015), 393–475.”</a> (crossref)</text>
 <text x="2345.0" y="2502.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-GS89">
-<rect x="53.0" y="2511.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-GS89" class="rd-row">
 <rect x="56" y="2514.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2533.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">GS89</tspan></text>
 <text x="215.0" y="2533.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1989</text>
 <text x="295.0" y="2533.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/3-540-51237-3_10">“Y. Gurevich and S. Shelah, Nearly linear time, Logic at Botik ’89, LNCS 363 (1989), 108–118.”</a> (crossref)</text>
 <text x="2345.0" y="2533.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-Guo26">
-<rect x="53.0" y="2542.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Guo26" class="rd-row">
 <rect x="56" y="2545.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2564.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Guo26</tspan></text>
 <text x="215.0" y="2564.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="2564.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2609.29568">“J. Guo, An n2 log log n lower bound for permanent circuits with valid division, arXiv:2609.29568, 2026.”</a> (zbmath)</text>
 <text x="2345.0" y="2564.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-HPV77">
-<rect x="53.0" y="2573.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-HPV77" class="rd-row">
 <rect x="56" y="2576.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2595.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">HPV77</tspan></text>
 <text x="215.0" y="2595.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1977</text>
 <text x="295.0" y="2595.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/322003.322015">“J. Hopcroft, W. Paul and L. Valiant, On time versus space, J. ACM 24 (1977), 332–337.”</a> (crossref)</text>
 <text x="2345.0" y="2595.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-HR18">
-<rect x="53.0" y="2604.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-HR18" class="rd-row">
 <rect x="56" y="2607.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2627.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">HR18</tspan></text>
 <text x="215.0" y="2627.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1918</text>
 <text x="295.0" y="2627.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1112/plms/s2-17.1.75">“G. H. Hardy and S. Ramanujan, Asymptotic formulae in combinatory analysis, Proc. London Math. Soc. (2) 17 (1918), 75–115.”</a> (crossref)</text>
 <text x="2345.0" y="2627.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">B</text>
 </g>
-<g id="ref-Hya79">
-<rect x="53.0" y="2635.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Hya79" class="rd-row">
 <rect x="56" y="2638.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2658.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Hya79</tspan></text>
 <text x="215.0" y="2658.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1979</text>
 <text x="295.0" y="2658.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/0208010">“L. Hyafil, On the parallel evaluation of multivariate polynomials, SIAM J. Comput. 8 (1979), 120–123.”</a> (crossref)</text>
 <text x="2345.0" y="2658.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, 2, E</text>
 </g>
-<g id="ref-IN05">
-<rect x="53.0" y="2667.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-IN05" class="rd-row">
 <rect x="56" y="2670.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2689.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">IN05</tspan></text>
 <text x="215.0" y="2689.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2005</text>
 <text x="295.0" y="2689.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s10711-004-1843-y">“H. Izeki and S. Nayatani, Combinatorial harmonic maps and discrete-group actions on Hadamard spaces, Geom. Dedicata 114 (2005), 147–188.”</a> (crossref)</text>
 <text x="2345.0" y="2689.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-IP17">
-<rect x="53.0" y="2698.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-IP17" class="rd-row">
 <rect x="56" y="2701.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2720.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">IP17</tspan></text>
 <text x="215.0" y="2720.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="2720.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.aim.2017.08.024">“C. Ikenmeyer and G. Panova, Rectangular Kronecker coefficients and plethysms in geometric complexity theory, Adv. Math. 319 (2017), 40–66.”</a> (crossref)</text>
 <text x="2345.0" y="2720.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-IS22">
-<rect x="53.0" y="2729.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-IS22" class="rd-row">
 <rect x="56" y="2732.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2751.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">IS22</tspan></text>
 <text x="215.0" y="2751.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2022</text>
 <text x="295.0" y="2751.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.ipl.2021.106243">“C. Ikenmeyer and A. Sanyal, A note on VNP-completeness and border complexity, Inform. Process. Lett. 176 (2022), 106243.”</a> (crossref)</text>
 <text x="2345.0" y="2751.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-JS82">
-<rect x="53.0" y="2760.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-JS82" class="rd-row">
 <rect x="56" y="2763.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2783.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">JS82</tspan></text>
 <text x="215.0" y="2783.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1982</text>
 <text x="295.0" y="2783.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/322326.322341">“M. Jerrum and M. Snir, Some exact complexity results for straight-line computations over semirings, J. ACM 29 (1982), 874–897.”</a> (crossref)</text>
 <text x="2345.0" y="2783.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, 2, K</text>
 </g>
-<g id="ref-Kal85">
-<rect x="53.0" y="2791.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Kal85" class="rd-row">
 <rect x="56" y="2794.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2814.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Kal85</tspan></text>
 <text x="215.0" y="2814.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1985</text>
 <text x="295.0" y="2814.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/0214050">“K. A. Kalorkoti, A lower bound for the formula size of rational functions, SIAM J. Comput. 14 (1985), 678–687.”</a> (crossref)</text>
 <text x="2345.0" y="2814.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Kas11">
-<rect x="53.0" y="2823.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Kas11" class="rd-row">
 <rect x="56" y="2826.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2845.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Kas11</tspan></text>
 <text x="215.0" y="2845.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2011</text>
 <text x="295.0" y="2845.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4171/ggd/134">“M. Kassabov, Subspace arrangements and property T, Groups Geom. Dyn. 5 (2011), 445–477.”</a> (crossref)</text>
 <text x="2345.0" y="2845.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-KI04">
-<rect x="53.0" y="2854.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KI04" class="rd-row">
 <rect x="56" y="2857.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2876.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KI04</tspan></text>
 <text x="215.0" y="2876.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2004</text>
 <text x="295.0" y="2876.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-004-0182-6">“V. Kabanets and R. Impagliazzo, Derandomizing polynomial identity tests means proving circuit lower bounds, Comput. Complexity 13 (2004), 1–46.”</a> (crossref)</text>
 <text x="2345.0" y="2876.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-KLS10">
-<rect x="53.0" y="2885.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KLS10" class="rd-row">
 <rect x="56" y="2888.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2907.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KLS10</tspan></text>
 <text x="215.0" y="2907.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2010</text>
 <text x="295.0" y="2907.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/978-3-642-05014-5">“R. Koekoek, P. A. Lesky and R. F. Swarttouw, Hypergeometric orthogonal polynomials and their q-analogues, Springer, 2010.”</a> (zbmath)</text>
 <text x="2345.0" y="2907.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">B</text>
 </g>
-<g id="ref-KLSS17">
-<rect x="53.0" y="2916.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KLSS17" class="rd-row">
 <rect x="56" y="2919.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="2939.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KLSS17</tspan></text>
 <text x="215.0" y="2939.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="2939.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/151002423">“N. Kayal, N. Limaye, C. Saha and S. Srinivasan, An exponential lower bound for homogeneous depth four arithmetic formulas, SIAM J. Comput. 46 (2017), 307–335.”</a> (crossref)</text>
 <text x="2345.0" y="2939.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-KO18">
-<rect x="53.0" y="2947.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KO18" class="rd-row">
 <rect x="56" y="2950.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="2970.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KO18</tspan></text>
 <text x="215.0" y="2970.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2018</text>
 <text x="295.0" y="2970.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3188745.3188782">“T. Kaufman and I. Oppenheim, Construction of new local spectral high dimensional expanders, STOC 2018, 773–786.”</a> (crossref)</text>
 <text x="2345.0" y="2970.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">H</text>
 </g>
-<g id="ref-KO23">
-<rect x="53.0" y="2979.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KO23" class="rd-row">
 <rect x="56" y="2982.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3001.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KO23</tspan></text>
 <text x="215.0" y="3001.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2023</text>
 <text x="295.0" y="3001.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.ejc.2023.103696">“T. Kaufman and I. Oppenheim, High dimensional expanders and coset geometries, European J. Combin. 111 (2023), 103696.”</a> (crossref)</text>
 <text x="2345.0" y="3001.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">H</text>
 </g>
-<g id="ref-Koi12">
-<rect x="53.0" y="3010.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Koi12" class="rd-row">
 <rect x="56" y="3013.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3032.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Koi12</tspan></text>
 <text x="215.0" y="3032.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2012</text>
 <text x="295.0" y="3032.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.tcs.2012.03.041">“P. Koiran, Arithmetic circuits: the chasm at depth four gets wider, Theoret. Comput. Sci. 448 (2012), 56–65.”</a> (crossref)</text>
 <text x="2345.0" y="3032.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-KP09">
-<rect x="53.0" y="3041.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KP09" class="rd-row">
 <rect x="56" y="3044.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3063.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KP09</tspan></text>
 <text x="215.0" y="3063.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2009</text>
 <text x="295.0" y="3063.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/ccc.2009.19">“P. Koiran and S. Perifel, A superpolynomial lower bound on the size of uniform non-constantdepth threshold circuits for the permanent, CCC 2009, 35–40.”</a> (crossref)</text>
 <text x="2345.0" y="3063.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-KRST22">
-<rect x="53.0" y="3072.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KRST22" class="rd-row">
 <rect x="56" y="3075.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3095.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KRST22</tspan></text>
 <text x="215.0" y="3095.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2022</text>
 <text x="295.0" y="3095.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4230/LIPIcs.STACS.2022.44">“M. Kumar, C. Ramya, R. Saptharishi and A. Tengse, If VNP is hard, then so are equations for it, STACS 2022, LIPIcs 219, 44:1–44:13.”</a> (hand)</text>
 <text x="2345.0" y="3095.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-KS17">
-<rect x="53.0" y="3103.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KS17" class="rd-row">
 <rect x="56" y="3106.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3126.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KS17</tspan></text>
 <text x="215.0" y="3126.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="3126.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/140999335">“M. Kumar and S. Saraf, On the power of homogeneous depth 4 arithmetic circuits, SIAM J. Comput. 46 (2017), 336–387.”</a> (crossref)</text>
 <text x="2345.0" y="3126.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-KS93">
-<rect x="53.0" y="3135.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KS93" class="rd-row">
 <rect x="56" y="3138.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3157.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KS93</tspan></text>
 <text x="215.0" y="3157.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1993</text>
 <text x="295.0" y="3157.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4310/cag.1993.v1.n4.a4">“N. J. Korevaar and R. M. Schoen, Sobolev spaces and harmonic maps for metric space targets, Comm. Anal. Geom. 1 (1993), 561–659.”</a> (crossref)</text>
 <text x="2345.0" y="3157.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">C</text>
 </g>
-<g id="ref-Kum20">
-<rect x="53.0" y="3166.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Kum20" class="rd-row">
 <rect x="56" y="3169.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3188.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Kum20</tspan></text>
 <text x="215.0" y="3188.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2020</text>
 <text x="295.0" y="3188.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3371506">“M. Kumar, On the power of border of depth-3 arithmetic circuits, ACM Trans. Comput. Theory 12 (2020), article 5.”</a> (crossref)</text>
 <text x="2345.0" y="3188.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-KV26">
-<rect x="53.0" y="3197.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-KV26" class="rd-row">
 <rect x="56" y="3200.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3219.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">KV26</tspan></text>
 <text x="215.0" y="3219.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="3219.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2609.34462">“M. Kumar and B. L. Volk, A quadratic lower bound on determinantal complexity, arXiv:2609.34462, 2026.”</a> (arxiv)</text>
 <text x="2345.0" y="3219.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Lan17">
-<rect x="53.0" y="3228.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Lan17" class="rd-row">
 <rect x="56" y="3231.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3251.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Lan17</tspan></text>
 <text x="215.0" y="3251.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="3251.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1017/9781108183192">“J. M. Landsberg, Geometry and complexity theory, Cambridge University Press, 2017.”</a> (crossref)</text>
 <text x="2345.0" y="3251.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Lean">
-<rect x="53.0" y="3259.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Lean" class="rd-row">
 <rect x="56" y="3262.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3282.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Lean</tspan></text>
 <text x="215.0" y="3282.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2021</text>
 <text x="295.0" y="3282.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/978-3-030-79876-5_37">“L. de Moura and S. Ullrich, The Lean 4 theorem prover and programming language, CADE 28, LNCS 12699 (2021), 625–635.”</a> (hand)</text>
 <text x="2345.0" y="3282.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">3, Q</text>
 </g>
-<g id="ref-LMR13">
-<rect x="53.0" y="3291.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-LMR13" class="rd-row">
 <rect x="56" y="3294.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3313.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">LMR13</tspan></text>
 <text x="215.0" y="3313.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2013</text>
 <text x="295.0" y="3313.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4171/cmh/292">“J. M. Landsberg, L. Manivel and N. Ressayre, Hypersurfaces with degenerate duals and the geometric complexity theory program, Comment. Math. Helv. 88 (2013), 469–484.”</a> (crossref)</text>
 <text x="2345.0" y="3313.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-LST25">
-<rect x="53.0" y="3322.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-LST25" class="rd-row">
 <rect x="56" y="3325.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3344.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">LST25</tspan></text>
 <text x="215.0" y="3344.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2025</text>
 <text x="295.0" y="3344.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3734215">“N. Limaye, S. Srinivasan and S. Tavenas, Superpolynomial lower bounds against low-depth algebraic circuits, J. ACM 72 (2025), article 26; preliminary version in FOCS 2021.”</a> (crossref)</text>
 <text x="2345.0" y="3344.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Mal03">
-<rect x="53.0" y="3353.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Mal03" class="rd-row">
 <rect x="56" y="3356.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3375.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Mal03</tspan></text>
 <text x="215.0" y="3375.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2003</text>
 <text x="295.0" y="3375.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://theses.hal.science/tel-00087399">“G. Malod, Polynômes et coefficients, Thèse, Université Claude Bernard Lyon 1, 2003.”</a> (hand)</text>
 <text x="2345.0" y="3375.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">M</text>
 </g>
-<g id="ref-Mathlib">
-<rect x="53.0" y="3384.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Mathlib" class="rd-row">
 <rect x="56" y="3387.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3407.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Mathlib</tspan></text>
 <text x="215.0" y="3407.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2020</text>
 <text x="295.0" y="3407.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3372885.3373824">“The mathlib Community, The Lean mathematical library, CPP 2020, 367–381.”</a> (hand)</text>
 <text x="2345.0" y="3407.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">3, Q</text>
 </g>
-<g id="ref-MN13">
-<rect x="53.0" y="3415.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MN13" class="rd-row">
 <rect x="56" y="3418.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3438.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MN13</tspan></text>
 <text x="215.0" y="3438.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2013</text>
 <text x="295.0" y="3438.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.2478/agms-2013-0003">“M. Mendel and A. Naor, Spectral calculus and Lipschitz extension for barycentric metric spaces, Anal. Geom. Metr. Spaces 1 (2013), 163–199.”</a> (crossref)</text>
 <text x="2345.0" y="3438.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-MP08">
-<rect x="53.0" y="3447.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MP08" class="rd-row">
 <rect x="56" y="3450.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3469.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MP08</tspan></text>
 <text x="215.0" y="3469.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2008</text>
 <text x="295.0" y="3469.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.jco.2006.09.006">“G. Malod and N. Portier, Characterizing Valiant’s algebraic complexity classes, J. Complexity 24 (2008), 16–38.”</a> (crossref)</text>
 <text x="2345.0" y="3469.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2, K</text>
 </g>
-<g id="ref-MR04">
-<rect x="53.0" y="3478.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MR04" class="rd-row">
 <rect x="56" y="3481.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3500.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MR04</tspan></text>
 <text x="215.0" y="3500.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2004</text>
 <text x="295.0" y="3500.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1155/S1073792804142566">“T. Mignon and N. Ressayre, A quadratic bound for the determinant and permanent problem, Int. Math. Res. Not. 2004, 4241–4253.”</a> (zbmath)</text>
 <text x="2345.0" y="3500.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-MS01">
-<rect x="53.0" y="3509.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MS01" class="rd-row">
 <rect x="56" y="3512.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3531.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MS01</tspan></text>
 <text x="215.0" y="3531.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2001</text>
 <text x="295.0" y="3531.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/s009753970038715x">“K. D. Mulmuley and M. Sohoni, Geometric complexity theory I: an approach to the P vs. NP and related problems, SIAM J. Comput. 31 (2001), 496–526.”</a> (crossref)</text>
 <text x="2345.0" y="3531.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×2, N</text>
 </g>
-<g id="ref-MS08">
-<rect x="53.0" y="3540.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MS08" class="rd-row">
 <rect x="56" y="3543.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3563.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MS08</tspan></text>
 <text x="215.0" y="3563.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2008</text>
 <text x="295.0" y="3563.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/080718115">“K. D. Mulmuley and M. Sohoni, Geometric complexity theory II: towards explicit obstructions for embeddings among class varieties, SIAM J. Comput. 38 (2008), 1175–1206.”</a> (crossref)</text>
 <text x="2345.0" y="3563.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-MS08b">
-<rect x="53.0" y="3571.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MS08b" class="rd-row">
 <rect x="56" y="3574.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3594.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MS08b</tspan></text>
 <text x="215.0" y="3594.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2008</text>
 <text x="295.0" y="3594.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/050644756">“I. L. Markov and Y. Shi, Simulating quantum computation by contracting tensor networks, SIAM J. Comput. 38 (2008), 963–981.”</a> (crossref)</text>
 <text x="2345.0" y="3594.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">H</text>
 </g>
-<g id="ref-MW17">
-<rect x="53.0" y="3603.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-MW17" class="rd-row">
 <rect x="56" y="3606.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3625.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">MW17</tspan></text>
 <text x="215.0" y="3625.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="3625.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4230/LIPIcs.CCC.2017.8">“C. D. Murray and R. R. Williams, Easiness amplification and uniform circuit lower bounds, CCC 2017, LIPIcs 79, 8:1–8:21.”</a> (crossref)</text>
 <text x="2345.0" y="3625.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-Nis91">
-<rect x="53.0" y="3634.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Nis91" class="rd-row">
 <rect x="56" y="3637.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3656.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Nis91</tspan></text>
 <text x="215.0" y="3656.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1991</text>
 <text x="295.0" y="3656.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/103418.103462">“N. Nisan, Lower bounds for non-commutative computation, STOC 1991, 410–418.”</a> (crossref)</text>
 <text x="2345.0" y="3656.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×2</text>
 </g>
-<g id="ref-NS23">
-<rect x="53.0" y="3665.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-NS23" class="rd-row">
 <rect x="56" y="3668.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3687.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">NS23</tspan></text>
 <text x="215.0" y="3687.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2023</text>
 <text x="295.0" y="3687.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00440-023-01228-2">“E. Nestoridi and A. Sly, The random walk on upper triangular matrices over Z/mZ, Probab. Theory Related Fields 187 (2023), 571–601.”</a> (crossref)</text>
 <text x="2345.0" y="3687.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-NW97">
-<rect x="53.0" y="3696.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-NW97" class="rd-row">
 <rect x="56" y="3699.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3719.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">NW97</tspan></text>
 <text x="215.0" y="3719.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1997</text>
 <text x="295.0" y="3719.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf01294256">“N. Nisan and A. Wigderson, Lower bounds on arithmetic circuits via partial derivatives, Comput. Complexity 6 (1996/97), 217–234.”</a> (crossref)</text>
 <text x="2345.0" y="3719.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-OAI26">
-<rect x="53.0" y="3727.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-OAI26" class="rd-row">
 <rect x="56" y="3730.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3750.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">OAI26</tspan></text>
 <text x="215.0" y="3750.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="3750.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">“OpenAI, manuscript on the border determinantal complexity of the permanent, with a Lean development, September 24, 2026; see [Guo26, She26b].” (not linked: no stable copy)</text>
 <text x="2345.0" y="3750.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Opp17">
-<rect x="53.0" y="3759.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Opp17" class="rd-row">
 <rect x="56" y="3762.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3781.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Opp17</tspan></text>
 <text x="215.0" y="3781.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="3781.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00208-016-1413-2">“I. Oppenheim, Averaged projections, angles between groups and strengthening of Banach property (T), Math. Ann. 367 (2017), 623–666.”</a> (crossref)</text>
 <text x="2345.0" y="3781.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-Orús14">
-<rect x="53.0" y="3790.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Orús14" class="rd-row">
 <rect x="56" y="3793.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3812.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Orús14</tspan></text>
 <text x="215.0" y="3812.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2014</text>
 <text x="295.0" y="3812.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.aop.2014.06.013">“R. Orús, A practical introduction to tensor networks: matrix product states and projected entangled pair states, Ann. Physics 349 (2014), 117–158.”</a> (crossref)</text>
 <text x="2345.0" y="3812.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A, H</text>
 </g>
-<g id="ref-PPST83">
-<rect x="53.0" y="3821.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-PPST83" class="rd-row">
 <rect x="56" y="3824.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3843.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">PPST83</tspan></text>
 <text x="215.0" y="3843.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1983</text>
 <text x="295.0" y="3843.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/sfcs.1983.39">“W. J. Paul, N. Pippenger, E. Szemerédi and W. T. Trotter, On determinism versus nondeterminism and related problems, FOCS 1983, 429–438.”</a> (crossref)</text>
 <text x="2345.0" y="3843.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-PS13">
-<rect x="53.0" y="3852.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-PS13" class="rd-row">
 <rect x="56" y="3855.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3875.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">PS13</tspan></text>
 <text x="215.0" y="3875.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2013</text>
 <text x="295.0" y="3875.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00440-012-0436-1">“Y. Peres and A. Sly, Mixing of the upper triangular matrix walk, Probab. Theory Related Fields 156 (2013), 581–591.”</a> (crossref)</text>
 <text x="2345.0" y="3875.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-Raz09">
-<rect x="53.0" y="3883.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Raz09" class="rd-row">
 <rect x="56" y="3886.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3906.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Raz09</tspan></text>
 <text x="215.0" y="3906.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2009</text>
 <text x="295.0" y="3906.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/1502793.1502797">“R. Raz, Multi-linear formulas for permanent and determinant are of super-polynomial size, J. ACM 56 (2009), article 8.”</a> (crossref)</text>
 <text x="2345.0" y="3906.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Raz10">
-<rect x="53.0" y="3915.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Raz10" class="rd-row">
 <rect x="56" y="3918.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3937.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Raz10</tspan></text>
 <text x="215.0" y="3937.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2010</text>
 <text x="295.0" y="3937.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4086/toc.2010.v006a007">“R. Raz, Elusive functions and lower bounds for arithmetic circuits, Theory Comput. 6 (2010), 135–177.”</a> (zbmath)</text>
 <text x="2345.0" y="3937.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Raz13">
-<rect x="53.0" y="3946.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Raz13" class="rd-row">
 <rect x="56" y="3949.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="3968.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Raz13</tspan></text>
 <text x="215.0" y="3968.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2013</text>
 <text x="295.0" y="3968.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/2535928">“R. Raz, Tensor-rank and lower bounds for arithmetic formulas, J. ACM 60 (2013), article 40.”</a> (crossref)</text>
 <text x="2345.0" y="3968.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Raz26">
-<rect x="53.0" y="3977.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Raz26" class="rd-row">
 <rect x="56" y="3980.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="3999.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Raz26</tspan></text>
 <text x="215.0" y="3999.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="3999.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2604.22006">“R. Raz, Polynomial lower bounds for arithmetic circuits over non-commutative rings, ECCC TR26-061, arXiv:2604.22006, 2026.”</a> (arxiv)</text>
 <text x="2345.0" y="3999.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Res68">
-<rect x="53.0" y="4008.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Res68" class="rd-row">
 <rect x="56" y="4011.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4031.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Res68</tspan></text>
 <text x="215.0" y="4031.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1968</text>
 <text x="295.0" y="4031.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf02199105">“Yu. G. Reshetnyak, Inextensible mappings in a space of curvature no greater than K, Siberian Math. J. 9 (1968), 683–689.”</a> (crossref)</text>
 <text x="2345.0" y="4031.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">C</text>
 </g>
-<g id="ref-Rob91">
-<rect x="53.0" y="4039.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Rob91" class="rd-row">
 <rect x="56" y="4042.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4062.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Rob91</tspan></text>
 <text x="215.0" y="4062.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1991</text>
 <text x="295.0" y="4062.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/0304-3975(91)90177-4">“J. M. Robson, An O(T log T) reduction from RAM computations to satisfiability, Theoret. Comput. Sci. 82 (1991), 141–149.”</a> (crossref)</text>
 <text x="2345.0" y="4062.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-RR97">
-<rect x="53.0" y="4071.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-RR97" class="rd-row">
 <rect x="56" y="4074.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4093.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">RR97</tspan></text>
 <text x="215.0" y="4093.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1997</text>
 <text x="295.0" y="4093.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1006/jcss.1997.1494">“A. A. Razborov and S. Rudich, Natural proofs, J. Comput. System Sci. 55 (1997), 24–35.”</a> (crossref)</text>
 <text x="2345.0" y="4093.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Rys63">
-<rect x="53.0" y="4102.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Rys63" class="rd-row">
 <rect x="56" y="4105.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4124.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Rys63</tspan></text>
 <text x="215.0" y="4124.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1963</text>
 <text x="295.0" y="4124.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.5948/upo9781614440147">“H. J. Ryser, Combinatorial mathematics, Carus Mathematical Monographs 14, Mathematical Association of America, 1963.”</a> (crossref)</text>
 <text x="2345.0" y="4124.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×2, L</text>
 </g>
-<g id="ref-RZ21">
-<rect x="53.0" y="4133.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-RZ21" class="rd-row">
 <rect x="56" y="4136.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4155.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">RZ21</tspan></text>
 <text x="215.0" y="4155.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2021</text>
 <text x="295.0" y="4155.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/focs52979.2021.00079">“R. Robere and J. Zuiddam, Amortized circuit complexity, formal complexity measures, and catalytic algorithms, FOCS 2021, 759–769.”</a> (crossref)</text>
 <text x="2345.0" y="4155.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-Sap21">
-<rect x="53.0" y="4164.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Sap21" class="rd-row">
 <rect x="56" y="4167.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4187.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Sap21</tspan></text>
 <text x="215.0" y="4187.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2021</text>
 <text x="295.0" y="4187.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://github.com/dasarpmar/lowerbounds-survey">“R. Saptharishi, A survey of lower bounds in arithmetic circuit complexity, version 9.0.3, 2021, https://github.com/dasarpmar/lowerbounds-survey.”</a> (paper)</text>
 <text x="2345.0" y="4187.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Sat09">
-<rect x="53.0" y="4195.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Sat09" class="rd-row">
 <rect x="56" y="4198.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4218.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Sat09</tspan></text>
 <text x="215.0" y="4218.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2009</text>
 <text x="295.0" y="4218.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00013-009-0057-9">“T. Sato, An alternative proof of Berg and Nikolaev’s characterization of CAT(0)-spaces via quadrilateral inequality, Arch. Math. (Basel) 93 (2009), 487–490.”</a> (crossref)</text>
 <text x="2345.0" y="4218.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">C</text>
 </g>
-<g id="ref-Sch78">
-<rect x="53.0" y="4227.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Sch78" class="rd-row">
 <rect x="56" y="4230.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4249.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Sch78</tspan></text>
 <text x="215.0" y="4249.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1978</text>
 <text x="295.0" y="4249.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/322047.322060">“C. P. Schnorr, Satisfiability is quasilinear complete in NQL, J. ACM 25 (1978), 136–145.”</a> (crossref)</text>
 <text x="2345.0" y="4249.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-Sch80">
-<rect x="53.0" y="4258.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Sch80" class="rd-row">
 <rect x="56" y="4261.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4280.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Sch80</tspan></text>
 <text x="215.0" y="4280.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1980</text>
 <text x="295.0" y="4280.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/0209036">“A. Schönhage, Storage modification machines, SIAM J. Comput. 9 (1980), 490–508.”</a> (crossref)</text>
 <text x="2345.0" y="4280.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-She26">
-<rect x="53.0" y="4289.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-She26" class="rd-row">
 <rect x="56" y="4292.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4311.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">She26</tspan></text>
 <text x="215.0" y="4311.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="4311.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2606.13628">“K. Sheshadri, A fully Lean-verified quadratic lower bound on the border determinantal complexity of xn 1 + ··· + xn n over C, including the symmetric and exact models, arXiv:2606.13628, 2026.”</a> (arxiv)</text>
 <text x="2345.0" y="4311.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-She26b">
-<rect x="53.0" y="4320.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-She26b" class="rd-row">
 <rect x="56" y="4323.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4343.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">She26b</tspan></text>
 <text x="215.0" y="4343.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="4343.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/2610.40484">“K. Sheshadri, Cubic lower bounds for the permanent in odd characteristic, for Pfaffian representations, and for polynomial entries, arXiv:2610.40484, 2026.”</a> (zbmath)</text>
 <text x="2345.0" y="4343.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Sto95">
-<rect x="53.0" y="4351.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Sto95" class="rd-row">
 <rect x="56" y="4354.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4374.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Sto95</tspan></text>
 <text x="215.0" y="4374.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1995</text>
 <text x="295.0" y="4374.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1214/aop/1176987809">“R. Stong, Random walks on the groups of upper triangular matrices, Ann. Probab. 23 (1995), 1939–1949.”</a> (crossref)</text>
 <text x="2345.0" y="4374.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-Str73">
-<rect x="53.0" y="4383.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Str73" class="rd-row">
 <rect x="56" y="4386.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4405.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Str73</tspan></text>
 <text x="215.0" y="4405.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1973</text>
 <text x="295.0" y="4405.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/bf01436566">“V. Strassen, Die Berechnungskomplexität von elementarsymmetrischen Funktionen und von Interpolationskoeffizienten, Numer. Math. 20 (1973), 238–251.”</a> (crossref)</text>
 <text x="2345.0" y="4405.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Str87">
-<rect x="53.0" y="4414.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Str87" class="rd-row">
 <rect x="56" y="4417.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4436.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Str87</tspan></text>
 <text x="215.0" y="4436.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1987</text>
 <text x="295.0" y="4436.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1515/crll.1987.375-376.406">“V. Strassen, Relative bilinear complexity and matrix multiplication, J. reine angew. Math. 375/376 (1987), 406–443.”</a> (crossref)</text>
 <text x="2345.0" y="4436.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2, A ×2</text>
 </g>
-<g id="ref-Str88">
-<rect x="53.0" y="4445.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Str88" class="rd-row">
 <rect x="56" y="4448.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4467.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Str88</tspan></text>
 <text x="215.0" y="4467.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1988</text>
 <text x="295.0" y="4467.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1515/crll.1988.384.102">“V. Strassen, The asymptotic spectrum of tensors, J. reine angew. Math. 384 (1988), 102–152.”</a> (crossref)</text>
 <text x="2345.0" y="4467.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×2, 2, A ×3</text>
 </g>
-<g id="ref-Str91">
-<rect x="53.0" y="4476.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Str91" class="rd-row">
 <rect x="56" y="4479.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4499.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Str91</tspan></text>
 <text x="215.0" y="4499.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1991</text>
 <text x="295.0" y="4499.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1515/crll.1991.413.127">“V. Strassen, Degeneration and complexity of bilinear maps: some asymptotic spectra, J. reine angew. Math. 413 (1991), 127–180.”</a> (crossref)</text>
 <text x="2345.0" y="4499.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Stu03">
-<rect x="53.0" y="4507.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Stu03" class="rd-row">
 <rect x="56" y="4510.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4530.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Stu03</tspan></text>
 <text x="215.0" y="4530.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2003</text>
 <text x="295.0" y="4530.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1090/conm/338/06080">“K.-T. Sturm, Probability measures on metric spaces of nonpositive curvature, Contemp. Math. 338 (2003), 357–390.”</a> (crossref)</text>
 <text x="2345.0" y="4530.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2, C ×3</text>
 </g>
-<g id="ref-SW14">
-<rect x="53.0" y="4539.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-SW14" class="rd-row">
 <rect x="56" y="4542.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4561.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">SW14</tspan></text>
 <text x="215.0" y="4561.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2014</text>
 <text x="295.0" y="4561.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00037-014-0087-y">“R. Santhanam and R. Williams, On uniformity and circuit lower bounds, Comput. Complexity 23 (2014), 177–205.”</a> (crossref)</text>
 <text x="2345.0" y="4561.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-SY10">
-<rect x="53.0" y="4570.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-SY10" class="rd-row">
 <rect x="56" y="4573.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4592.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">SY10</tspan></text>
 <text x="215.0" y="4592.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2010</text>
 <text x="295.0" y="4592.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1561/9781601984012">“A. Shpilka and A. Yehudayoff, Arithmetic circuits: a survey of recent results and open questions, Found. Trends Theor. Comput. Sci. 5 (2010), 207–388.”</a> (crossref)</text>
 <text x="2345.0" y="4592.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Tav15">
-<rect x="53.0" y="4601.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Tav15" class="rd-row">
 <rect x="56" y="4604.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4623.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Tav15</tspan></text>
 <text x="215.0" y="4623.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2015</text>
 <text x="295.0" y="4623.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/j.ic.2014.09.004">“S. Tavenas, Improved bounds for reduction to depth 4 and depth 3, Inform. and Comput. 240 (2015), 2–11.”</a> (crossref)</text>
 <text x="2345.0" y="4623.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Val79">
-<rect x="53.0" y="4632.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Val79" class="rd-row">
 <rect x="56" y="4635.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4655.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Val79</tspan></text>
 <text x="215.0" y="4655.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1979</text>
 <text x="295.0" y="4655.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/800135.804419">“L. G. Valiant, Completeness classes in algebra, STOC 1979, 249–261.”</a> (crossref)</text>
 <text x="2345.0" y="4655.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×3, 2, E, M ×2</text>
 </g>
-<g id="ref-Val79b">
-<rect x="53.0" y="4663.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Val79b" class="rd-row">
 <rect x="56" y="4666.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4686.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Val79b</tspan></text>
 <text x="215.0" y="4686.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1979</text>
 <text x="295.0" y="4686.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1016/0304-3975(79)90044-6">“L. G. Valiant, The complexity of computing the permanent, Theoret. Comput. Sci. 8 (1979), 189–201.”</a> (crossref)</text>
 <text x="2345.0" y="4686.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Val82">
-<rect x="53.0" y="4695.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Val82" class="rd-row">
 <rect x="56" y="4698.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4717.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Val82</tspan></text>
 <text x="215.0" y="4717.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1982</text>
 <text x="295.0" y="4717.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://zbmath.org/3744549">“L. G. Valiant, Reducibility by algebraic projections, in Logic and Algorithmic, Monogr. Enseign. Math. 30 (1982), 365–380.”</a> (zbmath)</text>
 <text x="2345.0" y="4717.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1 ×2</text>
 </g>
-<g id="ref-VC17">
-<rect x="53.0" y="4726.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-VC17" class="rd-row">
 <rect x="56" y="4729.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4748.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">VC17</tspan></text>
 <text x="215.0" y="4748.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2017</text>
 <text x="295.0" y="4748.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s00220-017-2861-6">“P. Vrana and M. Christandl, Entanglement distillation from Greenberger–Horne–Zeilinger shares, Comm. Math. Phys. 352 (2017), 621–627.”</a> (crossref)</text>
 <text x="2345.0" y="4748.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-Vin91">
-<rect x="53.0" y="4757.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Vin91" class="rd-row">
 <rect x="56" y="4760.4" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4779.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Vin91</tspan></text>
 <text x="215.0" y="4779.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1991</text>
 <text x="295.0" y="4779.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1109/sct.1991.160269">“V. Vinay, Counting auxiliary pushdown automata and semi-unbounded arithmetic circuits, Structure in Complexity Theory 1991, 270–284.”</a> (hand)</text>
 <text x="2345.0" y="4779.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-vM07">
-<rect x="53.0" y="4788.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-vM07" class="rd-row">
 <rect x="56" y="4791.6" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4811.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">vM07</tspan></text>
 <text x="215.0" y="4811.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2007</text>
 <text x="295.0" y="4811.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1561/9781601980854">“D. van Melkebeek, A survey of lower bounds for satisfiability and related problems, Found. Trends Theor. Comput. Sci. 2 (2007), 197–303.”</a> (crossref)</text>
 <text x="2345.0" y="4811.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">K</text>
 </g>
-<g id="ref-Vra22">
-<rect x="53.0" y="4819.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Vra22" class="rd-row">
 <rect x="56" y="4822.8" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4842.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Vra22</tspan></text>
 <text x="215.0" y="4842.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2022</text>
 <text x="295.0" y="4842.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1007/s11083-021-09570-7">“P. Vrana, A generalization of Strassen’s theorem on preordered semirings, Order 39 (2022), 209– 228.”</a> (crossref)</text>
 <text x="2345.0" y="4842.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">A</text>
 </g>
-<g id="ref-VSBR83">
-<rect x="53.0" y="4851.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-VSBR83" class="rd-row">
 <rect x="56" y="4854.0" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4873.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">VSBR83</tspan></text>
 <text x="215.0" y="4873.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1983</text>
 <text x="295.0" y="4873.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1137/0212043">“L. G. Valiant, S. Skyum, S. Berkowitz and C. Rackoff, Fast parallel computation of polynomials using few processors, SIAM J. Comput. 12 (1983), 641–644.”</a> (crossref)</text>
 <text x="2345.0" y="4873.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, 2, E, K</text>
 </g>
-<g id="ref-Wan00">
-<rect x="53.0" y="4882.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Wan00" class="rd-row">
 <rect x="56" y="4885.2" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4904.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Wan00</tspan></text>
 <text x="215.0" y="4904.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2000</text>
 <text x="295.0" y="4904.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.4310/cag.2000.v8.n3.a5">“M.-T. Wang, Generalized harmonic maps and representations of discrete groups, Comm. Anal. Geom. 8 (2000), 545–563.”</a> (crossref)</text>
 <text x="2345.0" y="4904.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">F</text>
 </g>
-<g id="ref-Wil25">
-<rect x="53.0" y="4913.4" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Wil25" class="rd-row">
 <rect x="56" y="4916.4" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4935.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Wil25</tspan></text>
 <text x="215.0" y="4935.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2025</text>
 <text x="295.0" y="4935.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3717823.3718225">“R. R. Williams, Simulating time with square-root space, STOC 2025, 13–23.”</a> (crossref)</text>
 <text x="2345.0" y="4935.9" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">I</text>
 </g>
-<g id="ref-WZ26">
-<rect x="53.0" y="4944.6" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-WZ26" class="rd-row">
 <rect x="56" y="4947.6" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="4967.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">WZ26</tspan></text>
 <text x="215.0" y="4967.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2026</text>
 <text x="295.0" y="4967.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1090/bull/1880">“A. Wigderson and J. Zuiddam, Asymptotic spectra: theory, applications, and extensions, Bull. Amer. Math. Soc. 63 (2026), 199–331.”</a> (crossref)</text>
 <text x="2345.0" y="4967.1" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1, A</text>
 </g>
-<g id="ref-Yab15">
-<rect x="53.0" y="4975.8" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Yab15" class="rd-row">
 <rect x="56" y="4978.8" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="4998.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Yab15</tspan></text>
 <text x="215.0" y="4998.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2015</text>
 <text x="295.0" y="4998.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://arxiv.org/abs/1504.00151">“A. Yabe, Bi-polynomial rank and determinantal complexity, arXiv:1504.00151, 2015.”</a> (arxiv)</text>
 <text x="2345.0" y="4998.3" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Yeh19">
-<rect x="53.0" y="5007.0" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Yeh19" class="rd-row">
 <rect x="56" y="5010.0" width="2968" height="31.2" fill="#ffffff" stroke="#d4d8e0" class="f-bg s-line" stroke-width="1"/>
 <text x="65.0" y="5029.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Yeh19</tspan></text>
 <text x="215.0" y="5029.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2019</text>
 <text x="295.0" y="5029.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><a href="https://doi.org/10.1145/3313276.3316311">“A. Yehudayoff, Separating monotone VP and VNP, STOC 2019, 425–429.”</a> (crossref)</text>
 <text x="2345.0" y="5029.5" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">1</text>
 </g>
-<g id="ref-Zui19">
-<rect x="53.0" y="5038.2" width="2974.0" height="37.2" rx="4" fill="#f1f2f4" stroke="#5f6878" class="rd-target ft-grey s-grey" stroke-width="3.5" opacity="0"/>
+<g id="ref-Zui19" class="rd-row">
 <rect x="56" y="5041.2" width="2968" height="31.2" fill="#fafbfc" stroke="#d4d8e0" class="f-zebra s-line" stroke-width="1"/>
 <text x="65.0" y="5060.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start"><tspan font-family="'RD Noto Sans Mono', 'RD Noto Sans Math', 'Noto Sans Mono', Menlo, Consolas, monospace" font-size="11.5">Zui19</tspan></text>
 <text x="215.0" y="5060.7" font-family="'RD Noto Sans', 'RD Noto Sans Math', 'Noto Sans', Helvetica, Arial, sans-serif" font-size="12.5" fill="#1e2430" class="f-ink" text-anchor="start">2019</text>
