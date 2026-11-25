@@ -46,7 +46,7 @@ FM_SUB = "vp-vnp"                    # the folder of the formalization inside fo
 # paper.pdf at FM_COMMIT, from which diagrams/src/paper-facts.json was read by tools/paper-facts/extract.py.
 PAPER_SHA256 = "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c"
 # diagrams/src/paper-facts.json as that script wrote it (tools/paper-facts/meta.json records both, and the commit).
-PAPER_FACTS_SHA256 = "dfe6b5b575857a897459ec91ced42d595d7cfc051463ae49f41133605b2ce94d"
+PAPER_FACTS_SHA256 = "4c5b9ea23fc64aca3d1ce55847c4f6aa78ccd5e3b3d13bad2022438a5d6288b7"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 

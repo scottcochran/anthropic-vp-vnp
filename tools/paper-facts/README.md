@@ -31,6 +31,12 @@ Alphanumeric Symbols (U+1D400 to U+1D7FF), or ℎ (U+210E), the italic h that bl
 plain letters by NFKC. In a quoted passage, a word broken at a line end before a lower-case letter is
 joined.
 
+**Spacing.** pypdf loses the spaces of some lines ("Thepermanentiswrittenthereas"). Every passage the script quotes
+is therefore respaced from PyMuPDF 2.1's reading of the same page: a space where two characters of a line stand
+further apart than a fifth of the font size, a space before an operator that has one after it (d+ 1 -> d + 1),
+running heads dropped. A passage is respaced only when its characters, spaces aside, stand in that reading exactly;
+at FM_COMMIT that holds for 158 passages, and 13 are kept as pypdf reads them. The script prints both counts.
+
 **Not checked:** that pypdf's text order matches the printed layout beyond these parses. On 2026.11.25 the rows
 were read against pypdf's text of pages 17 and 67, not against the rendered pages; a reading against the printed
 tables is still to be done (PLAN.md). When `FM_COMMIT` moves and the PDF changed, run the

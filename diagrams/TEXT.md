@@ -38,9 +38,10 @@ fifth, a transcription.
    prints, and that the PDF is the one it was read from (`PAPER_SHA256`). F4's interpretation card is computed
    from `VERDICTS`. The traces' "How to read it" sentences stand behind assertions in T1 and T2.
 
-**A known flaw in the quotations.** pypdf loses the spaces of a few lines of the PDF (difference 2 on F6 reads
-"Thepermanentiswrittenthereas"). The words are the paper's and in its order; the spacing is not. PLAN.md keeps it
-open.
+**The spacing of the quotations.** pypdf loses the spaces of a few lines of the PDF, so each quoted passage is
+respaced from PyMuPDF's reading of the page, where a space stands wherever two characters are further apart than a
+fifth of the font size (tools/paper-facts/README.md). The characters, spaces aside, must match pypdf's exactly, or
+the passage is kept as pypdf reads it. In a formula the spacing is PyMuPDF's, not the printed one.
 
 **Inferred relations.** Every use between statements, and so every use between sections that is marked "Lean", is
 inferred from names in the source text (`diagrams/README.md`, "How the Lean is read"). The posters say so where they

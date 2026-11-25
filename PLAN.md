@@ -87,9 +87,8 @@ Found: all 96 Lean names the paper prints are declared but `native_decide`, whic
 statements in any universe are exactly those whose Lean takes a type in any universe; the Lean never writes four
 of the paper's words that Q.3 says it renames (packet, tally, node tensor, upper functional).
 
-Open: pypdf loses the spaces of a few lines, which shows in some quotations (diagrams/TEXT.md); a reading of
-those passages with PyMuPDF's positions, as the glossary is read, would fix it. Read `paper-facts.json` against the rendered pages, still open from
-Phase 1.
+Open: read `paper-facts.json` against the rendered pages, still open from Phase 1. (The quotations that lost their
+spaces were fixed in Phase 1g.)
 
 ## Phase 1f: the papers (2026.11.25)
 
@@ -103,6 +102,14 @@ the entries before them; the first searches matched a conference version or a bo
 journal paper or a book (AW09, Bür00b, FPV13, GKKS14, Gro15, Hya79, KI04, SW14, KLS10, and Wil25 the other way),
 which the year check alone would have let through. Each was set right by comparing the cited venue with the
 record's, and its note says so.
+
+## Phase 1g: the spacing of the quotations (2026.11.25)
+
+pypdf loses the spaces of some lines of the PDF. The extractor now respaces every quoted passage from PyMuPDF's
+reading of the page, keeping pypdf's characters and requiring them to match exactly (158 passages respaced, 13 kept).
+At FM_COMMIT this changes 7 passages: Q.3's second difference ("Thepermanentiswrittenthereas"), the reference Vin91
+("Countingauxiliarypushdownautomata…"), and the spacing around commas and full stops in five others. No recorded
+expectation moved.
 
 ## Phase 2: checking the uses against the Lean (planned)
 

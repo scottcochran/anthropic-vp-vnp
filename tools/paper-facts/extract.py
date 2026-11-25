@@ -167,8 +167,68 @@ REF = re.compile(r"\b(Theorem|Lemma|Proposition|Corollary|Definition|Remark) ([A
 
 def prose(s):
     """A passage of the text as one line: a word broken at a line end is joined (devel-\nopment -> development;
-    a hyphen at a line end before a lower-case letter is taken to be a break), then as plain()."""
-    return plain(re.sub(r"-\n(?=[a-z])", "", s))
+    a hyphen at a line end before a lower-case letter is taken to be a break), then as plain(), then respaced from
+    PyMuPDF's reading of the page (respace)."""
+    return respace(plain(re.sub(r"-\n(?=[a-z])", "", s)))
+
+
+# PyMuPDF's reading of the whole text, for respace(): every character with its box, a space put where two characters
+# of a line stand further apart than a fifth of the font size, as glossary() does. pypdf, which the rest of this script
+# reads, loses the spaces of some lines ("Thepermanentiswrittenthereas"); PyMuPDF keeps them.
+SPACED = {"flat": "", "index": [], "source": "", "used": 0, "kept": 0}
+
+
+def spaced_text(pdf):
+    import pymupdf
+    lines = []
+    for page in pymupdf.open(str(pdf)):
+        rows = {}
+        for block in page.get_text("rawdict")["blocks"]:
+            for line in block.get("lines", []):
+                for span in line["spans"]:
+                    for ch in span["chars"]:
+                        rows.setdefault((block["number"], round(line["bbox"][3])), []).append(
+                            (ch["bbox"][0], ch["bbox"][2], ch["c"], span["size"]))
+        for key in sorted(rows):
+            text, last = "", None
+            for x0, x1, c, size in sorted(rows[key]):
+                if last is not None and x0 - last > 0.2 * size and not text.endswith(" ") and c != " ":
+                    text += " "
+                text += c
+                last = x1
+            lines.append(text)
+    src = "\n".join(ln for ln in lines if not re.fullmatch(r"\s*(VP ?̸?≠? ?= ?VNP \d+|\d+ CLAUDE)\s*", ln))
+    src = re.sub(r"-\n(?=[a-z])", "", src)
+    out, index = [], []
+    for i, ch in enumerate(src):                       # the same characters plain() keeps, one by one
+        n = unicodedata.normalize("NFKC", ch) if 0x1D400 <= ord(ch) <= 0x1D7FF or ch == "ℎ" else ch
+        if 0xFE00 <= ord(ch) <= 0xFE0F or ch.isspace() or ch == "\u0338":
+            continue
+        for c in n:
+            out.append(c)
+            index.append(i)
+    SPACED.update(flat="".join(out), index=index, source=src)
+
+
+def respace(t):
+    """t with the spacing of PyMuPDF's reading, when its characters, spaces aside, stand in that reading exactly
+    (≠ aside, which the two readings set differently); else t unchanged."""
+    if not SPACED["flat"] or not t:
+        return t
+    key = re.sub(r"\s+", "", t).replace("≠", "=")
+    flat = SPACED["flat"]
+    pos = flat.find(key)
+    if pos < 0 or len(key) < 12:
+        SPACED["kept"] += 1
+        return t
+    a, b = SPACED["index"][pos], SPACED["index"][pos + len(key) - 1]
+    out = plain(SPACED["source"][a:b + 1])
+    out = re.sub(r"(?<=[\w)\]])([+=−])(?= )", r" \1", out)    # d+ 1 -> d + 1: the gap before an operator is narrow
+    if re.sub(r"\s+", "", out).replace("≠", "=") != key:
+        SPACED["kept"] += 1
+        return t
+    SPACED["used"] += 1
+    return out
 
 
 def refs(s):
@@ -457,6 +517,7 @@ def main(argv):
                             check=True).stdout.strip()
     texts = pages(pdf)
     text = "\n".join(texts)
+    spaced_text(pdf)
     t3 = table3(text)
     facts = {"table1": table1(text), "table3": t3, "headers": headers(texts, t3), "intro": intro(text),
              "pages": len(texts), "notes": notes(text, texts, t3), "appendix_q": appendix_q(text), "figure1": figure1(text),
@@ -472,6 +533,7 @@ def main(argv):
     META.write_text(json.dumps(meta, indent=1) + "\n", encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(facts['table1'])} sections, {len(t3)} statements, "
           f"{len(facts['intro'])} in Sections 1 and 2, {len(facts['notes'])} formalization notes, read at {commit[:10]}")
+    print(f"  respaced from PyMuPDF: {SPACED['used']} passages; kept as pypdf reads them: {SPACED['kept']}")
     print(f"  PAPER_SHA256 = \"{meta['paper_sha256']}\"")
     print(f"  PAPER_FACTS_SHA256 = \"{meta['output_sha256']}\"")
 

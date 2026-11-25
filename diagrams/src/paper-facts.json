@@ -1170,7 +1170,7 @@
    {
     "lean": [],
     "names": [],
-    "text": "In the file printed in Section 3 circuits and the classes VP and VNP are defined over commutativesemirings. Thepermanentiswrittenthereas ∑ σ ∏ i xσ(i),i, whereSection1 has xi,σ(i); the two sums agree, as one sees by replacing σ with its inverse."
+    "text": "In the file printed in Section 3 circuits and the classes VP and VNP are defined over commutative semirings. The permanent is written there as ∑ σ ∏ i xσ(i),i, where Section 1 has xi,σ(i); the two sums agree, as one sees by replacing σ with its inverse."
    },
    {
     "lean": [
@@ -1182,7 +1182,7 @@
      "Lemma F.4",
      "Lemma F.5"
     ],
-    "text": "Lean defines the projection to the fixed points of a window (Section F) as the barycenter of the orbit, and projection_nearest shows that this is the nearest point. In the proof of Theorem F.6 the space of functions carries the sum where the text has the mean, which is one scaling factor. Lean states Lemma F.3 for explicit numbers, θn = 18⌈log2 n⌉ μ(L + 1)sL with L = ⌊logμ 2⌈log2 n⌉⌋ (kappa), which are not those of the printed proof, and C(n) in (F.1) and in Lemmas F.4 and F.5 is formed with them."
+    "text": "Lean defines the projection to the fixed points of a window (Section F) as the barycenter of the orbit, and projection_nearest shows that this is the nearest point. In the proof of Theorem F.6 the space of functions carries the sum where the text has the mean, which is one scaling factor. Lean states Lemma F.3 for explicit numbers, θn = 18⌈log2 n⌉μ(L + 1)sL with L = ⌊logμ 2⌈log2 n⌉⌋ (kappa), which are not those of the printed proof, and C(n) in (F.1) and in Lemmas F.4 and F.5 is formed with them."
    },
    {
     "lean": [],
@@ -1220,7 +1220,7 @@
      "Proposition B.2",
      "Proposition E.10"
     ],
-    "text": "Lemmas A.3, E.4, E.7, F.1, F.2, I.2, K.3, M.1, N.2 and N.3 and Proposition B.2 are proved in stronger or more general forms. For example, lem_hubs pushes the tensor t forward along an arbitrary map from its parties to a finite set of parties, of which o1, o2 are any two, and lem_hubs_further is the form with two further parties. Proposition B.2 is proved without the assumption that Σ1 and Σ2 are nonempty. Lemma E.4 is proved over every commutative semiring, and Lemmas E.7 and N.3 whenever t is covered by T1, . . . , TJ , so that linear maps may also be applied at the parties of P . In Section F Lemma F.1 is proved without the assumption s2 < μ and also for r = 0, and Lemma F.2 without the conditions 1 ≤ k < n and ξ, ω ≠ 0. Lemma K.3 is proved for every family that is complete for grid sums (Appendix M) and for every H ≥ 32. Lemmas M.1 and N.2 are proved with any algebraically closed field of characteristic p in the place of K. The flat bound for approximating circuits has 14 where Proposition E.10 has 16."
+    "text": "Lemmas A.3, E.4, E.7, F.1, F.2, I.2, K.3, M.1, N.2 and N.3 and Proposition B.2 are proved in stronger or more general forms. For example, lem_hubs pushes the tensor t forward along an arbitrary map from its parties to a finite set of parties, of which o1, o2 are any two, and lem_hubs_further is the form with two further parties. Proposition B.2 is proved without the assumption that Σ1 and Σ2 are nonempty. Lemma E.4 is proved over every commutative semiring, and Lemmas E.7 and N.3 whenever t is covered by T1, . . . , TJ, so that linear maps may also be applied at the parties of P. In Section F Lemma F.1 is proved without the assumption s2 < μ and also for r = 0, and Lemma F.2 without the conditions 1 ≤ k < n and ξ, ω ≠ 0. Lemma K.3 is proved for every family that is complete for grid sums (Appendix M) and for every H ≥ 32. Lemmas M.1 and N.2 are proved with any algebraically closed field of characteristic p in the place of K. The flat bound for approximating circuits has 14 where Proposition E.10 has 16."
    },
    {
     "lean": [
@@ -1249,7 +1249,7 @@
      "Theorem H.2",
      "Proposition J.2"
     ],
-    "text": "Theorem H.2 and Proposition J.2 state their clauses as the fields of structures. A relay is a law with one slot, two channels, one index and λ = 0, applied to a batch of packets. Thus relays too have outcomes and leave copies and dead packets at the ends of their strings, an outcome of a relay is good if it equals the number of packets of the batch on both channels, and there is a law move for every stage, type, coset and law, with t = 0 for those not chosen. The value of a tree is written as a sum, over the contents of named packets, present or absent, of products of the values of its nodes, and no theorem restates this as the value of a network as defined in Section H. As printed in (b) and (e), the dead packets are a set of names that are not all stated to be present, so that the bound on what a node ever holds may count absent ones. The end packets of relays count as dead, and in networks without these packets they would count among the absent ones. In part (e) Lean has the constant C of the theorem, and it counts for every move at p, with the number t, also t times one plus the number of its slots at p, which covers the zeros in slots. Proposition J.2 uses only the total M C . Packets have a direction in Lean, and packets from a node to itself are allowed and stay at their node. The programs may depend on M , N , ℓ, the ring of the network and the bound on the number of given nodes, respectively on v, T , k, the automaton and the standing data. In Proposition J.2 the outcomes range over tuples of numbers below a bound that is part of the data (the field U1); no clause says that every good outcome lies below it, and the identity sums over those that do. Whether an outcome is good is tested with the integer ⌊2C1a2 1⌋ (thm_tree_good). This implies the printed notion and is equal to it when 2C1a2 1 is an integer, as the laws provide."
+    "text": "Theorem H.2 and Proposition J.2 state their clauses as the fields of structures. A relay is a law with one slot, two channels, one index and λ = 0, applied to a batch of packets. Thus relays too have outcomes and leave copies and dead packets at the ends of their strings, an outcome of a relay is good if it equals the number of packets of the batch on both channels, and there is a law move for every stage, type, coset and law, with t = 0 for those not chosen. The value of a tree is written as a sum, over the contents of named packets, present or absent, of products of the values of its nodes, and no theorem restates this as the value of a network as defined in Section H. As printed in (b) and (e), the dead packets are a set of names that are not all stated to be present, so that the bound on what a node ever holds may count absent ones. The end packets of relays count as dead, and in networks without these packets they would count among the absent ones. In part (e) Lean has the constant C of the theorem, and it counts for every move at p, with the number t, also t times one plus the number of its slots at p, which covers the zeros in slots. Proposition J.2 uses only the total MC. Packets have a direction in Lean, and packets from a node to itself are allowed and stay at their node. The programs may depend on M, N, ℓ, the ring of the network and the bound on the number of given nodes, respectively on v, T, k, the automaton and the standing data. In Proposition J.2 the outcomes range over tuples of numbers below a bound that is part of the data (the field U1); no clause says that every good outcome lies below it, and the identity sums over those that do. Whether an outcome is good is tested with the integer ⌊2C1a2 1⌋ (thm_tree_good). This implies the printed notion and is equal to it when 2C1a2 1 is an integer, as the laws provide."
    },
    {
     "lean": [],
@@ -1257,7 +1257,7 @@
      "Proposition J.2",
      "Lemma I.2"
     ],
-    "text": "Proposition J.2 is proved without the bound on lg T , and its number of bits in all counts every copy ever held and the zeros in slots. Its sum runs over the numbers of packets with at most N packets at each node, as in the printed proof, where Lean takes for N the last bound of Lemma I.2, it is stated for every pair of a first and a last state, and the exponent of Λ is the constant C of the statement. It also states what the program needs besides: the packets have at most T bits, at most T Λ bits start at a node, and the numbers of the program have room for packets, outcomes and pieces."
+    "text": "Proposition J.2 is proved without the bound on lg T, and its number of bits in all counts every copy ever held and the zeros in slots. Its sum runs over the numbers of packets with at most N packets at each node, as in the printed proof, where Lean takes for N the last bound of Lemma I.2, it is stated for every pair of a first and a last state, and the exponent of Λ is the constant C of the statement. It also states what the program needs besides: the packets have at most T bits, at most TΛ bits start at a node, and the numbers of the program have room for packets, outcomes and pieces."
    },
    {
     "lean": [
@@ -2630,7 +2630,7 @@
    },
    {
     "key": "Rob91",
-    "text": "J. M. Robson, An O(T log T ) reduction from RAM computations to satisfiability, Theoret. Comput. Sci. 82 (1991), 141–149.",
+    "text": "J. M. Robson, An O(T log T) reduction from RAM computations to satisfiability, Theoret. Comput. Sci. 82 (1991), 141–149.",
     "year": 1991
    },
    {
@@ -2745,7 +2745,7 @@
    },
    {
     "key": "Vin91",
-    "text": "V.Vinay, Countingauxiliarypushdownautomataandsemi-unboundedarithmeticcircuits, Structure in Complexity Theory 1991, 270–284.",
+    "text": "V. Vinay, Counting auxiliary pushdown automata and semi-unbounded arithmetic circuits, Structure in Complexity Theory 1991, 270–284.",
     "year": 1991
    },
    {
