@@ -166,7 +166,9 @@ A release is a version tag, `vMAJOR.MINOR.PATCH`, annotated and signed, on `main
 (scottcochran) and never moved, re-pointed, deleted or re-created; a release found wrong gets a successor. On the tag,
 `.github/workflows/release.yml` runs the posters check, writes `pins.json` (the formal-math commit, the four pinned
 hashes, the run) and `SHA256SUMS`, and publishes every poster's SVG with notes from `tools/release-notes.py`
-(proof-posters:cutting-releases). There is no Pages site: the repository is private.
+(proof-posters:cutting-releases). Each release is then published by `.github/workflows/pages.yml` to the Pages site,
+https://scottcochran.github.io/anthropic-vp-vnp/, which serves one release at a time, checked against its
+`SHA256SUMS`. The site is public, though the repository is private.
 
 | Part | When it changes | What a reader of a cited poster has to do |
 |---|---|---|

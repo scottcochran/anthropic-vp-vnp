@@ -83,7 +83,8 @@ that differs.
 
 A release is a signed version tag, pushed by the custodian; its workflow (`.github/workflows/release.yml`) checks the
 posters at the tag and publishes every SVG with `SHA256SUMS` and `pins.json`, which names the formal-math commit and the
-four pinned hashes, so that a poster can be cited by release (PLAN.md, Releases).
+four pinned hashes, so that a poster can be cited by release (PLAN.md, Releases). The latest release is also served at
+https://scottcochran.github.io/anthropic-vp-vnp/, where a poster opens in the browser.
 
 ## Licence
 

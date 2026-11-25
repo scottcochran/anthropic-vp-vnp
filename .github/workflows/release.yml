@@ -1,7 +1,8 @@
 # A release is a version tag, pushed by the custodian, never moved or reused (PLAN.md, "Releases"). This workflow
 # runs the posters check on the tag, as CI runs it on main, then writes pins.json and SHA256SUMS, and creates the
 # GitHub release with every poster's SVG, the two files, and notes that record what a reader needs to check a
-# citation. Adapted from riemann-diagrams' release.yml; no Pages site (the repository is private).
+# citation. Adapted from riemann-diagrams' release.yml. Once the release exists, the pages job calls pages.yml with the
+# tag, which publishes the release's posters to GitHub Pages (see that file).
 #
 # The tag must be annotated, on main, vMAJOR.MINOR.PATCH, and the custodian's. Its message is the release's opening:
 # the kind of move, what changed, and one line saying which posters a reader must re-read.
@@ -93,3 +94,13 @@ jobs:
         run: |
           tag=${GITHUB_REF#refs/tags/}
           gh release create "$tag" --verify-tag --title "$tag" --notes-file notes.md stage/*
+
+  pages:
+    needs: release
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/pages.yml
+    with:
+      tag: ${{ github.ref_name }}
