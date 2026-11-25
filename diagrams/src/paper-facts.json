@@ -1,4 +1,33 @@
 {
+ "appendix_q": {
+  "library_only": "These are the sorting pass, the tape encoding and the time count of Proposition I.1, the constructions of Propositions E.1 and M.2, the induction of Lemma E.4, the word in Lemma F.2, the averaging in Lemma F.1, the properties of the mean E in Section C, and the semantics of scripts inside the evaluator.",
+  "not_in_lean": "Remark N.6, the example of flattening ranks after Definition A.1, the remarks that follow the proof of Theorem D.2, the fact that r in the proof of Proposition A.5 is also a limit, and the factor three between the two ways of counting gates in Section 1 are not formalized.",
+  "off_route": {
+   "definitions": true,
+   "names": [
+    "Theorem L.2",
+    "Corollary L.3",
+    "Proposition E.5",
+    "Theorem E.6"
+   ],
+   "text": "Theorem L.2, Corollary L.3, the qualitative bound in the flat case (Proposition E.5 and Theorem E.6) and the definitions"
+  },
+  "overview": "The printed proofs differ in completeness. Those of Sections A to G and of Appendix O, and the deduction of Theorem L.1 in Section L, are meant to be complete, if terse. The proofs of Proposition I.1, Theorem H.2(d), (e), Theorem J.3 and Proposition N.4 describe machines and programs and account for their sizes and running times. That these do exactly what is claimed can be verified only in the Lean development, and each of these four statements is followed by a formalization note that says so. Consequently the contracting case, and with it every main result, rests on Lean at these points.",
+  "overview_lean": [
+   "Proposition I.1",
+   "Theorem H.2",
+   "Theorem J.3",
+   "Proposition N.4"
+  ],
+  "routes": [
+   "In Proposition K.5, Theorem K.6 and Proposition N.4 some printed references are to definitions or enter as standing hypotheses. Proposition N.4 repeats the iteration of Proposition K.5, as printed.",
+   "Lemma K.3, Theorem M.3 and Theorem N.5 use the general forms for families that are complete for grid sums, of which Corollary E.2 and the statements about the permanent are instances.",
+   "Proposition E.10 uses the step prop_flat_lower_sum of the proof of Proposition E.5, not the proposition. Lemma N.2 repeats the argument of Lemma M.1 on coefficients.",
+   "Theorem N.5 does not cite Lemma K.3, Theorem K.7 and Theorem M.3. Instead it uses the step thm_allfields_exceeds of the proof of the last of them and approximate analogues of the first two, which share their steps with them; the analogues are lem_circuit_approx and contracting_approx_complete. On the way the constants are cut off twice.",
+   "Of Lemma A.2 only the clauses that say that dφ is a pseudometric are taken from the lemma: the power law and dφ ≤ 1 come from its named parts, and the bound by a tree is used nowhere. The clause of Lemma K.4 on the size is never cited and is proved again where it is needed. Part (d) of Lemma C.4 is redundant where it is used. The form of the constants in Lemma N.2 is derived again in the proof of Theorem N.5.",
+   "Theorem H.2 uses parts (a) and (b) of Proposition H.1 through the named theorems that also prove the proposition."
+  ]
+ },
  "headers": {
   "Corollary E.2": {
    "page": 32,
@@ -293,6 +322,61 @@
    "lean": "thm_alt",
    "number": "2.2",
    "title": "the two cases"
+  }
+ ],
+ "notes": [
+  {
+   "after": "Theorem F.6",
+   "names": [
+    "Theorem H.2"
+   ],
+   "page": 42,
+   "subsection": "G.1 Edges, loads and the choice of h",
+   "text": "Of the second condition in (G.1), the proof of Theorem H.2 uses only 1 + 4C1 ≤ h/4. The Lean proof is coarser at this point and uses (G.1) as it stands."
+  },
+  {
+   "after": "Proposition H.1",
+   "names": [],
+   "page": 44,
+   "subsection": "H.1 A tower of finite groups",
+   "text": "The exponent 7 in part (d) is the one that is proved in the Lean development; the argument above gives the exponent 3."
+  },
+  {
+   "after": "Theorem H.2",
+   "names": [],
+   "page": 46,
+   "subsection": "H.3 The decomposition theorem",
+   "text": "For part (d), and for the numbers up of part (e), the proof below only describes the straight-line program and accounts for its size. That the program computes exactly what is claimed is proved in the Lean development (Appendix Q), and so are the details of the count in part (e)."
+  },
+  {
+   "after": "Proposition I.1",
+   "names": [],
+   "page": 49,
+   "subsection": "I.2 Tape automata",
+   "text": "The proof describes the automaton and counts its steps, and that the automaton is exact is proved only in the Lean development (Appendix Q)."
+  },
+  {
+   "after": "Proposition J.2",
+   "names": [
+    "Theorem H.2"
+   ],
+   "page": 52,
+   "subsection": "J.2 The pieces of a tree network",
+   "text": "The last claim rests on Theorem H.2(d) and (e), whose printed proofs only describe the program in question."
+  },
+  {
+   "after": "Theorem J.3",
+   "names": [],
+   "page": 53,
+   "subsection": "J.3 One cut",
+   "text": "The proof describes the evaluator and the cutting program G but does not print them, and that they are exact and keep the stated bounds is proved only in the Lean development (Appendix Q)."
+  },
+  {
+   "after": "Proposition N.4",
+   "names": [],
+   "page": 63,
+   "subsection": "N.3 Approximate accelerators in the contracting case",
+   "text": "The proof below describes the programs and accounts for their sizes and running times to the level of exponents. That the programs do what is claimed is proved only in the Lean development."
   }
  ],
  "pages": 70,

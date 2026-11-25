@@ -41,11 +41,12 @@ SECTIONS = "ABCDEFGHIJKLMNO"
 
 def plain(s):
     """A title or a cell as plain text: the paper's math italic letters, which pypdf returns as Mathematical
-    Alphanumeric Symbols (U+1D400 to U+1D7FF), become plain ones by NFKC (𝑈𝑛 -> Un), every other character is kept
+    Alphanumeric Symbols (U+1D400 to U+1D7FF) and as ℎ (U+210E, the italic h that block leaves out), become plain
+    ones by NFKC (𝑈𝑛 -> Un), every other character is kept
     (ℓ stays ℓ), and runs of white space become one space."""
     if s is None:
         return None
-    s = "".join(unicodedata.normalize("NFKC", ch) if 0x1D400 <= ord(ch) <= 0x1D7FF else ch for ch in s)
+    s = "".join(unicodedata.normalize("NFKC", ch) if 0x1D400 <= ord(ch) <= 0x1D7FF or ch == "ℎ" else ch for ch in s)
     return re.sub(r"\s+", " ", s).strip()
 
 
@@ -158,6 +159,97 @@ def intro(text):
     return out
 
 
+REF = re.compile(r"\b(Theorem|Lemma|Proposition|Corollary|Definition|Remark) ([A-O]\.\d+)")
+
+
+def prose(s):
+    """A passage of the text as one line: a word broken at a line end is joined (devel-\nopment -> development;
+    a hyphen at a line end before a lower-case letter is taken to be a break), then as plain()."""
+    return plain(re.sub(r"-\n(?=[a-z])", "", s))
+
+
+def refs(s):
+    """The numbered statements a passage names, in order of first mention, as 'Theorem H.2'."""
+    out = []
+    for m in REF.finditer(s.replace("\n", " ")):
+        k = f"{m.group(1)} {m.group(2)}"
+        if k not in out:
+            out.append(k)
+    return out
+
+
+def notes(text, page_texts, rows):
+    """Every "Formalization note." of the text: its page; the note itself, up to the first line that ends with a
+    full stop (a page's running head inside it is dropped); the last statement header and the last subsection
+    heading before it; and the statements it names."""
+    starts = []
+    for r in rows:
+        if r["kind"] == "Display":
+            continue
+        key = f"{r['kind']} {r['number']}"
+        m = re.search(r"^" + re.escape(key) + r"(?: \(([^\n]*?)\))?\.", text, re.M)
+        starts.append((m.start(), key))
+    starts.sort()
+    subs = [(m.start(), m.group(1), plain(m.group(2))) for m in
+            re.finditer(r"^([A-O]\.\d+)\. ([A-Z][^.\n]*?)\.", text, re.M)]
+    page_at = []
+    pos = 0
+    for i, t in enumerate(page_texts):
+        page_at.append(pos)
+        pos += len(t) + 1
+    out = []
+    for m in re.finditer(r"^Formalization note\. ", text, re.M):
+        lines = []
+        for ln in text[m.end():].split("\n"):
+            if re.fullmatch(r"VP ̸= VNP \d+|\d+ CLAUDE", ln.strip()):
+                continue
+            lines.append(ln)
+            if ln.rstrip().endswith("."):
+                break
+            if len(lines) > 6:
+                fail(f"a formalization note at offset {m.start()} does not end within six lines")
+        body = prose("\n".join(lines))
+        after = [k for o, k in starts if o < m.start()][-1]
+        sub = [(n, t) for o, n, t in subs if o < m.start()][-1]
+        page = max(i for i, o in enumerate(page_at) if o <= m.start()) + 1
+        out.append({"page": page, "text": body, "after": after, "subsection": f"{sub[0]} {sub[1]}",
+                    "names": refs(body)})
+    if not out:
+        fail("no formalization note in the text")
+    return out
+
+
+def between(text, start, end, what):
+    m = re.search(re.escape(start) + r"(.*?)" + re.escape(end), text, re.S)
+    if not m:
+        fail(f"no passage {what}: from {start!r} to {end!r}")
+    return m.group(1)
+
+
+def appendix_q(text):
+    """The passages of the overview and of Appendix Q that say where the proof rests on the Lean and what is not on
+    the route of Solution's theorems, each quoted whole and with the statements it names."""
+    lean_only = between(text, "The proofs\nof ", " describe machines", "naming the proofs that only Lean checks")
+    overview = "The printed proofs differ in completeness. " + prose(between(
+        text, "The printed proofs differ in completeness. ", "\nTable 1 shows", "of the overview on the printed proofs"))
+    off = between(text, "with these exceptions, which are not on that route:\n", ". Many unnumbered",
+                  "of Appendix Q.3 on the route")
+    routes = between(text, "Routes of proof. The theorems of the main route follow the references between the "
+                     "printed\nproofs, with these exceptions.\n", "\nThe proofs of Proposition A.5",
+                     "of Appendix Q's routes of proof")
+    library = between(text, "Some steps exist only under names of the underlying library and not as\ntheorems "
+                      "with prefix Paper. ", " Lean proofs can be\ncoarser", "on steps only in the library")
+    not_lean = between(text, "Not in Lean. ", "\nComments in the Lean files", "on what is not in Lean")
+    return {
+        "overview": overview,
+        "overview_lean": refs(lean_only),
+        "off_route": {"text": prose(off), "names": refs(off), "definitions": prose(off).endswith("the definitions")},
+        "routes": [prose(b) for b in routes.split("∙") if b.strip()],
+        "library_only": prose(library),
+        "not_in_lean": prose(not_lean),
+    }
+
+
 def main(argv):
     src = pathlib.Path(argv[0] if argv else os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
     pdf = src / "paper.pdf"
@@ -169,7 +261,7 @@ def main(argv):
     text = "\n".join(texts)
     t3 = table3(text)
     facts = {"table1": table1(text), "table3": t3, "headers": headers(texts, t3), "intro": intro(text),
-             "pages": len(texts)}
+             "pages": len(texts), "notes": notes(text, texts, t3), "appendix_q": appendix_q(text)}
     data = json.dumps(facts, indent=1, ensure_ascii=False, sort_keys=True) + "\n"
     OUT.write_text(data, encoding="utf-8")
     meta = {"commit": commit, "file": "vp-vnp/paper.pdf",
@@ -178,7 +270,7 @@ def main(argv):
             "output_sha256": hashlib.sha256(data.encode("utf-8")).hexdigest()}
     META.write_text(json.dumps(meta, indent=1) + "\n", encoding="utf-8")
     print(f"{OUT.relative_to(ROOT)}: {len(facts['table1'])} sections, {len(t3)} statements, "
-          f"{len(facts['intro'])} in Sections 1 and 2, read at {commit[:10]}")
+          f"{len(facts['intro'])} in Sections 1 and 2, {len(facts['notes'])} formalization notes, read at {commit[:10]}")
     print(f"  PAPER_SHA256 = \"{meta['paper_sha256']}\"")
     print(f"  PAPER_FACTS_SHA256 = \"{meta['output_sha256']}\"")
 

@@ -24,13 +24,29 @@ Done: all four build with no WARNING or ERROR at `FM_COMMIT = 11b6c7e3c9`. The p
 `../riemann-diagrams/skills/` all pass. `check-expectations.py`: 4 modules, 22 expectations under 21 names, all
 literals. `determinism.py`: 5 files byte-identical over `PYTHONHASHSEED` 0 and 1. `check-links.py`: 578 links, 261
 within a poster, 154 to another poster's id, 163 to formal-math at the pin. Looked at in light (rsvg-convert)
-and, for R2, in dark (Chrome). Not yet committed, and CI has not run.
+and, for R2, in dark (Chrome). Committed as 4f009f5; CI (posters, run 45571628046) regenerated all four at the
+pin on Ubuntu with Python 3.12, byte-identical to the committed files.
 
 Still open in Phase 1:
 
 - Read `paper-facts.json` against the rendered Table 1 and Table 3, not only pypdf's text of them.
 - Look at a link's framed target in a browser. Headless Chrome's screenshot of `F1…svg#K.3` came out blank.
 - Look at R1, F1 and F2 in the dark theme.
+
+## Phase 1b: the route, and where the paper rests on the Lean (2026.11.25)
+
+R3 `route` and F3 `formalization-notes`. `paper-facts.json` gained the seven formalization notes and the passages
+of the overview and Appendix Q that they check against (`tools/paper-facts/README.md`), and `vp.py` gained
+`route` and `closure`.
+
+Found while building R3: Appendix Q.3 says "the definitions" are off the route of Solution's theorems, but the walk
+reaches Definition A.1 through `def_spectral_congr`, the second Lean name Table 3 gives it. No proof names
+`def_spectral`. R3 records this as `ON_BY_SECOND` rather than widening the comparison. Every other row agrees
+with Q.3, and all seven of Appendix Q's route claims that R3 checks hold.
+
+Done: all six posters build with no WARNING or ERROR. `check-expectations.py`: 6 modules, 30 expectations under 29
+names, all literals. `determinism.py`: 7 files byte-identical over two seeds (one failure was fixed first: R3 had
+iterated over a set). `check-links.py` passes. R3 and F3 looked at in light (rsvg-convert) and dark (Chrome).
 
 ## Phase 2: checking the uses against the Lean (planned)
 

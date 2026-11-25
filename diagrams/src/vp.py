@@ -45,7 +45,7 @@ FM_SUB = "vp-vnp"                    # the folder of the formalization inside fo
 # paper.pdf at FM_COMMIT, from which diagrams/src/paper-facts.json was read by tools/paper-facts/extract.py.
 PAPER_SHA256 = "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c"
 # diagrams/src/paper-facts.json as that script wrote it (tools/paper-facts/meta.json records both, and the commit).
-PAPER_FACTS_SHA256 = "9123b698878419b19ec098d48579482337e5880d6b46ed65f9abd7dd51bc9a76"
+PAPER_FACTS_SHA256 = "dcf6ae23499ed4b0b338396e5fe1d1333d3c1fd2028d34d3265231955f9cc109"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
@@ -301,8 +301,66 @@ def load():
         else:
             st["doc_kind"] = st["doc_label"] = st["quote"] = None
         s.statements[key] = st
+    s.reach = {}
     s.uses = _statement_uses(s)
     return s
+
+
+def closure(s, key):
+    """Every declaration of vp-vnp under a statement's own Lean theorems, in any library: the walk from them through
+    every declaration their text names, stopping at the theorems of other statements. A token names a declaration
+    when it is the full name, or a dotted suffix of exactly one full name (`foo` for `Nc.Price.foo` after `open`),
+    of a declaration in a file the naming file imports, directly or not, and has at least three characters; an
+    ambiguous token names nothing. A local variable that is also the last
+    part of exactly one declaration's name is counted as a use of it. Returns the set of full names."""
+    if not hasattr(s, "_last"):
+        s._last = {}
+        for n in s.decls:
+            s._last.setdefault(n.rsplit(".", 1)[-1], []).append(n)
+        s._resolved = {}
+        s._sees = {}
+    def sees(mod):
+        """The files a file can name: itself and every file of vp-vnp it imports, directly or not."""
+        if mod not in s._sees:
+            out, stack = {mod}, [mod]
+            while stack:
+                for i in s.modules[stack.pop()]["imports"]:
+                    if i in s.modules and i not in out:
+                        out.add(i)
+                        stack.append(i)
+            s._sees[mod] = out
+        return s._sees[mod]
+    def resolve(t, mod):
+        if (t, mod) in s._resolved:
+            return s._resolved[(t, mod)]
+        t2 = t.strip(".")
+        hit = None
+        vis = sees(mod)
+        if t2 in s.decls and s.decls[t2]["module"] in vis:
+            hit = t2
+        elif len(t2) >= 3:
+            for cut in range(t2.count(".") + 1):           # a projection after the name (`foo.1`, `foo.mp`)
+                head = t2.rsplit(".", cut)[0] if cut else t2
+                cands = [n for n in s._last.get(head.rsplit(".", 1)[-1], ())
+                         if (n == head or n.endswith("." + head)) and s.decls[n]["module"] in vis]
+                if len(cands) == 1:
+                    hit = cands[0]
+                    break
+                if cands:
+                    break
+        s._resolved[(t, mod)] = hit
+        return hit
+    st = s.statements[key]
+    mine = [n for n in st["decls"] if s.lean_of[n] == [key]]
+    seen, stack = set(mine), list(mine)
+    while stack:
+        d = s.decls[stack.pop()]
+        for t in d["tokens"]:
+            m = resolve(t, d["module"])
+            if m and m not in seen and not (m in s.lean_of and key not in s.lean_of[m]):
+                seen.add(m)
+                stack.append(m)
+    return seen
 
 
 def _statement_uses(s):
@@ -347,7 +405,21 @@ def _statement_uses(s):
                     seen.add(m)
                     frontier.append((m, False))
         uses[key] = {k: found[k] for k in sorted(found, key=order_key)}
+        s.reach[key] = seen                 # the statement's own theorems and the Paper helpers its walk passed
     return uses
+
+
+def route(s):
+    """(roots, on): the statements Solution's theorems name, and every statement reached from them by uses."""
+    roots = sorted({k for n, d in s.decls.items() if d["module"] == "Solution" and d["kind"] == "theorem"
+                    for k in statements_named(s, d)}, key=order_key)
+    on, stack = set(roots), list(roots)
+    while stack:
+        for u in s.uses[stack.pop()]:
+            if u not in on:
+                on.add(u)
+                stack.append(u)
+    return roots, on
 
 
 def statements_named(s, decl):
