@@ -9,7 +9,7 @@ expression only its children and, for a constant, the name it refers to; then, f
 paper (Table 3, through diagrams/src/vp.py), it walks, breadth first, from the statement's Lean theorems through every
 declaration of vp-vnp that belongs to no statement, and records each other statement's theorem it meets: "direct" when
 one of the statement's own theorems refers to it, "through" when a helper does, with a shortest chain of declarations
-from the one to the other. It is the walk of vp._statement_uses, over the
+from the one to the other, and the declarations of the Paper library the walk passed. It is the walk of vp._statement_uses, over the
 terms Lean elaborated instead of the names in the source, with the same rule for a name Table 3 gives two statements.
 
 A constant is vp-vnp's own when (rule; it is recorded in the meta file):
@@ -38,7 +38,7 @@ OUT = ROOT / "diagrams" / "src" / "lean-uses.json"
 def main(argv):
     path = pathlib.Path(argv[0])
     meta_path = pathlib.Path(argv[argv.index("--meta") + 1]) if "--meta" in argv else ROOT / "tools" / "lean-uses" / "meta.json"
-    src = vp.load()
+    src = vp.load(lean=False)
 
     # ---- one pass over the export
     names = {0: None}                       # name id -> (prefix id, component)
@@ -156,10 +156,10 @@ def main(argv):
             ref_cache[i] = refs(i)
         return ref_cache[i]
 
-    uses, chains = {}, {}
+    uses, chains, reach, met = {}, {}, {}, {}
     for key, st in sorted(src.statements.items(), key=lambda t: vp.order_key(t[0])):
         start = [by_name[f] for f in st["decls"] if f in by_name]
-        found, seen, via = {}, set(start), {}
+        found, seen, via, hit = {}, set(start), {}, {}
         prev = {i: None for i in start}
         frontier = collections.deque((i, True, frozenset(owner[i]) - {key}) for i in start)
         while frontier:                                 # breadth first, so that each chain recorded is a shortest
@@ -173,6 +173,7 @@ def main(argv):
                         if k in skip:
                             continue
                         found[k] = "direct" if (mine or found.get(k) == "direct") else found.get(k, "through")
+                        hit.setdefault(k, set()).add(name_of(c))
                         if k not in via or (mine and len(via[k]) > 2):
                             chain, j = [name_of(c)], i
                             while j is not None:
@@ -187,9 +188,12 @@ def main(argv):
                 frontier.append((c, False, skip))
         uses[key] = {k: found[k] for k in sorted(found, key=vp.order_key)}
         chains[key] = {k: via[k] for k in sorted(via, key=vp.order_key)}
+        # the declarations of the Paper library the walk passed, the statement's own among them: R3's route claims
+        met[key] = {k: sorted(hit[k]) for k in sorted(hit, key=vp.order_key)}   # the used one's names arrived at
+        reach[key] = sorted(n for n in (name_of(i) for i in seen) if n.startswith("Paper.") and n in source)
 
     own_count = sum(1 for i in decls if own(name_of(i)))
-    data = {"uses": uses, "chains": chains, "absent": sorted(absent),
+    data = {"uses": uses, "chains": chains, "reach": reach, "met": met, "absent": sorted(absent),
             "counts": {"declarations": len(decls), "vp_vnp": own_count, "library": len(decls) - own_count,
                        "uses": sum(len(v) for v in uses.values()),
                        "direct": sum(1 for v in uses.values() for h in v.values() if h == "direct")}}

@@ -1,7 +1,7 @@
 """R3 — The route to the main theorems: every numbered statement that Solution's theorems reach, as a graph.
 
 Solution.lean proves its five theorems from four numbered statements (R1). This poster follows the uses between
-statements that the Lean text shows (F1, vp.py) down from those four, draws every statement it reaches in layers
+statements that the elaborated Lean shows (F1, src/lean-uses.json) down from those four, draws every statement it reaches in layers
 by its longest distance from Solution, with an arrow from each statement to each one its Lean proof uses, and
 marks the longest chain. Below, the statements the walk does not reach are set against the paper's own list of
 what is not on that route (Appendix Q.3), and the paper's notes on how the route departs from the printed proofs
@@ -35,7 +35,7 @@ CHAIN = ["Corollary M.4", "Theorem M.3", "Theorem L.1", "Theorem K.7", "Theorem 
          "Theorem G.2", "Theorem F.6", "Proposition C.3", "Theorem C.1", "Proposition A.8", "Lemma A.2",
          "Definition A.1"]
 # Appendix Q, "Routes of proof": a phrase of the paper, how this poster reads it, and what must then hold of the uses
-# read from the Lean text. ("absent", user, used): user's walk does not reach used's theorems; ("through", user,
+# in the elaborated Lean. ("absent", user, used): user's walk does not reach used's theorems; ("through", user,
 # used): it reaches them only through helpers; ("reaches", user, name): its walk passes the Paper declaration name.
 ROUTE_CLAIMS = [
     ("Proposition N.4 repeats the iteration of Proposition K.5, as printed",
@@ -62,29 +62,29 @@ ROUTE_CLAIMS = [
 def holds(src, check):
     kind, user, obj = check
     if kind == "absent":
-        return obj not in src.uses[user]
+        return obj not in src.lean_uses[user]
     if kind == "through":
-        return src.uses[user].get(obj) == "through"
-    return obj in src.reach[user]
+        return src.lean_uses[user].get(obj) == "through"
+    return obj in src.lean_reach[user]
 
 
 def build():
     src = vp.load()
     st = src.statements
     q = src.facts["appendix_q"]
-    roots, on = vp.route(src)
-    edges = [(u, k) for k in st for u in src.uses[k]]
-    compare("R3: the uses drawn are F1's", sorted(F1_USES), sorted(edges), "d_f1_paper_lean.py and the Lean text")
+    roots, on = vp.route(src, src.lean_uses)
+    edges = [(u, k) for k in st for u in src.lean_uses[k]]
+    compare("R3: the uses drawn are F1's", sorted(F1_USES), sorted(edges), "d_f1_paper_lean.py and src/lean-uses.json")
     off = sorted((k for k in st if k not in on), key=vp.order_key)
     compare("R3: the statements off the route of Solution's theorems", OFF_ROUTE, off,
-            "Solution.lean and the uses read from the Lean text")
+            "Solution.lean and the uses in src/lean-uses.json")
     compare("R3: Appendix Q.3's list of what is not on the route", Q3_OFF, q["off_route"]["names"],
             "Appendix Q.3 of paper.pdf (src/paper-facts.json)")
     if not q["off_route"]["definitions"]:
         raise ValueError("R3: Appendix Q.3 no longer ends its list with 'the definitions': re-read it")
     q3 = set(Q3_OFF) | {k for k in st if st[k]["kind"] == "Definition"}
     unformalized = {k for k in st if not st[k]["decls"]}
-    named = {m for refs in src.paper_refs.values() for m in refs}
+    named = {n for user in src.lean["met"].values() for ns in user.values() for n in ns}   # names a walk arrives at
     second = {}
     for k in sorted(q3 & on, key=vp.order_key):
         hit = sorted(n for n in st[k]["decls"] if n in named)
@@ -105,13 +105,13 @@ def build():
 
     @functools.lru_cache(None)
     def height(k):
-        return 1 + max((height(u) for u in src.uses[k]), default=0)
+        return 1 + max((height(u) for u in src.lean_uses[k]), default=0)
 
     top = max(roots, key=lambda k: (height(k), [-c for c in vp.order_key(k)]))
     chain = [top]
-    while src.uses[chain[-1]]:
-        chain.append(max(src.uses[chain[-1]], key=lambda k: (height(k), [-c for c in vp.order_key(k)])))
-    compare("R3: the longest chain of uses", CHAIN, chain, "the uses read from the Lean text")
+    while src.lean_uses[chain[-1]]:
+        chain.append(max(src.lean_uses[chain[-1]], key=lambda k: (height(k), [-c for c in vp.order_key(k)])))
+    compare("R3: the longest chain of uses", CHAIN, chain, "the uses in src/lean-uses.json")
     routes = " ".join(q["routes"])
     results = []
     for phrase, checks in ROUTE_CLAIMS:
@@ -119,18 +119,18 @@ def build():
             raise ValueError(f"R3: Appendix Q's routes of proof no longer say {phrase!r}: re-read them")
         bad = [c for c in checks if not holds(src, c)]
         if bad:
-            raise ValueError(f"R3: the Lean text no longer bears out {phrase!r}: {bad}")
+            raise ValueError(f"R3: the elaborated Lean no longer bears out {phrase!r}: {bad}")
         results.append((phrase, checks))
 
     claims = {n: vp.statements_named(src, d) for n, d in src.decls.items()
               if d["module"] == "Solution" and d["kind"] == "theorem"}
 
     c = Canvas(ID, f"The route to the main theorems: the {len(on)} numbered statements that Solution's theorems "
-               "reach, as a graph of the uses the Lean text shows",
+               "reach, as a graph of the uses the elaborated Lean shows",
                "Each card is a numbered statement of the paper; an arrow runs from a statement to each statement whose "
-               "Lean theorem its Lean proof names, directly (solid) or through helpers of the Paper library (dashed). "
+               "Lean theorem its elaborated Lean proof uses, directly (solid) or through helpers of vp-vnp (dashed). "
                f"Rows are the longest distance from Solution.lean. Read from the Lean source of vp-vnp at formal-math "
-               f"{src.commit} and from the paper's Table 3 and Appendix Q (src/paper-facts.json).", W,
+               f"{src.commit}, its export (src/lean-uses.json), and the paper's Table 3 and Appendix Q (src/paper-facts.json).", W,
                sources=f"anthropics/formal-math {src.commit}, vp-vnp/Solution.lean, vp-vnp/Paper/*.lean, paper.pdf "
                "(Table 3, Appendix Q).", state=f"Drawn from formal-math {src.commit}")
     x0, y = c.x0, c.y
@@ -138,7 +138,7 @@ def build():
            f"{len(on)} of the paper's {len(st)} numbered statements, coloured by the case of their section (amber flat, "
            "pink contracting, grey both). The thick blue arrows are the longest chain of uses, "
            f"{len(CHAIN)} statements from `{anchor_of(CHAIN[0])}` to `{anchor_of(CHAIN[-1])}`. A statement number links "
-           "to its card here. " + vp.NOT_BUILT, S + 1.5, "muted")
+           "to its card here. " + vp.NOT_BUILT_LEAN, S + 1.5, "muted")
     y += 70
 
     # ---- layers, ordered by barycentres
@@ -157,7 +157,7 @@ def build():
 
     down = {n: claims[n] for n in claims}
     for k in sorted(on, key=vp.order_key):     # never a set's order: the sums below are of floats
-        down[k] = [u for u in src.uses[k] if u in on]
+        down[k] = [u for u in src.lean_uses[k] if u in on]
     up = collections.defaultdict(list)
     for k, us in down.items():
         for u in us:
@@ -205,15 +205,15 @@ def build():
     for k in sorted(down, key=lambda k: (ys[k], xs[k])):
         for d in down[k]:
             item = (port(k, d, out_order), ys[k] + ch, port(d, k, in_order), ys[d] - 2,
-                    "direct" if k in claims else src.uses[k][d], (d, k) in chain_edges)
+                    "direct" if k in claims else src.lean_uses[k][d], (d, k) in chain_edges)
             (thick if item[-1] else plain).append(item)
     for item in plain + thick:
         draw_edge(c, *item)
     for k in specs:
         vp.node(c, xs[k], ys[k], cw, h=ch, size=S, tsize=15, pad=12, **specs[k])
     y += len(rows) * (ch + ROW_GAP) + 10
-    c.legend(x0, y, [("arrow", "faint", "the proof names the statement's Lean theorem", None, 1.6),
-                     ("arrow", "faint", "through helpers of the Paper library", "5 4", 1.6),
+    c.legend(x0, y, [("arrow", "faint", "the proof refers to the statement's Lean theorem", None, 1.6),
+                     ("arrow", "faint", "through helpers of vp-vnp", "5 4", 1.6),
                      ("arrow", "blue", "the longest chain", None, 3.5),
                      ("box", "amber", "flat case"), ("box", "pink", "contracting case"), ("box", "grey", "both cases")],
              title="Key", size=S + 1)
@@ -230,10 +230,10 @@ def build():
         why = ("Table 3 gives it no Lean theorem" if k in unformalized else
                "a definition: Appendix Q.3 lists the definitions" if r["kind"] == "Definition" else
                "named in Appendix Q.3")
-        ub = [x for x in st if k in src.uses[x]]
+        ub = [x for x in st if k in src.lean_uses[x]]
         ospecs.append(dict(name=f"`{anchor_of(k)}` {r['kind'].lower()}", accent="grey", pill=None,
                            bullets=[title, "**Why** " + why,
-                                    "**Uses** " + (", ".join(f"`{anchor_of(u)}`" for u in src.uses[k]) or "none named"),
+                                    "**Uses** " + (", ".join(f"`{anchor_of(u)}`" for u in src.lean_uses[k]) or "none named"),
                                     "**Used by** " + (", ".join(f"`{anchor_of(u)}`" for u in ub) or "none")],
                            anchor=f"off-{anchor_of(k)}"))
     for row in range(0, len(ospecs), ncol2):

@@ -21,9 +21,9 @@ Open them on their own and zoom in.
   are stated with, and where the paper's introduction states each result.
 - [The proof, section by section](diagrams/R2-sections-2026.11.25.svg): the paper's 15 appendix sections as cards,
   coloured by the case each serves (flat, contracting or both), and Table 1's 30 uses between them set against the
-  uses the Lean text shows: 23 in both, 7 only in Table 1, 7 only in the Lean.
+  uses the elaborated Lean shows: 23 in both, 7 only in Table 1, 9 only in the Lean.
 - [The route to the main theorems](diagrams/R3-route-2026.11.25.svg): the 54 numbered statements that Solution's
-  theorems reach, drawn as a graph of the uses the Lean text shows, with the longest chain, 14 statements from
+  theorems reach, drawn as a graph of the uses the elaborated Lean shows, with the longest chain, 14 statements from
   Corollary M.4 through the contracting case down to Definition A.1. The 11 statements off the route are set against Appendix Q.3's list,
   which matches except for Definition A.1: the walk reaches it through its second Lean name,
   `def_spectral_congr`. Seven of Appendix Q's claims about the route are checked against the uses.
@@ -33,7 +33,7 @@ Open them on their own and zoom in.
   Theorem E.11. The two meet at Theorem C.1.
 - [The paper against the Lean](diagrams/F1-paper-lean-2026.11.25.svg): the 65 numbered statements of the appendix,
   row by row, each with its Lean theorems and their file and line, the label and the quotation of the paper in
-  the first theorem's docstring, and the 100 uses between statements read from the Lean text.
+  the first theorem's docstring, and the 124 uses between statements in the elaborated Lean.
 - [Where the paper rests on the Lean](diagrams/F3-formalization-notes-2026.11.25.svg): the overview's four
   statements whose proofs only the Lean verifies, the paper's seven formalization notes, each placed in the text,
   and the Lean under each of the 64 statements that have a Lean theorem. By lines, the overview's four rank 1, 2,
@@ -58,7 +58,7 @@ Open them on their own and zoom in.
 - [The text against the Lean](diagrams/F9-text-lean-2026.11.25.svg): every use between statements as the source text
   shows it and as the elaborated Lean shows it, from an export of vp-vnp built at the pin. All 100 uses of the text
   reading are confirmed, of the same kind; the Lean shows 24 more, each through a helper outside the Paper library,
-  which the text reading does not walk.
+  which the text reading does not walk. F1, R2, R3 and the traces draw the Lean reading.
 - [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
   files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
 

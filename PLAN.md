@@ -136,9 +136,16 @@ Found: the export holds 63,346 declarations, 9,995 of them vp-vnp's. All 100 use
 each of the same kind (41 direct); none is only in the text. It shows 24 more, all through helpers, and on the
 shortest chain of each lies a declaration outside the Paper library (Nc.Price, Ov.Spec, Nc.Flag, NS1), which the text
 reading does not walk by design. At the level of sections it adds A→D and F→H; the 7 uses that only Table 1 lists
-are not made by the elaborated Lean either. F9 draws this; F1, R2, R3 and the traces still draw the text reading.
+are not made by the elaborated Lean either. F9 draws this.
 
-Open: whether F1, R2 and R3 should draw the Lean reading instead, or mark the 24; the second reading
+Then F1, R2, R3 and the traces were switched to the Lean reading: F1 records 124 uses (41 direct), R2 9 uses between
+sections that only the Lean shows (A→D and F→H added). R3's route, its longest chain, Appendix Q.3's comparison (the
+exception of Definition A.1, reached only through `def_spectral_congr`, holds in the export too: no walk arrives at
+`def_spectral`) and the seven route claims hold unchanged, and so do T1 and T2. src/lean-uses.json gained, for each
+statement, the Paper declarations its walk passes and the used statements' names it arrives at, which R3's checks
+read. F3, F4 and F5 still read the text.
+
+Open: whether F3, F4 and F5 should read the Lean too; the second reading
 proof-posters:extracting-lean-deps asks for (the compiled modules, read by a small Lean program) is here the text
 reading, not a build cache.
 

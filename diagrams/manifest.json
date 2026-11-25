@@ -71,7 +71,7 @@
    "N.5",
    "N.6"
   ],
-  "links": 265,
+  "links": 313,
   "links_out": 0
  },
  "F2": {
@@ -382,7 +382,7 @@
  },
  "R2": {
   "file": "R2-sections-2026.11.25.svg",
-  "title": "The proof, section by section: the paper's map of its 15 appendix sections, against the uses between them that the Lean text shows",
+  "title": "The proof, section by section: the paper's map of its 15 appendix sections, against the uses between them that the elaborated Lean shows",
   "cards": 15,
   "arrows": 0,
   "anchors": [
@@ -403,13 +403,13 @@
    "sec-O"
   ],
   "links": 0,
-  "links_out": 79
+  "links_out": 89
  },
  "R3": {
   "file": "R3-route-2026.11.25.svg",
-  "title": "The route to the main theorems: the 54 numbered statements that Solution's theorems reach, as a graph of the uses the Lean text shows",
+  "title": "The route to the main theorems: the 54 numbered statements that Solution's theorems reach, as a graph of the uses the elaborated Lean shows",
   "cards": 70,
-  "arrows": 97,
+  "arrows": 120,
   "anchors": [
    "A.1",
    "A.2",
@@ -477,7 +477,7 @@
    "off-N.1",
    "off-N.6"
   ],
-  "links": 90,
+  "links": 91,
   "links_out": 18
  },
  "T1": {
@@ -501,8 +501,8 @@
    "M.3",
    "M.4"
   ],
-  "links": 39,
-  "links_out": 28
+  "links": 53,
+  "links_out": 44
  },
  "T2": {
   "file": "T2-trace-flat-2026.11.25.svg",
@@ -522,7 +522,7 @@
    "M.3",
    "M.4"
   ],
-  "links": 26,
-  "links_out": 23
+  "links": 40,
+  "links_out": 36
  }
 }

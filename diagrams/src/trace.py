@@ -1,6 +1,6 @@
 """A trace: one chain of uses between numbered statements, as cards in reading order, for the T posters.
 
-build(ID, title, chain, why) checks that each step uses the next (vp.uses, read from the Lean text), draws each
+build(ID, title, chain, why) checks that each step uses the next (src/lean-uses.json, the elaborated Lean), draws each
 statement in full (its header in the paper, its first Lean theorem's signature, the paper's words as that theorem's
 docstring quotes them, and its other uses), and joins the cards with an arrow that says how the use was read."""
 import vp
@@ -15,17 +15,17 @@ def build(ident, title, subtitle, chain, how_read):
     src = vp.load()
     st = src.statements
     for a, b in zip(chain, chain[1:]):
-        if b not in src.uses[a]:
-            raise ValueError(f"{ident}: {a} no longer uses {b} in the Lean text: re-read the chain")
-    if src.uses[chain[-1]]:
-        raise ValueError(f"{ident}: {chain[-1]}, the chain's last step, now uses {list(src.uses[chain[-1]])}")
+        if b not in src.lean_uses[a]:
+            raise ValueError(f"{ident}: {a} no longer uses {b} in the elaborated Lean: re-read the chain")
+    if src.lean_uses[chain[-1]]:
+        raise ValueError(f"{ident}: {chain[-1]}, the chain's last step, now uses {list(src.lean_uses[chain[-1]])}")
     case = {t["section"]: t["case"] for t in src.facts["table1"]}
-    used_by = {k: [u for u in st if k in src.uses[u]] for k in chain}
+    used_by = {k: [u for u in st if k in src.lean_uses[u]] for k in chain}
     c = Canvas(ident, title, subtitle, W,
                sources=f"anthropics/formal-math {src.commit}, vp-vnp/Paper/*.lean, paper.pdf (Table 1, Table 3, the "
                "statement headers).", state=f"Drawn from formal-math {src.commit}")
     x0, y = c.x0, c.y
-    c.para(x0, y, c.x1 - x0, how_read + " " + vp.NOT_BUILT, S, "muted")
+    c.para(x0, y, c.x1 - x0, how_read + " " + vp.NOT_BUILT_LEAN, S, "muted")
     y += 100
     cw = c.x1 - x0 - 120
     cx = x0 + 120
@@ -36,13 +36,13 @@ def build(ident, title, subtitle, chain, how_read):
         h = r["header"] or {}
         title_k = h.get("title") or ("a display" if r["kind"] == "Display" else r["kind"].lower())
         nxt = chain[i + 1] if i + 1 < len(chain) else None
-        others = [u for u in src.uses[k] if u != nxt]
+        others = [u for u in src.lean_uses[k] if u != nxt]
         bullets = []
         if nxt:
             bullets.append(f"**Uses next** `{anchor_of(nxt)}`, " + ("named by its own Lean theorem" if
-                           src.uses[k][nxt] == "direct" else "through helpers of the Paper library"))
+                           src.lean_uses[k][nxt] == "direct" else "through helpers of vp-vnp"))
         else:
-            bullets.append("**Uses** no other numbered statement in the Lean text: the chain ends here")
+            bullets.append("**Uses** no other numbered statement in the elaborated Lean: the chain ends here")
         bullets.append("**Its other uses** " + (", ".join(f"`{anchor_of(u)}`" for u in others) or "none"))
         bullets.append("**Used by** " + (", ".join(f"`{anchor_of(u)}`" for u in used_by[k]) or
                                          "no numbered statement: Solution.lean names it"))
@@ -60,8 +60,8 @@ def build(ident, title, subtitle, chain, how_read):
         y += hh
         if nxt:
             c.arrow([(cx + 60, y + 4), (cx + 60, y + 52)], "ink", sw=2.2,
-                    dash=None if src.uses[k][nxt] == "direct" else "6 4")
-            c.text(cx + 80, y + 33, "uses" + ("" if src.uses[k][nxt] == "direct" else ", through helpers"), S - 1,
+                    dash=None if src.lean_uses[k][nxt] == "direct" else "6 4")
+            c.text(cx + 80, y + 33, "uses" + ("" if src.lean_uses[k][nxt] == "direct" else ", through helpers"), S - 1,
                    "muted")
             y += 58
     return c

@@ -2,7 +2,7 @@
 
 The paper's Table 1, "Map of the proof", gives each of its fifteen appendix sections A to O what it proves, the
 sections it uses and the case it serves: the flat case, the contracting case or both. This poster draws the fifteen
-sections as cards, then the table's uses as a matrix beside the uses between sections that the Lean text shows: a
+sections as cards, then the table's uses as a matrix beside the uses between sections that the elaborated Lean shows: a
 statement of one section whose Lean proof names a theorem of a statement of another (src/paper-facts.json, Table 3,
 gives each statement its theorems; vp.py says how a proof is read). The build fails if the cases, the statements per
 section, Table 1's uses, the uses the Lean bears out, or the uses only the Lean shows differ from what is recorded
@@ -32,14 +32,15 @@ EXPECTED = [
     ("I", "K"), ("J", "K"), ("D", "L"), ("E", "L"), ("K", "L"), ("D", "M"), ("E", "M"), ("K", "M"), ("E", "N"),
     ("K", "N"), ("M", "N"), ("C", "O"),
 ]
-# Those of Table 1's uses that a statement of the user names a statement of the used section in the Lean text.
+# Those of Table 1's uses that a statement of the user uses a statement of the used section in the elaborated Lean.
 BORNE = [
     ("A", "B"), ("A", "C"), ("B", "C"), ("C", "D"), ("A", "E"), ("C", "E"), ("C", "F"), ("A", "G"), ("F", "G"),
     ("H", "J"), ("I", "J"), ("E", "K"), ("I", "K"), ("J", "K"), ("D", "L"), ("E", "L"), ("K", "L"), ("D", "M"), ("E", "M"),
     ("K", "M"), ("E", "N"), ("K", "N"), ("M", "N"),
 ]
-# Uses between sections that the Lean text shows and Table 1 does not list.
-LEAN_ONLY = [("A", "N"), ("D", "N"), ("G", "J"), ("I", "N"), ("J", "N"), ("L", "M"), ("L", "N")]
+# Uses between sections that the elaborated Lean shows and Table 1 does not list.
+LEAN_ONLY = [("A", "D"), ("A", "N"), ("D", "N"), ("F", "H"), ("G", "J"), ("I", "N"), ("J", "N"), ("L", "M"),
+             ("L", "N")]
 
 
 def sec(key):
@@ -59,30 +60,30 @@ def build():
     paper = [(u, k) for k in letters for u in t1[k]["uses"]]
     compare("R2: Table 1's uses", sorted(EXPECTED), sorted(paper), reread)
     lean = collections.defaultdict(list)
-    for k, us in src.uses.items():
+    for k, us in src.lean_uses.items():
         for t, how in us.items():
             if sec(k) != sec(t):
                 lean[(sec(t), sec(k))].append((t, k, how))
-    compare("R2: Table 1's uses that the Lean text bears out", sorted(BORNE), sorted(e for e in paper if e in lean),
-            "the proofs of the Lean theorems of the sections named, at FM_COMMIT")
-    compare("R2: uses between sections that only the Lean text shows", sorted(LEAN_ONLY),
-            sorted(e for e in lean if e not in paper), "the proofs of the Lean theorems of the sections named")
+    compare("R2: Table 1's uses that the elaborated Lean bears out", sorted(BORNE), sorted(e for e in paper if e in lean),
+            "src/lean-uses.json (tools/lean-uses/README.md)")
+    compare("R2: uses between sections that only the elaborated Lean shows", sorted(LEAN_ONLY),
+            sorted(e for e in lean if e not in paper), "src/lean-uses.json (tools/lean-uses/README.md)")
     unseen = [e for e in paper if e not in lean]
 
     c = Canvas(ID, f"The proof, section by section: the paper's map of its {len(letters)} appendix sections, against "
-               "the uses between them that the Lean text shows",
+               "the uses between them that the elaborated Lean shows",
                "Read from Table 1 of the paper, “Map of the proof” (what each section proves, what it uses, and the "
                "case it serves), and from the Lean source of vp-vnp at formal-math "
-               f"{src.commit}: a section uses another in the Lean when a statement of the one names, in its Lean proof, "
-               "a theorem of a statement of the other.", W,
+               f"{src.commit}: a section uses another in the Lean when a statement of the one uses, in its elaborated "
+               "Lean proof, a theorem of a statement of the other.", W,
                sources=f"anthropics/formal-math {src.commit}, vp-vnp/paper.pdf (Table 1, Table 3), vp-vnp/Paper/*.lean.",
                state=f"Drawn from formal-math {src.commit}")
     x0, y = c.x0, c.y
     nb, nt, nl = len(BORNE), len(EXPECTED), len(LEAN_ONLY)
     c.para(x0, y, c.x1 - x0, f"**How to read it.** The cards are the sections in the paper's order, coloured by the "
            "case Table 1 says each serves. The words in italics are Table 1's. Below them, the matrix sets each section "
-           "(a row) against the sections it uses (the columns), by Table 1, by the Lean text, or by both. A statement "
-           "number links to its row on F1. " + vp.NOT_BUILT, S + 0.5, "muted")
+           "(a row) against the sections it uses (the columns), by Table 1, by the elaborated Lean, or by both. A statement "
+           "number links to its row on F1. " + vp.NOT_BUILT_LEAN, S + 0.5, "muted")
     y += 64
 
     # ---- the cards
@@ -103,7 +104,7 @@ def build():
         bullets = [
             f"**{counts[k]} numbered statements**" + (f": {kind_s}" if kind_s else "; Table 3 lists none"),
             "**Uses, by Table 1:** " + (", ".join(r["uses"]) or "nothing"),
-            "**Uses, in the Lean text:** " + (", ".join(lean_uses[k]) or "nothing"),
+            "**Uses, in the elaborated Lean:** " + (", ".join(lean_uses[k]) or "nothing"),
         ]
         foot = []
         if by_sec[k]:
@@ -123,7 +124,7 @@ def build():
     y += 20
 
     # ---- the matrix
-    y += c.heading(x0, y, "Which section uses which: Table 1 and the Lean text")
+    y += c.heading(x0, y, "Which section uses which: Table 1 and the elaborated Lean")
     cell, head = 74, 210
     STYLE = {"both": ("teal", "both"), "paper": ("amber", "Table 1"), "lean": ("violet", "Lean")}
     c.text(x0 + head + 15 * cell / 2, y + 16, "used", S, "faint", anchor="middle", bold=True)
@@ -151,35 +152,35 @@ def build():
     # the key, beside the matrix
     kx, ky = mx1 + 60, my
     kw = c.x1 - kx
-    ky += c.para(kx, ky, kw, f"**both**: Table 1 lists the use, and a statement of the row names one of the column's "
-                 f"in its Lean proof. {nb} of Table 1's {nt} uses.", S + 1, "teal") + 14
-    ky += c.para(kx, ky, kw, f"**Table 1**: the paper lists the use, and no statement of the row names one of the "
-                 f"column's. {len(unseen)} of {nt}. A section whose statements use another's definitions only through "
-                 "Lean predicates (`Flat`, `Contracting`) or through declarations of the Nc library is not seen, and "
-                 "Section O proves facts that Lemma C.4 states, so no statement of its own names them.", S + 1,
+    ky += c.para(kx, ky, kw, f"**both**: Table 1 lists the use, and a statement of the row uses one of the column's "
+                 f"in its elaborated Lean proof. {nb} of Table 1's {nt} uses.", S + 1, "teal") + 14
+    ky += c.para(kx, ky, kw, f"**Table 1**: the paper lists the use, and no statement of the row uses one of the "
+                 f"column's in the elaborated Lean. {len(unseen)} of {nt}. A definition's Lean theorem is not what "
+                 "the proofs use (they use its Lean definition: `Flat`, `Contracting`, …), and Section O proves facts "
+                 "that Lemma C.4 states, so it has no statement of its own.", S + 1,
                  "amber") + 14
-    ky += c.para(kx, ky, kw, f"**Lean**: a statement of the row names one of the column's, and Table 1 does not list "
+    ky += c.para(kx, ky, kw, f"**Lean**: a statement of the row uses one of the column's, and Table 1 does not list "
                  f"the use. {nl} uses; the table below names the statements behind each.", S + 1, "violet") + 14
     y = max(my + 15 * cell * 0.55, ky) + 50
 
     # ---- the disagreements, statement by statement
     y += c.heading(x0, y, "Behind each disagreement")
-    cols = [("Use", 220), ("Which way", 260), ("The statements behind it, in the Lean text", c.x1 - x0 - 480)]
+    cols = [("Use", 220), ("Which way", 260), ("The statements behind it, in the elaborated Lean", c.x1 - x0 - 480)]
     rows = []
     for e in sorted(LEAN_ONLY):
         pairs = sorted(lean[e], key=lambda t: (vp.order_key(t[1]), vp.order_key(t[0])))
-        rows.append({"cells": [f"{e[1]} uses {e[0]}", "only in the Lean text",
-                               "; ".join(f"`{anchor_of(k)}` names `{anchor_of(t)}`" + (" through helpers" if h != "direct"
+        rows.append({"cells": [f"{e[1]} uses {e[0]}", "only in the elaborated Lean",
+                               "; ".join(f"`{anchor_of(k)}` uses `{anchor_of(t)}`" + (" through helpers" if h != "direct"
                                                                                        else "") for t, k, h in pairs)],
                      "accent": "violet"})
     for e in sorted(unseen):
         rows.append({"cells": [f"{e[1]} uses {e[0]}", "only in Table 1",
-                               f"no statement of {e[1]} names, in its Lean proof, a theorem of a statement of {e[0]}"
+                               f"no statement of {e[1]} uses, in its elaborated Lean proof, a theorem of a statement of {e[0]}"
                                + (" (Section O has no numbered statement)" if "O" in e else "")],
                      "accent": "amber"})
     y += c.table(x0, y, cols, rows, size=S) + 40
-    c.para(x0, y, c.x1 - x0, "**Not checked here.** Whether a use the Lean text shows is one the proof needs: a name in a "
-           "proof is counted wherever it stands. That Table 1 is complete or minimal as a map: the paper's caption "
+    c.para(x0, y, c.x1 - x0, "**Not checked here.** Whether a use the elaborated Lean shows is one the proof needs: a constant "
+           "of a term is counted wherever it stands, the term's type included. That Table 1 is complete or minimal as a map: the paper's caption "
            "adds that Sections I and K use only the ring A of Section G, and Section I only the notion of a network of "
            "Section H.", S + 0.5, "muted")
     return c

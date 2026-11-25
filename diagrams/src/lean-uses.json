@@ -836,6 +836,1593 @@
   "uses": 124,
   "vp_vnp": 9995
  },
+ "met": {
+  "Corollary E.2": {
+   "Proposition E.1": [
+    "Paper.prop_grid"
+   ]
+  },
+  "Corollary L.3": {
+   "Theorem L.2": [
+    "Paper.thm_simple"
+   ]
+  },
+  "Corollary M.4": {
+   "Theorem M.3": [
+    "Paper.thm_allfields"
+   ]
+  },
+  "Definition A.1": {},
+  "Definition A.4": {},
+  "Definition D.1": {},
+  "Definition G.1": {},
+  "Definition J.1": {},
+  "Definition K.1": {},
+  "Definition N.1": {},
+  "Display (F.1)": {
+   "Lemma C.4": [
+    "Paper.lem_toolkit"
+   ],
+   "Lemma F.3": [
+    "Paper.lem_first"
+   ]
+  },
+  "Lemma A.2": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ]
+  },
+  "Lemma A.3": {},
+  "Lemma B.1": {},
+  "Lemma C.2": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Proposition B.3": [
+    "Paper.eq_Q"
+   ]
+  },
+  "Lemma C.4": {},
+  "Lemma E.3": {
+   "Corollary E.2": [
+    "Paper.cor_clauses"
+   ]
+  },
+  "Lemma E.4": {},
+  "Lemma E.7": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ]
+  },
+  "Lemma E.8": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Proposition A.7": [
+    "Paper.prop_extend"
+   ],
+   "Theorem C.1": [
+    "Paper.thm_cn"
+   ]
+  },
+  "Lemma F.1": {},
+  "Lemma F.2": {},
+  "Lemma F.3": {
+   "Lemma F.1": [
+    "Paper.lem_growth"
+   ],
+   "Lemma F.2": [
+    "Paper.lem_words"
+   ]
+  },
+  "Lemma F.4": {
+   "Display (F.1)": [
+    "Paper.eq_window",
+    "Paper.projection_nearest"
+   ],
+   "Lemma C.4": [
+    "Paper.lem_toolkit"
+   ]
+  },
+  "Lemma F.5": {
+   "Display (F.1)": [
+    "Paper.projection_nearest"
+   ],
+   "Lemma C.4": [
+    "Paper.lem_toolkit"
+   ],
+   "Lemma F.4": [
+    "Paper.lem_tele"
+   ]
+  },
+  "Lemma I.2": {},
+  "Lemma K.2": {},
+  "Lemma K.3": {
+   "Lemma K.2": [
+    "Paper.lem_lowdeg"
+   ],
+   "Proposition E.1": [
+    "Paper.prop_grid"
+   ],
+   "Proposition I.1": [
+    "Paper.prop_universal"
+   ]
+  },
+  "Lemma K.4": {},
+  "Lemma M.1": {},
+  "Lemma N.2": {},
+  "Lemma N.3": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ]
+  },
+  "Proposition A.5": {},
+  "Proposition A.7": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Proposition A.5": [
+    "Paper.prop_gauge"
+   ]
+  },
+  "Proposition A.8": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Proposition A.7": [
+    "Paper.prop_extend"
+   ]
+  },
+  "Proposition B.2": {},
+  "Proposition B.3": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.lem_hubs"
+   ],
+   "Lemma B.1": [
+    "Paper.lem_count"
+   ],
+   "Proposition B.2": [
+    "Paper.prop_identity"
+   ]
+  },
+  "Proposition C.3": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Proposition A.8": [
+    "Paper.prop_random"
+   ],
+   "Theorem C.1": [
+    "Paper.thm_cn"
+   ]
+  },
+  "Proposition E.1": {},
+  "Proposition E.10": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.lem_hubs"
+   ],
+   "Lemma E.4": [
+    "Paper.lem_balanced"
+   ],
+   "Lemma E.7": [
+    "Paper.lem_few"
+   ],
+   "Proposition E.9": [
+    "Paper.prop_cube"
+   ]
+  },
+  "Proposition E.5": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.lem_hubs"
+   ],
+   "Lemma E.4": [
+    "Paper.lem_balanced"
+   ]
+  },
+  "Proposition E.9": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma E.8": [
+    "Paper.lem_convex"
+   ]
+  },
+  "Proposition H.1": {
+   "Lemma F.2": [
+    "Paper.lem_words"
+   ]
+  },
+  "Proposition I.1": {},
+  "Proposition J.2": {
+   "Lemma I.2": [
+    "Paper.lem_runnet"
+   ],
+   "Theorem H.2": [
+    "Paper.thm_tree"
+   ]
+  },
+  "Proposition K.5": {
+   "Lemma K.4": [
+    "Paper.lem_postpone"
+   ],
+   "Theorem J.4": [
+    "Paper.exists_setting"
+   ]
+  },
+  "Proposition M.2": {},
+  "Proposition N.4": {
+   "Lemma K.4": [
+    "Paper.lem_postpone"
+   ],
+   "Theorem J.4": [
+    "Paper.exists_setting"
+   ],
+   "Theorem K.6": [
+    "Paper.thm_noacc"
+   ]
+  },
+  "Remark N.6": {},
+  "Theorem A.6": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Proposition A.5": [
+    "Paper.prop_gauge"
+   ]
+  },
+  "Theorem C.1": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Lemma C.2": [
+    "Paper.lem_means"
+   ],
+   "Proposition A.8": [
+    "Paper.prop_random"
+   ],
+   "Proposition B.3": [
+    "Paper.eq_Q"
+   ]
+  },
+  "Theorem D.2": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Lemma C.4": [
+    "Paper.lem_toolkit"
+   ],
+   "Proposition C.3": [
+    "Paper.prop_space"
+   ]
+  },
+  "Theorem E.11": {
+   "Lemma E.3": [
+    "Paper.lem_fkl_perm"
+   ],
+   "Proposition E.10": [
+    "Paper.prop_flat_rate"
+   ]
+  },
+  "Theorem E.6": {
+   "Lemma E.3": [
+    "Paper.lem_fkl_perm"
+   ],
+   "Proposition E.5": [
+    "Paper.prop_flat_lower"
+   ]
+  },
+  "Theorem F.6": {
+   "Display (F.1)": [
+    "Paper.eq_window",
+    "Paper.projection_nearest"
+   ],
+   "Lemma C.4": [
+    "Paper.lem_toolkit"
+   ],
+   "Lemma F.2": [
+    "Paper.lem_words"
+   ],
+   "Lemma F.3": [
+    "Paper.lem_first"
+   ],
+   "Lemma F.5": [
+    "Paper.lem_angle"
+   ],
+   "Proposition C.3": [
+    "Paper.prop_space"
+   ]
+  },
+  "Theorem G.2": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.2": [
+    "Paper.lem_exponents"
+   ],
+   "Lemma F.2": [
+    "Paper.lem_words"
+   ],
+   "Theorem A.6": [
+    "Paper.thm_duality"
+   ],
+   "Theorem F.6": [
+    "Paper.thm_poincare"
+   ]
+  },
+  "Theorem H.2": {
+   "Proposition H.1": [
+    "Paper.prop_tower"
+   ]
+  },
+  "Theorem J.3": {
+   "Proposition I.1": [
+    "Paper.prop_universal"
+   ],
+   "Proposition J.2": [
+    "Paper.prop_pieces"
+   ]
+  },
+  "Theorem J.4": {
+   "Theorem G.2": [
+    "Paper.thm_laws"
+   ],
+   "Theorem J.3": [
+    "Paper.thm_onecut"
+   ]
+  },
+  "Theorem K.6": {
+   "Lemma K.4": [
+    "Paper.lem_postpone"
+   ],
+   "Proposition K.5": [
+    "Paper.prop_next"
+   ],
+   "Theorem J.4": [
+    "Paper.exists_setting"
+   ]
+  },
+  "Theorem K.7": {
+   "Lemma K.3": [
+    "Paper.lem_circuit"
+   ],
+   "Proposition E.1": [
+    "Paper.prop_grid"
+   ],
+   "Proposition K.5": [
+    "Paper.scales_setting"
+   ],
+   "Theorem K.6": [
+    "Paper.scales_setting"
+   ]
+  },
+  "Theorem L.1": {
+   "Theorem D.2": [
+    "Paper.thm_alt"
+   ],
+   "Theorem E.11": [
+    "Paper.thm_flat_rate"
+   ],
+   "Theorem K.7": [
+    "Paper.thm_contracting"
+   ]
+  },
+  "Theorem L.2": {
+   "Theorem D.2": [
+    "Paper.thm_alt"
+   ],
+   "Theorem E.6": [
+    "Paper.thm_flat_simple"
+   ],
+   "Theorem K.7": [
+    "Paper.thm_contracting"
+   ]
+  },
+  "Theorem M.3": {
+   "Lemma K.3": [
+    "Paper.lem_circuit"
+   ],
+   "Lemma M.1": [
+    "Paper.lem_transfer"
+   ],
+   "Proposition E.10": [
+    "Paper.prop_flat_rate"
+   ],
+   "Proposition K.5": [
+    "Paper.scales_setting"
+   ],
+   "Proposition M.2": [
+    "Paper.prop_hc_grid"
+   ],
+   "Theorem D.2": [
+    "Paper.thm_alt"
+   ],
+   "Theorem E.11": [
+    "Paper.thm_flat_rate"
+   ],
+   "Theorem K.6": [
+    "Paper.scales_setting"
+   ],
+   "Theorem K.7": [
+    "Paper.thm_contracting"
+   ],
+   "Theorem L.1": [
+    "Paper.thm_main_form"
+   ]
+  },
+  "Theorem N.5": {
+   "Definition A.1": [
+    "Paper.def_spectral_congr"
+   ],
+   "Lemma A.3": [
+    "Paper.lem_hubs"
+   ],
+   "Lemma E.4": [
+    "Paper.lem_balanced"
+   ],
+   "Lemma K.2": [
+    "Paper.lem_lowdeg"
+   ],
+   "Lemma N.2": [
+    "Paper.lem_transfer_approx"
+   ],
+   "Lemma N.3": [
+    "Paper.lem_few_approx"
+   ],
+   "Proposition E.1": [
+    "Paper.prop_grid"
+   ],
+   "Proposition E.9": [
+    "Paper.prop_cube"
+   ],
+   "Proposition I.1": [
+    "Paper.prop_universal"
+   ],
+   "Proposition M.2": [
+    "Paper.prop_hc_grid"
+   ],
+   "Proposition N.4": [
+    "Paper.prop_approx_acc_setting"
+   ],
+   "Theorem D.2": [
+    "Paper.thm_alt"
+   ],
+   "Theorem L.1": [
+    "Paper.thm_main_form"
+   ]
+  }
+ },
+ "reach": {
+  "Corollary E.2": [
+   "Paper.GridEntry",
+   "Paper.clauseSum",
+   "Paper.clauses_of_complete",
+   "Paper.cor_clauses",
+   "Paper.gridComplete_perm"
+  ],
+  "Corollary L.3": [
+   "Paper.cor_classes",
+   "Paper.csize_ryser",
+   "Paper.genPerm_eq_ryser",
+   "Paper.perm_mem_VNP",
+   "Paper.ryserWit"
+  ],
+  "Corollary M.4": [
+   "Paper.cor_allclasses",
+   "Paper.exists_beyond_poly",
+   "Paper.hc_mem_VNP"
+  ],
+  "Definition A.1": [
+   "Paper.def_spectral",
+   "Paper.def_spectral_congr"
+  ],
+  "Definition A.4": [
+   "Paper.def_price"
+  ],
+  "Definition D.1": [
+   "Paper.Contracting",
+   "Paper.Flat",
+   "Paper.def_cases",
+   "Paper.def_price_pullback",
+   "Paper.distAtRank",
+   "Paper.meanSq"
+  ],
+  "Definition G.1": [
+   "Paper.def_law"
+  ],
+  "Definition J.1": [
+   "Paper.def_cut"
+  ],
+  "Definition K.1": [
+   "Paper.def_acc"
+  ],
+  "Definition N.1": [
+   "Paper.def_approx"
+  ],
+  "Display (F.1)": [
+   "Paper.eq_window",
+   "Paper.fixed_closed_convex",
+   "Paper.kappa",
+   "Paper.lem_toolkit_c_exists",
+   "Paper.lem_toolkit_minimization",
+   "Paper.projection_nearest",
+   "Paper.projection_sq_le",
+   "Paper.projection_var",
+   "Paper.segment_fixed",
+   "Paper.windowConst"
+  ],
+  "Lemma A.2": [
+   "Paper.lem_exponents",
+   "Paper.lem_exponents_contract",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_self",
+   "Paper.lem_exponents_symm",
+   "Paper.lem_exponents_tree",
+   "Paper.lem_exponents_tree_le",
+   "Paper.lem_exponents_triangle",
+   "Paper.lem_exponents_unit_interval",
+   "Paper.lem_exponents_wire",
+   "Paper.lem_exponents_wire_two",
+   "Paper.tensor_push_mul"
+  ],
+  "Lemma A.3": [
+   "Paper.lem_hubs",
+   "Paper.lem_hubs_further"
+  ],
+  "Lemma B.1": [
+   "Paper.lem_count",
+   "Paper.lem_count_interleave",
+   "Paper.lem_count_sets",
+   "Paper.lem_count_upper",
+   "Paper.stateCount"
+  ],
+  "Lemma C.2": [
+   "Paper.def_price_pseudometric",
+   "Paper.le_meanNorm",
+   "Paper.lem_exponents_symm",
+   "Paper.lem_means",
+   "Paper.lem_means_Q",
+   "Paper.lem_means_Q_norm",
+   "Paper.lem_means_average",
+   "Paper.lem_means_convex",
+   "Paper.lem_means_display",
+   "Paper.lem_means_estimate",
+   "Paper.lem_means_even",
+   "Paper.lem_means_homogeneous",
+   "Paper.lem_means_identity",
+   "Paper.lem_means_limit",
+   "Paper.lem_means_lip",
+   "Paper.lem_means_near",
+   "Paper.lem_means_parallelogram_le",
+   "Paper.lem_means_seminorm",
+   "Paper.lem_means_subadditive",
+   "Paper.lem_means_telescope",
+   "Paper.meanLength",
+   "Paper.meanLength_len",
+   "Paper.meanLength_nonneg",
+   "Paper.meanNorm",
+   "Paper.meanNorm_isGLB",
+   "Paper.meanNorm_le",
+   "Paper.meanNorm_len",
+   "Paper.meanNorm_nonneg",
+   "Paper.meansDelta",
+   "Paper.meansDiff",
+   "Paper.meansPt"
+  ],
+  "Lemma C.4": [
+   "Paper.lem_toolkit",
+   "Paper.lem_toolkit_a",
+   "Paper.lem_toolkit_a_isPt",
+   "Paper.lem_toolkit_a_of_dist",
+   "Paper.lem_toolkit_b",
+   "Paper.lem_toolkit_b_box",
+   "Paper.lem_toolkit_b_first",
+   "Paper.lem_toolkit_c",
+   "Paper.lem_toolkit_c_contract",
+   "Paper.lem_toolkit_c_exists",
+   "Paper.lem_toolkit_c_minimizer",
+   "Paper.lem_toolkit_d",
+   "Paper.lem_toolkit_e",
+   "Paper.lem_toolkit_e_general",
+   "Paper.lem_toolkit_f",
+   "Paper.lem_toolkit_f_form",
+   "Paper.lem_toolkit_f_isPt",
+   "Paper.lem_toolkit_f_parallelogram",
+   "Paper.lem_toolkit_f_parts",
+   "Paper.lem_toolkit_f_same",
+   "Paper.lem_toolkit_minimization"
+  ],
+  "Lemma E.3": [
+   "Paper.Val",
+   "Paper.asm_pairOf",
+   "Paper.asm_self",
+   "Paper.clauseSum",
+   "Paper.fklExact",
+   "Paper.fklExact_computes",
+   "Paper.fklLits",
+   "Paper.fklLits_count",
+   "Paper.fklLits_ne",
+   "Paper.fklLits_occ",
+   "Paper.fklWt",
+   "Paper.forall_fklLits",
+   "Paper.lem_fkl_perm",
+   "Paper.lem_fkl_perm_clauseSum",
+   "Paper.lem_fkl_perm_printed",
+   "Paper.pairOf",
+   "Paper.rename_fklExact"
+  ],
+  "Lemma E.4": [
+   "Paper.lem_balanced",
+   "Paper.linearIn",
+   "Paper.linearIn_mul",
+   "Paper.linearPart"
+  ],
+  "Lemma E.7": [
+   "Paper.lem_exponents_power",
+   "Paper.lem_few",
+   "Paper.tensor_push_mul"
+  ],
+  "Lemma E.8": [
+   "Paper.def_price_multiple",
+   "Paper.def_price_pseudometric",
+   "Paper.exists_mix_hexp",
+   "Paper.exists_mix_spec_keep",
+   "Paper.hexp_convex",
+   "Paper.hexp_le_mean_add",
+   "Paper.le_mean_of_two_rpow_le",
+   "Paper.lem_convex",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_self",
+   "Paper.lem_exponents_symm",
+   "Paper.lem_exponents_wire",
+   "Paper.lem_exponents_wire_two",
+   "Paper.sq_dist_midpoint_le",
+   "Paper.tensor_push_mul"
+  ],
+  "Lemma F.1": [
+   "Paper.DM_eq_rankMean",
+   "Paper.card_mul_DM",
+   "Paper.lem_growth",
+   "Paper.lem_growth_digit",
+   "Paper.lem_growth_minkowski",
+   "Paper.rankMean",
+   "Paper.rank_dg",
+   "Paper.rank_units"
+  ],
+  "Lemma F.2": [
+   "Paper.lem_words"
+  ],
+  "Lemma F.3": [
+   "Paper.kappa",
+   "Paper.kappa_nonneg",
+   "Paper.kappa_small",
+   "Paper.lem_first",
+   "Paper.lem_first_block",
+   "Paper.lem_first_double",
+   "Paper.lem_first_rank_one",
+   "Paper.rankMean",
+   "Paper.rankMean_nonneg",
+   "Paper.rank_dg",
+   "Paper.rank_units"
+  ],
+  "Lemma F.4": [
+   "Paper.fixed_closed_convex",
+   "Paper.kappa",
+   "Paper.lem_tele",
+   "Paper.lem_tele_generator",
+   "Paper.lem_toolkit_c_exists",
+   "Paper.lem_toolkit_minimization",
+   "Paper.projection_var",
+   "Paper.segment_fixed",
+   "Paper.windowConst",
+   "Paper.windowConst_nonneg",
+   "Paper.windows_commute"
+  ],
+  "Lemma F.5": [
+   "Paper.fixed_closed_convex",
+   "Paper.kappa",
+   "Paper.lem_angle",
+   "Paper.lem_angle_projections",
+   "Paper.lem_toolkit_c_exists",
+   "Paper.lem_toolkit_minimization",
+   "Paper.projection_segment",
+   "Paper.projection_var",
+   "Paper.segment_fixed",
+   "Paper.windowConst"
+  ],
+  "Lemma I.2": [
+   "Paper.lem_runnet"
+  ],
+  "Lemma K.2": [
+   "Paper.lem_lowdeg",
+   "Paper.lem_lowdeg_chains",
+   "Paper.line_coeff_eq"
+  ],
+  "Lemma K.3": [
+   "Paper.GridEntry",
+   "Paper.card_clauses",
+   "Paper.clauseSum",
+   "Paper.clauseSum_inputs",
+   "Paper.clauses_of_complete",
+   "Paper.gridComplete_perm",
+   "Paper.inputWeights",
+   "Paper.lem_circuit",
+   "Paper.lem_circuit_assignment",
+   "Paper.lem_circuit_bound",
+   "Paper.lem_circuit_names",
+   "Paper.lem_circuit_perm",
+   "Paper.lem_circuit_phi",
+   "Paper.lem_circuit_program",
+   "Paper.lem_circuit_universal",
+   "Paper.lem_circuit_value",
+   "Paper.literal_bound",
+   "Paper.universal_symbols_ne",
+   "Paper.withInputs",
+   "Paper.wordG_bits",
+   "Paper.wordG_self"
+  ],
+  "Lemma K.4": [
+   "Paper.lem_postpone",
+   "Paper.postponed"
+  ],
+  "Lemma M.1": [
+   "Paper.lem_transfer"
+  ],
+  "Lemma N.2": [
+   "Paper.lem_transfer_approx"
+  ],
+  "Lemma N.3": [
+   "Paper.coeff_mul_T",
+   "Paper.coeff_toLaurent_natCast",
+   "Paper.lem_exponents_power",
+   "Paper.lem_few_approx",
+   "Paper.tensor_push_mul"
+  ],
+  "Proposition A.5": [
+   "Paper.prop_gauge",
+   "Paper.prop_gauge_chain",
+   "Paper.prop_gauge_localize",
+   "Paper.prop_gauge_minimal",
+   "Paper.prop_gauge_monoid",
+   "Paper.prop_gauge_radius",
+   "Paper.prop_gauge_radius_cover",
+   "Paper.prop_gauge_radius_keeps",
+   "Paper.prop_gauge_radius_le",
+   "Paper.prop_gauge_radius_pow",
+   "Paper.prop_gauge_radius_root"
+  ],
+  "Proposition A.7": [
+   "Paper.extendProduct",
+   "Paper.prop_extend",
+   "Paper.prop_extend_cover",
+   "Paper.prop_extend_gauge",
+   "Paper.prop_extend_localize",
+   "Paper.prop_extend_lower",
+   "Paper.prop_extend_product",
+   "Paper.prop_extend_upper",
+   "Paper.prop_gauge_localize",
+   "Paper.tensor_push_comp",
+   "Paper.tensor_push_cover",
+   "Paper.tensor_push_id",
+   "Paper.tensor_push_mul",
+   "Paper.tensor_push_one"
+  ],
+  "Proposition A.8": [
+   "Paper.def_price_closed",
+   "Paper.def_price_compact",
+   "Paper.def_price_multiple",
+   "Paper.def_price_pseudometric",
+   "Paper.def_price_pullback",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_symm",
+   "Paper.lem_exponents_wire",
+   "Paper.lem_exponents_wire_two",
+   "Paper.prop_random",
+   "Paper.prop_random_compact",
+   "Paper.prop_random_limit",
+   "Paper.prop_random_spectral",
+   "Paper.prop_random_values",
+   "Paper.tensor_push_mul"
+  ],
+  "Proposition B.2": [
+   "Paper.eq_orth",
+   "Paper.meixner_reciprocal",
+   "Paper.meixner_reciprocal'",
+   "Paper.prop_identity",
+   "Paper.prop_identity_blocks",
+   "Paper.prop_identity_coefficients",
+   "Paper.prop_identity_exchange",
+   "Paper.prop_identity_exchange_det",
+   "Paper.prop_identity_expand",
+   "Paper.prop_identity_near",
+   "Paper.prop_identity_one",
+   "Paper.prop_identity_reflection",
+   "Paper.prop_identity_reflection_coeff",
+   "Paper.prop_identity_reverse",
+   "Paper.prop_identity_schur",
+   "Paper.prop_identity_term_count",
+   "Paper.prop_identity_term_product",
+   "Paper.prop_identity_term_zero",
+   "Paper.stateCount"
+  ],
+  "Proposition B.3": [
+   "Paper.eq_Q",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_unit_interval",
+   "Paper.lem_exponents_wire",
+   "Paper.lem_exponents_wire_two",
+   "Paper.prop_crossing",
+   "Paper.prop_crossing_class_size",
+   "Paper.prop_crossing_classes",
+   "Paper.prop_crossing_cover",
+   "Paper.prop_crossing_cut",
+   "Paper.prop_crossing_first",
+   "Paper.prop_crossing_hubs_b",
+   "Paper.prop_crossing_hubs_c",
+   "Paper.prop_crossing_products",
+   "Paper.prop_crossing_some",
+   "Paper.prop_crossing_spectral",
+   "Paper.prop_crossing_tensors",
+   "Paper.prop_crossing_term",
+   "Paper.stateCount",
+   "Paper.tensor_push_mul"
+  ],
+  "Proposition C.3": [
+   "Paper.def_price_closed",
+   "Paper.def_price_limit",
+   "Paper.def_price_pseudometric",
+   "Paper.def_price_pullback",
+   "Paper.lem_exponents_symm",
+   "Paper.prop_random_finite",
+   "Paper.prop_space",
+   "Paper.prop_space_cauchy",
+   "Paper.prop_space_completion",
+   "Paper.prop_space_limit",
+   "Paper.prop_space_midpoints",
+   "Paper.prop_space_step"
+  ],
+  "Proposition E.1": [
+   "Paper.GridEntry",
+   "Paper.prop_grid"
+  ],
+  "Proposition E.10": [
+   "Paper.Flat",
+   "Paper.SomeSetPays",
+   "Paper.Val",
+   "Paper.asm_self",
+   "Paper.balEnum",
+   "Paper.bal_nonempty",
+   "Paper.card_bal_le",
+   "Paper.fklExact",
+   "Paper.fklExact_computes",
+   "Paper.fklTen",
+   "Paper.fklTen_onEnds",
+   "Paper.fklTen_price",
+   "Paper.fklTen_val",
+   "Paper.hexp_image",
+   "Paper.hubCost",
+   "Paper.hubOf",
+   "Paper.hubPt",
+   "Paper.hubTen",
+   "Paper.hubTen_price",
+   "Paper.lem_balanced_cf",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_wire",
+   "Paper.linearIn",
+   "Paper.linearIn_mul",
+   "Paper.linearPart",
+   "Paper.linearPart_cf",
+   "Paper.prop_flat_lower_sum",
+   "Paper.prop_flat_rate",
+   "Paper.prop_flat_rate_direction",
+   "Paper.prop_flat_rate_lengths",
+   "Paper.prop_flat_rate_printed",
+   "Paper.prop_flat_rate_pushforward",
+   "Paper.ratePos",
+   "Paper.rate_numbers14",
+   "Paper.rate_of_someSetPays",
+   "Paper.rate_pow",
+   "Paper.rename_fklExact",
+   "Paper.someSetPays_of_few",
+   "Paper.strEquiv",
+   "Paper.tables",
+   "Paper.tensor_push_mul"
+  ],
+  "Proposition E.5": [
+   "Paper.Flat",
+   "Paper.Val",
+   "Paper.asm_self",
+   "Paper.bal_nonempty",
+   "Paper.card_bal_le",
+   "Paper.fklExact",
+   "Paper.fklExact_computes",
+   "Paper.fklTen",
+   "Paper.fklTen_price",
+   "Paper.fklTen_val",
+   "Paper.hubCost",
+   "Paper.hubOf",
+   "Paper.hubTen",
+   "Paper.hubTen_price",
+   "Paper.lem_balanced_cf",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_wire",
+   "Paper.linearIn",
+   "Paper.linearIn_mul",
+   "Paper.linearPart",
+   "Paper.linearPart_cf",
+   "Paper.lowerPos",
+   "Paper.prop_flat_lower",
+   "Paper.prop_flat_lower_lengths",
+   "Paper.prop_flat_lower_printed",
+   "Paper.prop_flat_lower_sum",
+   "Paper.rename_fklExact",
+   "Paper.strEquiv",
+   "Paper.tables",
+   "Paper.tensor_push_mul"
+  ],
+  "Proposition E.9": [
+   "Paper.Flat",
+   "Paper.cubeAlpha",
+   "Paper.cubeAlpha_midpoint",
+   "Paper.cubeAlpha_top",
+   "Paper.cubeAlpha_zero",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_unit_interval",
+   "Paper.lem_exponents_wire",
+   "Paper.lem_exponents_wire_two",
+   "Paper.prop_cube",
+   "Paper.tensor_push_mul"
+  ],
+  "Proposition H.1": [
+   "Paper.prop_tower",
+   "Paper.prop_tower_cosets",
+   "Paper.prop_tower_cosets_over",
+   "Paper.prop_tower_equivariant",
+   "Paper.prop_tower_fibre",
+   "Paper.prop_tower_free",
+   "Paper.prop_tower_kernel",
+   "Paper.prop_tower_representatives"
+  ],
+  "Proposition I.1": [
+   "Paper.map_word",
+   "Paper.prop_universal",
+   "Paper.prop_universal_automaton",
+   "Paper.prop_universal_machine",
+   "Paper.prop_universal_series"
+  ],
+  "Proposition J.2": [
+   "Paper.NetUnit",
+   "Paper.NodeTable",
+   "Paper.PieceCut",
+   "Paper.Staged",
+   "Paper.Staged.Below",
+   "Paper.Staged.Head",
+   "Paper.Staged.Heavy",
+   "Paper.Staged.anc_stage",
+   "Paper.Staged.below",
+   "Paper.Staged.below_down",
+   "Paper.Staged.below_kids",
+   "Paper.Staged.below_mono",
+   "Paper.Staged.below_refl",
+   "Paper.Staged.below_stage",
+   "Paper.Staged.below_subtree",
+   "Paper.Staged.below_up",
+   "Paper.Staged.hd",
+   "Paper.Staged.hd_head",
+   "Paper.Staged.hd_par",
+   "Paper.Staged.hd_spec",
+   "Paper.Staged.head_of_heavy",
+   "Paper.Staged.kids",
+   "Paper.Staged.light_le",
+   "Paper.Staged.nxt",
+   "Paper.Staged.piece",
+   "Paper.Staged.piece_boundary",
+   "Paper.Staged.piece_hd",
+   "Paper.Staged.piece_head",
+   "Paper.Staged.piece_lt",
+   "Paper.Staged.piece_prog",
+   "Paper.Staged.piece_sum_le",
+   "Paper.Staged.rank",
+   "Paper.Staged.rank_inj",
+   "Paper.Staged.stage_lt",
+   "Paper.Staged.top",
+   "Paper.Staged.top_spec",
+   "Paper.ThinTrees",
+   "Paper.const_mul_pow_le",
+   "Paper.given",
+   "Paper.given_le",
+   "Paper.goodBound",
+   "Paper.ind_eq_one",
+   "Paper.ind_ite",
+   "Paper.lawMap",
+   "Paper.laws_over_algebras",
+   "Paper.lg_two",
+   "Paper.netValue",
+   "Paper.pieceAt",
+   "Paper.pieceFin",
+   "Paper.pieceFin_iff",
+   "Paper.pieceFin_val",
+   "Paper.pieceNum",
+   "Paper.pieceNum_pos",
+   "Paper.piece_all",
+   "Paper.piece_blocks",
+   "Paper.piece_cut",
+   "Paper.piece_given",
+   "Paper.pieces_gain",
+   "Paper.pieces_numbers",
+   "Paper.posVal_start",
+   "Paper.prop_pieces",
+   "Paper.prop_pieces_count",
+   "Paper.prop_pieces_dead",
+   "Paper.prop_pieces_heavy_few",
+   "Paper.prop_pieces_heavy_up",
+   "Paper.prop_pieces_identity",
+   "Paper.prop_pieces_program",
+   "Paper.prop_pieces_shape",
+   "Paper.runTab",
+   "Paper.slp_cast",
+   "Paper.slp_inputs",
+   "Paper.startTab",
+   "Paper.startTab_ne_none",
+   "Paper.startTab_run",
+   "Paper.sum_given",
+   "Paper.treeAt",
+   "Paper.yOf",
+   "Paper.yhat",
+   "Paper.yhat_pos"
+  ],
+  "Proposition K.5": [
+   "Paper.Contracting",
+   "Paper.Generates",
+   "Paper.distAtRank",
+   "Paper.meanSq",
+   "Paper.postponed",
+   "Paper.prop_next",
+   "Paper.prop_next_round",
+   "Paper.scales_setting"
+  ],
+  "Proposition M.2": [
+   "Paper.clauseSum",
+   "Paper.clauses_of_complete",
+   "Paper.cor_clauses_hc",
+   "Paper.gridComplete_hc",
+   "Paper.prop_hc_grid"
+  ],
+  "Proposition N.4": [
+   "Paper.Contracting",
+   "Paper.Generates",
+   "Paper.LargeScale",
+   "Paper.cube_le",
+   "Paper.distAtRank",
+   "Paper.meanSq",
+   "Paper.postponed",
+   "Paper.prop_approx_acc",
+   "Paper.prop_approx_acc_all_scales",
+   "Paper.prop_approx_acc_exact",
+   "Paper.prop_approx_acc_first",
+   "Paper.prop_approx_acc_hasAcc",
+   "Paper.prop_approx_acc_next",
+   "Paper.prop_approx_acc_round",
+   "Paper.prop_approx_acc_round_num",
+   "Paper.prop_approx_acc_setting",
+   "Paper.prop_approx_acc_step"
+  ],
+  "Remark N.6": [],
+  "Theorem A.6": [
+   "Paper.def_spectral_values",
+   "Paper.tensor_covered_by_ones",
+   "Paper.tensor_one_restr",
+   "Paper.thm_duality",
+   "Paper.thm_duality_copies",
+   "Paper.thm_duality_cover",
+   "Paper.thm_duality_exchange",
+   "Paper.thm_duality_gauge",
+   "Paper.thm_duality_replace"
+  ],
+  "Theorem C.1": [
+   "Paper.FanPts",
+   "Paper.FanPts.G",
+   "Paper.FanPts.old",
+   "Paper.FanPts.γ",
+   "Paper.IsFan",
+   "Paper.IsFan.D_nonneg",
+   "Paper.IsFan.G_i_le",
+   "Paper.IsFan.G_j_le",
+   "Paper.IsFan.fanDist_price",
+   "Paper.IsFan.fanLen_last",
+   "Paper.IsFan.fanLen_le",
+   "Paper.IsFan.fanLen_nonneg",
+   "Paper.IsFan.fanLen_step",
+   "Paper.IsFan.fanLen_zero",
+   "Paper.IsFan.fanPot_last",
+   "Paper.IsFan.fanPot_sub_le",
+   "Paper.IsFan.fanPot_zero",
+   "Paper.IsFan.from_z",
+   "Paper.IsFan.lipschitz",
+   "Paper.IsFan.step_ii",
+   "Paper.IsFan.step_iii",
+   "Paper.IsFan.z_γ_last",
+   "Paper.IsFan.z_γ_le",
+   "Paper.IsFan.z_γ_zero",
+   "Paper.IsFan.γ_le",
+   "Paper.def_price_multiple",
+   "Paper.def_price_pseudometric",
+   "Paper.def_price_pullback",
+   "Paper.dist_chain_le",
+   "Paper.dist_congr_of_zero",
+   "Paper.fanDist",
+   "Paper.fanL",
+   "Paper.fanL_bd",
+   "Paper.fanL_le",
+   "Paper.fanL_nonneg",
+   "Paper.fanL_sq_bd",
+   "Paper.fanL_step",
+   "Paper.fanLen",
+   "Paper.fanP",
+   "Paper.fanP_sub_le",
+   "Paper.fanPot",
+   "Paper.fanPt",
+   "Paper.fanPt_mk",
+   "Paper.fanW",
+   "Paper.fanW_price",
+   "Paper.fanWs",
+   "Paper.fanWs_lip",
+   "Paper.fan_D_nonneg",
+   "Paper.fan_w_nonneg",
+   "Paper.fanΛ₂",
+   "Paper.le_meanNorm",
+   "Paper.lem_exponents_symm",
+   "Paper.lem_means_lip",
+   "Paper.lem_means_norm",
+   "Paper.meanLength",
+   "Paper.meanLength_nonneg",
+   "Paper.meanNorm",
+   "Paper.meanNorm_isGLB",
+   "Paper.meanNorm_le",
+   "Paper.meanNorm_le_meanLength",
+   "Paper.meanNorm_nonneg",
+   "Paper.prop_random_finite",
+   "Paper.thm_cn",
+   "Paper.thm_cn_end",
+   "Paper.thm_cn_fan",
+   "Paper.thm_cn_i",
+   "Paper.thm_cn_ii",
+   "Paper.thm_cn_iii",
+   "Paper.thm_cn_iv",
+   "Paper.thm_cn_iv_bound",
+   "Paper.thm_cn_iv_mean",
+   "Paper.thm_cn_iv_square",
+   "Paper.thm_cn_iv_step",
+   "Paper.thm_cn_iv_telescope",
+   "Paper.thm_cn_lipschitz",
+   "Paper.thm_cn_segments",
+   "Paper.thm_cn_Λ₂_le"
+  ],
+  "Theorem D.2": [
+   "Paper.BB_singleton_set",
+   "Paper.Contracting",
+   "Paper.Extremal",
+   "Paper.Flat",
+   "Paper.MD_eq_meanSq",
+   "Paper.card_mul_DM",
+   "Paper.continuous_meanSq",
+   "Paper.cubePts",
+   "Paper.cubePts_update",
+   "Paper.def_price_closed",
+   "Paper.def_price_compact",
+   "Paper.def_price_multiple",
+   "Paper.def_price_pseudometric",
+   "Paper.def_price_pullback",
+   "Paper.defect_nonneg",
+   "Paper.dg_sub_dg",
+   "Paper.distAtRank",
+   "Paper.exists_disjoint_card",
+   "Paper.exists_singleton",
+   "Paper.exists_vec",
+   "Paper.frames",
+   "Paper.frames_pos",
+   "Paper.lem_exponents_symm",
+   "Paper.meanSq",
+   "Paper.meanSq_le",
+   "Paper.meanSq_nonneg",
+   "Paper.meanSq_smul",
+   "Paper.meanSq_zero",
+   "Paper.nn_X",
+   "Paper.rank_X",
+   "Paper.rank_dg",
+   "Paper.rank_units",
+   "Paper.thm_alt",
+   "Paper.thm_alt_additive",
+   "Paper.thm_alt_base_point",
+   "Paper.thm_alt_bounded",
+   "Paper.thm_alt_connect",
+   "Paper.thm_alt_cube",
+   "Paper.thm_alt_diagonal",
+   "Paper.thm_alt_equality",
+   "Paper.thm_alt_euclidean",
+   "Paper.thm_alt_exchange",
+   "Paper.thm_alt_extremal",
+   "Paper.thm_alt_fill",
+   "Paper.thm_alt_identity",
+   "Paper.thm_alt_lambda",
+   "Paper.thm_alt_mean_defect",
+   "Paper.thm_alt_move",
+   "Paper.thm_alt_one_value",
+   "Paper.thm_alt_opposite",
+   "Paper.thm_alt_orthogonal",
+   "Paper.thm_alt_quadrangle",
+   "Paper.thm_alt_rank",
+   "Paper.thm_alt_rank_one",
+   "Paper.thm_alt_rank_price",
+   "Paper.thm_alt_ranks",
+   "Paper.thm_alt_reflect",
+   "Paper.thm_alt_subadditive",
+   "Paper.thm_alt_sum",
+   "Paper.thm_alt_third",
+   "Paper.thm_alt_vertices",
+   "Paper.transversal_X",
+   "Paper.transversal_dg",
+   "Paper.transversal_pair",
+   "Paper.transversal_symm",
+   "Paper.transversal_triple"
+  ],
+  "Theorem E.11": [
+   "Paper.Flat",
+   "Paper.exists_cube_root",
+   "Paper.rate_of_projection",
+   "Paper.thm_flat_rate"
+  ],
+  "Theorem E.6": [
+   "Paper.Flat",
+   "Paper.thm_flat_simple"
+  ],
+  "Theorem F.6": [
+   "Paper.Contracting",
+   "Paper.DM_eq_rankMean",
+   "Paper.card_mul_DM",
+   "Paper.contracts_iff",
+   "Paper.contracts_smul",
+   "Paper.def_price_pullback",
+   "Paper.distAtRank",
+   "Paper.fixed_closed_convex",
+   "Paper.kappa",
+   "Paper.lem_angle_projections",
+   "Paper.lem_toolkit_c_exists",
+   "Paper.lem_toolkit_minimization",
+   "Paper.lengths_of_maps",
+   "Paper.meanSq",
+   "Paper.meanSq_nonneg",
+   "Paper.projection_segment",
+   "Paper.projection_var",
+   "Paper.rankMean",
+   "Paper.rank_dg",
+   "Paper.rank_units",
+   "Paper.segment_fixed",
+   "Paper.thm_poincare",
+   "Paper.thm_poincare_action",
+   "Paper.thm_poincare_far",
+   "Paper.thm_poincare_limit",
+   "Paper.thm_poincare_pairs",
+   "Paper.thm_poincare_size",
+   "Paper.thm_poincare_step",
+   "Paper.thm_poincare_windows",
+   "Paper.windowConst",
+   "Paper.windowConst_nonneg",
+   "Paper.windowSum",
+   "Paper.windowSum_nonneg",
+   "Paper.window_le",
+   "Paper.windows_commute"
+  ],
+  "Theorem G.2": [
+   "Paper.Contracting",
+   "Paper.PoincareBound",
+   "Paper.def_price_pseudometric",
+   "Paper.distAtRank",
+   "Paper.indices_agree",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_symm",
+   "Paper.lem_exponents_wire",
+   "Paper.meanSq",
+   "Paper.tensor_push_mul",
+   "Paper.thm_laws",
+   "Paper.thm_laws_cover",
+   "Paper.thm_laws_loads",
+   "Paper.thm_laws_over_field",
+   "Paper.thm_laws_poincare",
+   "Paper.thm_laws_ring",
+   "Paper.trivialPoint"
+  ],
+  "Theorem H.2": [
+   "Paper.NetUnit",
+   "Paper.NodeTable",
+   "Paper.TCst_map",
+   "Paper.ThinTrees",
+   "Paper.cKap",
+   "Paper.cTree",
+   "Paper.card_ndChildren",
+   "Paper.card_ndRoot",
+   "Paper.card_treeChildren",
+   "Paper.const_mul_pow_le",
+   "Paper.const_pow_le",
+   "Paper.cur_tree",
+   "Paper.exists_thinTrees",
+   "Paper.flagMap",
+   "Paper.gain_rpow",
+   "Paper.goodBound",
+   "Paper.kapB_tree",
+   "Paper.lawMap",
+   "Paper.laws_over_algebras",
+   "Paper.layers_le_seen",
+   "Paper.lg_two",
+   "Paper.ndPar",
+   "Paper.ndStage",
+   "Paper.ndStage_eq_top",
+   "Paper.ndStage_par",
+   "Paper.netValue",
+   "Paper.onN_le_up",
+   "Paper.par_computed",
+   "Paper.posVal_start",
+   "Paper.prop_tower_cosets",
+   "Paper.prop_tower_cosets_over",
+   "Paper.prop_tower_equivariant",
+   "Paper.prop_tower_fibre",
+   "Paper.prop_tower_kernel",
+   "Paper.startTab",
+   "Paper.startTab_congr",
+   "Paper.startTab_ne_none",
+   "Paper.thm_tree",
+   "Paper.thm_tree_copies",
+   "Paper.thm_tree_good",
+   "Paper.thm_tree_kappa",
+   "Paper.thm_tree_move",
+   "Paper.thm_tree_moves",
+   "Paper.thm_tree_poss_good",
+   "Paper.thm_tree_start",
+   "Paper.treePar",
+   "Paper.treeUp",
+   "Paper.tree_between",
+   "Paper.tree_computed",
+   "Paper.tree_node_le",
+   "Paper.tree_nums",
+   "Paper.tree_slp",
+   "Paper.tree_total_le",
+   "Paper.tree_towers",
+   "Paper.tree_up_node",
+   "Paper.tree_up_total",
+   "Paper.tree_value",
+   "Paper.valid_of"
+  ],
+  "Theorem J.3": [
+   "Paper.Generates",
+   "Paper.PieceCut",
+   "Paper.goodBound",
+   "Paper.lg_mul_sq_le",
+   "Paper.thm_onecut",
+   "Paper.thm_onecut_evaluator",
+   "Paper.thm_onecut_program"
+  ],
+  "Theorem J.4": [
+   "Paper.Contracting",
+   "Paper.Generates",
+   "Paper.PoincareBound",
+   "Paper.cutHyp_of_laws",
+   "Paper.distAtRank",
+   "Paper.exists_generates",
+   "Paper.exists_laws",
+   "Paper.exists_setting",
+   "Paper.meanSq",
+   "Paper.thm_cut",
+   "Paper.thm_cut_compose",
+   "Paper.thm_cut_iterate"
+  ],
+  "Theorem K.6": [
+   "Paper.AllScales",
+   "Paper.Contracting",
+   "Paper.Generates",
+   "Paper.distAtRank",
+   "Paper.meanSq",
+   "Paper.postponed",
+   "Paper.scales_setting",
+   "Paper.thm_noacc",
+   "Paper.thm_noacc_all_scales",
+   "Paper.thm_noacc_diagonal",
+   "Paper.thm_noacc_finite_field",
+   "Paper.thm_noacc_periodic"
+  ],
+  "Theorem K.7": [
+   "Paper.Contracting",
+   "Paper.Generates",
+   "Paper.GridEntry",
+   "Paper.contracting_complete",
+   "Paper.distAtRank",
+   "Paper.exists_scale",
+   "Paper.gridComplete_perm",
+   "Paper.meanSq",
+   "Paper.quasi_of_exponents",
+   "Paper.thm_contracting"
+  ],
+  "Theorem L.1": [
+   "Paper.Contracting",
+   "Paper.Flat",
+   "Paper.distAtRank",
+   "Paper.meanSq",
+   "Paper.thm_main",
+   "Paper.thm_main_calculation",
+   "Paper.thm_main_form"
+  ],
+  "Theorem L.2": [
+   "Paper.Contracting",
+   "Paper.Flat",
+   "Paper.distAtRank",
+   "Paper.meanSq",
+   "Paper.thm_main_calculation",
+   "Paper.thm_simple"
+  ],
+  "Theorem M.3": [
+   "Paper.Contracting",
+   "Paper.Flat",
+   "Paper.Generates",
+   "Paper.Val",
+   "Paper.asm_pairOf",
+   "Paper.asm_self",
+   "Paper.beyond_of_rate",
+   "Paper.clauseSum",
+   "Paper.clauses_of_complete",
+   "Paper.contracting_complete",
+   "Paper.contracting_hc",
+   "Paper.distAtRank",
+   "Paper.exists_closed",
+   "Paper.exists_cube_root",
+   "Paper.exists_scale",
+   "Paper.fklLits",
+   "Paper.fklLits_count",
+   "Paper.fklLits_ne",
+   "Paper.fklLits_occ",
+   "Paper.fklWt",
+   "Paper.fkl_complete",
+   "Paper.flat_rate_complete",
+   "Paper.flat_rate_hc",
+   "Paper.forall_fklLits",
+   "Paper.gridComplete_hc",
+   "Paper.lem_fkl_perm_clauseSum",
+   "Paper.map_genHC",
+   "Paper.map_permInt",
+   "Paper.meanSq",
+   "Paper.pairOf",
+   "Paper.permInt",
+   "Paper.quasi_of_exponents",
+   "Paper.rate_of_projection",
+   "Paper.thm_allfields",
+   "Paper.thm_allfields_exceeds",
+   "Paper.thm_main_calculation",
+   "Paper.two_ne_zero_of_char"
+  ],
+  "Theorem N.5": [
+   "Paper.Contracting",
+   "Paper.Flat",
+   "Paper.Generates",
+   "Paper.GridEntry",
+   "Paper.SomeSetPays",
+   "Paper.VPBar",
+   "Paper.Val",
+   "Paper.approx_rate_closed",
+   "Paper.asm_pairOf",
+   "Paper.asm_self",
+   "Paper.balEnum",
+   "Paper.bal_nonempty",
+   "Paper.beyond_of_rate",
+   "Paper.card_bal_le",
+   "Paper.card_clauses",
+   "Paper.clauseSum",
+   "Paper.clauseSum_inputs",
+   "Paper.clauses_of_complete",
+   "Paper.contracting_approx_complete",
+   "Paper.contracting_approx_rate",
+   "Paper.distAtRank",
+   "Paper.exists_beyond_poly",
+   "Paper.exists_closed",
+   "Paper.exists_cube_root",
+   "Paper.exists_cut_off",
+   "Paper.exists_scale",
+   "Paper.fklLits",
+   "Paper.fklLits_count",
+   "Paper.fklLits_ne",
+   "Paper.fklLits_occ",
+   "Paper.fklTen",
+   "Paper.fklTen_onEnds",
+   "Paper.fklTen_price",
+   "Paper.fklTen_val",
+   "Paper.fklWt",
+   "Paper.fkl_complete",
+   "Paper.flat_rate_approx_complete",
+   "Paper.flat_rate_approximating",
+   "Paper.forall_fklLits",
+   "Paper.gridComplete_hc",
+   "Paper.gridComplete_perm",
+   "Paper.hc_mem_VNP",
+   "Paper.hexp_image",
+   "Paper.hubCost",
+   "Paper.hubOf",
+   "Paper.hubPt",
+   "Paper.hubTen",
+   "Paper.hubTen_price",
+   "Paper.hubTen_series",
+   "Paper.hubs_series",
+   "Paper.inputWeights",
+   "Paper.lem_balanced_cf",
+   "Paper.lem_circuit_approx",
+   "Paper.lem_circuit_assignment",
+   "Paper.lem_circuit_bound",
+   "Paper.lem_circuit_names",
+   "Paper.lem_circuit_phi",
+   "Paper.lem_circuit_program",
+   "Paper.lem_circuit_universal",
+   "Paper.lem_circuit_value",
+   "Paper.lem_exponents_power",
+   "Paper.lem_exponents_wire",
+   "Paper.lem_fkl_perm_clauseSum",
+   "Paper.line_coeff_eq",
+   "Paper.linearIn",
+   "Paper.linearIn_mul",
+   "Paper.linearPart",
+   "Paper.linearPart_cf",
+   "Paper.literal_bound",
+   "Paper.map_genHC",
+   "Paper.map_permInt",
+   "Paper.meanSq",
+   "Paper.pairOf",
+   "Paper.permInt",
+   "Paper.prop_flat_lower_sum",
+   "Paper.prop_flat_rate_direction",
+   "Paper.prop_flat_rate_lengths",
+   "Paper.prop_flat_rate_pushforward",
+   "Paper.quasi_of_exponents",
+   "Paper.ratePos",
+   "Paper.rate_numbers14",
+   "Paper.rate_of_projection",
+   "Paper.rate_of_someSetPays",
+   "Paper.rate_pow",
+   "Paper.someSetPays_of_few",
+   "Paper.strEquiv",
+   "Paper.tables",
+   "Paper.tensor_push_mul",
+   "Paper.thm_allfields_exceeds",
+   "Paper.thm_approx",
+   "Paper.thm_main_calculation",
+   "Paper.two_ne_zero_of_char",
+   "Paper.universal_symbols_ne",
+   "Paper.wire_series",
+   "Paper.withInputs",
+   "Paper.wordG_bits",
+   "Paper.wordG_self"
+  ]
+ },
  "uses": {
   "Corollary E.2": {
    "Proposition E.1": "through"

@@ -15,7 +15,11 @@ with WARNING or ERROR is a failure.
 | `src/papers.toml`: the paper behind each reference | this repository's own data, checked both ways against the references | `vp.load()`, F8 |
 | `src/lean-uses.json`: the uses between statements in the elaborated Lean, from an export of vp-vnp built at the pin | `LEAN_USES_SHA256`, and `tools/lean-uses/meta.json`, which records the commit and the export's hash | `vp.load()`, F9 |
 
-How the Lean is read: as text, with comments and strings blanked. Full names come from `namespace`, `section` and
+Which reading a poster draws: F1, R2, R3, T1 and T2 draw the uses of the elaborated Lean (`src/lean-uses.json`,
+Phase 2: an export of vp-vnp built once at the pin, read by `tools/lean-uses/read_export.py`). F3, F4 and F5 read
+the source as text, as below. F9 sets the two readings against each other.
+
+How the Lean is read as text: comments and strings blanked, full names come from `namespace`, `section` and
 `end`, and a declaration runs from its keyword at the head of a line to the next command at the head of a line. A
 statement **uses** another when the text of one of its Lean theorems names one of the other's. It may name it
 directly, or through declarations of the Paper library that belong to no statement. A name Table 3 gives two
@@ -34,7 +38,7 @@ file the naming file imports, and has at least three characters.
 | Poster | What it shows | The build fails if any of these differ from what the module records |
 |---|---|---|
 | R1 `main-theorems` | the five theorems of `Solution.lean`, the 13 definitions of `Statement.lean`, the introduction's statements | the theorems `comparator.json` names, `Solution.lean` proves and `Challenge.lean` states (`CLAIMS`); the statement each is proved from (`CLAIMS`); the definitions (`DEFINITIONS`); Statement's and Challenge's imports; the introduction's statements and their rows of Table 3 (`INTRO`); the permitted axioms (`AXIOMS`); the README sentence it quotes (`QUOTED`) |
-| R2 `sections` | the 15 sections of the appendix, and their uses by Table 1 and by the Lean text | each section's case (`CASES`); statements per section (`COUNTS`); Table 1's uses (`EXPECTED`); those the Lean bears out (`BORNE`); those only the Lean shows (`LEAN_ONLY`) |
+| R2 `sections` | the 15 sections of the appendix, and their uses by Table 1 and by the elaborated Lean | each section's case (`CASES`); statements per section (`COUNTS`); Table 1's uses (`EXPECTED`); those the Lean bears out (`BORNE`); those only the Lean shows (`LEAN_ONLY`) |
 | R3 `route` | the 54 statements on the route of Solution's theorems as a graph, the longest chain, the 11 off the route, Appendix Q's route claims | the uses drawn are F1's (`EXPECTED` of F1); the statements off the route (`OFF_ROUTE`); Q.3's list (`Q3_OFF`) and that it ends with "the definitions"; the one row of Q.3 the walk reaches, and the Lean name it reaches it by (`ON_BY_SECOND`); that the rest of the route agrees with Q.3; the longest chain (`CHAIN`); each claim of Appendix Q's "Routes of proof" quoted and its check (`ROUTE_CLAIMS`) |
 | T1 `trace-contracting` | the longest chain of uses, 14 statements, one card each | the chain (`CHAIN`), which must be R3's; that each step uses the next and the last uses nothing; that below L.1 it runs through the contracting sections, then C and A |
 | T2 `trace-flat` | the longest chain through Theorem E.11, 11 statements | the chain (`CHAIN`); that each step uses the next; that below E.11 it is the longest; that it first meets T1's at C.1 |

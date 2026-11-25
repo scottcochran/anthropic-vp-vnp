@@ -50,7 +50,7 @@ PAPER_FACTS_SHA256 = "4c5b9ea23fc64aca3d1ce55847c4f6aa78ccd5e3b3d13bad2022438a5d
 
 # diagrams/src/lean-uses.json, the uses between statements read from a lean4export export of vp-vnp at FM_COMMIT by
 # tools/lean-uses/read_export.py (Phase 2); tools/lean-uses/meta.json records the export's hash and the commit.
-LEAN_USES_SHA256 = "5d7ee5bfd719d8650d083b0d895be25b422eb21ccc1a2d46a176f8e7c38da829"
+LEAN_USES_SHA256 = "e6645f504ee5828af2ec3d5d0db1b6bca830c2265f0cc11bfc444d2bb83b640c"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
@@ -68,6 +68,12 @@ NOT_BUILT = ("Nothing here builds or elaborates the Lean: names are read from th
 
 
 # ------------------------------------------------------------------------------------------------ git and hashes
+NOT_BUILT_LEAN = ("The posters build no Lean. The uses between statements are read from an export of vp-vnp built once "
+                  "at the pinned commit (src/lean-uses.json; F9 sets them against the source text), and a card says "
+                  "what a statement is, not that it is proved. That the proofs check is the claim of the formal-math "
+                  "repository's own CI (Comparator, with the nanoda kernel), not of these posters.")
+
+
 def git_rev(path, pin, what):
     """The full commit of a checkout, checked against `pin`."""
     out = subprocess.run(["git", "-C", str(path), "rev-parse", "HEAD"], capture_output=True, text=True)
@@ -247,7 +253,9 @@ def quote_of(doc):
     return re.sub(r"\s+", " ", m.group(1)).strip() if m else None
 
 
-def load():
+def load(lean=True):
+    """The sources, checked. lean=False leaves out src/lean-uses.json, for tools/lean-uses/read_export.py, which
+    writes it."""
     if not VP.is_dir():
         raise ValueError(f"no vp-vnp folder at {VP}; set VP_VNP")
     s = Source()
@@ -325,6 +333,8 @@ def load():
         s.statements[key] = st
     s.reach = {}
     s.uses = _statement_uses(s)
+    if not lean:
+        return s
     lean_path = SRC / "lean-uses.json"
     if sha256(lean_path) != LEAN_USES_SHA256:
         raise ValueError(f"src/lean-uses.json hashes to {sha256(lean_path)}, pinned {LEAN_USES_SHA256}: rebuild it "
@@ -334,6 +344,9 @@ def load():
         raise ValueError("tools/lean-uses/meta.json does not record FM_COMMIT and the pinned hash of src/lean-uses.json")
     s.lean = json.loads(lean_path.read_text(encoding="utf-8"))
     s.lean_meta = lmeta
+    # The Lean reading, in the form of s.uses: statement -> {used statement: "direct" | "through"}
+    s.lean_uses = {k: s.lean["uses"].get(k, {}) for k in s.statements}
+    s.lean_reach = {k: set(v) for k, v in s.lean["reach"].items()}
     return s
 
 
@@ -442,13 +455,15 @@ def _statement_uses(s):
     return uses
 
 
-def route(s):
-    """(roots, on): the statements Solution's theorems name, and every statement reached from them by uses."""
+def route(s, uses=None):
+    """(roots, on): the statements Solution's theorems name, and every statement reached from them by uses (the text
+    reading's, or those given, such as s.lean_uses)."""
+    uses = s.uses if uses is None else uses
     roots = sorted({k for n, d in s.decls.items() if d["module"] == "Solution" and d["kind"] == "theorem"
                     for k in statements_named(s, d)}, key=order_key)
     on, stack = set(roots), list(roots)
     while stack:
-        for u in s.uses[stack.pop()]:
+        for u in uses[stack.pop()]:
             if u not in on:
                 on.add(u)
                 stack.append(u)

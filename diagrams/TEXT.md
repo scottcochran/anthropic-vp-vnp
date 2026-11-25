@@ -45,6 +45,7 @@ respaced from PyMuPDF's reading of the page, where a space stands wherever two c
 fifth of the font size (tools/paper-facts/README.md). The characters, spaces aside, must match pypdf's exactly, or
 the passage is kept as pypdf reads it. In a formula the spacing is PyMuPDF's, not the printed one.
 
-**Inferred relations.** Every use between statements, and so every use between sections that is marked "Lean", is
-inferred from names in the source text (`diagrams/README.md`, "How the Lean is read"). The posters say so where they
-draw them, and F1 and R2 record every one.
+**Inferred relations.** On F1, R2, R3 and the traces, every use between statements, and so every use between
+sections marked "Lean", is read from the elaborated Lean (`src/lean-uses.json`); on F3, F4 and F5 it is inferred from
+names in the source text (`diagrams/README.md`). The posters say which where they draw them, and F1 and R2 record
+every one.

@@ -19,12 +19,12 @@ def build():
 
     @functools.lru_cache(None)
     def height(k):
-        return 1 + max((height(u) for u in src.uses[k]), default=0)
+        return 1 + max((height(u) for u in src.lean_uses[k]), default=0)
 
     i = CHAIN.index(THROUGH)
     tail = [THROUGH]
-    while src.uses[tail[-1]]:
-        tail.append(max(src.uses[tail[-1]], key=lambda k: (height(k), [-x for x in vp.order_key(k)])))
+    while src.lean_uses[tail[-1]]:
+        tail.append(max(src.lean_uses[tail[-1]], key=lambda k: (height(k), [-x for x in vp.order_key(k)])))
     if CHAIN[i:] != tail:
         raise ValueError(f"T2: the longest chain below {THROUGH} is {tail}, recorded {CHAIN[i:]}: re-read it")
     from d_t1_contracting import CHAIN as T1
@@ -39,5 +39,5 @@ def build():
         CHAIN,
         f"**How to read it.** From the top, each statement's Lean proof uses the one below it. From "
         f"`{anchor_of(THROUGH)}`, the lower bound in the flat case, it is the longest chain of the uses read from the "
-        "Lean text; T1 is the longest chain of all, through the contracting case. The two meet at "
+        "elaborated Lean; T1 is the longest chain of all, through the contracting case. The two meet at "
         f"`{anchor_of('Theorem C.1')}`. The colour is the case of the statement's section.")
