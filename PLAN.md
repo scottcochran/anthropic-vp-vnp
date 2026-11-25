@@ -76,6 +76,22 @@ name from some statement, least in Nc.Sort (61%) and Nc.Tape (63%). Phase 2's ex
 Done (1d): ten posters, no WARNING or ERROR. `check-expectations.py`, `determinism.py` and `check-links.py`
 pass (counts in the commit). F5 looked at in Chrome (dark).
 
+## Phase 1e: the differences, the vocabularies, the literature (2026.11.25)
+
+F6 `differences`, F7 `vocabulary`, F8 `literature`. The extractor gained the paper's printed Lean names, the rest
+of Appendix Q.3, the reference list with its citations, and Appendix P, the last read with PyMuPDF 2.1 from
+character positions because its three columns do not survive as text. The Lean reader gained each file's
+`variable` binders, so that `vp.polymorphic` sees the field of Lemmas M.1 and N.2, which comes from a `variable`.
+
+Found: all 96 Lean names the paper prints are declared but `native_decide`, which no file uses; Q.3's six
+statements in any universe are exactly those whose Lean takes a type in any universe; the Lean never writes four
+of the paper's words that Q.3 says it renames (packet, tally, node tensor, upper functional).
+
+Open: pypdf loses the spaces of a few lines, which shows in some quotations (diagrams/TEXT.md); a reading of
+those passages with PyMuPDF's positions, as the glossary is read, would fix it. The 132 references are not linked
+to the papers (proof-posters:linking-papers). Read `paper-facts.json` against the rendered pages, still open from
+Phase 1.
+
 ## Phase 2: checking the uses against the Lean (planned)
 
 Build vp-vnp at its toolchain (Lean 4.33.1, Mathlib `0df444a360e`), export it with lean4export, and derive a pinned

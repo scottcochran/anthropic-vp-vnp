@@ -45,7 +45,7 @@ FM_SUB = "vp-vnp"                    # the folder of the formalization inside fo
 # paper.pdf at FM_COMMIT, from which diagrams/src/paper-facts.json was read by tools/paper-facts/extract.py.
 PAPER_SHA256 = "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c"
 # diagrams/src/paper-facts.json as that script wrote it (tools/paper-facts/meta.json records both, and the commit).
-PAPER_FACTS_SHA256 = "fd6b14d0001f1a2559877d0f3e893199124e985f0354149890b70e1848396927"
+PAPER_FACTS_SHA256 = "46c2befb550ed317aef7d2216ade4d7739d07b6ef3dec69626bb7fc6ab30804d"
 
 VP = pathlib.Path(os.environ.get("VP_VNP") or ROOT.parent / "vp-np")
 
@@ -153,6 +153,7 @@ def read_file(path, rel):
         pos += len(ln) + 1
     imports = []
     scopes, decls = [], []
+    binders = []                                        # the `variable` binders seen so far, (name, type)
     cur = None
     for no, ln in enumerate(lines):
         head = ln[:1]
@@ -166,6 +167,11 @@ def read_file(path, rel):
             cur = None
         if word == "import":
             imports.append(ln.split()[1])
+        elif word == "variable":
+            full = "\n".join(lines[no:no + 6]).split("\n\n")[0]
+            for m in re.finditer(r"[{(\[⦃]([^{}()\[\]⦃⦄:]+):\s*([^{}()\[\]⦃⦄]+)[})\]⦄]", full):
+                for nm in m.group(1).split():
+                    binders.append((nm, m.group(2).strip()))
         elif word == "namespace":
             scopes += [("ns", p) for p in ln.split()[1].split(".")]
         elif word == "section":
@@ -192,7 +198,7 @@ def read_file(path, rel):
                 if t is not None and b <= off and not re.sub(r"@\[[^\]]*\]", "", raw[b:off]).strip():
                     doc = t
             cur = {"name": full, "short": name, "kind": m.group(2), "private": "private" in m.group(1),
-                   "file": rel, "line": no + 1, "doc": doc, "start": no}
+                   "file": rel, "line": no + 1, "doc": doc, "start": no, "variables": list(binders)}
             decls.append(cur)
     if cur:
         cur["end"] = len(lines)
@@ -422,6 +428,23 @@ def route(s):
                 on.add(u)
                 stack.append(u)
     return roots, on
+
+
+POLY = re.compile(r"Type u\b|Type\*|Type _|Sort u\b|Sort \*")
+
+
+def polymorphic(decl):
+    """Whether a declaration takes a type in any universe: its signature says so (`Type u`, `Type*`), or it uses a
+    name that a `variable` of its file binds so and that the signature does not bind again."""
+    sig = decl["signature"]
+    if POLY.search(sig):
+        return True
+    toks = set(decl["sig_tokens"])
+    for name, typ in decl["variables"]:
+        if name in toks and POLY.fullmatch(typ) and not re.search(r"[{(\[⦃][^:{}()\[\]]*\b" + re.escape(name)
+                                                                   + r"\b[^:{}()\[\]]*:", sig):
+            return True
+    return False
 
 
 def statements_named(s, decl):

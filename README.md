@@ -46,6 +46,14 @@ Open them on their own and zoom in.
   hold three quarters of the code, set against the sections whose statements reach them. 42168 of their 46392
   declaration lines (91%) are reached by name from some numbered statement. In 10 directories one section reaches
   at least 80%, for example Nc.Tow under H (trees) and Nc.Grp and Nc.Dl under J (cuts).
+- [Where the Lean and the text differ](diagrams/F6-differences-2026.11.25.svg): every Lean name the paper
+  prints (96; all declared but `native_decide`, a tactic no file uses), the 11 beyond Table 3, Appendix Q.3's
+  universes set against the signatures (the same 6 statements), and Q.3's 15 listed differences, quoted.
+- [The two vocabularies](diagrams/F7-vocabulary-2026.11.25.svg): Appendix P's 17 coined terms and Appendix Q.3's
+  7 renamings, each word counted in the Lean's names and text. The Lean never writes packet, tally, node tensor or
+  upper functional, and writes unit, bill, table and gauge instead.
+- [The proof as literature](diagrams/F8-literature-2026.11.25.svg): the 132 references by decade, and where each
+  of the 181 citations stands, Section 1 to 3 or an appendix.
 - [The proof as code](diagrams/F2-modules-2026.11.25.svg): the seven Lean libraries, the imports between them, the 44
   files of the Paper library with the part of the paper each one's docstring names, and the 12 largest files.
 

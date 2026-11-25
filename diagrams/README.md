@@ -1,6 +1,6 @@
 # The posters and what they check
 
-Ten posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
+Thirteen posters, each a module `diagrams/src/d_<id>_<slug>.py` that reads the sources at build time, records what it
 expects them to say as module-level literals, and fails the build when they differ, in either direction. R is a
 reading at one level, T a trace, F another frame. The generator is `diagrams/gen-diagrams.py`. Any line it prints starting
 with WARNING or ERROR is a failure.
@@ -40,6 +40,9 @@ file the naming file imports, and has at least three characters.
 | F3 `formalization-notes` | the overview's statements left to the Lean, the 7 formalization notes, the Lean under every statement | the overview's four (`OVERVIEW`); each note's page, place, names and statement (`NOTES`); the declarations and lines by library under each of 64 statements (`WEIGHT`) |
 | F4 `figure-1` | Figure 1 of the paper, transcribed, each arrow coloured by a verdict from the uses | the Lean names the figure prints (`FIGURE_NAMES`), which the transcription (`BOXES`, `ARROWS`) must use exactly; the row of Table 3 that is its Theorem 1.1 (`THEOREM`); the verdict on every statement an arrow carries (`VERDICTS`) |
 | F5 `library` | the 25 directories of Nc, NS1 and Ov against the 14 sections whose statements reach them | files, lines and declaration lines per directory (`DIRS`); the lines each section's statements reach in each directory (`MATRIX`); the lines of each directory some statement reaches (`REACHED`) |
+| F6 `differences` | every Lean name the paper prints, the universes, Appendix Q.3's differences | the count of printed names (`N_PAPER_NAMES`); those no file declares (`NOT_DECLARED`), and that no file uses them; those beyond Table 3 and their declarations (`BEYOND_TABLE3`); the universes of Q.3 and of the signatures (`UNIVERSES`); the stronger forms (`STRONGER`); each bullet's statements and Lean names (`DIFFERENCES`), every name declared |
+| F7 `vocabulary` | the glossary and the renamings, each word counted in the Lean | the glossary's terms and places (`GLOSSARY`); the renamings (`RENAMES`); each word's count in declaration names (`IN_NAMES`) and in the source text (`IN_TEXT`) |
+| F8 `literature` | the references by decade, and where each is cited | the number of references and citations (`N_REFS`, `N_CITATIONS`); where each reference is cited (`CITED`) |
 | F2 `modules` | the seven libraries, the imports between them, the Paper library file by file, the largest files | files, lines and declarations per library (`LIBRARY`); imports between libraries (`IMPORTS`); the files outside Paper that import a Paper file (`UPWARD`); the statements each Paper file declares (`STATEMENTS_IN`); the 12 largest files (`TOP`) |
 
 Also fails on any poster: a Table 3 name that no file declares, a declaration name used twice outside

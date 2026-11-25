@@ -31,11 +31,16 @@ fifth, a transcription.
    - F5, "most directories belong to one section": computed from `MATRIX`, `REACHED` and `DIRS`. A directory's
      "home" is a computed label, the section that reaches most of its lines; it says where the code is used from,
      not what it is about.
+   - F7, "the Lean writes its own word": computed from `IN_TEXT`. F8's "The most cited": computed from `CITED`.
 5. **A transcription.** F4's boxes and arrows (`BOXES`, `ARROWS`) are this repository's reading of Figure 1 as
    rendered (p. 5), since the PDF's text has the figure's words but not its arrows. The words in its boxes are this
    poster's short wording. What the build checks: that the transcription uses exactly the Lean names the figure
    prints, and that the PDF is the one it was read from (`PAPER_SHA256`). F4's interpretation card is computed
    from `VERDICTS`. The traces' "How to read it" sentences stand behind assertions in T1 and T2.
+
+**A known flaw in the quotations.** pypdf loses the spaces of a few lines of the PDF (difference 2 on F6 reads
+"Thepermanentiswrittenthereas"). The words are the paper's and in its order; the spacing is not. PLAN.md keeps it
+open.
 
 **Inferred relations.** Every use between statements, and so every use between sections that is marked "Lean", is
 inferred from names in the source text (`diagrams/README.md`, "How the Lean is read"). The posters say so where they

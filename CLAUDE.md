@@ -16,7 +16,7 @@ and done.
 4. The output is deterministic, and CI fails on the first byte that differs.
 5. No Lean is built. Uses between statements are read from the source text, and the posters say so.
 6. Standard library only for the posters, on Python 3.12+. The one exception is `tools/paper-facts/extract.py`,
-   which uses pypdf and runs outside the build.
+   which uses pypdf and PyMuPDF and runs outside the build.
 
 And:
 

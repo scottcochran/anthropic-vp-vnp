@@ -56,6 +56,93 @@
   ],
   "theorem": "Theorem 1.1"
  },
+ "glossary": [
+  {
+   "defined": "§A",
+   "meaning": "the unit tensor on two parties u ≠ v; it has dimension q and carries log q bits",
+   "term": "wire ⟨q⟩uv"
+  },
+  {
+   "defined": "Def. A.1",
+   "meaning": "a nonnegative function on tensors with φ(1) = 1 that is multiplicative, does not increase under restriction and is subadditive",
+   "term": "spectral point φ"
+  },
+  {
+   "defined": "Lemma A.2",
+   "meaning": "the exponents in φ(⟨q⟩P) = qgφ(P); dφ(u, v) = gφ({u, v})",
+   "term": "gφ(P), dφ(u, v)"
+  },
+  {
+   "defined": "Def. A.4",
+   "meaning": "a limit of multiples cdφ; the distance of x and y in it",
+   "term": "price; |xy|"
+  },
+  {
+   "defined": "Lemma A.3",
+   "meaning": "one of two additional parties through which a tensor of small rank is routed",
+   "term": "hub"
+  },
+  {
+   "defined": "§C",
+   "meaning": "a complete CAT(0) space whose metric is a price",
+   "term": "price space"
+  },
+  {
+   "defined": "§E",
+   "meaning": "a sum over bit vectors of a product of weights of satisfied clauses",
+   "term": "clause sum"
+  },
+  {
+   "defined": "§E",
+   "meaning": "the tensor network on the complete graph on k nodes with ℓ bits on every edge; its polynomial",
+   "term": "complete network; fk,ℓ"
+  },
+  {
+   "defined": "§G",
+   "meaning": "a vector of natural numbers on pairs of elements, or on edges",
+   "term": "load"
+  },
+  {
+   "defined": "Def. G.1",
+   "meaning": "an identity that rewrites bits on arbitrary pairs (slots) as a sum of networks with bits on edges (channels)",
+   "term": "law; slot; channel"
+  },
+  {
+   "defined": "§H",
+   "meaning": "a string of ℓ bits carried between two nodes",
+   "term": "packet"
+  },
+  {
+   "defined": "§H",
+   "meaning": "numbers of packets on pairs of nodes and a tensor at each node; the sum over all contents of the packets of the product of the node tensors; the numbers of packets that a law puts on its channels",
+   "term": "network; node tensor; value; outcome"
+  },
+  {
+   "defined": "§I",
+   "meaning": "a computation of a nondeterministic program; the element of A that it accumulates; the list of names of constants that it has used",
+   "term": "run; weight; tally"
+  },
+  {
+   "defined": "§I",
+   "meaning": "a program with an argument; the sum of the weights of its accepting runs",
+   "term": "instance z; sum(z)"
+  },
+  {
+   "defined": "§I",
+   "meaning": "all runs halt, and the accepting ones have empty tallies and take at most τ steps",
+   "term": "τ-plain"
+  },
+  {
+   "defined": "§I",
+   "meaning": "a finite automaton with a matrix over A for each letter, whose letters write on the two sides of tapes",
+   "term": "tape automaton"
+  },
+  {
+   "defined": "Def. K.1",
+   "meaning": "a program that evaluates sums over vH steps within vH−16 steps",
+   "term": "accelerator"
+  }
+ ],
  "headers": {
   "Corollary E.2": {
    "page": 32,
@@ -408,6 +495,2280 @@
   }
  ],
  "pages": 70,
+ "paper_names": [
+  {
+   "name": "contracting_approx_complete",
+   "pages": [
+    70
+   ]
+  },
+  {
+   "name": "cor_allclasses",
+   "pages": [
+    2,
+    67
+   ]
+  },
+  {
+   "name": "cor_classes",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "cor_clauses",
+   "pages": [
+    5,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "cor_clauses_hc",
+   "pages": [
+    10,
+    11,
+    67
+   ]
+  },
+  {
+   "name": "def_acc",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "def_approx",
+   "pages": [
+    2,
+    67,
+    69
+   ]
+  },
+  {
+   "name": "def_cases",
+   "pages": [
+    4,
+    5,
+    67
+   ]
+  },
+  {
+   "name": "def_cut",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "def_law",
+   "pages": [
+    67,
+    68
+   ]
+  },
+  {
+   "name": "def_price",
+   "pages": [
+    5,
+    67
+   ]
+  },
+  {
+   "name": "def_spectral",
+   "pages": [
+    4,
+    67
+   ]
+  },
+  {
+   "name": "def_spectral_congr",
+   "pages": [
+    66,
+    67
+   ]
+  },
+  {
+   "name": "eq_Q",
+   "pages": [
+    66,
+    67
+   ]
+  },
+  {
+   "name": "eq_window",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "exists_generates",
+   "pages": [
+    69
+   ]
+  },
+  {
+   "name": "exists_laws",
+   "pages": [
+    69
+   ]
+  },
+  {
+   "name": "exists_setting",
+   "pages": [
+    67,
+    69
+   ]
+  },
+  {
+   "name": "lem_angle",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_balanced",
+   "pages": [
+    5,
+    6,
+    7,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "lem_circuit",
+   "pages": [
+    5,
+    6,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "lem_circuit_approx",
+   "pages": [
+    70
+   ]
+  },
+  {
+   "name": "lem_circuit_perm",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_circuit_phi",
+   "pages": [
+    70
+   ]
+  },
+  {
+   "name": "lem_convex",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_count",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_exponents",
+   "pages": [
+    4,
+    7,
+    67
+   ]
+  },
+  {
+   "name": "lem_few",
+   "pages": [
+    5,
+    9,
+    67
+   ]
+  },
+  {
+   "name": "lem_few_approx",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_first",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_fkl_perm",
+   "pages": [
+    5,
+    6,
+    8,
+    67
+   ]
+  },
+  {
+   "name": "lem_fkl_perm_printed",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_growth",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_hubs",
+   "pages": [
+    5,
+    7,
+    67,
+    68
+   ]
+  },
+  {
+   "name": "lem_hubs_further",
+   "pages": [
+    67,
+    68
+   ]
+  },
+  {
+   "name": "lem_lowdeg",
+   "pages": [
+    5,
+    6,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "lem_means",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_postpone",
+   "pages": [
+    5,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "lem_runnet",
+   "pages": [
+    9,
+    67
+   ]
+  },
+  {
+   "name": "lem_tele",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_toolkit",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_toolkit_a",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_toolkit_b",
+   "pages": [
+    5
+   ]
+  },
+  {
+   "name": "lem_toolkit_c_minimizer",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_toolkit_f",
+   "pages": [
+    8
+   ]
+  },
+  {
+   "name": "lem_transfer",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_transfer_approx",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "lem_words",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "native_decide",
+   "pages": [
+    66
+   ]
+  },
+  {
+   "name": "permanent_over_real",
+   "pages": [
+    66
+   ]
+  },
+  {
+   "name": "projection_nearest",
+   "pages": [
+    67,
+    68
+   ]
+  },
+  {
+   "name": "prop_approx_acc",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_approx_acc_setting",
+   "pages": [
+    67,
+    69
+   ]
+  },
+  {
+   "name": "prop_crossing",
+   "pages": [
+    5,
+    8,
+    67
+   ]
+  },
+  {
+   "name": "prop_cube",
+   "pages": [
+    5,
+    9,
+    67
+   ]
+  },
+  {
+   "name": "prop_extend",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_flat_lower",
+   "pages": [
+    9,
+    67
+   ]
+  },
+  {
+   "name": "prop_flat_lower_printed",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_flat_lower_sum",
+   "pages": [
+    70
+   ]
+  },
+  {
+   "name": "prop_flat_rate",
+   "pages": [
+    5,
+    6,
+    9,
+    67
+   ]
+  },
+  {
+   "name": "prop_flat_rate_printed",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_gauge",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_grid",
+   "pages": [
+    10,
+    67
+   ]
+  },
+  {
+   "name": "prop_hc_grid",
+   "pages": [
+    11,
+    67
+   ]
+  },
+  {
+   "name": "prop_identity",
+   "pages": [
+    7,
+    8,
+    67
+   ]
+  },
+  {
+   "name": "prop_next",
+   "pages": [
+    5,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "prop_pieces",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_pieces_identity",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_random",
+   "pages": [
+    8,
+    67
+   ]
+  },
+  {
+   "name": "prop_space",
+   "pages": [
+    8,
+    67
+   ]
+  },
+  {
+   "name": "prop_tower",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "prop_tower_representatives",
+   "pages": [
+    67,
+    68
+   ]
+  },
+  {
+   "name": "prop_universal",
+   "pages": [
+    9,
+    67
+   ]
+  },
+  {
+   "name": "scales_setting",
+   "pages": [
+    67,
+    69
+   ]
+  },
+  {
+   "name": "thm_allfields",
+   "pages": [
+    2,
+    67
+   ]
+  },
+  {
+   "name": "thm_allfields_exceeds",
+   "pages": [
+    70
+   ]
+  },
+  {
+   "name": "thm_alt",
+   "pages": [
+    2,
+    5,
+    6,
+    17,
+    67
+   ]
+  },
+  {
+   "name": "thm_approx",
+   "pages": [
+    2,
+    67
+   ]
+  },
+  {
+   "name": "thm_cn",
+   "pages": [
+    5,
+    8,
+    67
+   ]
+  },
+  {
+   "name": "thm_contracting",
+   "pages": [
+    5,
+    8,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "thm_cut",
+   "pages": [
+    5,
+    9,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "thm_duality",
+   "pages": [
+    9,
+    67
+   ]
+  },
+  {
+   "name": "thm_flat_rate",
+   "pages": [
+    5,
+    8,
+    67
+   ]
+  },
+  {
+   "name": "thm_flat_simple",
+   "pages": [
+    9,
+    67
+   ]
+  },
+  {
+   "name": "thm_laws",
+   "pages": [
+    5,
+    9,
+    67
+   ]
+  },
+  {
+   "name": "thm_main",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "thm_main_form",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "thm_noacc",
+   "pages": [
+    5,
+    6,
+    10,
+    67
+   ]
+  },
+  {
+   "name": "thm_onecut",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "thm_onecut_evaluator",
+   "pages": [
+    69
+   ]
+  },
+  {
+   "name": "thm_onecut_program",
+   "pages": [
+    69
+   ]
+  },
+  {
+   "name": "thm_poincare",
+   "pages": [
+    5,
+    67
+   ]
+  },
+  {
+   "name": "thm_simple",
+   "pages": [
+    67
+   ]
+  },
+  {
+   "name": "thm_tree",
+   "pages": [
+    5,
+    9,
+    67
+   ]
+  },
+  {
+   "name": "thm_tree_good",
+   "pages": [
+    67,
+    69
+   ]
+  },
+  {
+   "name": "universal_symbols_ne",
+   "pages": [
+    69
+   ]
+  }
+ ],
+ "q3": {
+  "differences": [
+   {
+    "lean": [],
+    "names": [],
+    "text": "The numbers C, a and α are natural numbers."
+   },
+   {
+    "lean": [],
+    "names": [],
+    "text": "In the file printed in Section 3 circuits and the classes VP and VNP are defined over commutativesemirings. Thepermanentiswrittenthereas ∑ σ ∏ i xσ(i),i, whereSection1 has xi,σ(i); the two sums agree, as one sees by replacing σ with its inverse."
+   },
+   {
+    "lean": [
+     "projection_nearest"
+    ],
+    "names": [
+     "Theorem F.6",
+     "Lemma F.3",
+     "Lemma F.4",
+     "Lemma F.5"
+    ],
+    "text": "Lean defines the projection to the fixed points of a window (Section F) as the barycenter of the orbit, and projection_nearest shows that this is the nearest point. In the proof of Theorem F.6 the space of functions carries the sum where the text has the mean, which is one scaling factor. Lean states Lemma F.3 for explicit numbers, θn = 18⌈log2 n⌉ μ(L + 1)sL with L = ⌊logμ 2⌈log2 n⌉⌋ (kappa), which are not those of the printed proof, and C(n) in (F.1) and in Lemmas F.4 and F.5 is formed with them."
+   },
+   {
+    "lean": [],
+    "names": [
+     "Theorem A.6",
+     "Proposition A.7"
+    ],
+    "text": "The families of tensors in Theorem A.6 and of maps in Proposition A.7 are indexed by any finite set."
+   },
+   {
+    "lean": [],
+    "names": [
+     "Lemma E.3",
+     "Proposition E.10",
+     "Proposition E.5"
+    ],
+    "text": "A variable of block a of fk,ℓ is indexed by k strings, and the one at the place a is 0 in the variables that occur. The circuit sizes are the same, and the theorems with suffix _printed state Lemma E.3 and Propositions E.5 and E.10 for the printed polynomial."
+   },
+   {
+    "lean": [
+     "lem_hubs",
+     "lem_hubs_further"
+    ],
+    "names": [
+     "Lemma A.3",
+     "Lemma E.4",
+     "Lemma E.7",
+     "Lemma F.1",
+     "Lemma F.2",
+     "Lemma I.2",
+     "Lemma K.3",
+     "Lemma M.1",
+     "Lemma N.2",
+     "Lemma N.3",
+     "Proposition B.2",
+     "Proposition E.10"
+    ],
+    "text": "Lemmas A.3, E.4, E.7, F.1, F.2, I.2, K.3, M.1, N.2 and N.3 and Proposition B.2 are proved in stronger or more general forms. For example, lem_hubs pushes the tensor t forward along an arbitrary map from its parties to a finite set of parties, of which o1, o2 are any two, and lem_hubs_further is the form with two further parties. Proposition B.2 is proved without the assumption that Σ1 and Σ2 are nonempty. Lemma E.4 is proved over every commutative semiring, and Lemmas E.7 and N.3 whenever t is covered by T1, . . . , TJ , so that linear maps may also be applied at the parties of P . In Section F Lemma F.1 is proved without the assumption s2 < μ and also for r = 0, and Lemma F.2 without the conditions 1 ≤ k < n and ξ, ω ≠ 0. Lemma K.3 is proved for every family that is complete for grid sums (Appendix M) and for every H ≥ 32. Lemmas M.1 and N.2 are proved with any algebraically closed field of characteristic p in the place of K. The flat bound for approximating circuits has 14 where Proposition E.10 has 16."
+   },
+   {
+    "lean": [
+     "def_law"
+    ],
+    "names": [
+     "Theorem G.2",
+     "Theorem F.6"
+    ],
+    "text": "Laws may have any finite sets of elements, slots and channels. A law in Lean also records that its channels connect its elements, in the form that indices which agree along all channels agree everywhere; on Uh, where the channels are all the edges, this holds by itself. The conditions on λ, on ℐ and on Uh come with Theorem G.2. Its Lean form also states the choices of Section G: u and C0 are as in Theorem F.6, C′ 0 ≥ 2C0 +1 is an integer and C1 = 4C′ 0. It asserts that some multiple h ≥ 2u of u satisfies (G.1), and it asserts (a) and (b) for every such h. That the channels there are the edges, each once, on which the norm in Theorem G.2(b) depends, follows from the definitions but is stated by no theorem of the development. The theorem def_law lists only three of the fields of the structure, in one direction, so that it rests on reading the structure that it is the printed notion."
+   },
+   {
+    "lean": [
+     "prop_tower_representatives"
+    ],
+    "names": [
+     "Proposition H.1"
+    ],
+    "text": "In Proposition H.1, the set V0 is only stated to have as many elements as Gn, bijectivity on cosets is stated as equivariance and freeness, and the cosets over a coset are given by representatives (prop_tower_representatives: there is exactly one in each coset). Lean states the proposition for every h ≥ 3 and every n ≥ 0."
+   },
+   {
+    "lean": [
+     "thm_tree_good"
+    ],
+    "names": [
+     "Theorem H.2",
+     "Proposition J.2"
+    ],
+    "text": "Theorem H.2 and Proposition J.2 state their clauses as the fields of structures. A relay is a law with one slot, two channels, one index and λ = 0, applied to a batch of packets. Thus relays too have outcomes and leave copies and dead packets at the ends of their strings, an outcome of a relay is good if it equals the number of packets of the batch on both channels, and there is a law move for every stage, type, coset and law, with t = 0 for those not chosen. The value of a tree is written as a sum, over the contents of named packets, present or absent, of products of the values of its nodes, and no theorem restates this as the value of a network as defined in Section H. As printed in (b) and (e), the dead packets are a set of names that are not all stated to be present, so that the bound on what a node ever holds may count absent ones. The end packets of relays count as dead, and in networks without these packets they would count among the absent ones. In part (e) Lean has the constant C of the theorem, and it counts for every move at p, with the number t, also t times one plus the number of its slots at p, which covers the zeros in slots. Proposition J.2 uses only the total M C . Packets have a direction in Lean, and packets from a node to itself are allowed and stay at their node. The programs may depend on M , N , ℓ, the ring of the network and the bound on the number of given nodes, respectively on v, T , k, the automaton and the standing data. In Proposition J.2 the outcomes range over tuples of numbers below a bound that is part of the data (the field U1); no clause says that every good outcome lies below it, and the identity sums over those that do. Whether an outcome is good is tested with the integer ⌊2C1a2 1⌋ (thm_tree_good). This implies the printed notion and is equal to it when 2C1a2 1 is an integer, as the laws provide."
+   },
+   {
+    "lean": [],
+    "names": [
+     "Proposition J.2",
+     "Lemma I.2"
+    ],
+    "text": "Proposition J.2 is proved without the bound on lg T , and its number of bits in all counts every copy ever held and the zeros in slots. Its sum runs over the numbers of packets with at most N packets at each node, as in the printed proof, where Lean takes for N the last bound of Lemma I.2, it is stated for every pair of a first and a last state, and the exponent of Λ is the constant C of the statement. It also states what the program needs besides: the packets have at most T bits, at most T Λ bits start at a node, and the numbers of the program have room for packets, outcomes and pieces."
+   },
+   {
+    "lean": [
+     "exists_laws",
+     "exists_generates",
+     "exists_setting",
+     "thm_onecut_evaluator",
+     "thm_onecut_program"
+    ],
+    "names": [
+     "Theorem H.2",
+     "Proposition J.2",
+     "Theorem J.3",
+     "Theorem J.4",
+     "Theorem G.2"
+    ],
+    "text": "Theorem H.2, Proposition J.2 and Theorems J.3 and J.4 have the laws, and the last two the generators of A, as explicit standing hypotheses. The laws may be any finite family of laws, over any commutative ring, that has the properties of Theorem G.2, with h ≥ 3 and (G.1) as hypotheses; property (b) of Theorem G.2 enters as b ∑ e(λ + leni,e)2 ≤ G1 for an integer G1 ≤ 2C1a2 1. In the contracting case exists_laws and exists_generates supply these hypotheses, and exists_setting states the conclusion of Theorem J.4 without them. The programs of Theorem J.3 are written out in full, where we describe them (thm_onecut_evaluator, thm_onecut_program). The quotients in the bounds of Theorems J.3 and J.4 are rounded down in Lean."
+   },
+   {
+    "lean": [
+     "scales_setting",
+     "prop_approx_acc_setting"
+    ],
+    "names": [
+     "Proposition K.5",
+     "Theorem K.6",
+     "Proposition N.4",
+     "Theorem J.4"
+    ],
+    "text": "Proposition K.5, Theorem K.6 and Proposition N.4 do not assume the contracting case. They take the conclusion of Theorem J.4 as a hypothesis (CutHyp), for a commutative ring A, which has to be finitely generated only in Theorem K.6 and Proposition N.4, and H = 16h with h ≥ 17, and scales_setting and prop_approx_acc_setting are their instances for the A and H of Section J in the contracting case."
+   },
+   {
+    "lean": [
+     "def_approx"
+    ],
+    "names": [
+     "Lemma C.2",
+     "Proposition M.2",
+     "Definition N.1"
+    ],
+    "text": "In Section C Lean fixes one particular free ultrafilter, the one that Mathlib calls hyperfilter, and counts the prices Wn from n = 0; the Lean form of Lemma C.2 also asserts that the limit that defines N exists and equals the infimum. In Proposition M.2 Lean has HC0 = 1, which matters only for empty I. The theorem def_approx states when a circuit approximates a polynomial, as in the second sentence of Definition N.1; the last sentence of the definition is the definition of Paper.VPBar, and the match rests on reading it."
+   },
+   {
+    "lean": [],
+    "names": [],
+    "text": "In Section I.1, Lean reads the construct of a pair from the length of its first component as a list, so that this component need not be the number of a construct, and such a pair is read as fail only if the length is above 10."
+   },
+   {
+    "lean": [
+     "universal_symbols_ne",
+     "lem_circuit_phi"
+    ],
+    "names": [
+     "Proposition I.1",
+     "Lemma K.2",
+     "Lemma K.3"
+    ],
+    "text": "In Proposition I.1, that the two symbols of the word of an instance are different is a separate theorem (universal_symbols_ne). Lemma K.2 is stated for the alphabet of these two symbols and the end mark and with explicit constants, in which the time is O((d + 1) log(L + n) + (|z| + 1) log n); its bound on the number of steps is for accepting runs, and halting is stated for the z with |z| < n. In Lemma K.3, lem_circuit_phi states what is used of Φ, not that it equals the printed sum over words."
+   }
+  ],
+  "stronger": {
+   "names": [
+    "Lemma A.3",
+    "Lemma E.4",
+    "Lemma E.7",
+    "Lemma F.1",
+    "Lemma F.2",
+    "Lemma I.2",
+    "Lemma K.3",
+    "Lemma M.1",
+    "Lemma N.2",
+    "Lemma N.3",
+    "Proposition B.2"
+   ],
+   "text": "Lemmas A.3, E.4, E.7, F.1, F.2, I.2, K.3, M.1, N.2 and N.3 and Proposition B.2"
+  },
+  "universes": {
+   "names": [
+    "Theorem M.3",
+    "Theorem N.5",
+    "Corollary M.4",
+    "Definition N.1",
+    "Lemma M.1",
+    "Lemma N.2"
+   ],
+   "text": "Theorems M.3 and N.5, Corollary M.4, Definition N.1 and Lemmas M.1 and N.2"
+  },
+  "words": {
+   "pairs": [
+    [
+     "gauge",
+     "an upper functional"
+    ],
+    [
+     "unit",
+     "a packet"
+    ],
+    [
+     "table",
+     "a node tensor"
+    ],
+    [
+     "bill",
+     "a tally"
+    ],
+    [
+     "near pair",
+     "an edge of the Cayley graph of Uh"
+    ],
+    [
+     "window",
+     "the boxes of Section C as well as for the windows of Section F"
+    ],
+    [
+     "state",
+     "the symbols of Section B"
+    ]
+   ],
+   "text": "gauge for an upper functional, unit for a packet, table for a node tensor, bill for a tally, near pair for an edge of the Cayley graph of Uh, window for the boxes of Section C as well as for the windows of Section F, and state for the symbols of Section B"
+  }
+ },
+ "references": {
+  "citations": [
+   {
+    "key": "Bür00b",
+    "part": "1"
+   },
+   {
+    "key": "Val79",
+    "part": "1"
+   },
+   {
+    "key": "Val82",
+    "part": "1"
+   },
+   {
+    "key": "Rys63",
+    "part": "1"
+   },
+   {
+    "key": "Gly10",
+    "part": "1"
+   },
+   {
+    "key": "Cur26",
+    "part": "1"
+   },
+   {
+    "key": "Ber84",
+    "part": "1"
+   },
+   {
+    "key": "BCS97",
+    "part": "1"
+   },
+   {
+    "key": "Bür00",
+    "part": "1"
+   },
+   {
+    "key": "SY10",
+    "part": "1"
+   },
+   {
+    "key": "Lan17",
+    "part": "1"
+   },
+   {
+    "key": "Sap21",
+    "part": "1"
+   },
+   {
+    "key": "Bür24",
+    "part": "1"
+   },
+   {
+    "key": "Str73",
+    "part": "1"
+   },
+   {
+    "key": "BS83",
+    "part": "1"
+   },
+   {
+    "key": "Raz26",
+    "part": "1"
+   },
+   {
+    "key": "Kal85",
+    "part": "1"
+   },
+   {
+    "key": "CKSV22",
+    "part": "1"
+   },
+   {
+    "key": "JS82",
+    "part": "1"
+   },
+   {
+    "key": "Yeh19",
+    "part": "1"
+   },
+   {
+    "key": "Nis91",
+    "part": "1"
+   },
+   {
+    "key": "GKKS14",
+    "part": "1"
+   },
+   {
+    "key": "KLSS17",
+    "part": "1"
+   },
+   {
+    "key": "KS17",
+    "part": "1"
+   },
+   {
+    "key": "Raz09",
+    "part": "1"
+   },
+   {
+    "key": "LST25",
+    "part": "1"
+   },
+   {
+    "key": "For24",
+    "part": "1"
+   },
+   {
+    "key": "Nis91",
+    "part": "1"
+   },
+   {
+    "key": "NW97",
+    "part": "1"
+   },
+   {
+    "key": "Hya79",
+    "part": "1"
+   },
+   {
+    "key": "VSBR83",
+    "part": "1"
+   },
+   {
+    "key": "AV08",
+    "part": "1"
+   },
+   {
+    "key": "Koi12",
+    "part": "1"
+   },
+   {
+    "key": "Tav15",
+    "part": "1"
+   },
+   {
+    "key": "GKKS16",
+    "part": "1"
+   },
+   {
+    "key": "Raz10",
+    "part": "1"
+   },
+   {
+    "key": "Raz13",
+    "part": "1"
+   },
+   {
+    "key": "MS01",
+    "part": "1"
+   },
+   {
+    "key": "MS08",
+    "part": "1"
+   },
+   {
+    "key": "BLMW11",
+    "part": "1"
+   },
+   {
+    "key": "Gro15",
+    "part": "1"
+   },
+   {
+    "key": "IP17",
+    "part": "1"
+   },
+   {
+    "key": "BIP19",
+    "part": "1"
+   },
+   {
+    "key": "MS01",
+    "part": "1"
+   },
+   {
+    "key": "MR04",
+    "part": "1"
+   },
+   {
+    "key": "CCL10",
+    "part": "1"
+   },
+   {
+    "key": "Yab15",
+    "part": "1"
+   },
+   {
+    "key": "LMR13",
+    "part": "1"
+   },
+   {
+    "key": "OAI26",
+    "part": "1"
+   },
+   {
+    "key": "She26b",
+    "part": "1"
+   },
+   {
+    "key": "Guo26",
+    "part": "1"
+   },
+   {
+    "key": "She26",
+    "part": "1"
+   },
+   {
+    "key": "KV26",
+    "part": "1"
+   },
+   {
+    "key": "BCRL79",
+    "part": "1"
+   },
+   {
+    "key": "Ald84",
+    "part": "1"
+   },
+   {
+    "key": "Bür04",
+    "part": "1"
+   },
+   {
+    "key": "GMQ16",
+    "part": "1"
+   },
+   {
+    "key": "IS22",
+    "part": "1"
+   },
+   {
+    "key": "BIZ18",
+    "part": "1"
+   },
+   {
+    "key": "Kum20",
+    "part": "1"
+   },
+   {
+    "key": "DDS21",
+    "part": "1"
+   },
+   {
+    "key": "EGOW18",
+    "part": "1"
+   },
+   {
+    "key": "GMOW19",
+    "part": "1"
+   },
+   {
+    "key": "Str88",
+    "part": "1"
+   },
+   {
+    "key": "WZ26",
+    "part": "1"
+   },
+   {
+    "key": "Str88",
+    "part": "1"
+   },
+   {
+    "key": "Str91",
+    "part": "1"
+   },
+   {
+    "key": "CVZ23",
+    "part": "1"
+   },
+   {
+    "key": "FSV18",
+    "part": "1"
+   },
+   {
+    "key": "GKSS17",
+    "part": "1"
+   },
+   {
+    "key": "RR97",
+    "part": "1"
+   },
+   {
+    "key": "CKRST20",
+    "part": "1"
+   },
+   {
+    "key": "KRST22",
+    "part": "1"
+   },
+   {
+    "key": "BGS75",
+    "part": "1"
+   },
+   {
+    "key": "AW09",
+    "part": "1"
+   },
+   {
+    "key": "KI04",
+    "part": "1"
+   },
+   {
+    "key": "Val79",
+    "part": "1"
+   },
+   {
+    "key": "Val82",
+    "part": "1"
+   },
+   {
+    "key": "Rys63",
+    "part": "1"
+   },
+   {
+    "key": "Val79",
+    "part": "1"
+   },
+   {
+    "key": "Val79b",
+    "part": "1"
+   },
+   {
+    "key": "Bür00b",
+    "part": "1"
+   },
+   {
+    "key": "Str87",
+    "part": "2"
+   },
+   {
+    "key": "Str88",
+    "part": "2"
+   },
+   {
+    "key": "Val79",
+    "part": "2"
+   },
+   {
+    "key": "JS82",
+    "part": "2"
+   },
+   {
+    "key": "MP08",
+    "part": "2"
+   },
+   {
+    "key": "Hya79",
+    "part": "2"
+   },
+   {
+    "key": "VSBR83",
+    "part": "2"
+   },
+   {
+    "key": "BT72",
+    "part": "2"
+   },
+   {
+    "key": "BH99",
+    "part": "2"
+   },
+   {
+    "key": "Stu03",
+    "part": "2"
+   },
+   {
+    "key": "Eis95",
+    "part": "2"
+   },
+   {
+    "key": "Ber84",
+    "part": "2"
+   },
+   {
+    "key": "Str87",
+    "part": "A"
+   },
+   {
+    "key": "Str88",
+    "part": "A"
+   },
+   {
+    "key": "CVZ19",
+    "part": "A"
+   },
+   {
+    "key": "CZ19",
+    "part": "A"
+   },
+   {
+    "key": "VC17",
+    "part": "A"
+   },
+   {
+    "key": "Orús14",
+    "part": "A"
+   },
+   {
+    "key": "Str88",
+    "part": "A"
+   },
+   {
+    "key": "Str88",
+    "part": "A"
+   },
+   {
+    "key": "Str87",
+    "part": "A"
+   },
+   {
+    "key": "BS83b",
+    "part": "A"
+   },
+   {
+    "key": "Zui19",
+    "part": "A"
+   },
+   {
+    "key": "Fri21",
+    "part": "A"
+   },
+   {
+    "key": "Vra22",
+    "part": "A"
+   },
+   {
+    "key": "WZ26",
+    "part": "A"
+   },
+   {
+    "key": "RZ21",
+    "part": "A"
+   },
+   {
+    "key": "And84",
+    "part": "B"
+   },
+   {
+    "key": "HR18",
+    "part": "B"
+   },
+   {
+    "key": "KLS10",
+    "part": "B"
+   },
+   {
+    "key": "BT72",
+    "part": "C"
+   },
+   {
+    "key": "BH99",
+    "part": "C"
+   },
+   {
+    "key": "BT72",
+    "part": "C"
+   },
+   {
+    "key": "Stu03",
+    "part": "C"
+   },
+   {
+    "key": "BH99",
+    "part": "C"
+   },
+   {
+    "key": "BH99",
+    "part": "C"
+   },
+   {
+    "key": "Stu03",
+    "part": "C"
+   },
+   {
+    "key": "BN08",
+    "part": "C"
+   },
+   {
+    "key": "Res68",
+    "part": "C"
+   },
+   {
+    "key": "KS93",
+    "part": "C"
+   },
+   {
+    "key": "Enf69",
+    "part": "C"
+   },
+   {
+    "key": "Sat09",
+    "part": "C"
+   },
+   {
+    "key": "Stu03",
+    "part": "C"
+   },
+   {
+    "key": "BH99",
+    "part": "C"
+   },
+   {
+    "key": "BH99",
+    "part": "C"
+   },
+   {
+    "key": "BN08",
+    "part": "C"
+   },
+   {
+    "key": "Val79",
+    "part": "E"
+   },
+   {
+    "key": "Bür00",
+    "part": "E"
+   },
+   {
+    "key": "Bür24",
+    "part": "E"
+   },
+   {
+    "key": "Hya79",
+    "part": "E"
+   },
+   {
+    "key": "VSBR83",
+    "part": "E"
+   },
+   {
+    "key": "Sto95",
+    "part": "F"
+   },
+   {
+    "key": "PS13",
+    "part": "F"
+   },
+   {
+    "key": "NS23",
+    "part": "F"
+   },
+   {
+    "key": "DJ02",
+    "part": "F"
+   },
+   {
+    "key": "EJ10",
+    "part": "F"
+   },
+   {
+    "key": "Kas11",
+    "part": "F"
+   },
+   {
+    "key": "Opp17",
+    "part": "F"
+   },
+   {
+    "key": "Wan00",
+    "part": "F"
+   },
+   {
+    "key": "IN05",
+    "part": "F"
+   },
+   {
+    "key": "Gro03",
+    "part": "F"
+   },
+   {
+    "key": "MN13",
+    "part": "F"
+   },
+   {
+    "key": "KO18",
+    "part": "H"
+   },
+   {
+    "key": "KO23",
+    "part": "H"
+   },
+   {
+    "key": "MS08b",
+    "part": "H"
+   },
+   {
+    "key": "Orús14",
+    "part": "H"
+   },
+   {
+    "key": "DHM02",
+    "part": "H"
+   },
+   {
+    "key": "CDM16",
+    "part": "H"
+   },
+   {
+    "key": "AKK22",
+    "part": "H"
+   },
+   {
+    "key": "Sch78",
+    "part": "I"
+   },
+   {
+    "key": "Sch80",
+    "part": "I"
+   },
+   {
+    "key": "BEGKN94",
+    "part": "I"
+   },
+   {
+    "key": "Rob91",
+    "part": "I"
+   },
+   {
+    "key": "GS89",
+    "part": "I"
+   },
+   {
+    "key": "HPV77",
+    "part": "I"
+   },
+   {
+    "key": "PPST83",
+    "part": "I"
+   },
+   {
+    "key": "Wil25",
+    "part": "I"
+   },
+   {
+    "key": "JS82",
+    "part": "K"
+   },
+   {
+    "key": "MP08",
+    "part": "K"
+   },
+   {
+    "key": "VSBR83",
+    "part": "K"
+   },
+   {
+    "key": "Vin91",
+    "part": "K"
+   },
+   {
+    "key": "AJMV98",
+    "part": "K"
+   },
+   {
+    "key": "Eis95",
+    "part": "K"
+   },
+   {
+    "key": "FLMV05",
+    "part": "K"
+   },
+   {
+    "key": "vM07",
+    "part": "K"
+   },
+   {
+    "key": "SW14",
+    "part": "K"
+   },
+   {
+    "key": "MW17",
+    "part": "K"
+   },
+   {
+    "key": "All99",
+    "part": "K"
+   },
+   {
+    "key": "KP09",
+    "part": "K"
+   },
+   {
+    "key": "Rys63",
+    "part": "L"
+   },
+   {
+    "key": "Gly10",
+    "part": "L"
+   },
+   {
+    "key": "Val79",
+    "part": "M"
+   },
+   {
+    "key": "Mal03",
+    "part": "M"
+   },
+   {
+    "key": "FPV13",
+    "part": "M"
+   },
+   {
+    "key": "Val79",
+    "part": "M"
+   },
+   {
+    "key": "Ald84",
+    "part": "N"
+   },
+   {
+    "key": "Bür04",
+    "part": "N"
+   },
+   {
+    "key": "Ber84",
+    "part": "N"
+   },
+   {
+    "key": "MS01",
+    "part": "N"
+   }
+  ],
+  "entries": [
+   {
+    "key": "AJMV98",
+    "text": "E. Allender, J. Jiao, M. Mahajan and V. Vinay, Non-commutative arithmetic circuits: depth reduction and size lower bounds, Theoret. Comput. Sci. 209 (1998), 47–86.",
+    "year": 1998
+   },
+   {
+    "key": "AKK22",
+    "text": "P. Austrin, P. Kaski and K. Kubjas, Tensor network complexity of multilinear maps, Theory Comput. 18 (2022), article 16.",
+    "year": 2022
+   },
+   {
+    "key": "Ald84",
+    "text": "A. Alder, Grenzrang und Grenzkomplexität aus algebraischer und topologischer Sicht, Dissertation, Universität Zürich, 1984.",
+    "year": 1984
+   },
+   {
+    "key": "All99",
+    "text": "E. Allender, The permanent requires large uniform threshold circuits, Chicago J. Theoret. Comput. Sci. 1999, article 7.",
+    "year": 1999
+   },
+   {
+    "key": "And84",
+    "text": "G. E. Andrews, Generalized Frobenius partitions, Mem. Amer. Math. Soc. 49 (1984), no. 301.",
+    "year": 1984
+   },
+   {
+    "key": "AV08",
+    "text": "M. Agrawal and V. Vinay, Arithmetic circuits: a chasm at depth four, FOCS 2008, 67–75.",
+    "year": 2008
+   },
+   {
+    "key": "AW09",
+    "text": "S. Aaronson and A. Wigderson, Algebrization: a new barrier in complexity theory, ACM Trans. Comput. Theory 1 (2009), article 2.",
+    "year": 2009
+   },
+   {
+    "key": "BCRL79",
+    "text": "D. Bini, M. Capovani, F. Romani and G. Lotti, O(n2.7799) complexity for n × n approximate matrix multiplication, Inform. Process. Lett. 8 (1979), 234–235.",
+    "year": 1979
+   },
+   {
+    "key": "BCS97",
+    "text": "P. Bürgisser, M. Clausen and M. A. Shokrollahi, Algebraic complexity theory, Springer, 1997.",
+    "year": 1997
+   },
+   {
+    "key": "BEGKN94",
+    "text": "M. Blum, W. Evans, P. Gemmell, S. Kannan and M. Naor, Checking the correctness of memories, Algorithmica 12 (1994), 225–244.",
+    "year": 1994
+   },
+   {
+    "key": "Ber84",
+    "text": "S. J. Berkowitz, On computing the determinant in small parallel time using a small number of processors, Inform. Process. Lett. 18 (1984), 147–150.",
+    "year": 1984
+   },
+   {
+    "key": "BGS75",
+    "text": "T. Baker, J. Gill and R. Solovay, Relativizations of the P ? = NP question, SIAM J. Comput. 4 (1975), 431–442.",
+    "year": 1975
+   },
+   {
+    "key": "BH99",
+    "text": "M. R. Bridson and A. Haefliger, Metric spaces of non-positive curvature, Springer, 1999.",
+    "year": 1999
+   },
+   {
+    "key": "BIP19",
+    "text": "P. Bürgisser, C. Ikenmeyer and G. Panova, No occurrence obstructions in geometric complexity theory, J. Amer. Math. Soc. 32 (2019), 163–193.",
+    "year": 2019
+   },
+   {
+    "key": "BIZ18",
+    "text": "K. Bringmann, C. Ikenmeyer and J. Zuiddam, On algebraic branching programs of small width, J. ACM 65 (2018), article 32.",
+    "year": 2018
+   },
+   {
+    "key": "BLMW11",
+    "text": "P. Bürgisser, J. M. Landsberg, L. Manivel and J. Weyman, An overview of mathematical issues arising in the geometric complexity theory approach to VP ≠ VNP, SIAM J. Comput. 40 (2011), 1179–1209.",
+    "year": 2011
+   },
+   {
+    "key": "BN08",
+    "text": "I. D. Berg and I. G. Nikolaev, Quasilinearization and curvature of Aleksandrov spaces, Geom. Dedicata 133 (2008), 195–218.",
+    "year": 2008
+   },
+   {
+    "key": "BS83",
+    "text": "W. Baur and V. Strassen, The complexity of partial derivatives, Theoret. Comput. Sci. 22 (1983), 317–330.",
+    "year": 1983
+   },
+   {
+    "key": "BS83b",
+    "text": "E. Becker and N. Schwartz, Zum Darstellungssatz von Kadison–Dubois, Arch. Math. (Basel) 40 (1983), 421–428.",
+    "year": 1983
+   },
+   {
+    "key": "BT72",
+    "text": "F. Bruhat and J. Tits, Groupes réductifs sur un corps local: I. Données radicielles valuées, Publ. Math. IHÉS 41 (1972), 5–251.",
+    "year": 1972
+   },
+   {
+    "key": "Bür00",
+    "text": "P. Bürgisser, Completeness and reduction in algebraic complexity theory, Springer, 2000.",
+    "year": 2000
+   },
+   {
+    "key": "Bür00b",
+    "text": "P. Bürgisser, Cook’s versus Valiant’s hypothesis, Theoret. Comput. Sci. 235 (2000), 71–88.",
+    "year": 2000
+   },
+   {
+    "key": "Bür04",
+    "text": "P. Bürgisser, The complexity of factors of multivariate polynomials, Found. Comput. Math. 4 (2004), 369–396.",
+    "year": 2004
+   },
+   {
+    "key": "Bür24",
+    "text": "P. Bürgisser, Completeness classes in algebraic complexity theory, arXiv:2406.06217, 2024; to appear in Foundations of Computation and Machine Learning: The Work of Leslie Valiant (R. A. Servedio, ed.), ACM Books.",
+    "year": 2024
+   },
+   {
+    "key": "CCL10",
+    "text": "J.-Y. Cai, X. Chen and D. Li, Quadratic lower bound for permanent vs. determinant in any characteristic, Comput. Complexity 19 (2010), 37–56.",
+    "year": 2010
+   },
+   {
+    "key": "CDM16",
+    "text": "F. Capelli, A. Durand and S. Mengel, The arithmetic complexity of tensor contraction, Theory Comput. Syst. 58 (2016), 506–527.",
+    "year": 2016
+   },
+   {
+    "key": "CKRST20",
+    "text": "P. Chatterjee, M. Kumar, C. Ramya, R. Saptharishi and A. Tengse, On the existence of algebraically natural proofs, FOCS 2020; arXiv:2004.14147.",
+    "year": 2020
+   },
+   {
+    "key": "CKSV22",
+    "text": "P. Chatterjee, M. Kumar, A. She and B. L. Volk, Quadratic lower bounds for algebraic branching programs and formulas, Comput. Complexity 31 (2022), article 8.",
+    "year": 2022
+   },
+   {
+    "key": "Cur26",
+    "text": "R. Curticapean, Get permanent results faster by counting stars, arXiv:2611.03636, 2026.",
+    "year": 2026
+   },
+   {
+    "key": "CVZ19",
+    "text": "M. Christandl, P. Vrana and J. Zuiddam, Asymptotic tensor rank of graph tensors: beyond matrix multiplication, Comput. Complexity 28 (2019), 57–111.",
+    "year": 2019
+   },
+   {
+    "key": "CVZ23",
+    "text": "M. Christandl, P. Vrana and J. Zuiddam, Universal points in the asymptotic spectrum of tensors, J. Amer. Math. Soc. 36 (2023), 31–79.",
+    "year": 2023
+   },
+   {
+    "key": "CZ19",
+    "text": "M. Christandl and J. Zuiddam, Tensor surgery and tensor rank, Comput. Complexity 28 (2019), 27–56.",
+    "year": 2019
+   },
+   {
+    "key": "DDS21",
+    "text": "P. Dutta, P. Dwivedi and N. Saxena, Demystifying the border of depth-3 algebraic circuits, FOCS 2021, 92–103.",
+    "year": 2021
+   },
+   {
+    "key": "DHM02",
+    "text": "C. Damm, M. Holzer and P. McKenzie, The complexity of tensor calculus, Comput. Complexity 11 (2002), 54–89.",
+    "year": 2002
+   },
+   {
+    "key": "DJ02",
+    "text": "J. Dymara and T. Januszkiewicz, Cohomology of buildings and of their automorphism groups, Invent. Math. 150 (2002), 579–627.",
+    "year": 2002
+   },
+   {
+    "key": "EGOW18",
+    "text": "K. Efremenko, A. Garg, R. Oliveira and A. Wigderson, Barriers for rank methods in arithmetic complexity, ITCS 2018, LIPIcs 94, 1:1–1:19.",
+    "year": 2018
+   },
+   {
+    "key": "Eis95",
+    "text": "D. Eisenbud, Commutative algebra with a view toward algebraic geometry, Springer, 1995.",
+    "year": 1995
+   },
+   {
+    "key": "EJ10",
+    "text": "M. Ershov and A. Jaikin-Zapirain, Property (T) for noncommutative universal lattices, Invent. Math. 179 (2010), 303–347.",
+    "year": 2010
+   },
+   {
+    "key": "Enf69",
+    "text": "P. Enflo, On the nonexistence of uniform homeomorphisms between Lp-spaces, Ark. Mat. 8 (1969), 103–105.",
+    "year": 1969
+   },
+   {
+    "key": "FLMV05",
+    "text": "L. Fortnow, R. Lipton, D. van Melkebeek and A. Viglas, Time-space lower bounds for satisfiability, J. ACM 52 (2005), 835–865.",
+    "year": 2005
+   },
+   {
+    "key": "For24",
+    "text": "M. A. Forbes, Low-depth algebraic circuit lower bounds over any field, CCC 2024, LIPIcs 300, 31:1–31:16.",
+    "year": 2024
+   },
+   {
+    "key": "FPV13",
+    "text": "H. Fournier, S. Perifel and R. de Joannis de Verclos, On fixed-polynomial size circuit lower bounds for uniform polynomials in the sense of Valiant, Inform. and Comput. 240 (2015), 31–41; preliminary version in MFCS 2013.",
+    "year": 2013
+   },
+   {
+    "key": "Fri21",
+    "text": "T. Fritz, A generalization of Strassen’s Positivstellensatz, Comm. Algebra 49 (2021), 482–499.",
+    "year": 2021
+   },
+   {
+    "key": "FSV18",
+    "text": "M. A. Forbes, A. Shpilka and B. L. Volk, Succinct hitting sets and barriers to proving lower bounds for algebraic circuits, Theory Comput. 14 (2018), article 18.",
+    "year": 2018
+   },
+   {
+    "key": "GKKS14",
+    "text": "A. Gupta, P. Kamath, N. Kayal and R. Saptharishi, Approaching the chasm at depth four, J. ACM 61 (2014), article 33.",
+    "year": 2014
+   },
+   {
+    "key": "GKKS16",
+    "text": "A. Gupta, P. Kamath, N. Kayal and R. Saptharishi, Arithmetic circuits: a chasm at depth 3, SIAM J. Comput. 45 (2016), 1064–1079.",
+    "year": 2016
+   },
+   {
+    "key": "GKSS17",
+    "text": "J. A. Grochow, M. Kumar, M. Saks and S. Saraf, Towards an algebraic natural proofs barrier via polynomial identity testing, arXiv:1701.01717, 2017.",
+    "year": 2017
+   },
+   {
+    "key": "Gly10",
+    "text": "D. G. Glynn, The permanent of a square matrix, European J. Combin. 31 (2010), 1887–1891.",
+    "year": 2010
+   },
+   {
+    "key": "GMOW19",
+    "text": "A. Garg, V. Makam, R. Oliveira and A. Wigderson, More barriers for rank methods, via a “numeric to symbolic” transfer, FOCS 2019, 824–844.",
+    "year": 2019
+   },
+   {
+    "key": "GMQ16",
+    "text": "J. A. Grochow, K. D. Mulmuley and Y. Qiao, Boundaries of VP and VNP, ICALP 2016, LIPIcs 55, 34:1–34:14.",
+    "year": 2016
+   },
+   {
+    "key": "Gro03",
+    "text": "M. Gromov, Random walk in random groups, Geom. Funct. Anal. 13 (2003), 73–146.",
+    "year": 2003
+   },
+   {
+    "key": "Gro15",
+    "text": "J. A. Grochow, Unifying known lower bounds via geometric complexity theory, Comput. Complexity 24 (2015), 393–475.",
+    "year": 2015
+   },
+   {
+    "key": "Guo26",
+    "text": "J. Guo, An n2 log log n lower bound for permanent circuits with valid division, arXiv:2609.29568, 2026.",
+    "year": 2026
+   },
+   {
+    "key": "GS89",
+    "text": "Y. Gurevich and S. Shelah, Nearly linear time, Logic at Botik ’89, LNCS 363 (1989), 108–118.",
+    "year": 1989
+   },
+   {
+    "key": "HPV77",
+    "text": "J. Hopcroft, W. Paul and L. Valiant, On time versus space, J. ACM 24 (1977), 332–337.",
+    "year": 1977
+   },
+   {
+    "key": "HR18",
+    "text": "G. H. Hardy and S. Ramanujan, Asymptotic formulae in combinatory analysis, Proc. London Math. Soc. (2) 17 (1918), 75–115.",
+    "year": 1918
+   },
+   {
+    "key": "Hya79",
+    "text": "L. Hyafil, On the parallel evaluation of multivariate polynomials, SIAM J. Comput. 8 (1979), 120–123.",
+    "year": 1979
+   },
+   {
+    "key": "IN05",
+    "text": "H. Izeki and S. Nayatani, Combinatorial harmonic maps and discrete-group actions on Hadamard spaces, Geom. Dedicata 114 (2005), 147–188.",
+    "year": 2005
+   },
+   {
+    "key": "IP17",
+    "text": "C. Ikenmeyer and G. Panova, Rectangular Kronecker coefficients and plethysms in geometric complexity theory, Adv. Math. 319 (2017), 40–66.",
+    "year": 2017
+   },
+   {
+    "key": "IS22",
+    "text": "C. Ikenmeyer and A. Sanyal, A note on VNP-completeness and border complexity, Inform. Process. Lett. 176 (2022), 106243.",
+    "year": 2022
+   },
+   {
+    "key": "JS82",
+    "text": "M. Jerrum and M. Snir, Some exact complexity results for straight-line computations over semirings, J. ACM 29 (1982), 874–897.",
+    "year": 1982
+   },
+   {
+    "key": "Kal85",
+    "text": "K. A. Kalorkoti, A lower bound for the formula size of rational functions, SIAM J. Comput. 14 (1985), 678–687.",
+    "year": 1985
+   },
+   {
+    "key": "Kas11",
+    "text": "M. Kassabov, Subspace arrangements and property T, Groups Geom. Dyn. 5 (2011), 445–477.",
+    "year": 2011
+   },
+   {
+    "key": "KI04",
+    "text": "V. Kabanets and R. Impagliazzo, Derandomizing polynomial identity tests means proving circuit lower bounds, Comput. Complexity 13 (2004), 1–46.",
+    "year": 2004
+   },
+   {
+    "key": "KLS10",
+    "text": "R. Koekoek, P. A. Lesky and R. F. Swarttouw, Hypergeometric orthogonal polynomials and their q-analogues, Springer, 2010.",
+    "year": 2010
+   },
+   {
+    "key": "KLSS17",
+    "text": "N. Kayal, N. Limaye, C. Saha and S. Srinivasan, An exponential lower bound for homogeneous depth four arithmetic formulas, SIAM J. Comput. 46 (2017), 307–335.",
+    "year": 2017
+   },
+   {
+    "key": "KO18",
+    "text": "T. Kaufman and I. Oppenheim, Construction of new local spectral high dimensional expanders, STOC 2018, 773–786.",
+    "year": 2018
+   },
+   {
+    "key": "KO23",
+    "text": "T. Kaufman and I. Oppenheim, High dimensional expanders and coset geometries, European J. Combin. 111 (2023), 103696.",
+    "year": 2023
+   },
+   {
+    "key": "Koi12",
+    "text": "P. Koiran, Arithmetic circuits: the chasm at depth four gets wider, Theoret. Comput. Sci. 448 (2012), 56–65.",
+    "year": 2012
+   },
+   {
+    "key": "KP09",
+    "text": "P. Koiran and S. Perifel, A superpolynomial lower bound on the size of uniform non-constantdepth threshold circuits for the permanent, CCC 2009, 35–40.",
+    "year": 2009
+   },
+   {
+    "key": "KRST22",
+    "text": "M. Kumar, C. Ramya, R. Saptharishi and A. Tengse, If VNP is hard, then so are equations for it, STACS 2022, LIPIcs 219, 44:1–44:13.",
+    "year": 2022
+   },
+   {
+    "key": "KS17",
+    "text": "M. Kumar and S. Saraf, On the power of homogeneous depth 4 arithmetic circuits, SIAM J. Comput. 46 (2017), 336–387.",
+    "year": 2017
+   },
+   {
+    "key": "KS93",
+    "text": "N. J. Korevaar and R. M. Schoen, Sobolev spaces and harmonic maps for metric space targets, Comm. Anal. Geom. 1 (1993), 561–659.",
+    "year": 1993
+   },
+   {
+    "key": "Kum20",
+    "text": "M. Kumar, On the power of border of depth-3 arithmetic circuits, ACM Trans. Comput. Theory 12 (2020), article 5.",
+    "year": 2020
+   },
+   {
+    "key": "KV26",
+    "text": "M. Kumar and B. L. Volk, A quadratic lower bound on determinantal complexity, arXiv:2609.34462, 2026.",
+    "year": 2026
+   },
+   {
+    "key": "Lan17",
+    "text": "J. M. Landsberg, Geometry and complexity theory, Cambridge University Press, 2017. [Lean] L. de Moura and S. Ullrich, The Lean 4 theorem prover and programming language, CADE 28, LNCS 12699 (2021), 625–635.",
+    "year": 2017
+   },
+   {
+    "key": "LMR13",
+    "text": "J. M. Landsberg, L. Manivel and N. Ressayre, Hypersurfaces with degenerate duals and the geometric complexity theory program, Comment. Math. Helv. 88 (2013), 469–484.",
+    "year": 2013
+   },
+   {
+    "key": "LST25",
+    "text": "N. Limaye, S. Srinivasan and S. Tavenas, Superpolynomial lower bounds against low-depth algebraic circuits, J. ACM 72 (2025), article 26; preliminary version in FOCS 2021.",
+    "year": 2025
+   },
+   {
+    "key": "Mal03",
+    "text": "G. Malod, Polynômes et coefficients, Thèse, Université Claude Bernard Lyon 1, 2003. [Mathlib] The mathlib Community, The Lean mathematical library, CPP 2020, 367–381.",
+    "year": 2003
+   },
+   {
+    "key": "MN13",
+    "text": "M. Mendel and A. Naor, Spectral calculus and Lipschitz extension for barycentric metric spaces, Anal. Geom. Metr. Spaces 1 (2013), 163–199.",
+    "year": 2013
+   },
+   {
+    "key": "MP08",
+    "text": "G. Malod and N. Portier, Characterizing Valiant’s algebraic complexity classes, J. Complexity 24 (2008), 16–38.",
+    "year": 2008
+   },
+   {
+    "key": "MR04",
+    "text": "T. Mignon and N. Ressayre, A quadratic bound for the determinant and permanent problem, Int. Math. Res. Not. 2004, 4241–4253.",
+    "year": 2004
+   },
+   {
+    "key": "MS01",
+    "text": "K. D. Mulmuley and M. Sohoni, Geometric complexity theory I: an approach to the P vs. NP and related problems, SIAM J. Comput. 31 (2001), 496–526.",
+    "year": 2001
+   },
+   {
+    "key": "MS08",
+    "text": "K. D. Mulmuley and M. Sohoni, Geometric complexity theory II: towards explicit obstructions for embeddings among class varieties, SIAM J. Comput. 38 (2008), 1175–1206.",
+    "year": 2008
+   },
+   {
+    "key": "MS08b",
+    "text": "I. L. Markov and Y. Shi, Simulating quantum computation by contracting tensor networks, SIAM J. Comput. 38 (2008), 963–981.",
+    "year": 2008
+   },
+   {
+    "key": "MW17",
+    "text": "C. D. Murray and R. R. Williams, Easiness amplification and uniform circuit lower bounds, CCC 2017, LIPIcs 79, 8:1–8:21.",
+    "year": 2017
+   },
+   {
+    "key": "Nis91",
+    "text": "N. Nisan, Lower bounds for non-commutative computation, STOC 1991, 410–418.",
+    "year": 1991
+   },
+   {
+    "key": "NS23",
+    "text": "E. Nestoridi and A. Sly, The random walk on upper triangular matrices over Z/mZ, Probab. Theory Related Fields 187 (2023), 571–601.",
+    "year": 2023
+   },
+   {
+    "key": "NW97",
+    "text": "N. Nisan and A. Wigderson, Lower bounds on arithmetic circuits via partial derivatives, Comput. Complexity 6 (1996/97), 217–234.",
+    "year": 1997
+   },
+   {
+    "key": "OAI26",
+    "text": "OpenAI, manuscript on the border determinantal complexity of the permanent, with a Lean development, September 24, 2026; see [Guo26, She26b].",
+    "year": 2026
+   },
+   {
+    "key": "Opp17",
+    "text": "I. Oppenheim, Averaged projections, angles between groups and strengthening of Banach property (T), Math. Ann. 367 (2017), 623–666.",
+    "year": 2017
+   },
+   {
+    "key": "Orús14",
+    "text": "R. Orús, A practical introduction to tensor networks: matrix product states and projected entangled pair states, Ann. Physics 349 (2014), 117–158.",
+    "year": 2014
+   },
+   {
+    "key": "PPST83",
+    "text": "W. J. Paul, N. Pippenger, E. Szemerédi and W. T. Trotter, On determinism versus nondeterminism and related problems, FOCS 1983, 429–438.",
+    "year": 1983
+   },
+   {
+    "key": "PS13",
+    "text": "Y. Peres and A. Sly, Mixing of the upper triangular matrix walk, Probab. Theory Related Fields 156 (2013), 581–591.",
+    "year": 2013
+   },
+   {
+    "key": "Raz09",
+    "text": "R. Raz, Multi-linear formulas for permanent and determinant are of super-polynomial size, J. ACM 56 (2009), article 8.",
+    "year": 2009
+   },
+   {
+    "key": "Raz10",
+    "text": "R. Raz, Elusive functions and lower bounds for arithmetic circuits, Theory Comput. 6 (2010), 135–177.",
+    "year": 2010
+   },
+   {
+    "key": "Raz13",
+    "text": "R. Raz, Tensor-rank and lower bounds for arithmetic formulas, J. ACM 60 (2013), article 40.",
+    "year": 2013
+   },
+   {
+    "key": "Raz26",
+    "text": "R. Raz, Polynomial lower bounds for arithmetic circuits over non-commutative rings, ECCC TR26-061, arXiv:2604.22006, 2026.",
+    "year": 2026
+   },
+   {
+    "key": "Res68",
+    "text": "Yu. G. Reshetnyak, Inextensible mappings in a space of curvature no greater than K, Siberian Math. J. 9 (1968), 683–689.",
+    "year": 1968
+   },
+   {
+    "key": "Rob91",
+    "text": "J. M. Robson, An O(T log T ) reduction from RAM computations to satisfiability, Theoret. Comput. Sci. 82 (1991), 141–149.",
+    "year": 1991
+   },
+   {
+    "key": "RR97",
+    "text": "A. A. Razborov and S. Rudich, Natural proofs, J. Comput. System Sci. 55 (1997), 24–35.",
+    "year": 1997
+   },
+   {
+    "key": "Rys63",
+    "text": "H. J. Ryser, Combinatorial mathematics, Carus Mathematical Monographs 14, Mathematical Association of America, 1963.",
+    "year": 1963
+   },
+   {
+    "key": "RZ21",
+    "text": "R. Robere and J. Zuiddam, Amortized circuit complexity, formal complexity measures, and catalytic algorithms, FOCS 2021, 759–769.",
+    "year": 2021
+   },
+   {
+    "key": "Sap21",
+    "text": "R. Saptharishi, A survey of lower bounds in arithmetic circuit complexity, version 9.0.3, 2021, https://github.com/dasarpmar/lowerbounds-survey.",
+    "year": 2021
+   },
+   {
+    "key": "Sat09",
+    "text": "T. Sato, An alternative proof of Berg and Nikolaev’s characterization of CAT(0)-spaces via quadrilateral inequality, Arch. Math. (Basel) 93 (2009), 487–490.",
+    "year": 2009
+   },
+   {
+    "key": "Sch78",
+    "text": "C. P. Schnorr, Satisfiability is quasilinear complete in NQL, J. ACM 25 (1978), 136–145.",
+    "year": 1978
+   },
+   {
+    "key": "Sch80",
+    "text": "A. Schönhage, Storage modification machines, SIAM J. Comput. 9 (1980), 490–508.",
+    "year": 1980
+   },
+   {
+    "key": "She26",
+    "text": "K. Sheshadri, A fully Lean-verified quadratic lower bound on the border determinantal complexity of xn 1 + ··· + xn n over C, including the symmetric and exact models, arXiv:2606.13628, 2026.",
+    "year": 2026
+   },
+   {
+    "key": "She26b",
+    "text": "K. Sheshadri, Cubic lower bounds for the permanent in odd characteristic, for Pfaffian representations, and for polynomial entries, arXiv:2610.40484, 2026.",
+    "year": 2026
+   },
+   {
+    "key": "Sto95",
+    "text": "R. Stong, Random walks on the groups of upper triangular matrices, Ann. Probab. 23 (1995), 1939–1949.",
+    "year": 1995
+   },
+   {
+    "key": "Str73",
+    "text": "V. Strassen, Die Berechnungskomplexität von elementarsymmetrischen Funktionen und von Interpolationskoeffizienten, Numer. Math. 20 (1973), 238–251.",
+    "year": 1973
+   },
+   {
+    "key": "Str87",
+    "text": "V. Strassen, Relative bilinear complexity and matrix multiplication, J. reine angew. Math. 375/376 (1987), 406–443.",
+    "year": 1987
+   },
+   {
+    "key": "Str88",
+    "text": "V. Strassen, The asymptotic spectrum of tensors, J. reine angew. Math. 384 (1988), 102–152.",
+    "year": 1988
+   },
+   {
+    "key": "Str91",
+    "text": "V. Strassen, Degeneration and complexity of bilinear maps: some asymptotic spectra, J. reine angew. Math. 413 (1991), 127–180.",
+    "year": 1991
+   },
+   {
+    "key": "Stu03",
+    "text": "K.-T. Sturm, Probability measures on metric spaces of nonpositive curvature, Contemp. Math. 338 (2003), 357–390.",
+    "year": 2003
+   },
+   {
+    "key": "SW14",
+    "text": "R. Santhanam and R. Williams, On uniformity and circuit lower bounds, Comput. Complexity 23 (2014), 177–205.",
+    "year": 2014
+   },
+   {
+    "key": "SY10",
+    "text": "A. Shpilka and A. Yehudayoff, Arithmetic circuits: a survey of recent results and open questions, Found. Trends Theor. Comput. Sci. 5 (2010), 207–388.",
+    "year": 2010
+   },
+   {
+    "key": "Tav15",
+    "text": "S. Tavenas, Improved bounds for reduction to depth 4 and depth 3, Inform. and Comput. 240 (2015), 2–11.",
+    "year": 2015
+   },
+   {
+    "key": "Val79",
+    "text": "L. G. Valiant, Completeness classes in algebra, STOC 1979, 249–261.",
+    "year": 1979
+   },
+   {
+    "key": "Val79b",
+    "text": "L. G. Valiant, The complexity of computing the permanent, Theoret. Comput. Sci. 8 (1979), 189–201.",
+    "year": 1979
+   },
+   {
+    "key": "Val82",
+    "text": "L. G. Valiant, Reducibility by algebraic projections, in Logic and Algorithmic, Monogr. Enseign. Math. 30 (1982), 365–380.",
+    "year": 1982
+   },
+   {
+    "key": "VC17",
+    "text": "P. Vrana and M. Christandl, Entanglement distillation from Greenberger–Horne–Zeilinger shares, Comm. Math. Phys. 352 (2017), 621–627.",
+    "year": 2017
+   },
+   {
+    "key": "Vin91",
+    "text": "V.Vinay, Countingauxiliarypushdownautomataandsemi-unboundedarithmeticcircuits, Structure in Complexity Theory 1991, 270–284.",
+    "year": 1991
+   },
+   {
+    "key": "vM07",
+    "text": "D. van Melkebeek, A survey of lower bounds for satisfiability and related problems, Found. Trends Theor. Comput. Sci. 2 (2007), 197–303.",
+    "year": 2007
+   },
+   {
+    "key": "Vra22",
+    "text": "P. Vrana, A generalization of Strassen’s theorem on preordered semirings, Order 39 (2022), 209– 228.",
+    "year": 2022
+   },
+   {
+    "key": "VSBR83",
+    "text": "L. G. Valiant, S. Skyum, S. Berkowitz and C. Rackoff, Fast parallel computation of polynomials using few processors, SIAM J. Comput. 12 (1983), 641–644.",
+    "year": 1983
+   },
+   {
+    "key": "Wan00",
+    "text": "M.-T. Wang, Generalized harmonic maps and representations of discrete groups, Comm. Anal. Geom. 8 (2000), 545–563.",
+    "year": 2000
+   },
+   {
+    "key": "Wil25",
+    "text": "R. R. Williams, Simulating time with square-root space, STOC 2025, 13–23.",
+    "year": 2025
+   },
+   {
+    "key": "WZ26",
+    "text": "A. Wigderson and J. Zuiddam, Asymptotic spectra: theory, applications, and extensions, Bull. Amer. Math. Soc. 63 (2026), 199–331.",
+    "year": 2026
+   },
+   {
+    "key": "Yab15",
+    "text": "A. Yabe, Bi-polynomial rank and determinantal complexity, arXiv:1504.00151, 2015.",
+    "year": 2015
+   },
+   {
+    "key": "Yeh19",
+    "text": "A. Yehudayoff, Separating monotone VP and VNP, STOC 2019, 425–429.",
+    "year": 2019
+   },
+   {
+    "key": "Zui19",
+    "text": "J. Zuiddam, The asymptotic spectrum of graphs and the Shannon capacity, Combinatorica 39 (2019), 1173–1184. VP ≠ VNP 17",
+    "year": 2019
+   }
+  ]
+ },
  "table1": [
   {
    "case": "both",

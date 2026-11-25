@@ -3,6 +3,7 @@
  "file": "vp-vnp/paper.pdf",
  "paper_sha256": "882f5eefb1e067cc8c99ddfe660c10d1d67f9fcee7b69364bd0bab06c0c1f97c",
  "pypdf": "7.1.1",
+ "pymupdf": "2.1",
  "output": "diagrams/src/paper-facts.json",
- "output_sha256": "fd6b14d0001f1a2559877d0f3e893199124e985f0354149890b70e1848396927"
+ "output_sha256": "46c2befb550ed317aef7d2216ade4d7739d07b6ef3dec69626bb7fc6ab30804d"
 }

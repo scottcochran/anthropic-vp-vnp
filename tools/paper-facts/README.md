@@ -6,10 +6,10 @@ only, so the parts of the paper the posters read are extracted once, outside the
 and the PDF by its own (`PAPER_SHA256`), and `meta.json` here records both with the commit they were read at.
 
 ```sh
-uv run --with pypdf==7.1.1 python tools/paper-facts/extract.py ../vp-np
+uv run --with pypdf==7.1.1 --with pymupdf==2.1 python tools/paper-facts/extract.py ../vp-np
 ```
 
-What it reads, from the text pypdf 7.1.1 extracts:
+What it reads, from the text pypdf 7.1.1 extracts (and, for the glossary only, PyMuPDF 2.1's character positions):
 
 | Key | From the paper | Read as |
 |---|---|---|
@@ -19,6 +19,10 @@ What it reads, from the text pypdf 7.1.1 extracts:
 | `intro` | the numbered statements of Sections 1 and 2 | 6 headers of the form "Theorem 1.1 (main theorem; thm_allfields)." |
 | `notes` | every "Formalization note." | 7 notes: the page, the note up to its first line that ends with a full stop, the last statement header and the last subsection heading before it, and the statements it names |
 | `figure1` | Figure 1, "The structure of the proof" | the 22 Lean names its text prints, in pypdf's order, its caption, and that it ends at Theorem 1.1; not its arrows, which F4 transcribes |
+| `paper_names` | every word with an underscore in the text | 96 Lean names, each with its pages |
+| `q3` | Appendix Q.3: the renamings, the universes, the stronger forms, the differences | 7 renamings "X for Y" (the page of Table 3 that pypdf sets inside that sentence is cut out first), the statements of the universe and stronger-forms sentences (plural lists too: "Lemmas M.1 and N.2"), and 15 bullets of differences with the statements and Lean names each mentions |
+| `references` | the reference list and every citation | 132 entries (a key is letters, two digits and perhaps a letter, as in Bür00b and vM07; the year is the printed one that ends in the key's digits, 1996/97 read as 1997) and 181 citations, each placed in Section 1, 2 or 3 or an appendix |
+| `glossary` | Appendix P, by the columns of its table | 17 rows, read with PyMuPDF from the characters' positions: a space where two characters stand apart by more than a fifth of the font size, a superscript set on its line |
 | `appendix_q` | the overview's passage on the printed proofs (p. 17); Appendix Q.3's list of what is off the route; Q's "Routes of proof", "Some steps exist only under names of the underlying library", and "Not in Lean" | quoted whole, with the statements they name; the routes as their 6 bullets |
 
 It stops without writing if a row does not parse, Table 1's sections are out of order, a row of Table 3 sits under
