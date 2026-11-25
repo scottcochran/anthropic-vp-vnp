@@ -220,6 +220,66 @@ table's 50 (F2 `imp-Statement-Mathlib`, `imp-Challenge-Statement`, `imp-Paper-Nc
 `files-Nc.Price`), an import on F10 (`mod-Nc.Price.Basic`) and a directory header's card (F5 `dir-Nc-Price`). A poster
 is added, so the next release is a MINOR.
 
+## Phase 4: completing the drill-down (planned, 2026.11.25)
+
+The aim: every count on a card opens the list it counts, and every anchored card or row is opened by some link, or
+is recorded below as text on purpose. Measured at v0.2.0 (6b2bd57): 168 of the set's 758 anchors are opened by no link,
+and five kinds of count open nothing. Each step below is one commit, and each is checked as Phase 3 was:
+`check-links.py`, every link clickable at the centre of its text in Chrome, one link of each new kind opened and seen
+framed, no other poster's bytes changed.
+
+Counts that open nothing:
+
+1. **R2's "8 numbered statements: 3 propositions, …"** (15 cards). Opens the section's rows on F1. F1's section group
+   rows get anchors (`rows-K`), which `lib.table` now allows. Small.
+2. **R3's "off the route are the 4 statements Q.3 names, 6 of the 7 definitions, and Remark N.6"**. Opens R3's own 11
+   `off-` cards, opened by no link now. Markup at the call site (`vp.to`). Small.
+3. **F5's "Under a statement 7427 of 7427 declaration lines"** (25 cards). Opens the directory's column in F5's own
+   section-against-directory table, which breaks that count down by section. A column is drawn with rectangles, not
+   `lib.table`, so it needs a new anchored form: a group around the column, with a halo spanning it. Medium.
+4. **F8's "9 references" for a decade, and "N cited once", "only in Sections 1 to 3", "only in the appendices"**.
+   Each opens a block naming the keys it counts, each key to its row. The blocks are computed from `CITED` and the
+   years, and they add no new recorded list. Medium.
+5. **F3's "Under it 947 declarations, 12290 lines"** (its 7 note cards) **and "13729 lines, 1076 declarations"** (the
+   64 bars of its band on the Lean under each statement). Opens a new poster, F11 `under`, which does not exist
+   yet: per statement, the files of vp-vnp its declarations lie in, with how many each, every file linked to its F10
+   row (993 entries over the 65 statements, at most 99 for Theorem J.3's 1,076 declarations). Read from
+   `src/lean-uses.json` (`under`). It would record the files under each statement, compared both ways. It does not
+   name the 8,554 declarations (4,563 distinct) one by one; F10 names each file's. A poster is added, so this step is
+   a MINOR. Large.
+
+Targets that no link opens:
+
+6. **F3's 7 formalization notes**. Linked from the F1 row and the R3 card of the statement each is about (`NOTES`
+   records the subject): "note p. 42" in F1's title cell. F1's text grows by a few words. Small.
+7. **F6's 15 differences of Appendix Q.3**. Linked from the F1 rows of the statements each names (`DIFFERENCES`
+   records them), as "Q.3 (n)". Small.
+8. **F4's 12 Figure 1 boxes**. Linked from the F1 rows of the statements whose Lean names a box carries (`BOXES`,
+   through Table 3), as "Figure 1: <box>". Small.
+9. **F8's 121 references that only the top ten open**. Linked from R2's section cards: "Cites" and the keys the
+   section cites (`CITED`), each to its F8 row. R2's cards grow; how many keys a card can hold before it lists only a
+   count, and opens F8, is decided when it is drawn. Medium.
+10. **R1's `Statement.Family` and `Statement.hc`**. Named only inside Lean panels. They follow step 12 if it is done,
+    and stay unopened otherwise.
+
+To decide, before any work:
+
+11. **Mathlib.** The `Mathlib` imports (F10, F2's band 3, 25 import lines) could open mathlib4 at the commit
+    `vp-vnp/lake-manifest.json` pins (`0df444a360e`). That takes a `[links].allow` prefix at that commit, and Mathlib
+    becomes a second pinned source.
+12. **Names inside the Lean panels.** The panels quote code, and a name in them stays text. Linking each identifier to
+    its declaration means setting each token as its own run, and a binder or a local of the same name would be
+    linked wrongly. Recommended: leave the panels as quotations.
+13. **What stays text.** F1's LaTeX labels (`def:spectral`) and page numbers (`p. 19`) would open the paper, but
+    GitHub's viewer of `paper.pdf` at the pin does not honour `#page=`. The paper's Sections 1 to 3 have no card on
+    any poster. A count beside the list it counts, on the same poster (F9's "124 uses, 41 direct" above its table,
+    F10's header rows), already stands with what it counts.
+
+Done when: every anchor of the set is opened by a link, except those step 10 and the decisions leave; every count on a
+card opens its list or is in item 13; the audit that measured the 168 (anchors no link opens, counts outside any link)
+runs as a script beside `check-links.py`, so that a new poster cannot leave a target unreached without someone
+deciding it. Steps 1 to 4 and 6 to 9 are a PATCH together; step 5 is a MINOR.
+
 ## Releases
 
 A release is a version tag, `vMAJOR.MINOR.PATCH`, annotated and signed, on `main`, pushed by the custodian
