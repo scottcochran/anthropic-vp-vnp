@@ -182,5 +182,7 @@ date in the posters' file names changes with every regeneration, and is not a mo
 Done, v0.1.0 (2026.11.25): the first release, signed and pushed by the custodian on c23e2d0. Release run
 45605568786 passed (tag, check, release); it published 16 assets, the 14 posters, `pins.json` and `SHA256SUMS`.
 `verify-release.py v0.1.0`: the 14 posters match the tree at the tag by their checksums, and `pins.json` names the
-tag (formal-math 11b6c7e3c927, Python 3.12 in the run). No Pages site.
+tag (formal-math 11b6c7e3c927, Python 3.12 in the run). Published to the Pages site afterwards, by pages.yml run by
+hand from main at 1723c26 (run 45606514259): the build checked every file against the release's `SHA256SUMS`, and the
+deploy confirmed the site serves v0.1.0; `verify-release.py v0.1.0` then passed with the site check too.
 
