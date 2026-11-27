@@ -1,4 +1,4 @@
-# Posters of *VP ≠ VNP over every field* and its Lean formalization
+# Posters of Anthropic's *VP ≠ VNP over every field* and its Lean formalization
 
 Fifteen generated SVG posters of the paper and of the vp-vnp folder of
 [anthropics/formal-math](https://github.com/anthropics/formal-math/tree/main/vp-vnp), read at one pinned commit
